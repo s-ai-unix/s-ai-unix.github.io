@@ -9,7 +9,7 @@ params:
   author: "s-ai-unix"
 
   defaultTheme: auto
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowReadingTime: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
