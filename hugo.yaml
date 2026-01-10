@@ -42,6 +42,21 @@ params:
     - name: github
       url: "https://github.com/s-ai-unix"
 
+  # Giscus 评论系统配置
+  giscus:
+    repo: "s-ai-unix/blog"              # GitHub 仓库，格式：用户名/仓库名
+    repoId: "R_kgdon12345"              # 仓库 ID，需要从 Giscus 网站获取
+    category: "Announcements"           # Discussion 分类名称
+    categoryId: "DIC_kwdon12345"        # 分类 ID，需要从 Giscus 网站获取
+    mapping: "pathname"                 # 映射方式：pathname, url, title, og:title
+    strict: "0"                         # 严格模式
+    reactionsEnabled: "1"               # 启用表情反应
+    emitMetadata: "0"                   # 发射元数据
+    inputPosition: "bottom"             # 输入框位置：top, bottom
+    theme: "preferred_color_scheme"     # 主题：light, dark, dark_dimmed, dark_high_contrast, transparent_dark, preferred_color_scheme
+    lang: "zh-CN"                       # 语言：en, zh-CN, etc.
+    loading: "lazy"                     # 加载方式：lazy, eager
+
 menu:
   main:
     - identifier: home
