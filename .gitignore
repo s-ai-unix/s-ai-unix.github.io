@@ -1,0 +1,14 @@
+# Hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.tmp
+*.log
+*.swp
+*~

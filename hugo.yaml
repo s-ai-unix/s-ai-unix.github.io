@@ -1,0 +1,59 @@
+baseURL: https://s-ai-unix.github.io/blog/
+languageCode: zh-cn
+title: s-ai-unix's Blog
+theme: PaperMod
+
+params:
+  env: production
+  description: "我的个人博客"
+  author: "s-ai-unix"
+
+  defaultTheme: auto
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+
+  profileMode:
+    enabled: false
+    title: "Hi there \U0001F44B"
+    subtitle: "Welcome to my blog"
+    imageUrl: ""
+    imageTitle: ""
+    imageWidth: 120
+    imageHeight: 120
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: >
+      Welcome to my blog. Here you'll find my thoughts and articles about technology and programming.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/s-ai-unix"
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
