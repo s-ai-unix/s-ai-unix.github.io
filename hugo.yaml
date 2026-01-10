@@ -38,6 +38,8 @@ params:
   socialIcons:
     - name: email
       url: "mailto:isunix1989@gmail.com"
+    - name: github
+      url: "https://github.com/s-ai-unix"
 
 menu:
   main:
