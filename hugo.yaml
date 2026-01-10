@@ -9,7 +9,8 @@ params:
   author: "s-ai-unix"
 
   defaultTheme: auto
-  ShowShareButtons: false
+  ShowShareButtons: true
+  ShareButtons: ["twitter", "linkedin", "facebook"]
   ShowReadingTime: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
