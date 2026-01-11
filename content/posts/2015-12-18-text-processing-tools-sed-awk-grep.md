@@ -415,7 +415,7 @@ history | awk '{a[$2]++} END {for(i in a) {print a[i]" "i}}'| sort -rn | head
 wget http://example.com/lecture{1..26}.pdf
 ```
 
-## ��具选择指南
+## 工具选择指南
 
 ### 何时使用grep
 

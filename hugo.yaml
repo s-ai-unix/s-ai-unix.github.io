@@ -88,3 +88,10 @@ menu:
       name: Search
       url: /search/
       weight: 40
+
+# Hugo 输出配置，用于生成搜索索引
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # 必需，用于搜索功能
