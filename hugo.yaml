@@ -115,6 +115,10 @@ menu:
       name: Search
       url: /search/
       weight: 40
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 50
 
 # Hugo 输出配置，用于生成搜索索引
 outputs:
