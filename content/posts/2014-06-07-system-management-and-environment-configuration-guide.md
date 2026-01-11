@@ -23,7 +23,7 @@ cover:
 
 ### macOS上配置Apache
 
-macOS系统自���Apache，只需简单配置即可使用。
+macOS系统自带Apache，只需简单配置即可使用。
 
 #### 启用PHP支持
 
