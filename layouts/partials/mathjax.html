@@ -1,9 +1,9 @@
-{{ if or .Params.mathjax (and .Site.Params.mathjax .Params.mathjax) }}
+{{ if or .Params.mathjax .Site.Params.mathjax }}
 <script>
 window.MathJax = {
   tex: {
-    inlineMath: [['\\(', '\\)']],
-    displayMath: [['\\[', '\\]']],
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
     processEscapes: true,
     processEnvironments: true,
     tags: 'ams',
@@ -20,7 +20,6 @@ window.MathJax = {
       ]
     },
     macros: {
-      // 自定义宏，方便输入常用数学符号
       R: "{\\mathbb{R}}",
       N: "{\\mathbb{N}}",
       Z: "{\\mathbb{Z}}",
@@ -40,32 +39,9 @@ window.MathJax = {
   startup: {
     pageReady: () => {
       return MathJax.startup.defaultPageReady().then(() => {
-        console.log('MathJax initial typesetting complete');
+        console.log('MathJax loaded and processed');
       });
     }
-  },
-  svg: {
-    fontCache: 'global',
-    scale: 1,
-    minScale: 0.5,
-    mtextInheritFont: false,
-    merrorInheritFont: true,
-    mathmlSpacing: false,
-    skipAttributes: {},
-    exFactor: 0.5,
-    displayAlign: 'center',
-    displayIndent: '0'
-  },
-  chtml: {
-    scale: 1,
-    minScale: 0.5,
-    mtextInheritFont: false,
-    merrorInheritFont: true,
-    mathmlSpacing: false,
-    skipAttributes: {},
-    exFactor: 0.5,
-    displayAlign: 'center',
-    displayIndent: '0'
   }
 };
 </script>

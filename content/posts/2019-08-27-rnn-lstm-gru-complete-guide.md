@@ -91,6 +91,7 @@ LSTM(Long Short-Term Memory)由Hochreiter和Schmidhuber在1997年提出,专门�
 
 \[f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)\]
 
+
 其中\(\sigma\)是sigmoid函数,输出值在\([0,1]\)之间,0代表完全遗忘,1代表完全保留。
 
 #### 2. 输入门(Input Gate)
@@ -100,6 +101,7 @@ LSTM(Long Short-Term Memory)由Hochreiter和Schmidhuber在1997年提出,专门�
 \[i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)\]
 
 \[\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C)\]
+
 
 #### 3. 更新细胞状态
 
@@ -112,6 +114,7 @@ LSTM(Long Short-Term Memory)由Hochreiter和Schmidhuber在1997年提出,专门�
 决定输出什么信息:
 
 \[o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)\]
+
 
 \[h_t = o_t * \tanh(C_t)\]
 
@@ -153,6 +156,7 @@ GRU将LSTM的三个门简化为两个:
 
 \[z_t = \sigma(W_z \cdot [h_{t-1}, x_t] + b_z)\]
 
+
 #### 2. 重置门
 
 决定如何将新的输入与之前的记忆结合:
@@ -162,6 +166,7 @@ GRU将LSTM的三个门简化为两个:
 #### 3. 候选隐藏状态
 
 \[\tilde{h}_t = \tanh(W_h \cdot [r_t * h_{t-1}, x_t] + b_h)\]
+
 
 #### 4. 最终隐藏状态
 

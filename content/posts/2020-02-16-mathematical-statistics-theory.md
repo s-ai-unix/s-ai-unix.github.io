@@ -147,6 +147,7 @@ print(f"p值: {p_value:.4f}")
 **矩估计**:用样本矩估计总体矩
 
 **极大似然估计**(MLE):
+
 \[\hat{\theta} = \arg\max_{\theta} L(\theta; x_1, \ldots, x_n)\[\]
 
 **评价标准**:
@@ -201,12 +202,15 @@ else:
 **单因素方差分析**:
 
 \[H_0: \mu_1 = \mu_2 = \cdots = \mu_k\[\]
+
 \[H_1: \text{至少有两个不相等}\[\]
 
 **平方和分解**:
 \[SST = SSA + SSE\[\]
 
+
 **F统计量**:
+
 \[F = \frac{SSA/(k-1)}{SSE/(n-k)}\[\]
 
 ```python
@@ -226,9 +230,12 @@ print(f"p值: {p_value:.4f}")
 **一元线性回归**:
 \[y = \beta_0 + \beta_1 x + \varepsilon\[\]
 
+
 **参数估计**:
+
 \[\hat{\beta}_1 = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2}\[\]
 \[\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}\[\]
+
 
 **模型评价**:
 - 决定系数: \(R^2 = \frac{SSR}{SST}\)
