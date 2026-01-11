@@ -11,9 +11,9 @@ tags:
   - 算法
 description: "汇集JavaScript、Python等多语言开发技巧，涵盖数组操作、数据结构实现、算法实践等实用技能。"
 cover:
-  image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-  alt: "各种编程语言和开发工具的代码编辑器界面"
-  caption: "Photo by Unsplash"
+  image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  alt: "开发工具抽象艺术"
+  caption: "Photo by Arnold Francisca on Unsplash"
 ---
 
 优秀的开发者不仅要掌握语言本身，更要熟悉各种开发工具和编程技巧。本文汇集了多种语言的实用技巧和工具，帮助你提升开发效率和代码质量。

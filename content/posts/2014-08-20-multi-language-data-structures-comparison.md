@@ -11,9 +11,9 @@ tags:
   - 编程语言对比
 description: "深入对比C、Perl和Python三种语言在实现数据结构与算法时的差异，包括语法特点、性能表现、适用场景等方面的分析。"
 cover:
-  image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-  alt: "多编程语言代码对比"
-  caption: "Photo by Unsplash"
+  image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  alt: "多语言编程抽象艺术"
+  caption: "Photo by Ilya Pavlov on Unsplash"
 ---
 
 不同的编程语言在实现数据结构与算法时各有特点。本文将通过实际代码示例，对比C、Perl和Python三种语言在实现常见数据结构与算法时的差异，帮助开发者选择最适合的工具。

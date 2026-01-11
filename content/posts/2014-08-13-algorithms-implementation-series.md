@@ -10,9 +10,9 @@ tags:
   - C语言
 description: "深入探讨二叉树的递归与非递归遍历算法，包括前序、中序、后序和层序遍历的完整实现，以及递归算法的优化技巧。"
 cover:
-  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-  alt: "算法和数据结构可视化图形"
-  caption: "Photo by Unsplash"
+  image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  alt: "算法几何抽象艺术"
+  caption: "Photo by Markus Spiske on Unsplash"
 ---
 
 树形结构是计算机科学中最重要的数据结构之一，而二叉树的遍历算法是理解递归思想的经典案例。本文将详细介绍二叉树的四种遍历方式，以及递归与非递归的实现对比。

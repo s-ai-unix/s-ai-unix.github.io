@@ -8,9 +8,9 @@ tags:
   - 教程
 description: "深入探讨Perl语言的基础知识和核心概念，包括变量作用域、列表操作、正则表达式等重要内容。"
 cover:
-  image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-  alt: "Perl编程代码编辑器界面"
-  caption: "Photo by Unsplash"
+  image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  alt: "抽象几何艺术插画"
+  caption: "Photo by Frank McKenna on Unsplash"
 ---
 
 Perl是一种功能强大的文本处理语言，以其灵活性和表达能力著称。本文将详细介绍Perl的核心概念和基础知识。

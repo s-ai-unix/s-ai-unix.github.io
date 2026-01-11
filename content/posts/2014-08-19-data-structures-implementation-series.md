@@ -9,9 +9,9 @@ tags:
   - 教程
 description: "详细介绍线性表、链表、栈等基础数据结构的C语言实现，包括顺序存储和链式存储两种方式，以及指针实现和引用实现的对比。"
 cover:
-  image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-  alt: "数据结构和算法可视化"
-  caption: "Photo by Unsplash"
+  image: "https://images.unsplash.com/photo-1506259091721-347f798196d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  alt: "数据结构抽象艺术"
+  caption: "Photo by fabio on Unsplash"
 ---
 
 数据结构是计算机科学的基础，掌握各种数据结构的实现原理对于编写高效程序至关重要。本文将详细介绍线性表、链表、栈等基础数据结构的实现方法。

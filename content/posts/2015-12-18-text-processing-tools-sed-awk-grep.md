@@ -11,9 +11,9 @@ tags:
   - 命令行
 description: "深入掌握sed、awk和grep这三个强大的文本处理工具，通过实战示例学习如何在命令行下高效处理文本数据。"
 cover:
-  image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-  alt: "命令行终端中的文本处理操作"
-  caption: "Photo by Unsplash"
+  image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  alt: "文本处理抽象艺术"
+  caption: "Photo by Stefan Coders on Unsplash"
 ---
 
 在Unix/Linux系统中，sed、awk和grep被称为文本处理三剑客。它们各自擅长不同的文本处理任务，配合使用可以解决绝大多数文本处理需求。本文将通过实战示例帮助你掌握这些工具的核心用法。

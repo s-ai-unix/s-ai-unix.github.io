@@ -11,9 +11,9 @@ tags:
   - 文本处理
 description: "深入学习Shell脚本编程，从基础语法到高级技巧，掌握命令行自动化的核心技能。"
 cover:
-  image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-  alt: "Linux终端和Shell脚本编辑界面"
-  caption: "Photo by Unsplash"
+  image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  alt: "Shell脚本抽象艺术"
+  caption: "Photo by Clément Hélardot on Unsplash"
 ---
 
 Shell脚本是系统管理和自动化任务的利器。本文将带你从基础到高级，全面掌握Shell脚本编程的最佳实践。
