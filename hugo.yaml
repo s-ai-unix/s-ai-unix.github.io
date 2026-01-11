@@ -3,6 +3,14 @@ languageCode: zh-cn
 title: s-ai-unix's Blog
 theme: PaperMod
 
+# 忽略 Goldmark 警告
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+ignoreLogs: ['warning-goldmark-raw-html']
+
 params:
   env: production
   description: "我的个人博客"
