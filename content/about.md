@@ -3,12 +3,12 @@ title: "About"
 layout: "about"
 date: 2024-01-11T00:00:00+08:00
 draft: false
-description: "About me - Data Analyst & Software Engineer"
+description: "About me - Data Scientist & Product/Business Development"
 ---
 
 ## Hi, I'm Steven
 
-A data professional passionate about turning data into insights. With over a decade of experience spanning data analysis, software engineering, and product management, I specialize in building scalable data solutions that drive business decisions.
+A data and machine learning professional passionate about turning data into insights. With over a decade of experience spanning data analysis, software engineering, and product management, I specialize in building scalable data solutions that drive business decisions.
 
 ## What I Do
 
@@ -16,7 +16,7 @@ Currently focusing on intelligent automotive systems, I bridge the gap between d
 
 ### Expertise
 
-- **Data Analytics**: Full-stack data analysis from ETL pipelines to actionable insights
+- **Data Analytics**: Full-stack data analytical tasks from ETL pipelines to actionable insights
 - **Product Management**: Translating data into product features and user experiences
 - **Software Engineering**: Building tools and platforms with Perl, Python, and Shell
 - **Statistical Analysis**: Applying statistical methods to solve real-world problems
@@ -33,7 +33,7 @@ Currently focusing on intelligent automotive systems, I bridge the gap between d
 
 ### Education
 
-- **Renmin University of China** - M.S. Probability & Mathematical Statistics (2020-present)
+- **Renmin University of China** - M.S. Probability & Mathematical Statistics (2020-2025)
 - **Anhui Agricultural University** - B.S. Information & Computing Science (2007-2011)
 
 ## Technical Skills
