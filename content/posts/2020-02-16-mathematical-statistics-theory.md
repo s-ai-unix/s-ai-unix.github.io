@@ -97,9 +97,9 @@ mathjax: true
 
 **常见统计量**:
 
-- **样本均值**: $\bar{X} = \frac{1}{n}\sum_{i=1}^{n}X_i$
-- **样本方差**: $S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \bar{X})^2$
-- **样本矩**: $m_k = \frac{1}{n}\sum_{i=1}^{n}X_i^k$
+- **样本均值**: $\bar{X} = \frac{1}{n}\sum\_{i=1}^{n}X\_i$
+- **样本方差**: $S^2 = \frac{1}{n-1}\sum\_{i=1}^{n}(X\_i - \bar{X})^2$
+- **样本矩**: $m\_k = \frac{1}{n}\sum\_{i=1}^{n}X\_i^k$
 
 **性质**:
 - 样本均值是总体均值的无偏估计
@@ -114,9 +114,9 @@ mathjax: true
 
 **正态分布相关**:
 - 标准正态分布: $Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \sim N(0,1)$
-- 卡方分布: $\chi^2 = \sum_{i=1}^{n}\left(\frac{X_i - \mu}{\sigma}\right)^2$
+- 卡方分布: $\chi^2 = \sum\_{i=1}^{n}\left(\frac{X\_i - \mu}{\sigma}\right)^2$
 - t分布: $T = \frac{\bar{X} - \mu}{S/\sqrt{n}}$
-- F分布: $F = \frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}$
+- F分布: $F = \frac{S\_1^2/\sigma\_1^2}{S\_2^2/\sigma\_2^2}$
 
 **应用示例**:
 
@@ -147,11 +147,11 @@ print(f"p值: {p_value:.4f}")
 **矩估计**:用样本矩估计总体矩
 
 **极大似然估计**(MLE):
-$$\hat{\theta} = \arg\max_{\theta} L(\theta; x_1, \ldots, x_n)$$
+$$\hat{\theta} = \arg\max\_{\theta} L(\theta; x\_1, \ldots, x\_n)$$
 
 **评价标准**:
 - **无偏性**: $E(\hat{\theta}) = \theta$
-- **有效性**: $\text{Var}(\hat{\theta}_1) < \text{Var}(\hat{\theta}_2)$
+- **有效性**: $\text{Var}(\hat{\theta}\_1) < \text{Var}(\hat{\theta}\_2)$
 - **一致性**: $\hat{\theta} \xrightarrow{P} \theta$ (依概率)
 
 #### 区间估计
@@ -159,8 +159,8 @@ $$\hat{\theta} = \arg\max_{\theta} L(\theta; x_1, \ldots, x_n)$$
 置信区间的形式: $[\hat{\theta} - \delta, \hat{\theta} + \delta]$
 
 **常见置信区间**:
-- 均值的置信区间: $\bar{X} \pm t_{\alpha/2} \cdot \frac{S}{\sqrt{n}}$
-- 方差的置信区间: $\left[\frac{(n-1)S^2}{\chi^2_{\alpha/2}}, \frac{(n-1)S^2}{\chi^2_{1-\alpha/2}}\right]$
+- 均值的置信区间: $\bar{X} \pm t\_{\alpha/2} \cdot \frac{S}{\sqrt{n}}$
+- 方差的置信区间: $\left[\frac{(n-1)S^2}{\chi^2\_{\alpha/2}}, \frac{(n-1)S^2}{\chi^2\_{1-\alpha/2}}\right]$
 
 ### 4. 假设检验
 
@@ -200,8 +200,8 @@ else:
 
 **单因素方差分析**:
 
-$$H_0: \mu_1 = \mu_2 = \cdots = \mu_k$$
-$$H_1: \text{至少有两个不相等}$$
+$$H\_0: \mu\_1 = \mu\_2 = \cdots = \mu\_k$$
+$$H\_1: \text{至少有两个不相等}$$
 
 **平方和分解**:
 $$SST = SSA + SSE$$
@@ -224,11 +224,11 @@ print(f"p值: {p_value:.4f}")
 ### 6. 回归分析
 
 **一元线性回归**:
-$$y = \beta_0 + \beta_1 x + \varepsilon$$
+$$y = \beta\_0 + \beta\_1 x + \varepsilon$$
 
 **参数估计**:
-$$\hat{\beta}_1 = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2}$$
-$$\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}$$
+$$\hat{\beta}\_1 = \frac{\sum\_{i=1}^{n}(x\_i - \bar{x})(y\_i - \bar{y})}{\sum\_{i=1}^{n}(x\_i - \bar{x})^2}$$
+$$\hat{\beta}\_0 = \bar{y} - \hat{\beta}\_1\bar{x}$$
 
 **模型评价**:
 - 决定系数: $R^2 = \frac{SSR}{SST}$

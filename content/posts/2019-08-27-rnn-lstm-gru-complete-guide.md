@@ -30,13 +30,13 @@ RNN是一种具有记忆功能的神经网络,它能够处理序列数据,如:
 
 RNN的核心思想是在隐藏层之间引入循环连接,使得网络能够记住之前的信息。
 
-$$h_t = f(W_h \cdot h_{t-1} + W_x \cdot x_t + b)$$
+$$h\_t = f(W\_h \cdot h\_{t-1} + W\_x \cdot x\_t + b)$$
 
 其中:
-- $h_t$: 时刻$t$的隐藏状态
-- $h_{t-1}$: 时刻$t-1$的隐藏状态
-- $x_t$: 时刻$t$的输入
-- $W_h, W_x$: 权重矩阵
+- $h\_t$: 时刻$t$的隐藏状态
+- $h\_{t-1}$: 时刻$t-1$的隐藏状态
+- $x\_t$: 时刻$t$的输入
+- $W\_h, W\_x$: 权重矩阵
 - $b$: 偏置
 
 ### RNN的优势
@@ -52,7 +52,7 @@ $$h_t = f(W_h \cdot h_{t-1} + W_x \cdot x_t + b)$$
 **原因**:
 - 在反向传播过程中,梯度需要连乘多个时间步
 - 当梯度绝对值小于1时,连乘会导致梯度指数级衰减
-- 网络无法���习到长距离依赖
+- 网络无法学习到长距离依赖
 
 **表现**:
 - 只能记住短期的信息
@@ -89,7 +89,7 @@ LSTM(Long Short-Term Memory)由Hochreiter和Schmidhuber在1997年提出,专门�
 
 决定从细胞状态中丢弃哪些信息:
 
-$$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$
+$$f\_t = \sigma(W\_f \cdot [h\_{t-1}, x\_t] + b\_f)$$
 
 其中$\sigma$是sigmoid函数,输出值在$[0,1]$之间,0代表完全遗忘,1代表完全保留。
 
@@ -97,13 +97,13 @@ $$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$
 
 决定哪些新信息将被存储到细胞状态中:
 
-$$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$$
+$$i\_t = \sigma(W\_i \cdot [h\_{t-1}, x\_t] + b\_i)$$
 
-$$\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C)$$
+$$\tilde{C}\_t = \tanh(W\_C \cdot [h\_{t-1}, x\_t] + b\_C)$$
 
 #### 3. 更新细胞状态
 
-$$C_t = f_t * C_{t-1} + i_t * \tilde{C}_t$$
+$$C\_t = f\_t * C\_{t-1} + i\_t * \tilde{C}\_t$$
 
 这一步完成了对旧状态的遗忘和新信息的添加。
 
@@ -111,9 +111,9 @@ $$C_t = f_t * C_{t-1} + i_t * \tilde{C}_t$$
 
 决定输出什么信息:
 
-$$o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)$$
+$$o\_t = \sigma(W\_o \cdot [h\_{t-1}, x\_t] + b\_o)$$
 
-$$h_t = o_t * \tanh(C_t)$$
+$$h\_t = o\_t * \tanh(C\_t)$$
 
 ### LSTM如何解决梯度消失
 
@@ -151,21 +151,21 @@ GRU将LSTM的三个门简化为两个:
 
 决定保留多少旧的隐藏状态:
 
-$$z_t = \sigma(W_z \cdot [h_{t-1}, x_t] + b_z)$$
+$$z\_t = \sigma(W\_z \cdot [h\_{t-1}, x\_t] + b\_z)$$
 
 #### 2. 重置门
 
 决定如何将新的输入与之前的记忆结合:
 
-$$r_t = \sigma(W_r \cdot [h_{t-1}, x_t] + b_r)$$
+$$r\_t = \sigma(W\_r \cdot [h\_{t-1}, x\_t] + b\_r)$$
 
 #### 3. 候选隐藏状态
 
-$$\tilde{h}_t = \tanh(W_h \cdot [r_t * h_{t-1}, x_t] + b_h)$$
+$$\tilde{h}\_t = \tanh(W\_h \cdot [r\_t * h\_{t-1}, x\_t] + b\_h)$$
 
 #### 4. 最终隐藏状态
 
-$$h_t = (1 - z_t) * h_{t-1} + z_t * \tilde{h}_t$$
+$$h\_t = (1 - z\_t) * h\_{t-1} + z\_t * \tilde{h}\_t$$
 
 ### GRU vs LSTM
 

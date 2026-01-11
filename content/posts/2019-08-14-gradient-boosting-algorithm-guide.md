@@ -74,12 +74,12 @@ Gradient Boosting是一种迭代算法,每次迭代都训练一个新的弱学�
 
 给定损失函数$L(y, F(x))$,Gradient Boosting的优化目标是:
 
-$$F_m(x) = F_{m-1}(x) + \gamma_m \cdot h_m(x)$$
+$$F\_m(x) = F\_{m-1}(x) + \gamma\_m \cdot h\_m(x)$$
 
 其中:
-- $F_{m-1}(x)$是之前的模型
-- $h_m(x)$是新训练的基学习器
-- $\gamma_m$是学习率
+- $F\_{m-1}(x)$是之前的模型
+- $h\_m(x)$是新训练的基学习器
+- $\gamma\_m$是学习率
 
 ### 常用损失函数
 
