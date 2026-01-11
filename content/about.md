@@ -8,7 +8,9 @@ description: "About me - Data Scientist & Product/Business Development"
 
 ## Hi, I'm Steven
 
-A data and machine learning professional passionate about turning data into insights. With over a decade of experience spanning data analysis, software engineering, and product management, I specialize in building scalable data solutions that drive business decisions.
+A data and machine learning professional passionate about turning data into insights. With over a decade of experience spanning data analysis, software engineering, product development and management, I specialize in building scalable data solutions that drive business decisions.
+
+I am also interested in and responsible for AI related products and business development and planning.
 
 ## What I Do
 
@@ -24,10 +26,11 @@ Currently focusing on intelligent automotive systems, I bridge the gap between d
 ## Background
 
 ### Professional Journey
-- **Geely Auto** - Principal Engineer, Smart Cockpit (2023-2024)
-- **OPPO** - Senior Data Analyst (2022-2023)
-- **Huami** - Senior Data Analyst (2016-2021) - Xiaomi ecosystem
-- **Cisco** - Anti-Spam Engineer (2012-2016)
+- **iflytek** - Product Manager, Intelligent Cockpit (2024-2024)
+- **Geely Auto** - Principal Product Manager, Intelligent Cockpit (2023-2024)
+- **OPPO** - Principal Data Analytical Engineer (2022-2023)
+- **Huami** - Senior Data Analytical Engineer (2016-2021) - Xiaomi ecosystem
+- **Cisco** - Senior Anti-Spam Engineer (2012-2016)
 
 ### Education
 
@@ -42,7 +45,18 @@ Currently focusing on intelligent automotive systems, I bridge the gap between d
 
 ## When Not Coding
 
-I enjoy exploring ideas at the intersection of technology and humanities - history, literature, and classical culture. An avid Mac user and Ubuntu enthusiast who believes in elegant solutions to complex problems.
+I enjoy exploring ideas at the intersection of technology and humanities and big fan of, 
+- History
+- Literature
+- Classical culture
+- An avid Mac user and Ubuntu
+-  An ethusiast who believes in elegant solutions to complex problems
+- Hiking
+- Badminton
+- Mathematics
+- AI
+- Statistics
+- How humans thinks and behave
 
 ## Get in Touch
 
