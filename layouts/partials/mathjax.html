@@ -2,49 +2,75 @@
 <script>
 window.MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    tags: 'ams',
-    tagSide: 'right',
-    tagIndent: '.8em',
-    packages: {
-      '[+]': [
-        'base',
-        'ams',
-        'newcommand',
-        'mathtools',
-        'textmacros',
-        'unicode'
-      ]
-    },
-    macros: {
-      R: "{\\mathbb{R}}",
-      N: "{\\mathbb{N}}",
-      Z: "{\\mathbb{Z}}",
-      Q: "{\\mathbb{Q}}",
-      C: "{\\mathbb{C}}",
-      vec: ["\\mathbf{#1}", 1],
-      norm: ["\\left\\lVert#1\\right\\rVert", 1],
-      abs: ["\\left|#1\\right|", 1],
-      bm: ["\\boldsymbol{#1}", 1]
-    }
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']],
+    processEscapes: true
   },
   options: {
     skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-    ignoreHtmlClass: 'tex2jax_ignore',
-    processHtmlClass: 'tex2jax_process'
+    includeHtmlTags: ['span', 'div', 'p', 'li']
   },
   startup: {
     pageReady: () => {
       return MathJax.startup.defaultPageReady().then(() => {
-        console.log('MathJax loaded and processed');
+        console.log('MathJax formulas rendered successfully');
       });
     }
   }
 };
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script>
+// Fix formulas broken by Goldmark markdown processor
+(function() {
+  'use strict';
+
+  function fixMathFormulas() {
+    // Fix underscore issues: $h_<em>t</em>$ -> $h_t$
+    document.querySelectorAll('p, li, td, div').forEach(el => {
+      let html = el.innerHTML;
+
+      // Fix inline math: $x_<em>t</em>$ -> $x_t$
+      html = html.replace(
+        /\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,
+        (match, before, sub, after) => {
+          // Skip if looks like currency
+          if (/^[\d.,]+$/.test((before + sub + after).replace(/[.,]/g, ''))) {
+            return match;
+          }
+          return '$' + before + '_' + sub + after + '$';
+        }
+      );
+
+      // Fix display math: $$x_<em>t</em>$$ -> $$x_t$$
+      html = html.replace(
+        /\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,
+        (match, before, sub, after) => {
+          return '$$' + before + '_' + sub + after + '$$';
+        }
+      );
+
+      if (html !== el.innerHTML) {
+        el.innerHTML = html;
+      }
+    });
+
+    // Re-render with MathJax
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().then(() => {
+        console.log('Fixed and rendered math formulas');
+      });
+    }
+  }
+
+  // Run fix after page loads
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixMathFormulas);
+  } else {
+    setTimeout(fixMathFormulas, 100);
+  }
+})();
+</script>
 {{ end }}

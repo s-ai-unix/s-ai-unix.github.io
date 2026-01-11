@@ -30,14 +30,23 @@ RNN是一种具有记忆功能的神经网络,它能够处理序列数据,如:
 
 RNN的核心思想是在隐藏层之间引入循环连接,使得网络能够记住之前的信息。
 
-\[h_t = f(W_h \cdot h_{t-1} + W_x \cdot x_t + b)\]
+
+
+
+
+$$
+$h_t$ = f($W_h$ $\cdot$ $h_{t-1}$ + $W_x$ $\cdot$ $x_t$ + b)
+$$
+
+
+
 
 其中:
-- \(h_t\): 时刻\(t\)的隐藏状态
-- \(h_{t-1}\): 时刻\(t-1\)的隐藏状态
-- \(x_t\): 时刻\(t\)的输入
-- \(W_h, W_x\): 权重矩阵
-- \(b\): 偏置
+- $h_t$: 时刻t的隐藏状态
+- $h_{t-1}$: 时刻t-1的隐藏状态
+- $x_t$: 时刻t的输入
+- $W_h$, $W_x$: 权重矩阵
+- b: 偏置
 
 ### RNN的优势
 
@@ -89,23 +98,59 @@ LSTM(Long Short-Term Memory)由Hochreiter和Schmidhuber在1997年提出,专门�
 
 决定从细胞状态中丢弃哪些信息:
 
-\[f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)\]
 
 
-其中\(\sigma\)是sigmoid函数,输出值在\([0,1]\)之间,0代表完全遗忘,1代表完全保留。
+
+
+$$
+$f_t$ = $\sigma$($W_f$ $\cdot$ [$h_{t-1}$, $x_t$] + $b_f$)
+$$
+
+
+
+
+
+其中$\sigma$是sigmoid函数,输出值在[0,1]之间,0代表完全遗忘,1代表完全保留。
 
 #### 2. 输入门(Input Gate)
 
 决定哪些新信息将被存储到细胞状态中:
 
-\[i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)\]
 
-\[\tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C)\]
+
+
+
+$$
+$i_t$ = $\sigma$($W_i$ $\cdot$ [$h_{t-1}$, $x_t$] + $b_i$)
+$$
+
+
+
+
+
+
+
+
+$$
+$\tilde{C}$_t = $\tanh$($W_C$ $\cdot$ [$h_{t-1}$, $x_t$] + $b_C$)
+$$
+
+
+
 
 
 #### 3. 更新细胞状态
 
-\[C_t = f_t * C_{t-1} + i_t * \tilde{C}_t\]
+
+
+
+
+$$
+$C_t$ = $f_t$ * $C_{t-1}$ + $i_t$ * $\tilde{C}$_t
+$$
+
+
+
 
 这一步完成了对旧状态的遗忘和新信息的添加。
 
@@ -113,10 +158,28 @@ LSTM(Long Short-Term Memory)由Hochreiter和Schmidhuber在1997年提出,专门�
 
 决定输出什么信息:
 
-\[o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)\]
 
 
-\[h_t = o_t * \tanh(C_t)\]
+
+
+$$
+$o_t$ = $\sigma$($W_o$ $\cdot$ [$h_{t-1}$, $x_t$] + $b_o$)
+$$
+
+
+
+
+
+
+
+
+
+$$
+$h_t$ = $o_t$ * $\tanh$($C_t$)
+$$
+
+
+
 
 ### LSTM如何解决梯度消失
 
@@ -154,23 +217,59 @@ GRU将LSTM的三个门简化为两个:
 
 决定保留多少旧的隐藏状态:
 
-\[z_t = \sigma(W_z \cdot [h_{t-1}, x_t] + b_z)\]
+
+
+
+
+$$
+$z_t$ = $\sigma$($W_z$ $\cdot$ [$h_{t-1}$, $x_t$] + $b_z$)
+$$
+
+
+
 
 
 #### 2. 重置门
 
 决定如何将新的输入与之前的记忆结合:
 
-\[r_t = \sigma(W_r \cdot [h_{t-1}, x_t] + b_r)\]
+
+
+
+
+$$
+$r_t$ = $\sigma$($W_r$ $\cdot$ [$h_{t-1}$, $x_t$] + $b_r$)
+$$
+
+
+
 
 #### 3. 候选隐藏状态
 
-\[\tilde{h}_t = \tanh(W_h \cdot [r_t * h_{t-1}, x_t] + b_h)\]
+
+
+
+
+$$
+$\tilde{h}$_t = $\tanh$($W_h$ $\cdot$ [$r_t$ * $h_{t-1}$, $x_t$] + $b_h$)
+$$
+
+
+
 
 
 #### 4. 最终隐藏状态
 
-\[h_t = (1 - z_t) * h_{t-1} + z_t * \tilde{h}_t\]
+
+
+
+
+$$
+$h_t$ = (1 - $z_t$) * $h_{t-1}$ + $z_t$ * $\tilde{h}$_t
+$$
+
+
+
 
 ### GRU vs LSTM
 
@@ -198,16 +297,26 @@ from keras.layers import LSTM, Dense
 # 构建LSTM模型
 model = Sequential()
 model.add(LSTM(50, activation='relu',
-               input_shape=(n_steps, n_features)))
+
+
+$$
+               $input_shape$=($n_steps$, $n_features$)))
 model.add(Dense(1))
 model.compile(optimizer='adam', loss='mse')
+$$
+
 
 # 训练模型
-model.fit(X_train, y_train,
+model.fit($X_train$, $y_train$,
           epochs=50,
-          batch_size=32,
-          validation_data=(X_val, y_val))
+          $batch_size$=32,
+
+
+$$
+          $validation_data$=($X_val$, $y_val$))
 ```
+$$
+
 
 ### 2. 文本分类
 
@@ -215,35 +324,50 @@ model.fit(X_train, y_train,
 from keras.layers import Embedding, GRU, Dense
 
 model = Sequential()
-model.add(Embedding(vocab_size, 128))
-model.add(GRU(128, return_sequences=False))
+model.add(Embedding($vocab_size$, 128))
+model.add(GRU(128, $return_sequences$=False))
 model.add(Dense(64, activation='relu'))
-model.add(Dense(num_classes, activation='softmax'))
+model.add(Dense($num_classes$, activation='softmax'))
 
 model.compile(
     optimizer='adam',
-    loss='categorical_crossentropy',
+
+
+$$
+    loss='$categorical_crossentropy$',
     metrics=['accuracy']
 )
 ```
+$$
+
 
 ### 3. 序列生成
 
 ```python
 # 构建序列到序列模型
-encoder_inputs = Input(shape=(None, input_dim))
-encoder = LSTM(latent_dim, return_state=True)
-encoder_outputs, state_h, state_c = encoder(encoder_inputs)
 
-decoder_inputs = Input(shape=(None, output_dim))
-decoder_lstm = LSTM(latent_dim,
-                    return_sequences=True,
-                    return_state=True)
-decoder_outputs, _, _ = decoder_lstm(decoder_inputs,
-                                     initial_state=[state_h, state_c])
-decoder_dense = Dense(output_dim, activation='softmax')
-decoder_outputs = decoder_dense(decoder_outputs)
+
+$$
+$encoder_inputs$ = Input(shape=(None, $input_dim$))
+encoder = LSTM($latent_dim$, $return_state$=True)
+$encoder_outputs$, $state_h$, $state_c$ = encoder($encoder_inputs$)
+$$
+
+
+
+
+$$
+$decoder_inputs$ = Input(shape=(None, $output_dim$))
+$decoder_lstm$ = LSTM($latent_dim$,
+                    $return_sequences$=True,
+                    $return_state$=True)
+$decoder_outputs$, _, _ = $decoder_lstm$($decoder_inputs$,
+                                     $initial_state$=[$state_h$, $state_c$])
+$decoder_dense$ = Dense($output_dim$, activation='softmax')
+$decoder_outputs$ = $decoder_dense$($decoder_outputs$)
 ```
+$$
+
 
 ## 训练技巧
 
@@ -265,8 +389,13 @@ model.compile(optimizer=optimizer, loss='mse')
 ```python
 from keras.layers import Dropout
 
-model.add(LSTM(128, dropout=0.2, recurrent_dropout=0.2))
+
+
+$$
+model.add(LSTM(128, dropout=0.2, $recurrent_dropout$=0.2))
 ```
+$$
+
 
 ### 3. 批归一化
 

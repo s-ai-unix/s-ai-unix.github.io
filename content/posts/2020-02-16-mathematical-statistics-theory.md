@@ -97,9 +97,14 @@ mathjax: true
 
 **常见统计量**:
 
-- **样本均值**: \(\bar{X} = \frac{1}{n}\sum_{i=1}^{n}X_i\)
-- **样本方差**: \(S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \bar{X})^2\)
-- **样本矩**: \(m_k = \frac{1}{n}\sum_{i=1}^{n}X_i^k\)
+
+
+$$
+- **样本均值**: $\bar{X}$ = $\frac{1}${n}$\sum$_{i=1}^{n}$X_i$
+- **样本方差**: S^2 = $\frac{1}${n-1}$\sum$_{i=1}^{n}($X_i$ - $\bar{X}$)^2
+- **样本矩**: $m_k$ = $\frac{1}${n}$\sum$_{i=1}^{n}$X_i$^k
+$$
+
 
 **性质**:
 - 样本均值是总体均值的无偏估计
@@ -113,10 +118,15 @@ mathjax: true
 **重要抽样分布**:
 
 **正态分布相关**:
-- 标准正态分布: \(Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \sim N(0,1)\)
-- 卡方分布: \(\chi^2 = \sum_{i=1}^{n}\left(\frac{X_i - \mu}{\sigma}\right)^2\)
-- t分布: \(T = \frac{\bar{X} - \mu}{S/\sqrt{n}}\)
-- F分布: \(F = \frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}\)
+- 标准正态分布: Z = $\frac{$\bar${X}$ - $\mu$}{$\sigma$/$\sqrt{n}$} $\sim$ N(0,1)
+
+
+$$
+- 卡方分布: $\chi$^2 = $\sum$_{i=1}^{n}$\left$($\frac${$X_i$ - $\mu$}{$\sigma$}$\right$)^2
+- t分布: T = $\frac{$\bar${X}$ - $\mu$}{S/$\sqrt{n}$}
+- F分布: F = $\frac${$S_1$^2/$\sigma$_1^2}{$S_2$^2/$\sigma$_2^2}
+$$
+
 
 **应用示例**:
 
@@ -128,16 +138,21 @@ from scipy import stats
 sample = np.array([2.3, 2.5, 2.1, 2.4, 2.2])
 
 # 计算统计量
-sample_mean = np.mean(sample)
-sample_var = np.var(sample, ddof=1)
+$sample_mean$ = np.mean(sample)
+$sample_var$ = np.var(sample, ddof=1)
 
 # t检验
-t_stat = (sample_mean - 2.0) / (np.std(sample, ddof=1) / np.sqrt(len(sample)))
-p_value = 1 - stats.t.cdf(t_stat, df=len(sample)-1)
 
-print(f"样本均值: {sample_mean:.3f}")
-print(f"t统计量: {t_stat:.3f}")
-print(f"p值: {p_value:.4f}")
+
+$$
+$t_stat$ = ($sample_mean$ - 2.0) / (np.std(sample, ddof=1) / np.sqrt(len(sample)))
+$p_value$ = 1 - stats.t.cdf($t_stat$, df=len(sample)-1)
+$$
+
+
+print(f"样本均值: {$sample_mean$:.3f}")
+print(f"t统计量: {$t_stat$:.3f}")
+print(f"p值: {$p_value$:.4f}")
 ```
 
 ### 3. 估计理论
@@ -148,34 +163,38 @@ print(f"p值: {p_value:.4f}")
 
 **极大似然估计**(MLE):
 
-\[\hat{\theta} = \arg\max_{\theta} L(\theta; x_1, \ldots, x_n)\[\]
+
+
+$\hat{$\theta$}$ = $\arg$\max_{$\theta$} L($\theta$; $x_1$, $\ldots$, $x_n$)\[
+
+
 
 **评价标准**:
-- **无偏性**: \(E(\hat{\theta}) = \theta\)
-- **有效性**: \(\text{Var}(\hat{\theta}_1) < \text{Var}(\hat{\theta}_2)\)
-- **一致性**: \(\hat{\theta} \xrightarrow{P} \theta\) (依概率)
+- **无偏性**: E($\hat{$\theta$}$) = $\theta$
+- **有效性**: $\text{Var}$($\hat{$\theta$}$_1) < $\text{Var}$($\hat{$\theta$}$_2)
+- **一致性**: $\hat{$\theta$}$ $\xrightarrow{P}$ $\theta$ (依概率)
 
 #### 区间估计
 
-置信区间的形式: \([\hat{\theta} - \delta, \hat{\theta} + \delta]\)
+置信区间的形式: [$\hat{$\theta$}$ - $\delta$, $\hat{$\theta$}$ + $\delta$]
 
 **常见置信区间**:
-- 均值的置信区间: \(\bar{X} \pm t_{\alpha/2} \cdot \frac{S}{\sqrt{n}}\)
-- 方差的置信区间: \(\left[\frac{(n-1)S^2}{\chi^2_{\alpha/2}}, \frac{(n-1)S^2}{\chi^2_{1-\alpha/2}}\right]\)
+- 均值的置信区间: $\bar{X}$ $\pm$ $t_{$\alpha$/2}$ $\cdot$ $\frac{S}${$\sqrt{n}$}
+- 方差的置信区间: $\left$[$\frac{(n-1)S^2}${$\chi$^2_{$\alpha$/2}}, $\frac{(n-1)S^2}${$\chi$^2_{1-$\alpha$/2}}$\right$]
 
 ### 4. 假设检验
 
 **基本步骤**:
 
-1. 建立假设: \(H_0\) vs \(H_1\)
+1. 建立假设: $H_0$ vs $H_1$
 2. 选择检验统计量
 3. 确定拒绝域
 4. 计算统计量值
 5. 做出决策
 
 **两类错误**:
-- 第一类错误(\(\alpha\)): 拒真
-- 第二类错误(\(\beta\)): 取伪
+- 第一类错误($\alpha$): 拒真
+- 第二类错误($\beta$): 取伪
 
 **示例**:
 
@@ -186,12 +205,12 @@ from scipy import stats
 data = np.random.normal(0, 1, 100)
 
 # Shapiro-Wilk检验
-statistic, p_value = stats.shapiro(data)
+statistic, $p_value$ = stats.shapiro(data)
 
 print(f"统计量: {statistic:.4f}")
-print(f"p值: {p_value:.4f}")
+print(f"p值: {$p_value$:.4f}")
 
-if p_value > 0.05:
+if $p_value$ > 0.05:
     print("不能拒绝正态性假设")
 else:
     print("拒绝正态性假设")
@@ -201,17 +220,38 @@ else:
 
 **单因素方差分析**:
 
-\[H_0: \mu_1 = \mu_2 = \cdots = \mu_k\[\]
 
-\[H_1: \text{至少有两个不相等}\[\]
+
+
+
+$$
+$H_0$: $\mu$_1 = $\mu$_2 = $\cdots$ = $\mu$_k\[
+$$
+
+
+
+
+
+
+$H_1$: $\text{至少有两个不相等}$\[
+
+
 
 **平方和分解**:
-\[SST = SSA + SSE\[\]
+
+
+SST = SSA + SSE\[
+
+
 
 
 **F统计量**:
 
-\[F = \frac{SSA/(k-1)}{SSE/(n-k)}\[\]
+
+
+F = $\frac{SSA/(k-1)}${SSE/(n-k)}\[
+
+
 
 ```python
 # 单因素方差分析
@@ -219,30 +259,57 @@ group1 = [25, 30, 28, 36, 29]
 group2 = [45, 55, 29, 56, 40]
 group3 = [30, 29, 33, 37, 35]
 
-f_stat, p_value = stats.f_oneway(group1, group2, group3)
 
-print(f"F统计量: {f_stat:.4f}")
-print(f"p值: {p_value:.4f}")
+
+$$
+$f_stat$, $p_value$ = stats.$f_oneway$(group1, group2, group3)
+$$
+
+
+print(f"F统计量: {$f_stat$:.4f}")
+print(f"p值: {$p_value$:.4f}")
 ```
 
 ### 6. 回归分析
 
 **一元线性回归**:
-\[y = \beta_0 + \beta_1 x + \varepsilon\[\]
+
+
+
+
+$$
+y = $\beta$_0 + $\beta$_1 x + $\varepsilon$\[
+$$
+
+
+
 
 
 **参数估计**:
 
-\[\hat{\beta}_1 = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n}(x_i - \bar{x})^2}\[\]
-\[\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}\[\]
+
+
+
+
+$$
+$\hat{$\beta$}$_1 = $\frac{$\sum$_{i=1}$^{n}($x_i$ - $\bar{x}$)($y_i$ - $\bar{y}$)}{$\sum$_{i=1}^{n}($x_i$ - $\bar{x}$)^2}\[
+$$
+
+
+
+
+
+$\hat{$\beta$}$_0 = $\bar{y}$ - $\hat{$\beta$}$_1$\bar{x}$\[
+
+
 
 
 **模型评价**:
-- 决定系数: \(R^2 = \frac{SSR}{SST}\)
+- 决定系数: R^2 = $\frac{SSR}${SST}
 - 残差分析
 
 ```python
-from sklearn.linear_model import LinearRegression
+from sklearn.$linear_model$ import LinearRegression
 
 # 准备数据
 X = np.array([[1], [2], [3], [4], [5]])
@@ -253,14 +320,14 @@ model = LinearRegression()
 model.fit(X, y)
 
 # 预测
-y_pred = model.predict(X)
+$y_pred$ = model.predict(X)
 
 # 评估
-r_squared = model.score(X, y)
+$r_squared$ = model.score(X, y)
 
 print(f"斜率: {model.coef_[0]:.3f}")
 print(f"截距: {model.intercept_:.3f}")
-print(f"R²: {r_squared:.3f}")
+print(f"R²: {$r_squared$:.3f}")
 ```
 
 ## 学习路径建议
@@ -322,16 +389,21 @@ np.random.seed(42)
 sample = np.random.normal(loc=5, scale=2, size=100)
 
 # 应用所学理论
-sample_mean = np.mean(sample)
-sample_std = np.std(sample, ddof=1)
+$sample_mean$ = np.mean(sample)
+$sample_std$ = np.std(sample, ddof=1)
 
 # 计算置信区间
 ci = stats.t.interval(0.95,
                       df=len(sample)-1,
-                      loc=sample_mean,
-                      scale=sample_std/np.sqrt(len(sample)))
 
-print(f"样本均值: {sample_mean:.3f}")
+
+$$
+                      loc=$sample_mean$,
+                      scale=$sample_std$/np.sqrt(len(sample)))
+$$
+
+
+print(f"样本均值: {$sample_mean$:.3f}")
 print(f"95%置信区间: [{ci[0]:.3f}, {ci[1]:.3f}]")
 ```
 
@@ -349,13 +421,23 @@ print(f"95%置信区间: [{ci[0]:.3f}, {ci[1]:.3f}]")
 # 例如:样本方差为什么除以n-1?
 
 # 有偏估计
-var_biased = np.sum((sample - sample_mean)**2) / len(sample)
+
+
+$$
+$var_biased$ = np.sum((sample - $sample_mean$)**2) / len(sample)
+$$
+
 
 # 无偏估计
-var_unbiased = np.sum((sample - sample_mean)**2) / (len(sample) - 1)
 
-print(f"有偏估计: {var_biased:.3f}")
-print(f"无偏估计: {var_unbiased:.3f}")
+
+$$
+$var_unbiased$ = np.sum((sample - $sample_mean$)**2) / (len(sample) - 1)
+$$
+
+
+print(f"有偏估计: {$var_biased$:.3f}")
+print(f"无偏估计: {$var_unbiased$:.3f}")
 ```
 
 ## 常见误区

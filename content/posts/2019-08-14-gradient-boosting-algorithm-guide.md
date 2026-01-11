@@ -72,25 +72,29 @@ Gradient Boosting是一种迭代算法,每次迭代都训练一个新的弱学�
 
 ### 数学表达
 
-给定损失函数\(L(y, F(x))\),Gradient Boosting的优化目标是:
+给定损失函数L(y, F(x)),Gradient Boosting的优化目标是:
 
-\[F_m(x) = F_{m-1}(x) + \gamma_m \cdot h_m(x)\[\]
+
+
+$F_m$(x) = $F_{m-1}$(x) + $\gamma$_m $\cdot$ $h_m$(x)\[
+
+
 
 其中:
-- \(F_{m-1}(x)\)是之前的模型
-- \(h_m(x)\)是新训练的基学习器
-- \(\gamma_m\)是学习率
+- $F_{m-1}$(x)是之前的模型
+- $h_m$(x)是新训练的基学习器
+- $\gamma$_m是学习率
 
 ### 常用损失函数
 
 **回归问题**:
-- 均方误差(MSE): \(L(y, F) = (y - F)^2\)
-- 绝对误差(MAE): \(L(y, F) = |y - F|\)
+- 均方误差(MSE): L(y, F) = (y - F)^2
+- 绝对误差(MAE): L(y, F) = |y - F|
 - Huber损失:对异常值更鲁棒
 
 **分类问题**:
-- 对数损失(Log Loss): \(L(y, p) = -y \cdot \log(p) - (1-y) \cdot \log(1-p)\)
-- 指数损失(Exponential Loss): \(L(y, F) = \exp(-yF)\)
+- 对数损失(Log Loss): L(y, p) = -y $\cdot$ $\log$(p) - (1-y) $\cdot$ $\log$(1-p)
+- 指数损失(Exponential Loss): L(y, F) = $\exp$(-yF)
 
 ## 主流实现框架
 
@@ -172,30 +176,35 @@ Gradient Boosting是一种迭代算法,每次迭代都训练一个新的弱学�
 **XGBoost核心参数**:
 
 ```python
+
+
+$$
 params = {
-    'max_depth': 6,              # 树的最大深度
-    'learning_rate': 0.1,        # 学习率
-    'n_estimators': 100,         # 树的数量
-    'min_child_weight': 1,       # 最小子节点权重
+    '$max_depth$': 6,              # 树的最大深度
+    '$learning_rate$': 0.1,        # 学习率
+    '$n_estimators$': 100,         # 树的数量
+    '$min_child_weight$': 1,       # 最小子节点权重
     'subsample': 0.8,            # 样本采样比例
-    'colsample_bytree': 0.8,     # 特征采样比例
+    '$colsample_bytree$': 0.8,     # 特征采样比例
     'gamma': 0,                  # 剪枝参数
-    'reg_alpha': 0,              # L1正则化
-    'reg_lambda': 1,             # L2正则化
+    '$reg_alpha$': 0,              # L1正则化
+    '$reg_lambda$': 1,             # L2正则化
 }
 ```
+$$
+
 
 **调参顺序**:
-1. 先调n_estimators和learning_rate
-2. 再调max_depth和min_child_weight
+1. 先调$n_estimators和learning_rate$
+2. 再调$max_depth和min_child_weight$
 3. 然后调gamma
-4. 最后调subsample和colsample_bytree
+4. 最后调$subsample和colsample_bytree$
 
 ### 2. 防止过拟合
 
 **方法**:
-- 降低模型复杂度(max_depth, min_child_weight)
-- 增加正则化(reg_alpha, reg_lambda)
+- 降低模型复杂度($max_depth$, $min_child_weight$)
+- 增加正则化($reg_alpha$, $reg_lambda$)
 - 使用更小的学习率
 - 增加训练数据
 - 早停(Early Stopping)
@@ -204,25 +213,30 @@ params = {
 
 ```python
 model = xgb.XGBClassifier(
-    max_depth=6,
-    learning_rate=0.01,
-    n_estimators=1000,
-    reg_alpha=0.1,
-    reg_lambda=1.0
+    $max_depth$=6,
+    $learning_rate$=0.01,
+    $n_estimators$=1000,
+    $reg_alpha$=0.1,
+    $reg_lambda$=1.0
 )
 
 # 使用早停
 model.fit(
-    X_train, y_train,
-    eval_set=[(X_val, y_val)],
-    early_stopping_rounds=50,
+    $X_train$, $y_train$,
+
+
+$$
+    $eval_set$=[($X_val$, $y_val$)],
+    $early_stopping_rounds$=50,
     verbose=False
 )
 ```
+$$
+
 
 ### 3. 特征工程
 
-- **特征选择**:使用feature_importance选择重要特征
+- **特征选择**:使用$feature_importance选择重要特征$
 - **特征变换**:对类别特征进行编码
 - **特征交互**:创建特征组合
 - **特征缩放**:标准化或归一化
@@ -230,13 +244,18 @@ model.fit(
 ### 4. 交叉验证
 
 ```python
-from sklearn.model_selection import cross_val_score
+from sklearn.$model_selection$ import $cross_val_score$
 
-scores = cross_val_score(
+
+
+$$
+scores = $cross_val_score$(
     model, X, y,
     cv=5,
     scoring='accuracy'
 )
+$$
+
 
 print(f"CV Score: {scores.mean():.4f} (+/- {scores.std():.4f})")
 ```

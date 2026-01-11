@@ -3,9 +3,13 @@ languageCode: zh-cn
 title: s-ai-unix's Blog
 theme: PaperMod
 
-# 忽略 Goldmark 警告
+# 配置 Goldmark 处理数学公式
 markup:
   goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
     renderer:
       unsafe: true
 
