@@ -65,7 +65,7 @@ params:
   profileMode:
     enabled: true
     title: "s-ai-unix"
-    subtitle: "🚀 技术博主 | 📐 数学爱好者 | 🤖 机器人学研究者"
+    subtitle: "🚀 技术博主 | 📐 数学爱好者 | 🤖 AI 从业者"
     imageUrl: "https://api.dicebear.com/7.x/micah/svg?seed=s-ai-unix&backgroundColor=b6e3f4,c0aede,d1d4f9"
     imageTitle: "s-ai-unix"
     imageWidth: 140

@@ -144,7 +144,7 @@ cover:
 在流形 $M$ 的点 $p$ 处，切空间 $T_p M$ 是所有经过 $p$ 的曲线的切向量的集合。更抽象地说，切空间是所有在 $p$ 处为零的导数的空间。
 
 对于 $n$ 维流形，切空间 $T_p M$ 是一个 $n$ 维向量空间。如果 $p$ 的局部坐标是 $(x^1, \dots, x^n)$，那么切空间的一组基是：
-$$\left\{\frac{\partial}{\partial x^1}, \dots, \frac{\partial}{\partial x^n}\right\}$$
+$$\bigg\{\frac{\partial}{\partial x^1}, \dots, \frac{\partial}{\partial x^n}\bigg\}$$
 
 **向量场**是流形上的一个函数，它为每一点 $p$ 指定一个切向量 $V(p) \in T_p M$。向量场可以看作是流形上的"速度场"或"方向场"。
 
