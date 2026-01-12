@@ -83,11 +83,7 @@ params:
       url: "mailto:isunix1989@gmail.com"
     - name: github
       url: "https://github.com/s-ai-unix"
-    - name: twitter
-      url: "https://twitter.com/s_ai_unix"
-    - name: linkedin
-      url: "https://linkedin.com/in/s-ai-unix"
-
+    
   # Giscus 评论系统配置
   giscus:
     repo: "s-ai-unix/blog"
