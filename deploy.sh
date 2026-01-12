@@ -41,7 +41,7 @@ git add .
 git commit -m "Deploy to GitHub Pages - $(date +'%Y-%m-%d %H:%M:%S')"
 
 # 强制推送到 gh-pages
-git push origin gh-pages --force
+git push origin HEAD:gh-pages --force
 
 # 清理临时分支并回到原分支
 git checkout $CURRENT_BRANCH
