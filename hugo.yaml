@@ -2,7 +2,6 @@ baseURL: https://s-ai-unix.github.io/blog/
 languageCode: zh-cn
 title: s-ai-unix's Blog
 theme: PaperMod
-canonifyURLs: true
 
 # 配置 Goldmark 处理数学公式
 markup:
