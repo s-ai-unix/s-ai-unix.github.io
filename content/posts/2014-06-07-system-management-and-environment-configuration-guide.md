@@ -12,7 +12,7 @@ tags:
   - Web服务
 description: "从Apache、PHP配置到MySQL、CGI配置，全面掌握Web服务器环境的搭建与管理技巧。"
 cover:
-  image: "/images/covers/1558494949-ef010cbdcc31.jpg"
+  image: "images/covers/1558494949-ef010cbdcc31.jpg"
   alt: "服务器机房"
   caption: "系统管理：从服务器到云端的运维实践"
 ---

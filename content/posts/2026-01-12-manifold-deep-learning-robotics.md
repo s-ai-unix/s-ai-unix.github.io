@@ -6,7 +6,7 @@ description: "从高斯和黎曼的几何革命出发，系统讲解流形的概
 categories: ["数学", "深度学习", "机器人学"]
 tags: ["流形", "黎曼几何", "深度学习", "机器人学", "SO(3)", "四元数", "流形学习", "李群"]
 cover:
-    image: "/images/covers/1620641788421-7a1c342ea42e.jpg"
+    image: "images/covers/1620641788421-7a1c342ea42e.jpg"
     alt: "流形的可视化"
     caption: "流形：从欧几里得到黎曼几何的跨越"
 ---
