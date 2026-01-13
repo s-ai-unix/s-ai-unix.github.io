@@ -62,9 +62,8 @@
       tags: 'ams'
     },
     macros: {
-      // 定义特殊积分符号
-      '\\oiint': ['\\mathop{\\oint\\kern-0.35em\\oint}', 1],
-      '\\oiiint': ['\\mathop{\\oint\\kern-0.35em\\oint\\kern-0.35em\\oint}', 1],
+      '\\oiint': '\\mathop{\\oint\\!\\oint}',
+      '\\oiiint': '\\mathop{\\oint\\!\\oint\\!\\oint}',
       '\\slashpartial': '{\\partial\\!\\!/}'
     },
     options: {
