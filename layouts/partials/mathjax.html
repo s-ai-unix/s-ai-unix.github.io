@@ -60,9 +60,11 @@
       processEscapes: true,
       processEnvironments: true,
       tags: 'ams',
-      packages: {'[+]': ['ams', 'noerrors', 'noundefined', 'esint']},
       macros: {
-        // 定义斜偏导数符号
+        // 定义特殊积分符号
+        // 注意：JavaScript字符串中需要双反斜杠来表示一个反斜杠
+        oiint: '{\\\\mathop{\\\\oint\\\\!\\\\oint}}',
+        oiiint: '{\\\\mathop{\\\\oint\\\\!\\\\oint\\\\!\\\\oint}}',
         slashpartial: '{\\\\partial\\\\!\\\\!/}'
       }
     },
