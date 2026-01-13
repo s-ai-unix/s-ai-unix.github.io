@@ -100,7 +100,7 @@ $$\nabla \times \mathbf{F} = \left( \frac{\partial F_z}{\partial y} - \frac{\par
 
 **高斯定理**（散度定理）是向量微积分中最重要的定理之一：
 
-$$\iiint_V (\nabla \cdot \mathbf{F}) \, dV = ∯_S \mathbf{F} \cdot d\mathbf{S}$$
+$$\iiint_V (\nabla \cdot \mathbf{F}) \, dV = \mathop{∯}_S \mathbf{F} \cdot d\mathbf{S}$$
 
 **含义**：向量场穿过闭合曲面的通量等于该曲面所围体积内场的散度的积分。
 
@@ -179,7 +179,7 @@ $$\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \int \frac{\rho(\mathbf{r
 
 以点电荷为中心画一个半径为 $r$ 的球面 $S_0$，电场通量为：
 
-$$\Phi_E = ∯_{S_0} \mathbf{E} \cdot d\mathbf{S} = ∯_{S_0} E \, dS = \frac{q}{4\pi\varepsilon_0 r^2} \cdot 4\pi r^2 = \frac{q}{\varepsilon_0}$$
+$$\Phi_E = \mathop{∯}_{S_0} \mathbf{E} \cdot d\mathbf{S} = \mathop{∯}_{S_0} E \, dS = \frac{q}{4\pi\varepsilon_0 r^2} \cdot 4\pi r^2 = \frac{q}{\varepsilon_0}$$
 
 **第二步：任意闭合曲面**
 
@@ -195,7 +195,7 @@ $$Q_{\text{enc}} = \iiint_V \rho \, dV$$
 
 因此，**高斯定律**为：
 
-$$∯_S \mathbf{E} \cdot d\mathbf{S} = \frac{Q_{\text{enc}}}{\varepsilon_0} = \frac{1}{\varepsilon_0} \iiint_V \rho \, dV$$
+$$\mathop{∯}_S \mathbf{E} \cdot d\mathbf{S} = \frac{Q_{\text{enc}}}{\varepsilon_0} = \frac{1}{\varepsilon_0} \iiint_V \rho \, dV$$
 
 **第四步：微分形式**
 
@@ -435,10 +435,10 @@ $$\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\parti
 **积分形式**：
 
 1. **高斯定律（电场）**：
-   $$∯_S \mathbf{E} \cdot d\mathbf{S} = \frac{Q_{\text{enc}}}{\varepsilon_0}$$
+   $$\mathop{∯}_S \mathbf{E} \cdot d\mathbf{S} = \frac{Q_{\text{enc}}}{\varepsilon_0}$$
 
 2. **高斯磁定律**：
-   $$∯_S \mathbf{B} \cdot d\mathbf{S} = 0$$
+   $$\mathop{∯}_S \mathbf{B} \cdot d\mathbf{S} = 0$$
 
 3. **法拉第电磁感应定律**：
    $$\oint_C \mathbf{E} \cdot d\mathbf{l} = -\frac{d\Phi_B}{dt} = -\frac{d}{dt} \iint_S \mathbf{B} \cdot d\mathbf{S}$$
@@ -703,9 +703,9 @@ $$\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\parti
 
 ### 麦克斯韦方程组（积分形式）
 
-$$∯_S \mathbf{E} \cdot d\mathbf{S} = \frac{Q_{\text{enc}}}{\varepsilon_0}$$
+$$\mathop{∯}_S \mathbf{E} \cdot d\mathbf{S} = \frac{Q_{\text{enc}}}{\varepsilon_0}$$
 
-$$∯_S \mathbf{B} \cdot d\mathbf{S} = 0$$
+$$\mathop{∯}_S \mathbf{B} \cdot d\mathbf{S} = 0$$
 
 $$\oint_C \mathbf{E} \cdot d\mathbf{l} = -\frac{d\Phi_B}{dt}$$
 
