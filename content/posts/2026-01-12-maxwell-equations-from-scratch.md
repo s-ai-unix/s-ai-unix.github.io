@@ -128,7 +128,7 @@ $$\iint_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S} = \oint_C \mathbf{F} \cdo
 
 $$\mathbf{F}_{12} = k_e \frac{q_1 q_2}{r^2} \hat{\mathbf{r}}_{12}$$
 
-其中 $k_e = \frac{1}{4\pi\varepsilon_0} \approx 8.99 \times 10^9 \, \text{N·m}^2/\text{C}^2$ 是库仑常数，$\varepsilon_0 \approx 8.85 \times 10^{-12} \, \text{F/m}$ 是真空介电常数。
+其中 $k_e = \frac{1}{4\pi\varepsilon_0} \approx 8.99 \times 10^9 \, \text{N}\cdot\text{m}^2/\text{C}^2$ 是库仑常数，$\varepsilon_0 \approx 8.85 \times 10^{-12} \, \text{F/m}$ 是真空介电常数。
 
 **方向**：
 - 同性电荷相斥，异性电荷相吸
@@ -718,7 +718,7 @@ $$\oint_C \mathbf{B} \cdot d\mathbf{l} = \mu_0 I_{\text{enc}} + \mu_0 \varepsilo
 | $\varepsilon_0$ | 真空介电常数 | $8.85 \times 10^{-12} \, \text{F/m}$ |
 | $\mu_0$ | 真空磁导率 | $4\pi \times 10^{-7} \, \text{N/A}^2$ |
 | $c$ | 光速 | $3.00 \times 10^8 \, \text{m/s}$ |
-| $k_e$ | 库仑常数 | $8.99 \times 10^9 \, \text{N·m}^2/\text{C}^2$ |
+| $k_e$ | 库仑常数 | $8.99 \times 10^9 \, \text{N}\cdot\text{m}^2/\text{C}^2$ |
 
 ---
 
