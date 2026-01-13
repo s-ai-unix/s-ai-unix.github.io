@@ -6,7 +6,7 @@ description: "从零开始详细推导广义相对论，包括张量分析、测
 categories: ["物理学", "数学"]
 tags: ["广义相对论", "微分几何", "爱因斯坦", "引力", "黎曼几何"]
 cover:
-    image: "images/covers/1462331940025-496dfbfc7564.jpg"
+    image: "/images/covers/1462331940025-496dfbfc7564.jpg"
     alt: "广义相对论"
     caption: "广义相对论：时空的弯曲与引力"
 ---

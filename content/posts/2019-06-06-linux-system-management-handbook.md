@@ -12,7 +12,7 @@ tags:
   - 时区配置
 description: "Linux系统管理员必备速查手册，涵盖Node.js安装、时区配置、内存监控等常用操作技巧与问题排查方法。"
 cover:
-  image: "images/covers/1551434678-e076c223a692.jpg"
+  image: "/images/covers/1551434678-e076c223a692.jpg"
   alt: "Linux系统管理"
   caption: "Linux系统管理：命令与实践手册"
 ---

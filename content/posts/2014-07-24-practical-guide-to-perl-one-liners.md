@@ -9,7 +9,7 @@ tags:
   - 文本处理
 description: "Perl one-liners是强大的命令行工具，可以在不创建脚本文件的情况下快速完成文本处理任务。本文收集了最实用的Perl one-liners示例。"
 cover:
-  image: "images/covers/1526374965328-7f61d4dc18c5.jpg"
+  image: "/images/covers/1526374965328-7f61d4dc18c5.jpg"
   alt: "终端命令行"
   caption: "Perl One-liners：命令行下的瑞士军刀"
 ---

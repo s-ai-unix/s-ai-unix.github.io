@@ -8,7 +8,7 @@ tags:
   - 教程
 description: "深入探讨Perl语言的基础知识和核心概念，包括变量作用域、列表操作、正则表达式等重要内容。"
 cover:
-  image: "images/covers/1555066931-4365d14bab8c.jpg"
+  image: "/images/covers/1555066931-4365d14bab8c.jpg"
   alt: "Perl代码编辑器"
   caption: "Perl：强大的文本处理语言"
 ---
