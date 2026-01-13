@@ -60,13 +60,15 @@
       processEscapes: true,
       processEnvironments: true,
       tags: 'ams',
-      packages: {'[+]': ['ams', 'configmacros', 'newcommand', 'esint']}
+      packages: {'[+]': ['ams', 'configmacros', 'newcommand']}
     },
     loader: {
-      load: ['[tex]/ams', '[tex]/configmacros', '[tex]/newcommand', '[tex]/esint']
+      load: ['[tex]/ams', '[tex]/configmacros', '[tex]/newcommand']
     },
     macros: {
-      // 定义特殊积分符号（esint 宏包提供 \oiint 和 \oiiint）
+      // 定义特殊积分符号
+      '\\oiint': '\\mathop{\\oint\\!\\oint}',
+      '\\oiiint': '\\mathop{\\oint\\!\\oint\\!\\oint}',
       '\\slashpartial': '{\\partial\\!\\!/}'
     },
     options: {
