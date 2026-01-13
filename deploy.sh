@@ -7,7 +7,8 @@ echo "🚀 开始部署流程..."
 # 保存当前分支
 CURRENT_BRANCH=$(git branch --show-current)
 
-echo "📦 1. 构建 Hugo 站点..."
+echo "📦 1. 更新子模块并构建 Hugo 站点..."
+git submodule update --init --recursive
 hugo --minify
 
 if [ $? -ne 0 ]; then
