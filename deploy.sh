@@ -14,16 +14,10 @@ CURRENT_BRANCH=$(git branch --show-current)
 
 echo "🔍 0. 部署前检查..."
 
-# 检查子模块状态
+# 显示子模块状态（会在构建阶段自动初始化）
 echo "   检查子模块状态..."
-SUBMODULE_STATUS=$(git submodule status | grep "^-" || true)
-if [ -n "$SUBMODULE_STATUS" ]; then
-    echo "   ⚠️  发现未初始化的子模块，正在初始化..."
-    git submodule update --init --recursive
-    echo "   ✅ 子模块初始化完成"
-else
-    echo "   ✅ 子模块状态正常"
-fi
+git submodule status
+echo "   💡 子模块将在构建阶段自动更新"
 
 # 检查是否有未来日期的文章
 echo "   检查未来日期的文章..."
@@ -86,8 +80,8 @@ if [ ! -d "public" ]; then
     exit 1
 fi
 
-# 统计生成的页面
-PAGE_COUNT=$(hugo -q | grep "^Pages" | awk '{print $2}' || echo "未知")
+# 统计生成的页面（使用 Hugo list 命令）
+PAGE_COUNT=$(hugo list all | wc -l | tr -d ' ')
 echo "   📄 生成页面数: $PAGE_COUNT"
 
 # 检查页面数量是否异常
@@ -105,8 +99,15 @@ if [ ! -f "public/index.html" ]; then
     exit 1
 fi
 
-# 检查最新文章是否存在
-LATEST_POST=$(find content/posts -name "*.md" -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2-)
+# 检查最新文章是否存在（跨平台兼容）
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS (BSD find)
+    LATEST_POST=$(find content/posts -name "*.md" -type f -exec stat -f "%m %N" {} \; | sort -n | tail -1 | cut -d' ' -f2-)
+else
+    # Linux (GNU find)
+    LATEST_POST=$(find content/posts -name "*.md" -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2-)
+fi
+
 if [ -n "$LATEST_POST" ]; then
     POST_NAME=$(basename "$LATEST_POST" .md)
     # 转换为Hugo的URL格式
@@ -153,6 +154,12 @@ git push origin HEAD:gh-pages --force
 # 清理临时分支并回到原分支
 git checkout $CURRENT_BRANCH
 git branch -D gh-pages-temp
+
+# 恢复子模块工作目录（git checkout 不会自动恢复子模块）
+echo ""
+echo "🔄 恢复子模块状态..."
+git submodule update --init --recursive
+echo "   ✅ 子模块已恢复"
 
 # ==================== 完成阶段 ====================
 
