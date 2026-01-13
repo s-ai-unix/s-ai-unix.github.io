@@ -59,22 +59,16 @@
       displayMath: [['$$', '$$']],
       processEscapes: true,
       processEnvironments: true,
-      tags: 'ams',
-      packages: {'[+]': ['ams', 'configmacros', 'newcommand']}
-    },
-    loader: {
-      load: ['[tex]/ams', '[tex]/configmacros', '[tex]/newcommand']
+      tags: 'ams'
     },
     macros: {
       // 定义特殊积分符号
-      '\\oiint': '\\mathop{\\oint\\!\\oint}',
-      '\\oiiint': '\\mathop{\\oint\\!\\oint\\!\\oint}',
+      '\\oiint': ['\\mathop{\\oint\\kern-0.35em\\oint}', 1],
+      '\\oiiint': ['\\mathop{\\oint\\kern-0.35em\\oint\\kern-0.35em\\oint}', 1],
       '\\slashpartial': '{\\partial\\!\\!/}'
     },
     options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-      includeHtmlTags: ['span', 'div', 'p', 'li', 'td', 'th', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-      processHtml: true
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
     },
     startup: {
       pageReady: function() {
