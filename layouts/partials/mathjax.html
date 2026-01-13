@@ -35,11 +35,18 @@
       }
 
       // 修复双重转义: \\ -> \
-      // 在 HTML 源代码中，\\ 表示两个反斜杠字符
+      // 只在数学公式内修复，避免破坏LaTeX命��
       if (html.indexOf('\\\\') !== -1) {
-        var newHtml = html.replace(/\\\\(.)/g, function(match, char) {
-          return '\\' + char;
-        });
+        // 只在 $...$ 或 $$...$$ 内部替换 \\...\
+        var newHtml = html.replace(
+          /(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,
+          function(match, open, content, close) {
+            // 在公式内容中将 \\ 替换为 \
+            return open + content.replace(/\\\\(.)/g, function(m, c) {
+              return '\\' + c;
+            }) + close;
+          }
+        );
         if (newHtml !== html) {
           html = newHtml;
           fixed = true;
@@ -61,11 +68,9 @@
       processEnvironments: true,
       tags: 'ams',
       macros: {
-        // 定义特殊积分符号
-        // 使用双反斜杠：\\\\ 在JS字符串中表示 \\，MathJax将其解析为 \
-        oiint: '{\\\\mathop{\\\\oint\\\\kern-3pt\\\\oint}}',
-        oiiint: '{\\\\mathop{\\\\oint\\\\kern-3pt\\\\oint\\\\kern-3pt\\\\oint}}',
-        slashpartial: '{\\\\partial\\\\!\\\\!/}'
+        // 定义双重闭合积分符号（使用Unicode字符，包裹在\mathop中以获得正确的大小和字体）
+        oiint: '\\mathop{∯}',
+        oiiint: '\\mathop{∰}'
       }
     },
     options: {
