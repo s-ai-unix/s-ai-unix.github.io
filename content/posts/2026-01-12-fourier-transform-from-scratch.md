@@ -6,7 +6,7 @@ description: "从零开始详细推导傅里叶级数和傅里叶变换，包括
 categories: ["数学", "信号处理"]
 tags: ["傅里叶变换", "傅里叶级数", "信号处理", "频谱分析", "FFT", "数字信号处理"]
 cover:
-    image: "/images/covers/1550684848-fac1c5b4e853.jpg"
+    image: "images/covers/1550684848-fac1c5b4e853.jpg"
     alt: "傅里叶变换与信号处理"
     caption: "傅里叶变换：频谱分析的核心"
 ---

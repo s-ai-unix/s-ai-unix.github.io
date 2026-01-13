@@ -6,7 +6,7 @@ description: "从零开始详细推导微分几何中的高斯绝妙定理，包
 categories: ["数学", "微分几何"]
 tags: ["微分几何", "高斯绝妙定理", "高斯曲率", "黎曼几何", "曲面论", "内蕴几何"]
 cover:
-    image: "/images/covers/1618005182384-a83a8bd57fbe.jpg"
+    image: "images/covers/1618005182384-a83a8bd57fbe.jpg"
     alt: "高斯绝妙定理"
     caption: "高斯绝妙定理：内蕴几何的诞生"
 ---

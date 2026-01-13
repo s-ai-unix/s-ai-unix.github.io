@@ -9,7 +9,7 @@ tags:
   - 面向对象
 description: "深入探讨Perl的高级特性，包括模块使用、引用、面向对象编程和最佳实践。"
 cover:
-  image: "/images/covers/1515879218367-8466d910aaa4.jpg"
+  image: "images/covers/1515879218367-8466d910aaa4.jpg"
   alt: "编程代码"
   caption: "Perl进阶：模块、引用与面向对象编程"
 ---
