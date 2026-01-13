@@ -34,10 +34,10 @@
         }
       }
 
-      // 修复双重转义: \\bar{X} -> \bar{X}
+      // 修复双重转义: \\ -> \
       // 在 HTML 源代码中，\\ 表示两个反斜杠字符
       if (html.indexOf('\\\\') !== -1) {
-        var newHtml = html.replace(/\\\\([a-zA-Z@{}|_])/g, function(match, char) {
+        var newHtml = html.replace(/\\\\(.)/g, function(match, char) {
           return '\\' + char;
         });
         if (newHtml !== html) {
