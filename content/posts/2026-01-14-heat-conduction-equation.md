@@ -6,7 +6,7 @@ description: "从傅里叶的实验到现代数学物理的核心，热传导方
 categories: ["数学物理"]
 tags: ["偏微分方程", "热力学", "傅里叶分析", "扩散过程"]
 cover:
-    image: "images/covers/heat-equation.jpg"
+    image: "images/covers/photo-1620641788421-7a1c342ea42e.jpg"
     alt: "热传导的抽象可视化"
     caption: "热传导方程描述了热量如何在物质中传播，从微观粒子碰撞到宏观温度分布"
 ---
