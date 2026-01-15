@@ -124,41 +124,41 @@ $$
 - 隐藏层：m 个神经元
 - 输出层：c 个神经元（c 个类别）
 
-设 W^(1) ∈ R^(m×d) 是输入层到隐藏层的权重矩阵，b^(1) ∈ R^m 是隐藏层的偏置向量。
+设 $W^{(1)} \in \mathbb{R}^{m \times d}$ 是输入层到隐藏层的权重矩阵，$b^{(1)} \in \mathbb{R}^m$ 是隐藏层的偏置向量。
 
-设 W^(2) ∈ R^(c×m) 是隐藏层到输出层的权重矩阵，b^(2) ∈ R^c 是输出层的偏置向量。
+设 $W^{(2)} \in \mathbb{R}^{c \times m}$ 是隐藏层到输出层的权重矩阵，$b^{(2)} \in \mathbb{R}^c$ 是输出层的偏置向量。
 
 **隐藏层的净输入**：
 
 $$
-z^(1) = W^(1) x + b^(1)
+z^{(1)} = W^{(1)} x + b^{(1)}
 $$
 
 **隐藏层的输出**（使用非线性激活函数，如 sigmoid）：
 
 $$
-a^(1) = σ(z^(1))
+a^{(1)} = \sigma(z^{(1)})
 $$
 
-其中 σ 逐元素应用 sigmoid 函数：
+其中 $\sigma$ 逐元素应用 sigmoid 函数：
 
 $$
-σ(z) = \frac{1}{1 + e^{-z}}
+\sigma(z) = \frac{1}{1 + e^{-z}}
 $$
 
 **输出层的净输入**：
 
 $$
-z^(2) = W^(2) a^(1) + b^(2)
+z^{(2)} = W^{(2)} a^{(1)} + b^{(2)}
 $$
 
 **输出层的输出**（使用 softmax，用于多分类）：
 
 $$
-\hat{y} = \text{softmax}(z^(2))
+\hat{y} = \text{softmax}(z^{(2)})
 $$
 
-其中 softmax 函数将 c 个实数转换为概率分布：
+其中 softmax 函数将 $c$ 个实数转换为概率分布：
 
 $$
 \text{softmax}(z)_j = \frac{e^{z_j}}{\sum_{k=1}^{c} e^{z_k}}
@@ -181,7 +181,7 @@ $$
 首先计算输出层的误差：
 
 $$
-δ^(2) = \hat{y} - y
+\delta^{(2)} = \hat{y} - y
 $$
 
 这是 softmax 交叉熵损失对净输入的导数（一个优雅的简化）。
@@ -189,37 +189,37 @@ $$
 输出层权重的梯度：
 
 $$
-\frac{\partial L}{\partial W^(2)} = δ^(2) (a^(1))^T
+\frac{\partial L}{\partial W^{(2)}} = \delta^{(2)} (a^{(1)})^T
 $$
 
 输出层偏置的梯度：
 
 $$
-\frac{\partial L}{\partial b^(2)} = δ^(2)
+\frac{\partial L}{\partial b^{(2)}} = \delta^{(2)}
 $$
 
 然后，将误差**反向传播**到隐藏层。隐藏层的误差是：
 
 $$
-δ^(1) = (W^(2))^T δ^(2) ⊙ σ'(z^(1))
+\delta^{(1)} = (W^{(2)})^T \delta^{(2)} \odot \sigma'(z^{(1)})
 $$
 
-其中 ⊙ 是逐元素乘法，σ' 是 sigmoid 的导数：
+其中 $\odot$ 是逐元素乘法，$\sigma'$ 是 sigmoid 的导数：
 
 $$
-σ'(z) = σ(z)(1 - σ(z))
+\sigma'(z) = \sigma(z)(1 - \sigma(z))
 $$
 
 隐藏层权重的梯度：
 
 $$
-\frac{\partial L}{\partial W^(1)} = δ^(1) x^T
+\frac{\partial L}{\partial W^{(1)}} = \delta^{(1)} x^T
 $$
 
 隐藏层偏置的梯度：
 
 $$
-\frac{\partial L}{\partial b^(1)} = δ^(1)
+\frac{\partial L}{\partial b^{(1)}} = \delta^{(1)}
 $$
 
 #### 为什么称为"反向传播"？
@@ -235,22 +235,22 @@ $$
 使用梯度下降更新参数：
 
 $$
-W^(1) \leftarrow W^(1) - η \frac{\partial L}{\partial W^(1)}
+W^{(1)} \leftarrow W^{(1)} - \eta \frac{\partial L}{\partial W^{(1)}}
 $$
 
 $$
-b^(1) \leftarrow b^(1) - η \frac{\partial L}{\partial b^(1)}
+b^{(1)} \leftarrow b^{(1)} - \eta \frac{\partial L}{\partial b^{(1)}}
 $$
 
 $$
-W^(2) \leftarrow W^(2) - η \frac{\partial L}{\partial W^(2)}
+W^{(2)} \leftarrow W^{(2)} - \eta \frac{\partial L}{\partial W^{(2)}}
 $$
 
 $$
-b^(2) \leftarrow b^(2) - η \frac{\partial L}{\partial b^(2)}
+b^{(2)} \leftarrow b^{(2)} - \eta \frac{\partial L}{\partial b^{(2)}}
 $$
 
-其中 η 是学习率。
+其中 $\eta$ 是学习率。
 
 ---
 
@@ -268,13 +268,13 @@ $$
 
 #### 卷积操作（Convolution）
 
-卷积神经网络的核心是**卷积层**（Convolutional Layer）。给定输入特征图 X ∈ R^(H×W×C_in)（高 H、宽 W、输入通道数 C_in），卷积核 K ∈ R^(k×k×C_in×C_out)（高 k、宽 k、C_out 个输出通道），卷积操作定义为：
+卷积神经网络的核心是**卷积层**（Convolutional Layer）。给定输入特征图 $X \in \mathbb{R}^{H \times W \times C_{\text{in}}}$（高 $H$、宽 $W$、输入通道数 $C_{\text{in}}$），卷积核 $K \in \mathbb{R}^{k \times k \times C_{\text{in}} \times C_{\text{out}}}$（高 $k$、宽 $k$、$C_{\text{out}}$ 个输出通道），卷积操作定义为：
 
 $$
-(X * K)_{i,j,o} = \sum_{c=1}^{C_in} \sum_{p=1}^{k} \sum_{q=1}^{k} X_{i+p-1, j+q-1, c} · K_{p,q,c,o}
+(X * K)_{i,j,o} = \sum_{c=1}^{C_{\text{in}}} \sum_{p=1}^{k} \sum_{q=1}^{k} X_{i+p-1, j+q-1, c} \cdot K_{p,q,c,o}
 $$
 
-其中 * 表示卷积运算，i, j 是输出特征图的空间坐标，o 是输出通道索引。
+其中 $*$ 表示卷积运算，$i, j$ 是输出特征图的空间坐标，$o$ 是输出通道索引。
 
 更简洁的矩阵表示：
 
@@ -282,7 +282,7 @@ $$
 Y = X * K
 $$
 
-其中 Y ∈ R^(H'×W'×C_out) 是输出特征图（空间大小为 H' = H - k + 1, W' = W - k + 1）。
+其中 $Y \in \mathbb{R}^{H' \times W' \times C_{\text{out}}}$ 是输出特征图（空间大小为 $H' = H - k + 1$, $W' = W - k + 1$）。
 
 #### 池化层（Pooling Layer）
 
@@ -360,10 +360,10 @@ h_t = f(W_{xh} x_t + W_{hh} h_{t-1} + b_h)
 $$
 
 其中：
-- W_{xh} ∈ R^(m×d) 是输入到隐藏的权重矩阵
-- W_{hh} ∈ R^(m×m) 是隐藏到隐藏的权重矩阵
-- b_h ∈ R^m 是隐藏层的偏置
-- f 是激活函数（如 tanh 或 ReLU）
+- $W_{xh} \in \mathbb{R}^{m \times d}$ 是输入到隐藏的权重矩阵
+- $W_{hh} \in \mathbb{R}^{m \times m}$ 是隐藏到隐藏的权重矩阵
+- $b_h \in \mathbb{R}^m$ 是隐藏层的偏置
+- $f$ 是激活函数（如 $\tanh$ 或 ReLU）
 
 每个时间步的输出是：
 
@@ -372,9 +372,9 @@ y_t = g(W_{hy} h_t + b_y)
 $$
 
 其中：
-- W_{hy} ∈ R^(c×m) 是隐藏到输出的权重矩阵（c 是输出维度）
-- b_y ∈ R^c 是输出的偏置
-- g 是输出激活函数（如 softmax）
+- $W_{hy} \in \mathbb{R}^{c \times m}$ 是隐藏到输出的权重矩阵（$c$ 是输出维度）
+- $b_y \in \mathbb{R}^c$ 是输出的偏置
+- $g$ 是输出激活函数（如 softmax）
 
 #### 展开的时间图
 
@@ -461,31 +461,31 @@ $$
 LSTM 的细胞状态（cell state）和隐藏状态（hidden state）分离：
 
 $$
-c_t = \text{遗忘门} ⊙ c_{t-1} + \text{输入门} ⊗ \tilde{c}_t
+c_t = \text{遗忘门} \odot c_{t-1} + \text{输入门} \odot \tilde{c}_t
 $$
 
 $$
-h_t = \text{输出门} ⊙ \tanh(c_t)
+h_t = \text{输出门} \odot \tanh(c_t)
 $$
 
-其中 ⊙ 是逐元素乘法，\tilde{c}_t 是候选细胞状态。
+其中 $\odot$ 是逐元素乘法，$\tilde{c}_t$ 是候选细胞状态。
 
 #### 遗忘门（Forget Gate）
 
 遗忘门决定保留多少旧信息：
 
 $$
-f_t = σ(W_f [h_{t-1}, x_t] + b_f)
+f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)
 $$
 
-其中 σ 是 sigmoid 函数，输出在 [0, 1] 之间。
+其中 $\sigma$ 是 sigmoid 函数，输出在 $[0, 1]$ 之间。
 
 #### 输入门（Input Gate）
 
 输入门决定写入多少新信息：
 
 $$
-i_t = σ(W_i [h_{t-1}, x_t] + b_i)
+i_t = \sigma(W_i [h_{t-1}, x_t] + b_i)
 $$
 
 #### 候选细胞状态（Candidate Cell State）
@@ -499,19 +499,19 @@ $$
 输出门决定输出多少信息到隐藏状态：
 
 $$
-o_t = σ(W_o [h_{t-1}, x_t] + b_o)
+o_t = \sigma(W_o [h_{t-1}, x_t] + b_o)
 $$
 
 #### 细胞状态更新
 
 $$
-c_t = f_t ⊙ c_{t-1} + i_t ⊙ \tilde{c}_t
+c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t
 $$
 
 #### 隐藏状态更新
 
 $$
-h_t = o_t ⊙ \tanh(c_t)
+h_t = o_t \odot \tanh(c_t)
 $$
 
 ### 为什么 LSTM 解决了梯度消失问题？
@@ -550,14 +550,14 @@ $$
 Q_i = x_i W^Q, \quad K_i = x_i W^K, \quad V_i = x_i W^V
 $$
 
-其中 W^Q, W^K, W^V ∈ R^(d×d_k) 是可学习的参数矩阵，d_k 是查询/键/值的维度。
+其中 $W^Q, W^K, W^V \in \mathbb{R}^{d \times d_k}$ 是可学习的参数矩阵，$d_k$ 是查询/键/值的维度。
 
 #### 注意力分数
 
-对于位置 i 和 j，计算注意力分数（缩放点积）：
+对于位置 $i$ 和 $j$，计算注意力分数（缩放点积）：
 
 $$
-\text{score}_{ij} = \frac{Q_i · K_j}{\sqrt{d_k}}
+\text{score}_{ij} = \frac{Q_i \cdot K_j}{\sqrt{d_k}}
 $$
 
 #### 注意力权重
@@ -565,7 +565,7 @@ $$
 将分数转换为概率分布（使用 softmax）：
 
 $$
-α_{ij} = \frac{\exp(\text{score}_{ij})}{\sum_{k=1}^{T} \exp(\text{score}_{ik})}
+\alpha_{ij} = \frac{\exp(\text{score}_{ij})}{\sum_{k=1}^{T} \exp(\text{score}_{ik})}
 $$
 
 #### 加权求和
@@ -573,7 +573,7 @@ $$
 对值向量加权求和，得到输出：
 
 $$
-z_i = \sum_{j=1}^{T} α_{ij} V_j
+z_i = \sum_{j=1}^{T} \alpha_{ij} V_j
 $$
 
 #### 矩阵形式
@@ -585,9 +585,9 @@ Z = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V
 $$
 
 其中：
-- Q = X W^Q ∈ R^(T×d_k)
-- K = X W^K ∈ R^(T×d_k)
-- V = X W^V ∈ R^(T×d_v)
+- $Q = X W^Q \in \mathbb{R}^{T \times d_k}$
+- $K = X W^K \in \mathbb{R}^{T \times d_k}$
+- $V = X W^V \in \mathbb{R}^{T \times d_v}$
 
 #### 为什么称为"注意力"？
 
@@ -607,7 +607,7 @@ $$
 \text{head}_i = \text{Attention}(X W_i^Q, X W_i^K, X W_i^V)
 $$
 
-W^O ∈ R^(h×d_v × d_model) 是输出投影矩阵，d_model 是模型维度。
+$W^O \in \mathbb{R}^{h \times d_v \times d_{\text{model}}}$ 是输出投影矩阵，$d_{\text{model}}$ 是模型维度。
 
 ---
 
