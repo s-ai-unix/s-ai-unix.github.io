@@ -3,15 +3,27 @@
   text-align: center !important;
   margin: 2rem auto !important;
   padding: 1rem !important;
-  background: #fafafa !important;
+  background: #ffffff !important;
   border-radius: 8px !important;
   max-width: 95% !important;
   overflow-x: auto !important;
 }
 
-/* 深色模式适配 */
-[data-theme='dark'] .mermaid {
-  background: #1e1e1e !important;
+/* 去掉所有可能的黑色背景 */
+.mermaid svg,
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon,
+.mermaid .node path,
+.mermaid .cluster rect {
+  fill: none !important;
+}
+
+/* subgraph 背景透明 */
+.mermaid .cluster {
+  fill: #ffffff !important;
+  stroke: #e0e0e0 !important;
 }
 
 /* 确保 SVG 图表居中 */

@@ -57,7 +57,7 @@ $$ \text{ASIL} = f(S, E, C) $$
 
 ```mermaid
 graph TB
-    subgraph ASIL��维评估模型
+    subgraph ASIL三维评估模型
         S[严重度 Severity<br>S0: 无伤害<br>S1: 轻微伤害<br>S2: 严重伤害<br>S3: 致命伤害]
         E[暴露率 Exposure<br>E0: 极低概率<br>E1: 低概率<br>E2: 中等概率<br>E3: 高概率<br>E4: 极高概率]
         C[可控性 Controllability<br>C0: 完全可控<br>C1: 易于控制<br>C2: 正常可控<br>C3: 难以控制]
