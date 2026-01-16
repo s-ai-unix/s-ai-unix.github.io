@@ -26,6 +26,8 @@ markup:
     lineNos: false
     style: monokai
     tabWidth: 2
+    noClasses: false
+    lineNumbersInTable: true
 
 ignoreLogs: ['warning-goldmark-raw-html']
 
