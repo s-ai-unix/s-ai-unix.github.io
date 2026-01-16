@@ -32,9 +32,9 @@ graph TB
         Medi --> Medi3[数据隐私<br>HIPAA合规]
     end
 
-    style Auto fill:#e1f5fe
-    style Aero fill:#fff59d
-    style Medi fill:#f3e5f5
+    style Auto fill:#90caf9,stroke:#1976d2,stroke-width:3px,color:#ffffff
+    style Aero fill:#ffcc80,stroke:#ef6c00,stroke-width:3px,color:#000000
+    style Medi fill:#ba68c8,stroke:#7b1fa2,stroke-width:3px,color:#ffffff
 ```
 
 ### 1.1 汽车行业风险分类体系
@@ -153,9 +153,9 @@ graph LR
         MediStds --> STARDAI[STARD-AI<br>诊断报告]
     end
 
-    style AutoStds fill:#e1f5fe
-    style AeroStds fill:#fff59d
-    style MediStds fill:#f3e5f5
+    style AutoStds fill:#42a5f5,stroke:#1976d2,stroke-width:3px,color:#ffffff
+    style AeroStds fill:#ffa726,stroke:#ef6c00,stroke-width:3px,color:#000000
+    style MediStds fill:#ab47bc,stroke:#6a1b9a,stroke-width:3px,color:#ffffff
 ```
 | **AI专用标准** | ISO/PAS 8800:2024, ISO/TS 5083:2025 | ED-324/ARP6983, NPA 2025-07 | FDA PCCP指南, STARD-AI |
 | **监管机构** | ISO, UN WP.29, 各国NCAP | FAA, EASA, 各国民航局 | FDA, EMA, 各國衛生主管機關 |

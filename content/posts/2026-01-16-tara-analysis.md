@@ -43,18 +43,18 @@ TARA分析的核心价值在于将模糊的"网络安全问题"转化为可量�
 
 ```mermaid
 flowchart TD
-    Start[TARA分析开始] --> P1[阶段一: 分析准备<br>资产识别与边界定义]
-    P1 --> P2[阶段二: 威胁建模<br>攻击路径与攻击树分析]
-    P2 --> P3[阶段三: 风险评估<br>可能性与影响性评级]
-    P3 --> P4[阶段四: 风险处置<br>策略选择与控制措施设计]
-    P4 --> End[输出网络安全需求]
+    Start([TARA分析开始]) --> P1[阶段一: 分析准备<br/>资产识别与边界定义]
+    P1 --> P2[阶段二: 威胁建模<br/>攻击路径与攻击树分析]
+    P2 --> P3[阶段三: 风险评估<br/>可能性与影响性评级]
+    P3 --> P4[阶段四: 风险处置<br/>策略选择与控制措施设计]
+    P4 --> End([输出网络安全需求])
 
-    style Start fill:#e3f2fd
-    style P1 fill:#e1f5fe
-    style P2 fill:#fff59d
-    style P3 fill:#ce93d8
-    style P4 fill:#a5d6a7
-    style End fill:#a5d6a7
+    style Start fill:#42a5f5,stroke:#1976d2,stroke-width:3px,color:#ffffff
+    style P1 fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style P2 fill:#ffcc80,stroke:#f57c00,stroke-width:2px
+    style P3 fill:#ce93d8,stroke:#7b1fa2,stroke-width:2px
+    style P4 fill:#a5d6a7,stroke:#388e3c,stroke-width:2px
+    style End fill:#66bb6a,stroke:#388e3c,stroke-width:3px,color:#ffffff
 ```
 
 ### 2.1 分析准备阶段：资产识别与边界定义
@@ -76,12 +76,12 @@ TARA分析的第一步是明确分析范围和识别保护对象，这一阶段�
 
 ```mermaid
 graph LR
-    S[Spoofing<br>伪装攻击]
-    T[Tampering<br>篡改攻击]
-    R[Repudiation<br>抵赖攻击]
-    I[Information Disclosure<br>信息泄露]
-    D[Denial of Service<br>拒绝服务]
-    E[Elevation of Privilege<br>权限提升]
+    S[Spoofing<br/>伪装攻击]
+    T[Tampering<br/>篡改攻击]
+    R[Repudiation<br/>抵赖攻击]
+    I[Information Disclosure<br/>信息泄露]
+    D[Denial of Service<br/>拒绝服务]
+    E[Elevation of Privilege<br/>权限提升]
 
     Asset[汽车资产] --> S
     Asset --> T
@@ -90,12 +90,13 @@ graph LR
     Asset --> D
     Asset --> E
 
-    style S fill:#ef9a9a
-    style T fill:#ffcc80
-    style R fill:#fff59d
-    style I fill:#e1bee7
-    style D fill:#c5cae9
-    style E fill:#b2dfdb
+    style S fill:#ef5350,stroke:#c62828,stroke-width:2px
+    style T fill:#ffa726,stroke:#ef6c00,stroke-width:2px
+    style R fill:#ffee58,stroke:#f9a825,stroke-width:2px
+    style I fill:#ab47bc,stroke:#6a1b9a,stroke-width:2px
+    style D fill:#7e57c2,stroke:#4527a0,stroke-width:2px
+    style E fill:#26a69a,stroke:#00695c,stroke-width:2px
+    style Asset fill:#42a5f5,stroke:#1976d2,stroke-width:3px,color:#ffffff
 ```
 
 **STRIDE**（Spoofing、Tampering、Repudiation、Information Disclosure、Denial of Service、Elevation of Privilege）方法由微软提出，广泛应用于软件安全领域。在汽车行业应用中，STRIDE方法能够系统化地识别各类资产面临的威胁类型。例如，对于车载网关控制器，STRIDE分析可能识别出以下威胁：伪装攻击（Spoofing）——攻击者伪造ECU身份发送欺诈性消息；篡改攻击（Tampering）——攻击者修改CAN总线报文内容；信息泄露（Information Disclosure）——攻击者通过诊断接口读取敏感车辆状态信息。
@@ -141,11 +142,11 @@ graph LR
 ```mermaid
 graph TB
     subgraph IVI系统TARA分析
-        Assets[IVI资产识别] --> A1[系统软件资产<br>OS/驱动/服务]
-        Assets --> A2[应用软件资产<br>导航/语音/浏览器]
-        Assets --> A3[用户数据资产<br>联系人/位置/习惯]
-        Assets --> A4[通信接口资产<br>蓝牙/WiFi/4G/USB]
-        Assets --> A5[硬件资产<br>芯片/存储/显示]
+        Assets[IVI资产识别] --> A1[系统软件资产<br/>OS/驱动/服务]
+        Assets --> A2[应用软件资产<br/>导航/语音/浏览器]
+        Assets --> A3[用户数据资产<br/>联系人/位置/习惯]
+        Assets --> A4[通信接口资产<br/>蓝牙/WiFi/4G/USB]
+        Assets --> A5[硬件资产<br/>芯片/存储/显示]
 
         A4 --> Threat[STRIDE威胁分析]
         Threat --> T1[Spoofing: 伪造设备连接]
@@ -166,11 +167,11 @@ graph TB
         Control --> C3[引导层: 安全启动链]
     end
 
-    style Assets fill:#e1f5fe
-    style Threat fill:#fff59d
-    style Risk fill:#ce93d8
-    style Level fill:#ef5350
-    style Control fill:#a5d6a7
+    style Assets fill:#90caf9,stroke:#1976d2,stroke-width:3px,color:#ffffff
+    style Threat fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style Risk fill:#ce93d8,stroke:#7b1fa2,stroke-width:2px
+    style Level fill:#ef5350,stroke:#c62828,stroke-width:3px,color:#ffffff
+    style Control fill:#81c784,stroke:#388e3c,stroke-width:2px
 ```某合资汽车制造商在其最新一代IVI系统开发中，采用了完整的TARA分析流程，以下详细呈现其实践经验。
 
 **资产识别与分类**

@@ -73,15 +73,15 @@ graph TB
     ASIL --> CC[ASIL C 高要求]
     ASIL --> D[ASIL D 最高要求]
 
-    style S fill:#ef9a9a
-    style E fill:#ffcc80
-    style C fill:#fff59d
-    style ASIL fill:#ce93d8
-    style R fill:#f5f5f5
-    style A fill:#a5d6a7
-    style B fill:#66bb6a
-    style CC fill:#43a047
-    style D fill:#43a047
+    style S fill:#ef5350,stroke:#c62828,stroke-width:2px
+    style E fill:#ffa726,stroke:#ef6c00,stroke-width:2px
+    style C fill:#ffee58,stroke:#f9a825,stroke-width:2px
+    style ASIL fill:#ab47bc,stroke:#6a1b9a,stroke-width:3px,color:#ffffff
+    style R fill:#bdbdbd,stroke:#616161,stroke-width:2px
+    style A fill:#a5d6a7,stroke:#388e3c,stroke-width:2px
+    style B fill:#66bb6a,stroke:#388e3c,stroke-width:2px
+    style CC fill:#43a047,stroke:#2e7d32,stroke-width:2px
+    style D fill:#2e7d32,stroke:#1b5e20,stroke-width:3px,color:#ffffff
 ```
 
 ## HARA 的发展历程
@@ -122,14 +122,14 @@ flowchart TD
     Step5 --> Step6[步骤6: 功能安全需求分配<br>FSR Allocation]
     Step6 --> End[输出安全需求规格]
 
-    style Start fill:#e3f2fd
-    style Step1 fill:#e1f5fe
-    style Step2 fill:#fff59d
-    style Step3 fill:#fff59d
-    style Step4 fill:#ce93d8
-    style Step5 fill:#a5d6a7
-    style Step6 fill:#a5d6a7
-    style End fill:#a5d6a7
+    style Start fill:#42a5f5,stroke:#1976d2,stroke-width:3px,color:#ffffff
+    style Step1 fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style Step2 fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style Step3 fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style Step4 fill:#ab47bc,stroke:#6a1b9a,stroke-width:2px
+    style Step5 fill:#81c784,stroke:#388e3c,stroke-width:2px
+    style Step6 fill:#66bb6a,stroke:#388e3c,stroke-width:2px
+    style End fill:#26a69a,stroke:#00695c,stroke-width:3px,color:#ffffff
 ```
 
 #### 步骤 1：项目定义（Item Definition）
@@ -336,11 +336,11 @@ graph TB
         Goal --> FSR4[热管理安全策略 ASIL B]
     end
 
-    style Item fill:#e1f5fe
-    style Hazard fill:#fff59d
-    style Event fill:#ce93d8
-    style ASILD fill:#ef5350
-    style Goal fill:#a5d6a7
+    style Item fill:#90caf9,stroke:#1976d2,stroke-width:3px,color:#ffffff
+    style Hazard fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style Event fill:#ab47bc,stroke:#6a1b9a,stroke-width:2px
+    style ASILD fill:#ef5350,stroke:#c62828,stroke-width:3px,color:#ffffff
+    style Goal fill:#66bb6a,stroke:#388e3c,stroke-width:3px,color:#ffffff
 ```
 
 **项目定义**：

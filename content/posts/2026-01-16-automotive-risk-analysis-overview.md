@@ -72,18 +72,18 @@ FMEA的三维评估模型是其技术核心。这一模型通过三个维度的�
 ```mermaid
 graph LR
     subgraph RPN计算模型
-        S[严重度 S<br>1-10分] --> RPN[RPN = S × O × D<br>风险优先序数]
-        O[发生频率 O<br>1-10分] --> RPN
-        D[探测度 D<br>1-10分] --> RPN
+        S[严重度 S<br/>1-10分] --> RPN[RPN = S × O × D<br/>风险优先序数]
+        O[发生频率 O<br/>1-10分] --> RPN
+        D[探测度 D<br/>1-10分] --> RPN
     end
 
     RPN -->|1-1000分| RISK[风险等级评估]
 
-    style S fill:#ef9a9a
-    style O fill:#ef9a9a
-    style D fill:#ef9a9a
-    style RPN fill:#ce93d8
-    style RISK fill:#fff59d
+    style S fill:#ef5350,stroke:#c62828,stroke-width:2px
+    style O fill:#ffa726,stroke:#ef6c00,stroke-width:2px
+    style D fill:#ab47bc,stroke:#6a1b9a,stroke-width:2px
+    style RPN fill:#7e57c2,stroke:#4527a0,stroke-width:3px,color:#ffffff
+    style RISK fill:#26a69a,stroke:#00695c,stroke-width:2px
 ```
 
 RPN的取值范围为1-1000分。RPN越高，表示该失效模式的风险越大，需要优先采取措施降低风险。需要特别强调的是，RPN仅用于优先级排序，三个维度的权重并非总是相等，在特定行业或应用场景下，组织可能需要根据自身经验调整评估标准。
@@ -107,16 +107,16 @@ flowchart TD
     I --> F
     H --> J[完成归档]
 
-    style A fill:#e1f5fe
-    style B fill:#e1f5fe
-    style C fill:#e1f5fe
-    style D fill:#fff59d
-    style E fill:#fff59d
-    style F fill:#ce93d8
-    style G fill:#a5d6a7
-    style H fill:#a5d6a7
-    style I fill:#a5d6a7
-    style J fill:#a5d6a7
+    style A fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style B fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style C fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style D fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style E fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style F fill:#ce93d8,stroke:#7b1fa2,stroke-width:2px
+    style G fill:#81c784,stroke:#388e3c,stroke-width:2px
+    style H fill:#a5d6a7,stroke:#388e3c,stroke-width:2px
+    style I fill:#81c784,stroke:#388e3c,stroke-width:2px
+    style J fill:#66bb6a,stroke:#388e3c,stroke-width:3px,color:#ffffff
 ```
 
 **第一步：规划与准备。** 这一阶段的核心任务是明确分析的范围、边界和团队组成。范围定义需要回答"分析什么"和"不分析什么"这两个基本问题，通常通过系统边界图来表达。团队组成应涵盖设计、工艺、质量、制造等多学科专家，确保知识的全面覆盖。一个典型的FMEA团队包括：1名项目经理（负责协调和资源保障）、2-3名设计工程师（负责技术方案和设计决策）、1名工艺工程师（负责制造可行性分析）、1名测试工程师（负责检测能力评估）、1名质量工程师（负责标准和规范把控）。
@@ -235,13 +235,13 @@ graph TD
     OR3 --> A3[增压器故障]
     OR3 --> A4[EGR阀卡滞]
 
-    style Top fill:#ef5350
-    style OR1 fill:#ff9800
-    style OR2 fill:#ff9800
-    style OR3 fill:#ff9800
-    style Fuel fill:#e1f5fe
-    style Air fill:#e1f5fe
-    style Other fill:#e1f5fe
+    style Top fill:#ef5350,stroke:#c62828,stroke-width:3px,color:#ffffff
+    style OR1 fill:#ffa726,stroke:#ef6c00,stroke-width:2px
+    style OR2 fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style OR3 fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style Fuel fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style Air fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style Other fill:#a5d6a7,stroke:#388e3c,stroke-width:2px
 ```
 
 **定量概率分析：** 假设各基本事件的年失效率如下：低压泵失效0.1%、高压泵失效0.05%、喷油器堵塞0.02%、空气滤清器堵塞0.01%、增压器机械故障0.03%、正时链条跳齿0.01%。使用或门概率公式计算顶事件概率：$P_{top} = 1 - (1-0.001)(1-0.0005)(1-0.0002)(1-0.0001)(1-0.0003)(1-0.0001) ≈ 0.12\%$。即约千分之一的车辆在一年内可能出现发动机无法启动故障。
@@ -303,11 +303,11 @@ graph TB
         Human -.->|手动操作| Process
     end
 
-    style Controller fill:#e1f5fe
-    style Actuator fill:#a5d6a7
-    style Sensor fill:#fff59d
-    style Process fill:#ce93d8
-    style Human fill:#f3e5f5
+    style Controller fill:#42a5f5,stroke:#1976d2,stroke-width:3px,color:#ffffff
+    style Actuator fill:#66bb6a,stroke:#388e3c,stroke-width:2px
+    style Sensor fill:#ffa726,stroke:#ef6c00,stroke-width:2px
+    style Process fill:#ab47bc,stroke:#6a1b9a,stroke-width:2px
+    style Human fill:#ba68c8,stroke:#7b1fa2,stroke-width:2px
 ```
 
 分析框架基于四个问题：控制动作是否应该在某种情境下发出但没有发出？控制动作是否不应该在某种情境下发出但却发出？控制动作是否在错误的时机发出？控制动作的强度、方向或其他参数是否错误？对于每个控制器，需要考虑其在不同工作模式、不同输入条件下可能产生的所有UCA。
@@ -390,16 +390,16 @@ graph LR
     Cont[可控度 C<br>C0-C3] --> ASIL
     ASIL --> RESULT[安全目标与需求]
 
-    style D fill:#ef5350
-    style CC fill:#ffa726
-    style B fill:#42a5f5
-    style A fill:#66bb6a
-    style QM fill:#bdbdbd
-    style S fill:#90caf9
-    style E fill:#ffcc80
-    style Cont fill:#a5d6a7
-    style ASIL fill:#ce93d8
-    style RESULT fill:#66bb6a
+    style D fill:#ef5350,stroke:#c62828,stroke-width:3px,color:#ffffff
+    style CC fill:#ffa726,stroke:#ef6c00,stroke-width:2px
+    style B fill:#42a5f5,stroke:#1976d2,stroke-width:2px
+    style A fill:#66bb6a,stroke:#388e3c,stroke-width:2px
+    style QM fill:#bdbdbd,stroke:#616161,stroke-width:2px
+    style S fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style E fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style Cont fill:#a5d6a7,stroke:#388e3c,stroke-width:2px
+    style ASIL fill:#ab47bc,stroke:#6a1b9a,stroke-width:2px
+    style RESULT fill:#26a69a,stroke:#00695c,stroke-width:3px,color:#ffffff
 ```
 
 从上表可以看出：危害的严重程度越高、暴露概率越高、可控性越低，所需的ASIL等级就越高。ASIL D是最高安全等级，适用于可能导致生命威胁且暴露概率和可控度都较高的危害事件，如制动系统失效、转向系统失效等。ASIL A是最低的安全等级要求，通常适用于可能导致轻微伤害且可控性较高的危害事件。
@@ -419,13 +419,13 @@ flowchart TD
     E --> F[第六步: 安全目标制定<br>制定高层安全要求]
     F --> G[第七步: FSR分解<br>功能安全需求分解与分配]
 
-    style A fill:#e1f5fe
-    style B fill:#e1f5fe
-    style C fill:#fff59d
-    style D fill:#fff59d
-    style E fill:#ce93d8
-    style F fill:#a5d6a7
-    style G fill:#a5d6a7
+    style A fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style B fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style C fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style D fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style E fill:#ab47bc,stroke:#6a1b9a,stroke-width:2px
+    style F fill:#81c784,stroke:#388e3c,stroke-width:2px
+    style G fill:#66bb6a,stroke:#388e3c,stroke-width:3px,color:#ffffff
 ```
 
 **第一步：功能定义。** HARA的起点是对被分析项目的**功能**进行清晰、完整的定义。功能定义应包括：项目的主要功能和辅助功能、项目的正常运行条件和边界条件、项目的接口（与驾驶员、与其他系统、与环境的交互）。功能定义应足够详细，以便后续识别危害场景，但不需要深入到具体的设计实现。
@@ -516,14 +516,14 @@ flowchart TD
     F --> G[第七步: 风险处理<br>规避/转移/接受/缓解]
     G --> H[第八步: 持续监控与更新<br>漏洞管理与响应]
 
-    style A fill:#e1f5fe
-    style B fill:#fff59d
-    style C fill:#fff59d
-    style D fill:#ce93d8
-    style E fill:#f3e5f5
-    style F fill:#a5d6a7
-    style G fill:#a5d6a7
-    style H fill:#a5d6a7
+    style A fill:#90caf9,stroke:#1976d2,stroke-width:2px
+    style B fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style C fill:#ffcc80,stroke:#ef6c00,stroke-width:2px
+    style D fill:#ab47bc,stroke:#6a1b9a,stroke-width:2px
+    style E fill:#ba68c8,stroke:#7b1fa2,stroke-width:2px
+    style F fill:#81c784,stroke:#388e3c,stroke-width:2px
+    style G fill:#66bb6a,stroke:#388e3c,stroke-width:2px
+    style H fill:#26a69a,stroke:#00695c,stroke-width:3px,color:#ffffff
 ```
 
 **第一步：资产识别。** 资产识别的目标是建立被分析项目的资产清单。资产分类包括：数据资产（个人隐私数据、安全关键配置数据、诊断数据）、功能资产（安全关键功能、诊断功能、通信功能）、接口资产（外部通信接口、内部网络接口、诊断接口）。每项资产需要明确其安全属性要求：机密性（防止未授权访问）、完整性（防止未授权篡改）、可用性（防止未授权拒绝）。
@@ -638,8 +638,8 @@ graph LR
         A4 --> A5
     end
 
-    classDef trad fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
-    classDef ai fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef trad fill:#90caf9,stroke:#1976d2,stroke-width:3px,color:#ffffff
+    classDef ai fill:#ba68c8,stroke:#7b1fa2,stroke-width:3px,color:#ffffff
 ```
 
 从对比可以看出，传统风险分析与AI风险分析各有优势和局限。在实践中，两种方法应该**互补使用**：对于已知的、边界清晰的系统组件和接口，使用传统方法进行系统化的风险分析；对于AI模型特有的风险（对抗样本、分布偏移、模型偏见），引入专门的AI风险评估方法。
