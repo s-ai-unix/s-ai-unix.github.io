@@ -1,13 +1,20 @@
 {{- partial "mathjax.html" . -}}
 
+<!-- Mermaid 代码块转换脚本 -->
+<script src="{{ "js/mermaid-converter.js" | relURL }}"></script>
+
 <!-- Mermaid 图表支持 -->
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    securityLevel: 'loose',
-  });
+
+  // 等待转换脚本执行完成后再初始化
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose',
+    });
+  }, 100);
 </script>
 
 <!-- TOC 自动高亮和滚动跟随脚本 -->
