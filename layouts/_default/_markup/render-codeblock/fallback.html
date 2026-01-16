@@ -1,0 +1,20 @@
+{{- $content := .Inner | trim -}}
+{{- if hasPrefix "flowchart TD" $content }}
+<div class="mermaid">
+{{ $content }}
+</div>
+{{- else if hasPrefix "flowchart LR" $content }}
+<div class="mermaid">
+{{ $content }}
+</div>
+{{- else if hasPrefix "graph TB" $content }}
+<div class="mermaid">
+{{ $content }}
+</div>
+{{- else if hasPrefix "graph LR" $content }}
+<div class="mermaid">
+{{ $content }}
+</div>
+{{- else }}
+<pre><code class="language-fallback">{{ $content }}</code></pre>
+{{- end -}}
