@@ -1,21 +1,41 @@
 {{- partial "mathjax.html" . -}}
 
-<!-- Mermaid 图表支持 -->
+<!-- Mermaid ���表支持 -->
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    securityLevel: 'loose',
-    themeVariables: {
-      primaryColor: '#e1f5fe',
-      primaryTextColor: '#000',
-      primaryBorderColor: '#0277bd',
-      lineColor: '#0277bd',
-      secondaryColor: '#fff9c4',
-      tertiaryColor: '#c8e6c9',
-      fontFamily: 'arial'
-    }
+  document.addEventListener('DOMContentLoaded', function () {
+    // 查找所有包含 mermaid 代码的代码块
+    const codeBlocks = document.querySelectorAll('pre > code');
+    codeBlocks.forEach((block) => {
+      const language = block.className.trim();
+      if (language === 'language-mermaid') {
+        // 获取mermaid代码
+        const code = block.textContent;
+        // 创建新的div来渲染mermaid
+        const pre = block.parentElement;
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = code;
+        // 替换原来的代码块
+        pre.replaceWith(mermaidDiv);
+      }
+    });
+
+    // 初始化Mermaid
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose',
+      themeVariables: {
+        primaryColor: '#e1f5fe',
+        primaryTextColor: '#000',
+        primaryBorderColor: '#0277bd',
+        lineColor: '#0277bd',
+        secondaryColor: '#fff9c4',
+        tertiaryColor: '#c8e6c9',
+        fontFamily: 'arial'
+      }
+    });
   });
 </script>
 
