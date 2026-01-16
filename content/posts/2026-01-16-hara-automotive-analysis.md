@@ -55,6 +55,34 @@ $$ \text{ASIL} = f(S, E, C) $$
 
 其中，$S \in \{0, 1, 2, 3\}$（从无伤害到致命伤害），$E \in \{0, 1, 2, 3, 4\}$（从极低概率到极高概率），$C \in \{0, 1, 2, 3\}$（从易于控制到难以控制）。ASIL 的等级越高，意味着系统需要更严格的安全措施和更高的开发成本。
 
+```mermaid
+graph TB
+    subgraph ASIL三维评估模型
+        S[严重度 Severity<br>S0: 无伤害<br>S1: 轻微伤害<br>S2: 严重伤害<br>S3: 致命伤害]:::s
+        E[暴露率 Exposure<br>E0: 极低概率<br>E1: 低概率<br>E2: 中等概率<br>E3: 高概率<br>E4: 极高概率]:::e
+        C[可控性 Controllability<br>C0: 完全可控<br>C1: 易于控制<br>C2: 正常可控<br>C3: 难以控制]:::c
+
+        S --> ASIL[ASIL等级确定]
+        E --> ASIL
+        C --> ASIL
+    end
+
+    ASIL --> R[QM 质量管理]:::qm
+    ASIL --> A[ASIL A 较低要求]:::a
+    ASIL --> B[ASIL B 中等要求]:::b
+    ASIL --> CC[ASIL C 高要求]:::cc
+    ASIL --> D[ASIL D 最高要求]:::d
+
+    classDef s fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+    classDef e fill:#ffe0b2,stroke:#ef6c00,stroke-width:2px
+    classDef c fill:#fff9c4,stroke:#f9a825,stroke-width:2px
+    classDef qm fill:#e0e0e0,stroke:#616161,stroke-width:1px
+    classDef a fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    classDef b fill:#81c784,stroke:#1b5e20,stroke-width:2px
+    classDef cc fill:#4caf50,stroke:#1b5e20,stroke-width:2px
+    classDef d fill:#2e7d32,stroke:#1b5e20,stroke-width:3px,color:#fff
+```
+
 ## HARA 的发展历程
 
 ### 早期阶段：经验驱动
@@ -82,6 +110,26 @@ $$ \text{ASIL} = f(S, E, C) $$
 ### HARA 的核心流程
 
 HARA 是一个系统化的流程，通常包含以下关键步骤：
+
+```mermaid
+flowchart TD
+    Start[HARA分析开始] --> Step1[步骤1: 项目定义<br>Item Definition]
+    Step1 --> Step2[步骤2: 危害识别<br>Hazard Identification]
+    Step2 --> Step3[步骤3: 危害事件分析<br>Hazardous Event Analysis]
+    Step3 --> Step4[步骤4: ASIL确定<br>ASIL Determination]
+    Step4 --> Step5[步骤5: 安全目标定义<br>Safety Goal Definition]
+    Step5 --> Step6[步骤6: 功能安全需求分配<br>FSR Allocation]
+    Step6 --> End[输出安全需求规格]
+
+    style Start fill:#e3f2fd
+    style Step1 fill:#e1f5fe
+    style Step2 fill:#fff9c4
+    style Step3 fill:#fff9c4
+    style Step4 fill:#ffccbc
+    style Step5 fill:#c8e6c9
+    style Step6 fill:#c8e6c9
+    style End fill:#a5d6a7
+```
 
 #### 步骤 1：项目定义（Item Definition）
 
@@ -264,6 +312,35 @@ HARA 是一个系统化的流程，通常包含以下关键步骤：
 #### BMS 的 HARA 示例
 
 电池管理系统（Battery Management System，BMS）是电动汽车的核心安全系统之一，负责监控电池组的状态、平衡电池单元、防止过充过放等。下面是一个简化的 BMS HARA 示例：
+
+```mermaid
+graph TB
+    subgraph BMS HARA分析
+        Item[项目: BMS电池管理系统] --> Hazard[危害识别]
+        Hazard --> H1[过充 Overcharging]
+        Hazard --> H2[过放 Overdischarging]
+        Hazard --> H3[单元不平衡 Cell Imbalance]
+        Hazard --> H4[热失控 Thermal Runaway]
+        Hazard --> H5[绝缘故障 Insulation Fault]
+
+        H1 --> Event[危害事件: 过充+高速行驶]
+        Event --> Assess[S3: 致命伤害<br>E3: 高概率<br>C2: 部分可控]
+        Assess --> ASILD[ASIL D]
+
+        ASILD --> Goal[安全目标:<br>防止充电过程中过充<br>避免热失控风险]
+
+        Goal --> FSR1[电池电压监测冗余 ASIL D]
+        Goal --> FSR2[充电控制算法验证 ASIL D]
+        Goal --> FSR3[BMS故障诊断响应 ASIL C]
+        Goal --> FSR4[热管理安全策略 ASIL B]
+    end
+
+    style Item fill:#e1f5fe
+    style Hazard fill:#fff9c4
+    style Event fill:#ffccbc
+    style ASILD fill:#d32f2f,color:#fff
+    style Goal fill:#c8e6c9
+```
 
 **项目定义**：
 - 功能：监控和管理锂离子电池组

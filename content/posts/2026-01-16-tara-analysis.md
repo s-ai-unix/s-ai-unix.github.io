@@ -38,8 +38,24 @@ TARA分析的核心价值在于将模糊的"网络安全问题"转化为可量�
 
 从系统工程角度而言，TARA分析体现了"安全左移"的先进理念。在产品概念阶段早期开展TARA分析，能够在架构设计阶段就嵌入安全考量，避免后期返工带来的巨大成本。同时，TARA分析也为安全测试提供了明确的测试目标和验收标准，形成了从风险识别到安全验证的完整闭环。
 
-## 第二章 TARA分析方法论体系详解
+## 第二章 TARA分析方法论体系���解
 
+
+```mermaid
+flowchart TD
+    Start[TARA分析开始] --> P1[阶段一: 分析准备<br>资产识别与边界定义]
+    P1 --> P2[阶段二: 威胁建模<br>攻击路径与攻击树分析]
+    P2 --> P3[阶段三: 风险评估<br>可能性与影响性评级]
+    P3 --> P4[阶段四: 风险处置<br>策略选择与控制措施设计]
+    P4 --> End[输出网络安全需求]
+
+    style Start fill:#e3f2fd
+    style P1 fill:#e1f5fe
+    style P2 fill:#fff9c4
+    style P3 fill:#ffccbc
+    style P4 fill:#c8e6c9
+    style End fill:#a5d6a7
+```
 
 ### 2.1 分析准备阶段：资产识别与边界定义
 
@@ -57,6 +73,32 @@ TARA分析的第一步是明确分析范围和识别保护对象，这一阶段�
 
 
 威胁建模是TARA分析的核心环节，其目标是将抽象的威胁具体化为可分析的攻击场景。当前汽车行业主流的威胁建模方法包括STRIDE、PASTA、TVRA等，每种方法各有侧重和适用场景。
+
+```mermaid
+graph LR
+    subgraph STRIDE威胁模型
+        S[Spoofing<br>伪装攻击]:::s
+        T[Tampering<br>篡改攻击]:::t
+        R[Repudiation<br>抵赖攻击]:::r
+        I[Information Disclosure<br>信息泄露]:::i
+        D[Denial of Service<br>拒绝服务]:::d
+        E[Elevation of Privilege<br>权限提升]:::e
+    end
+
+    Asset[汽车资产] --> S
+    Asset --> T
+    Asset --> R
+    Asset --> I
+    Asset --> D
+    Asset --> E
+
+    classDef s fill:#ffcdd2,stroke:#c62828
+    classDef t fill:#ffe0b2,stroke:#ef6c00
+    classDef r fill:#fff9c4,stroke:#f9a825
+    classDef i fill:#e1bee7,stroke:#8e24aa
+    classDef d fill:#c5cae9,stroke:#5e35b1
+    classDef e fill:#b2dfdb,stroke:#00897b
+```
 
 **STRIDE**（Spoofing、Tampering、Repudiation、Information Disclosure、Denial of Service、Elevation of Privilege）方法由微软提出，广泛应用于软件安全领域。在汽车行业应用中，STRIDE方法能够系统化地识别各类资产面临的威胁类型。例如，对于车载网关控制器，STRIDE分析可能识别出以下威胁：伪装攻击（Spoofing）——攻击者伪造ECU身份发送欺诈性消息；篡改攻击（Tampering）——攻击者修改CAN总线报文内容；信息泄露（Information Disclosure）——攻击者通过诊断接口读取敏感车辆状态信息。
 
@@ -96,7 +138,42 @@ TARA分析的第一步是明确分析范围和识别保护对象，这一阶段�
 
 ### 3.1 案例一：车载信息娱乐系统的TARA分析实践
 
-车载信息娱乐系统（IVI）是汽车网络安全分析的重点对象，因其具有丰富的外部接口和复杂的软件生态，面临来自多个维度的威胁。某合资汽车制造商在其最新一代IVI系统开发中，采用了完整的TARA分析流程，以下详细呈现其实践经验。
+车载信息娱乐系统（IVI）是汽车网络安全分析的重点对象，因其具有丰富的外部接口和复杂的软件生态，面临来自多个维度的威胁。
+
+```mermaid
+graph TB
+    subgraph IVI系统TARA分析
+        Assets[IVI资产识别] --> A1[系统软件资产<br>OS/驱动/服务]
+        Assets --> A2[应用软件资产<br>导航/语音/浏览器]
+        Assets --> A3[用户数据资产<br>联系人/位置/习惯]
+        Assets --> A4[通信接口资产<br>蓝牙/WiFi/4G/USB]
+        Assets --> A5[硬件资产<br>芯片/存储/显示]
+
+        A4 --> Threat[STRIDE威胁分析]
+        Threat --> T1[Spoofing: 伪造设备连接]
+        Threat --> T2[Tampering: 篡改通话数据]
+        Threat --> T3[InfoDisclosure: 窃听通信]
+        Threat --> T4[DoS: 蓝牙服务崩溃]
+        Threat --> T5[EoP: 获取root权限]
+
+        T1 --> Risk[风险评估]
+        Risk --> Feasibility[攻击可行性: 中等]
+        Risk --> Impact[影响严重性: 高]
+        Feasibility --> Level[风险等级: 高]
+        Impact --> Level
+
+        Level --> Control[控制措施]
+        Control --> C1[传输层: TLS 1.3加密]
+        Control --> C2[应用层: 国密SM2签名]
+        Control --> C3[引导层: 安全启动链]
+    end
+
+    style Assets fill:#e1f5fe
+    style Threat fill:#fff9c4
+    style Risk fill:#ffccbc
+    style Level fill:#d32f2f,color:#fff
+    style Control fill:#c8e6c9
+```某合资汽车制造商在其最新一代IVI系统开发中，采用了完整的TARA分析流程，以下详细呈现其实践经验。
 
 **资产识别与分类**
 
