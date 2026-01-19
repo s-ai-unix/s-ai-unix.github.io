@@ -1,92 +1,68 @@
-/* 国学经典名句样式 - 左右对称布局 */
+/* 优化的首页布局设计 */
 
-/* 包装容器：实现左右对称 */
-.profile-quote-wrapper {
+/* 首页主容器 */
+.main > .profile-quote-wrapper {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 3rem auto 2rem;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 4rem auto 3rem;
     padding: 0 2rem;
 }
 
-/* 名句容器 */
+/* 个人信息区域 */
+.profile-quote-wrapper > .profile {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.profile-quote-wrapper > .profile .profile_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 200px;
+}
+
+/* 名句卡片 - 优化版 */
 .classical-quote-container {
     position: relative;
     flex: 1;
-    max-width: 550px;
-    padding: 2.5rem 2rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    max-width: 520px;
+    min-width: 380px;
+    padding: 2rem 2.2rem 2.2rem 2rem;
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.99) 0%,
+        rgba(248, 250, 252, 0.98) 100%
+    );
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
     backdrop-filter: blur(10px);
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
-.classical-quote-container:hover {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
-}
-
-/* 顶部装饰条 */
 .classical-quote-container::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: linear-gradient(90deg,
         #C41E3A 0%,
-        #8B0000 25%,
         #D4AF37 50%,
-        #8B0000 75%,
         #C41E3A 100%
     );
 }
 
-/* 印章装饰 */
-.classical-quote-container::after {
-    content: '国学';
-    position: absolute;
-    top: 1.2rem;
-    right: 1.2rem;
-    width: 46px;
-    height: 46px;
-    border: 2px solid #C41E3A;
-    border-radius: 4px;
-    color: #C41E3A;
-    font-size: 1.1rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.12;
-    font-family: "STKaiti", "KaiTi", "楷体", "楷体-GB", serif;
-}
-
-/* 引号装饰 */
+/* 去掉引号装饰 */
 .quote-decoration-top,
 .quote-decoration-bottom {
-    position: absolute;
-    left: 1.5rem;
-    font-size: 3.5rem;
-    color: rgba(196, 30, 58, 0.08);
-    font-family: Georgia, "Times New Roman", serif;
-    line-height: 1;
-    z-index: 0;
-    font-style: italic;
-}
-
-.quote-decoration-top {
-    top: 0.5rem;
-}
-
-.quote-decoration-bottom {
-    bottom: 0.5rem;
+    display: none;
 }
 
 .classical-quote {
@@ -97,66 +73,73 @@
     z-index: 1;
 }
 
-/* 名句正文 - 艺术字体 */
+/* 名句正文 - 优化字体 */
 .quote-text {
-    font-family: "STKaiti", "KaiTi", "楷体", "Kaiti SC", "华文楷体", "楷体-GB", "AR PL UKai CN", serif;
-    font-size: 1.5rem;
-    line-height: 1.9;
+    font-family: "STKaiti", "KaiTi", "楷体", "Kaiti SC", "华文楷体", "楷体-GB", serif;
+    font-size: 1.35rem;
+    line-height: 1.75;
     color: #1a1a1a;
     font-weight: 500;
-    letter-spacing: 0.08em;
-    margin: 0 0 1.8rem 0;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+    letter-spacing: 0.05em;
+    margin: 0 0 1.5rem 0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
     font-variant-ligatures: common-ligatures;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* 作者信息 */
+/* 作者信息 - 优化 */
 .quote-footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.4rem;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    gap: 0.3rem;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .quote-author {
     font-style: normal;
-    font-family: "STSong", "SimSun", "宋体", "Songti SC", "华文宋体", serif;
-    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "STSong", "SimSun", "宋体", serif;
+    font-size: 0.95rem;
     color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .author-name {
     font-weight: 600;
     color: #2d3748;
+    font-size: 0.98rem;
 }
 
 .dynasty {
     font-weight: 400;
     color: #718096;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
+    padding-left: 0.5rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .quote-source {
-    font-family: "STSong", "SimSun", "宋体", "Songti SC", serif;
-    font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    font-size: 0.85rem;
     color: #a0aec0;
     font-style: italic;
+    font-weight: 400;
 }
 
-/* 刷新按钮 */
+/* 刷新按钮 - 优化位置和样式 */
 .refresh-quote-btn {
     position: absolute;
-    bottom: 1rem;
+    top: 1rem;
     right: 1rem;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
     background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
     border: none;
     color: white;
@@ -164,22 +147,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(196, 30, 58, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(196, 30, 58, 0.2);
     z-index: 10;
+    opacity: 0.8;
 }
 
 .refresh-quote-btn:hover {
-    transform: rotate(180deg) scale(1.1);
-    box-shadow: 0 4px 12px rgba(196, 30, 58, 0.4);
+    opacity: 1;
+    transform: rotate(180deg) scale(1.08);
+    box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
 }
 
 .refresh-quote-btn:active {
-    transform: rotate(180deg) scale(1.05);
+    transform: rotate(180deg) scale(1.02);
 }
 
 .refresh-quote-btn svg {
+    width: 16px;
+    height: 16px;
     transition: transform 0.3s ease;
+}
+
+/* 悬停效果 */
+.classical-quote-container:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
 }
 
 /* 深色模式适配 */
@@ -189,8 +182,8 @@
             rgba(30, 41, 59, 0.98) 0%,
             rgba(15, 23, 42, 0.98) 100%
         );
-        border-color: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
     }
 
     .quote-text {
@@ -208,90 +201,80 @@
     }
 
     .quote-footer {
-        border-top-color: rgba(255, 255, 255, 0.1);
+        border-top-color: rgba(255, 255, 255, 0.08);
     }
 
     .classical-quote-container:hover {
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.4);
     }
 }
 
 /* 响应式设计 */
 @media (max-width: 1024px) {
-    .profile-quote-wrapper {
+    .main > .profile-quote-wrapper {
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 2.5rem;
+        padding: 0 1.5rem;
     }
 
     .classical-quote-container {
         max-width: 100%;
+        min-width: unset;
+        width: 100%;
     }
 }
 
 @media (max-width: 768px) {
-    .profile-quote-wrapper {
+    .main > .profile-quote-wrapper {
+        margin: 3rem auto 2rem;
         padding: 0 1rem;
-        margin: 2rem auto 1.5rem;
     }
 
     .classical-quote-container {
-        padding: 2rem 1.5rem;
+        padding: 1.8rem 1.5rem 1.5rem 1.5rem;
     }
 
     .quote-text {
-        font-size: 1.3rem;
-        line-height: 1.8;
-        letter-spacing: 0.05em;
+        font-size: 1.25rem;
+        line-height: 1.65;
+        letter-spacing: 0.03em;
     }
 
     .quote-author {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .quote-source {
-        font-size: 0.85rem;
-    }
-
-    .quote-decoration-top,
-    .quote-decoration-bottom {
-        font-size: 2.8rem;
-        left: 1rem;
-    }
-
-    .classical-quote-container::after {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-        top: 1rem;
-        right: 1rem;
+        font-size: 0.82rem;
     }
 
     .refresh-quote-btn {
-        width: 32px;
-        height: 32px;
-        bottom: 0.8rem;
+        width: 28px;
+        height: 28px;
+        top: 0.8rem;
         right: 0.8rem;
+    }
+
+    .refresh-quote-btn svg {
+        width: 14px;
+        height: 14px;
     }
 }
 
 @media (max-width: 480px) {
-    .profile-quote-wrapper {
-        padding: 0 0.5rem;
+    .main > .profile-quote-wrapper {
+        padding: 0 0.8rem;
+        gap: 2rem;
     }
 
     .classical-quote-container {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 1.2rem 1.2rem 1.2rem;
     }
 
     .quote-text {
-        font-size: 1.2rem;
-        line-height: 1.7;
-    }
-
-    .quote-decoration-top,
-    .quote-decoration-bottom {
-        font-size: 2.2rem;
+        font-size: 1.15rem;
+        line-height: 1.6;
     }
 }
 
@@ -299,7 +282,7 @@
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(15px);
     }
     to {
         opacity: 1;
@@ -307,17 +290,18 @@
     }
 }
 
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-    50% {
-        opacity: 0.8;
+    to {
+        opacity: 1;
     }
 }
 
-.classical-quote-container.animate {
-    animation: fadeInUp 0.8s ease-out;
+/* 淡入动画 */
+.classical-quote-container {
+    animation: fadeInUp 0.6s ease-out;
 }
 
 /* 打印样式 */
@@ -326,9 +310,46 @@
         box-shadow: none;
         border: 1px solid #ccc;
         page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .refresh-quote-btn {
         display: none;
     }
+
+    .classical-quote-container {
+        animation: none;
+    }
+}
+
+/* 针对博客主题的额外优化 */
+body:not(.skin-dark) .classical-quote-container {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.98) 0%,
+        rgba(251, 251, 254, 0.98) 100%
+    );
+}
+
+body.skin-dark .classical-quote-container {
+    background: linear-gradient(135deg,
+        rgba(30, 41, 59, 0.98) 0%,
+        rgba(15, 23, 42, 0.98) 100%
+    );
+}
+
+/* 确保在 main 元素内正确对齐 */
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.main > .profile-quote-wrapper ~ * {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 文章列表样式保持不变 */
+.post-entry {
+    max-width: 1000px;
+    margin: 0 auto;
 }

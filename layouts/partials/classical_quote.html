@@ -1,9 +1,8 @@
-{{/* 每日国学经典名句组件 - 随机展示 */}}
+{{/* 国学经典名句组件 - 优雅版，无引号 */}}
 {{ $quotes := site.Data.quotes }}
 {{ if $quotes }}
 
 <div class="classical-quote-container" id="classical-quote-display">
-    <div class="quote-decoration-top">❝</div>
     <blockquote class="classical-quote">
         <p class="quote-text" id="quote-text">正在加载名句...</p>
         <footer class="quote-footer">
@@ -14,8 +13,7 @@
             <div class="quote-source" id="quote-source"></div>
         </footer>
     </blockquote>
-    <div class="quote-decoration-bottom">❞</div>
-    <button class="refresh-quote-btn" id="refresh-quote" title="刷新名句">
+    <button class="refresh-quote-btn" id="refresh-quote" title="刷新名句" aria-label="刷新名句">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 2v6h-6"></path>
             <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
@@ -45,17 +43,17 @@
 
         // 添加淡出效果
         var container = document.getElementById('classical-quote-display');
-        container.style.opacity = '0.5';
+        container.style.opacity = '0.6';
 
         setTimeout(function() {
             textEl.textContent = quote.quote;
             authorEl.textContent = quote.author;
-            dynastyEl.textContent = quote.dynasty ? ' · ' + quote.dynasty : '';
+            dynastyEl.textContent = quote.dynasty ? quote.dynasty : '';
             sourceEl.textContent = quote.source || '';
 
             // 淡入
             container.style.opacity = '1';
-        }, 200);
+        }, 150);
     }
 
     // 初始化
@@ -64,21 +62,24 @@
 
         // 初始动画
         container.style.opacity = '0';
-        container.style.transform = 'translateY(20px)';
-        container.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        container.style.transform = 'translateY(15px)';
+        container.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
 
         setTimeout(function() {
             container.style.opacity = '1';
             container.style.transform = 'translateY(0)';
-        }, 300);
+        }, 100);
 
         // 显示初始名句
         displayQuote(getRandomQuote());
 
         // 刷新按钮事件
-        document.getElementById('refresh-quote').addEventListener('click', function() {
-            displayQuote(getRandomQuote());
-        });
+        var refreshBtn = document.getElementById('refresh-quote');
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', function() {
+                displayQuote(getRandomQuote());
+            });
+        }
     });
 })();
 </script>
