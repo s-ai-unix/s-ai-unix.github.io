@@ -172,7 +172,9 @@ graph TB
     style Risk fill:#AF52DE,stroke:#AF52DE,stroke-width:2px,color:#ffffff
     style Level fill:#FF3B30,stroke:#FF3B30,stroke-width:3px,color:#ffffff
     style Control fill:#34C759,stroke:#34C759,stroke-width:2px,color:#ffffff
-```某合资汽车制造商在其最新一代IVI系统开发中，采用了完整的TARA分析流程，以下详细呈现其实践经验。
+```
+
+某合资汽车制造商在其最新一代IVI系统开发中，采用了完整的TARA分析流程，以下详细呈现其实践经验。
 
 **资产识别与分类**
 
