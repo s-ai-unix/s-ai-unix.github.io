@@ -1,0 +1,214 @@
+/* 国学经典名句样式 */
+.classical-quote-container {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+    padding: 3rem 2.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* 背景装饰 */
+.classical-quote-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+        #C41E3A 0%,
+        #8B0000 25%,
+        #D4AF37 50%,
+        #8B0000 75%,
+        #C41E3A 100%
+    );
+}
+
+/* 印章装饰 */
+.classical-quote-container::after {
+    content: '国学';
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #C41E3A;
+    border-radius: 4px;
+    color: #C41E3A;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.15;
+    font-family: "STKaiti", "KaiTi", "楷体", serif;
+}
+
+.quote-decoration-top,
+.quote-decoration-bottom {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    color: rgba(196, 30, 58, 0.1);
+    font-family: Georgia, serif;
+    line-height: 1;
+    z-index: 0;
+}
+
+.quote-decoration-top {
+    top: -1rem;
+}
+
+.quote-decoration-bottom {
+    bottom: -1rem;
+}
+
+.classical-quote {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    z-index: 1;
+}
+
+.quote-text {
+    font-family: "STKaiti", "KaiTi", "楷体", "Kaiti SC", "华文楷体", serif;
+    font-size: 1.75rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin: 0 0 2rem 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.quote-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.quote-author {
+    font-style: normal;
+    font-family: "STSong", "SimSun", "宋体", "Songti SC", "华文宋体", serif;
+    font-size: 1.1rem;
+    color: #5a6c7d;
+}
+
+.author-name {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.dynasty {
+    font-weight: 400;
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+.quote-source {
+    font-family: "STSong", "SimSun", "宋体", "Songti SC", serif;
+    font-size: 0.95rem;
+    color: #95a5a6;
+    font-style: italic;
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+    .classical-quote-container {
+        background: linear-gradient(135deg,
+            rgba(30, 41, 59, 0.95) 0%,
+            rgba(15, 23, 42, 0.95) 100%
+        );
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .quote-text {
+        color: #e2e8f0;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .author-name {
+        color: #f1f5f9;
+    }
+
+    .dynasty,
+    .quote-source {
+        color: #94a3b8;
+    }
+
+    .quote-footer {
+        border-top-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .classical-quote-container {
+        margin: 2rem 1rem 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .quote-text {
+        font-size: 1.4rem;
+        line-height: 1.7;
+    }
+
+    .quote-author {
+        font-size: 1rem;
+    }
+
+    .quote-source {
+        font-size: 0.9rem;
+    }
+
+    .quote-decoration-top,
+    .quote-decoration-bottom {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .classical-quote-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .quote-text {
+        font-size: 1.25rem;
+    }
+
+    .classical-quote-container::after {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.classical-quote-container.animate {
+    animation: fadeInUp 0.8s ease-out;
+}

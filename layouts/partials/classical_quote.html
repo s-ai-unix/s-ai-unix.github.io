@@ -1,0 +1,44 @@
+{{- /* 每日国学经典名句组件 */ -}}
+{{- $quotes := site.Data.classical-quotes -}}
+{{- $now := now -}}
+{{- $days := int (div $now.Unix 86400) -}}
+{{- $quoteIndex := mod $days (len $quotes) -}}
+{{- $quote := index $quotes $quoteIndex -}}
+
+<div class="classical-quote-container">
+    <div class="quote-decoration-top">❝</div>
+    <blockquote class="classical-quote">
+        <p class="quote-text">{{ $quote.quote }}</p>
+        <footer class="quote-footer">
+            <cite class="quote-author">
+                <span class="author-name">{{ $quote.author }}</span>
+                {{- if $quote.dynasty -}}
+                <span class="dynasty"> · {{ $quote.dynasty }}</span>
+                {{- end -}}
+            </cite>
+            {{- if $quote.source -}}
+            <div class="quote-source">{{ $quote.source }}</div>
+            {{- end -}}
+        </footer>
+    </blockquote>
+    <div class="quote-decoration-bottom">❞</div>
+</div>
+
+<script>
+(function() {
+    // 添加淡入动画
+    document.addEventListener('DOMContentLoaded', function() {
+        const quoteContainer = document.querySelector('.classical-quote-container');
+        if (quoteContainer) {
+            quoteContainer.style.opacity = '0';
+            quoteContainer.style.transform = 'translateY(20px)';
+            quoteContainer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+
+            setTimeout(function() {
+                quoteContainer.style.opacity = '1';
+                quoteContainer.style.transform = 'translateY(0)';
+            }, 300);
+        }
+    });
+})();
+</script>
