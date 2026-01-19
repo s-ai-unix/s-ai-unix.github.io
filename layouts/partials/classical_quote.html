@@ -1,45 +1,86 @@
-{{/* 每日国学经典名句组件 */}}
+{{/* 每日国学经典名句组件 - 随机展示 */}}
 {{ $quotes := site.Data.quotes }}
-{{ $now := now }}
-{{ $days := int (div $now.Unix 86400) }}
-{{ $quoteIndex := mod $days (len $quotes) }}
-{{ $quote := index $quotes $quoteIndex }}
-{{ if $quote }}
+{{ if $quotes }}
 
-<div class="classical-quote-container">
+<div class="classical-quote-container" id="classical-quote-display">
     <div class="quote-decoration-top">❝</div>
     <blockquote class="classical-quote">
-        <p class="quote-text">{{ $quote.quote }}</p>
+        <p class="quote-text" id="quote-text">正在加载名句...</p>
         <footer class="quote-footer">
             <cite class="quote-author">
-                <span class="author-name">{{ $quote.author }}</span>
-                {{ if $quote.dynasty }}
-                <span class="dynasty"> · {{ $quote.dynasty }}</span>
-                {{ end }}
+                <span class="author-name" id="quote-author"></span>
+                <span class="dynasty" id="quote-dynasty"></span>
             </cite>
-            {{ if $quote.source }}
-            <div class="quote-source">{{ $quote.source }}</div>
-            {{ end }}
+            <div class="quote-source" id="quote-source"></div>
         </footer>
     </blockquote>
     <div class="quote-decoration-bottom">❞</div>
+    <button class="refresh-quote-btn" id="refresh-quote" title="刷新名句">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 2v6h-6"></path>
+            <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+            <path d="M3 22v-6h6"></path>
+            <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+        </svg>
+    </button>
 </div>
 
 <script>
 (function() {
-    document.addEventListener('DOMContentLoaded', function() {
-        const quoteContainer = document.querySelector('.classical-quote-container');
-        if (quoteContainer) {
-            quoteContainer.style.opacity = '0';
-            quoteContainer.style.transform = 'translateY(20px)';
-            quoteContainer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    // 名句数据
+    const quotes = {{ $quotes | jsonify }};
 
-            setTimeout(function() {
-                quoteContainer.style.opacity = '1';
-                quoteContainer.style.transform = 'translateY(0)';
-            }, 300);
-        }
+    // 随机选择一个名句
+    function getRandomQuote() {
+        const index = Math.floor(Math.random() * quotes.length);
+        return quotes[index];
+    }
+
+    // 显示名句
+    function displayQuote(quote) {
+        const textEl = document.getElementById('quote-text');
+        const authorEl = document.getElementById('quote-author');
+        const dynastyEl = document.getElementById('quote-dynasty');
+        const sourceEl = document.getElementById('quote-source');
+
+        // 添加淡出效果
+        const container = document.getElementById('classical-quote-display');
+        container.style.opacity = '0.5';
+
+        setTimeout(function() {
+            textEl.textContent = quote.quote;
+            authorEl.textContent = quote.author;
+            dynastyEl.textContent = quote.dynasty ? ' · ' + quote.dynasty : '';
+            sourceEl.textContent = quote.source || '';
+
+            // 淡入
+            container.style.opacity = '1';
+        }, 200);
+    }
+
+    // 初始化
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('classical-quote-display');
+
+        // 初始动画
+        container.style.opacity = '0';
+        container.style.transform = 'translateY(20px)';
+        container.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+
+        setTimeout(function() {
+            container.style.opacity = '1';
+            container.style.transform = 'translateY(0)';
+        }, 300);
+
+        // 显示初始名句
+        displayQuote(getRandomQuote());
+
+        // 刷新按钮事件
+        document.getElementById('refresh-quote').addEventListener('click', function() {
+            displayQuote(getRandomQuote());
+        });
     });
 })();
 </script>
+
 {{ end }}
