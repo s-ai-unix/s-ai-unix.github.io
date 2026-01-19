@@ -46,28 +46,29 @@
     z-index: 1;
 }
 
-/* 名句正文 - 优化字体 */
+/* 名句正文 - 书法字体 */
 .profile_inner .quote-text {
-    font-family: "STKaiti", "KaiTi", "楷体", "Kaiti SC", "华文楷体", "楷体-GB", serif;
-    font-size: 1.25rem;
-    line-height: 1.65;
+    font-family: "Xingkai SC", "STXingkai", "华文行楷", "LiSu", "隶书", "STKaiti", "KaiTi", "楷体", "Kaiti SC", "华文楷体", "楷体-GB", serif;
+    font-size: 1.35rem;
+    line-height: 1.7;
     color: #1a1a1a;
     font-weight: 500;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     margin: 0 0 1.2rem 0;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     font-variant-ligatures: common-ligatures;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* 作者信息 - 优化 */
+/* 作者信息 - 一行显示 */
 .profile_inner .quote-footer {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
@@ -75,8 +76,8 @@
 
 .profile_inner .quote-author {
     font-style: normal;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "STSong", "SimSun", "宋体", serif;
-    font-size: 0.9rem;
+    font-family: "Xingkai SC", "STXingkai", "华文行楷", "LiSu", "隶书", -apple-system, BlinkMacSystemFont, "SF Pro Text", "STSong", "SimSun", "宋体", serif;
+    font-size: 0.95rem;
     color: #4a5568;
     display: flex;
     align-items: center;
@@ -86,23 +87,31 @@
 .profile_inner .author-name {
     font-weight: 600;
     color: #2d3748;
-    font-size: 0.93rem;
+    font-size: 0.98rem;
 }
 
 .profile_inner .dynasty {
     font-weight: 400;
     color: #718096;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     padding-left: 0.4rem;
     border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .profile_inner .quote-source {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-    font-size: 0.82rem;
-    color: #a0aec0;
+    font-family: "Xingkai SC", "STXingkai", "华文行楷", "LiSu", "隶书", -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    font-size: 0.88rem;
+    color: #718096;
     font-style: italic;
     font-weight: 400;
+}
+
+.profile_inner .quote-source::before {
+    content: "《";
+}
+
+.profile_inner .quote-source::after {
+    content: "》";
 }
 
 /* 刷新按钮 - 优化位置和样式 */
@@ -214,17 +223,25 @@ body.skin-dark .profile_inner .quote-footer {
     }
 
     .profile_inner .quote-text {
-        font-size: 1.15rem;
-        line-height: 1.6;
-        letter-spacing: 0.03em;
+        font-size: 1.2rem;
+        line-height: 1.65;
+        letter-spacing: 0.05em;
     }
 
     .profile_inner .quote-author {
-        font-size: 0.85rem;
+        font-size: 0.88rem;
+    }
+
+    .profile_inner .author-name {
+        font-size: 0.9rem;
+    }
+
+    .profile_inner .dynasty {
+        font-size: 0.8rem;
     }
 
     .profile_inner .quote-source {
-        font-size: 0.78rem;
+        font-size: 0.8rem;
     }
 
     .profile_inner .refresh-quote-btn {
@@ -246,8 +263,8 @@ body.skin-dark .profile_inner .quote-footer {
     }
 
     .profile_inner .quote-text {
-        font-size: 1.1rem;
-        line-height: 1.55;
+        font-size: 1.15rem;
+        line-height: 1.6;
     }
 }
 
