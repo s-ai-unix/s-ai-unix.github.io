@@ -1,9 +1,10 @@
 {{/* 每日国学经典名句组件 */}}
-{{ $quotes := site.Data.classical-quotes }}
+{{ $quotes := site.Data.quotes }}
 {{ $now := now }}
 {{ $days := int (div $now.Unix 86400) }}
 {{ $quoteIndex := mod $days (len $quotes) }}
 {{ $quote := index $quotes $quoteIndex }}
+{{ if $quote }}
 
 <div class="classical-quote-container">
     <div class="quote-decoration-top">❝</div>
@@ -12,13 +13,13 @@
         <footer class="quote-footer">
             <cite class="quote-author">
                 <span class="author-name">{{ $quote.author }}</span>
-                {{- if $quote.dynasty -}}
+                {{ if $quote.dynasty }}
                 <span class="dynasty"> · {{ $quote.dynasty }}</span>
-                {{- end -}}
+                {{ end }}
             </cite>
-            {{- if $quote.source -}}
+            {{ if $quote.source }}
             <div class="quote-source">{{ $quote.source }}</div>
-            {{- end -}}
+            {{ end }}
         </footer>
     </blockquote>
     <div class="quote-decoration-bottom">❞</div>
@@ -26,7 +27,6 @@
 
 <script>
 (function() {
-    // 添加淡入动画
     document.addEventListener('DOMContentLoaded', function() {
         const quoteContainer = document.querySelector('.classical-quote-container');
         if (quoteContainer) {
@@ -42,3 +42,4 @@
     });
 })();
 </script>
+{{ end }}

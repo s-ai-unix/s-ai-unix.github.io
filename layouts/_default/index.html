@@ -1,8 +1,5 @@
 {{- define "main" }}
 
-{{- /* 首先显示国学经典名句 */ -}}
-{{- partial "classical_quote.html" . }}
-
 {{- if (and site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
 {{- else }}

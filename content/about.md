@@ -29,7 +29,7 @@ Currently focusing on intelligent automotive systems, I bridge the gap between d
 - **Geely Auto** - Principal Product Manager, Intelligent Cockpit (2023-2024)
 - **OPPO** - Staff Data Analytical Engineer (2022-2023)
 - **Huami** - Senior Data Analytical Engineer (2016-2021) - Xiaomi ecosystem
-- **Sonata/Cisco** - Senior Anti-Spam Engineer (2012-2016)
+- **Ironport/Cisco** - Senior Anti-Spam Engineer (2012-2016)
 
 ### Education
 
@@ -45,17 +45,17 @@ Currently focusing on intelligent automotive systems, I bridge the gap between d
 ## When Not Coding
 
 I enjoy exploring ideas at the intersection of technology and humanities and big fan of, 
+- AI
+- Mathematics
+- Statistics
 - History
 - Literature
 - Classical culture
-- An avid Mac user and Ubuntu
--  An ethusiast who believes in elegant solutions to complex problems
+- An avid Mac and Ubuntu fan
 - Hiking
 - Badminton
-- Mathematics
-- AI
-- Statistics
 - How humans thinks and behave
+- An ethusiast who believes in elegant solutions to complex problems
 
 ## Get in Touch
 
