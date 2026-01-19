@@ -28,23 +28,23 @@
 <script>
 (function() {
     // 名句数据
-    const quotes = {{ $quotes | jsonify }};
+    var quotesData = JSON.parse({{ $quotes | jsonify }});
 
     // 随机选择一个名句
     function getRandomQuote() {
-        const index = Math.floor(Math.random() * quotes.length);
-        return quotes[index];
+        var index = Math.floor(Math.random() * quotesData.length);
+        return quotesData[index];
     }
 
     // 显示名句
     function displayQuote(quote) {
-        const textEl = document.getElementById('quote-text');
-        const authorEl = document.getElementById('quote-author');
-        const dynastyEl = document.getElementById('quote-dynasty');
-        const sourceEl = document.getElementById('quote-source');
+        var textEl = document.getElementById('quote-text');
+        var authorEl = document.getElementById('quote-author');
+        var dynastyEl = document.getElementById('quote-dynasty');
+        var sourceEl = document.getElementById('quote-source');
 
         // 添加淡出效果
-        const container = document.getElementById('classical-quote-display');
+        var container = document.getElementById('classical-quote-display');
         container.style.opacity = '0.5';
 
         setTimeout(function() {
@@ -60,7 +60,7 @@
 
     // 初始化
     document.addEventListener('DOMContentLoaded', function() {
-        const container = document.getElementById('classical-quote-display');
+        var container = document.getElementById('classical-quote-display');
 
         // 初始动画
         container.style.opacity = '0';
