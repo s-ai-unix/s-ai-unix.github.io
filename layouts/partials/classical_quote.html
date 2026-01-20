@@ -40,13 +40,13 @@
         };
 
         function loadIndex() {
-            if (isIndexLoaded) return Promise.resolve();
+            if (isIndexLoaded) return Promise.resolve(shardIndex);
 
             console.log('开始加载名言索引...');
             return fetch('/quotes/quotes_index.json?v=' + Date.now())
                 .then(function(response) {
                     if (!response.ok) {
-                        throw new Error('Failed to load index');
+                        throw new Error('Failed to load index, status: ' + response.status);
                     }
                     return response.json();
                 })
@@ -54,10 +54,16 @@
                     shardIndex = data;
                     isIndexLoaded = true;
                     console.log('✓ 已加载分片索引: ' + data.total_shards + ' 个分片，共 ' + data.total_quotes + ' 条名句');
+                    return shardIndex;
                 })
                 .catch(function(error) {
                     console.error('✗ 加载索引失败:', error);
-                    return null;
+                    // 返回一个默认的索引结构，确保后续逻辑能正常执行
+                    return {
+                        total_quotes: 0,
+                        total_shards: 0,
+                        shards: []
+                    };
                 });
         }
 
@@ -89,7 +95,8 @@
                     return data;
                 })
                 .catch(function(error) {
-                    console.error('✗ 加载分片失败:', shardName, error);
+                    console.error('✗ 加载分片失败:', shardName, error.message);
+                    // 返回空数组而不是失败
                     return [];
                 })
                 .finally(function() {
