@@ -42,6 +42,7 @@
         function loadIndex() {
             if (isIndexLoaded) return Promise.resolve();
 
+            console.log('开始加载名言索引...');
             return fetch('/quotes/quotes_index.json?v=' + Date.now())
                 .then(function(response) {
                     if (!response.ok) {
@@ -52,24 +53,27 @@
                 .then(function(data) {
                     shardIndex = data;
                     isIndexLoaded = true;
-                    console.log('已加载分片索引: ' + data.total_shards + ' 个分片，共 ' + data.total_quotes + ' 条名句');
+                    console.log('✓ 已加载分片索引: ' + data.total_shards + ' 个分片，共 ' + data.total_quotes + ' 条名句');
                 })
                 .catch(function(error) {
-                    console.warn('加载索引失败:', error);
+                    console.error('✗ 加载索引失败:', error);
                     return null;
                 });
         }
 
         function loadShard(shardName) {
             if (loadedShards[shardName]) {
+                console.log('分片 ' + shardName + ' 已加载，使用缓存');
                 return Promise.resolve(loadedShards[shardName]);
             }
 
             if (isLoadingShard) {
+                console.log('正在加载其他分片，返回当前已加载的名句');
                 return Promise.resolve(allQuotes.length > 0 ? allQuotes : [defaultQuote]);
             }
 
             isLoadingShard = true;
+            console.log('开始加载分片:', shardName);
 
             return fetch('/quotes/' + shardName + '?v=' + Date.now())
                 .then(function(response) {
@@ -81,11 +85,11 @@
                 .then(function(data) {
                     loadedShards[shardName] = data;
                     allQuotes = allQuotes.concat(data);
-                    console.log('已加载分片 ' + shardName + ': ' + data.length + ' 条名句');
+                    console.log('✓ 已加载分片 ' + shardName + ': ' + data.length + ' 条名句 (总计: ' + allQuotes.length + ' 条)');
                     return data;
                 })
                 .catch(function(error) {
-                    console.warn('加载分片失败:', shardName, error);
+                    console.error('✗ 加载分片失败:', shardName, error);
                     return [];
                 })
                 .finally(function() {
@@ -175,8 +179,12 @@
         }
 
         function init() {
+            console.log('初始化名言组件...');
             var container = document.getElementById('classical-quote-display');
-            if (!container) return;
+            if (!container) {
+                console.error('✗ 未找到名言容器元素');
+                return;
+            }
 
             container.style.opacity = '0';
             container.style.transform = 'translateY(15px)';
@@ -188,29 +196,30 @@
                 displayQuote(defaultQuote);
             }, 100);
 
-            var loadFirstShardPromise;
-
-            if ('requestIdleCallback' in window) {
-                loadFirstShardPromise = new Promise(function(resolve) {
-                    requestIdleCallback(function() {
-                        loadFirstShard().then(resolve);
-                    }, { timeout: 2000 });
-                });
-            } else {
-                loadFirstShardPromise = loadFirstShard();
-            }
-
-            loadFirstShardPromise.then(function() {
+            // 直接加载，不使用 requestIdleCallback
+            console.log('开始加载第一个名言分片...');
+            loadFirstShard().then(function() {
+                console.log('分片加载完成，当前名句数量:', allQuotes.length);
                 if (allQuotes.length > 0) {
-                    displayQuote(getRandomQuote());
+                    var randomQuote = getRandomQuote();
+                    console.log('显示随机名句:', randomQuote.quote.substring(0, 20) + '...');
+                    displayQuote(randomQuote);
+                } else {
+                    console.warn('⚠ 未加载到任何名句，使用默认名句');
                 }
+            }).catch(function(error) {
+                console.error('加载名句出错:', error);
             });
 
             var refreshBtn = document.getElementById('refresh-quote');
             if (refreshBtn) {
+                console.log('✓ 刷新按钮事件已绑定');
                 refreshBtn.addEventListener('click', function() {
+                    console.log('刷新按钮被点击');
                     refreshQuote();
                 });
+            } else {
+                console.error('✗ 未找到刷新按钮');
             }
         }
 
