@@ -685,7 +685,7 @@ $$
 使用**覆盖函数**（Covering Function）估计：
 
 $$
-N(\epsilon, \mathcal{D}) = \min \left\{ n : \bigcup_{i=1}^n B(x_i, \epsilon) \supseteq \mathcal{X} \right\}
+N(\epsilon, \mathcal{D}) = \min \left\lbrace n : \bigcup_{i=1}^n B(x_i, \epsilon) \supseteq \mathcal{X} \right\rbrace
 $$
 
 其中 $B(x_i, \epsilon)$ 是以 $x_i$ 为中心、半径为 $\epsilon$ 的球。
