@@ -69,21 +69,21 @@ params:
   profileMode:
     enabled: true
     title: "s-ai-unix"
-    subtitle: "🚀 技术博主 | 📐 数学爱好者 | 🤖 AI 从业者"
+    subtitle: "🚀 胡思乱想家 | 📐 数据魔法师 | 🤖 AI 从业者"
     imageUrl: "https://api.dicebear.com/7.x/micah/svg?seed=s-ai-unix&backgroundColor=b6e3f4,c0aede,d1d4f9"
     imageTitle: "s-ai-unix"
     imageWidth: 140
     imageHeight: 140
 
   homeInfoParams:
-    Title: "🚀 欢迎来到我的技术博客"
+    Title: "🚀 欢迎来到我的博客"
     imageUrl: "https://api.dicebear.com/7.x/micah/svg?seed=s-ai-unix&backgroundColor=b6e3f4,c0aede,d1d4f9"
     imageTitle: "s-ai-unix"
     imageWidth: 120
     imageHeight: 120
     Content: >
-      这里记录了我在学习数学、深度学习、机器人学等领域的探索和思考。<br><br>
-      希望通过分享能帮助到同样对技术充满热情的你。<br><br>
+      这里记录了我的碎碎念。<br><br>
+      如果刚好你也喜欢, 那更好。<br><br>
       📧 联系方式: [isunix1989@gmail.com](mailto:isunix1989@gmail.com)<br>
       💻 GitHub: [@s-ai-unix](https://github.com/s-ai-unix)
 
