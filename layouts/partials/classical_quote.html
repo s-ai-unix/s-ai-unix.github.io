@@ -90,9 +90,12 @@
                 })
                 .then(function(data) {
                     loadedShards[shardName] = data;
-                    allQuotes = allQuotes.concat(data);
-                    console.log('✓ 已加载分片 ' + shardName + ': ' + data.length + ' 条名句 (总计: ' + allQuotes.length + ' 条)');
-                    return data;
+                    // 使用 push 方法而不是 concat，确保原数组被修改
+                    for (var i = 0; i < data.length; i++) {
+                        allQuotes.push(data[i]);
+                    }
+                    console.log('✓ 已���载分片 ' + shardName + ': ' + data.length + ' 条名句 (总计: ' + allQuotes.length + ' 条)');
+                    return allQuotes; // 返回 allQuotes 而不是 data
                 })
                 .catch(function(error) {
                     console.error('✗ 加载分片失败:', shardName, error.message);
@@ -205,14 +208,20 @@
 
             // 直接加载，不使用 requestIdleCallback
             console.log('开始加载第一个名言分片...');
-            loadFirstShard().then(function() {
-                console.log('分片加载完成，当前名句数量:', allQuotes.length);
+            loadFirstShard().then(function(shardData) {
+                console.log('分片加载完成，当前名句数量:', allQuotes.length, '，返回数据:', shardData ? shardData.length : 0, '条');
                 if (allQuotes.length > 0) {
                     var randomQuote = getRandomQuote();
                     console.log('显示随机名句:', randomQuote.quote.substring(0, 20) + '...');
                     displayQuote(randomQuote);
                 } else {
                     console.warn('⚠ 未加载到任何名句，使用默认名句');
+                    // 如果 allQuotes 为空但 shardData 有数据，说明 concat 没生效
+                    if (shardData && shardData.length > 0) {
+                        console.warn('检测到数据分离问题，shardData 有', shardData.length, '条但 allQuotes 为空');
+                        allQuotes = shardData; // 直接赋值作为后备方案
+                        displayQuote(getRandomQuote());
+                    }
                 }
             }).catch(function(error) {
                 console.error('加载名句出错:', error);
