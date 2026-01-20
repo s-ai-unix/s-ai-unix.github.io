@@ -110,14 +110,6 @@
     font-weight: 400;
 }
 
-.profile_inner .quote-source::before {
-    content: "《";
-}
-
-.profile_inner .quote-source::after {
-    content: "》";
-}
-
 /* 刷新按钮 - 优化位置和样式 */
 .profile_inner .refresh-quote-btn {
     position: absolute;
