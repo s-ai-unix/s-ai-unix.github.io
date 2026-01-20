@@ -1,6 +1,4 @@
-{{/* 国学经典名句组件 - 优雅版，无引号 */}}
-{{ $quotes := site.Data.quotes }}
-{{ if $quotes }}
+{{/* 国学经典名句组件 - 分片懒加载版本 */}}
 
 <div class="classical-quote-container" id="classical-quote-display">
     <blockquote class="classical-quote">
@@ -25,63 +23,210 @@
 
 <script>
 (function() {
-    // 名句数据
-    var quotesData = JSON.parse({{ $quotes | jsonify }});
+    'use strict';
 
-    // 随机选择一个名句
-    function getRandomQuote() {
-        var index = Math.floor(Math.random() * quotesData.length);
-        return quotesData[index];
-    }
+    var quotesManager = (function() {
+        var loadedShards = {};
+        var shardIndex = null;
+        var allQuotes = [];
+        var isIndexLoaded = false;
+        var isLoadingShard = false;
 
-    // 显示名句
-    function displayQuote(quote) {
-        var textEl = document.getElementById('quote-text');
-        var authorEl = document.getElementById('quote-author');
-        var dynastyEl = document.getElementById('quote-dynasty');
-        var sourceEl = document.getElementById('quote-source');
+        var defaultQuote = {
+            quote: "学而时习之，不亦说乎？有朋自远方来，不亦乐乎？",
+            author: "孔子",
+            source: "《论语·学而》",
+            dynasty: "春秋"
+        };
 
-        // 添加淡出效果
-        var container = document.getElementById('classical-quote-display');
-        container.style.opacity = '0.6';
+        function loadIndex() {
+            if (isIndexLoaded) return Promise.resolve();
 
-        setTimeout(function() {
-            textEl.textContent = quote.quote;
-            authorEl.textContent = quote.author;
-            dynastyEl.textContent = quote.dynasty ? quote.dynasty : '';
-            sourceEl.textContent = quote.source || '';
+            return fetch('/quotes/quotes_index.json?v=' + Date.now())
+                .then(function(response) {
+                    if (!response.ok) {
+                        throw new Error('Failed to load index');
+                    }
+                    return response.json();
+                })
+                .then(function(data) {
+                    shardIndex = data;
+                    isIndexLoaded = true;
+                    console.log('已加载分片索引: ' + data.total_shards + ' 个分片，共 ' + data.total_quotes + ' 条名句');
+                })
+                .catch(function(error) {
+                    console.warn('加载索引失败:', error);
+                    return null;
+                });
+        }
 
-            // 淡入
-            container.style.opacity = '1';
-        }, 150);
-    }
+        function loadShard(shardName) {
+            if (loadedShards[shardName]) {
+                return Promise.resolve(loadedShards[shardName]);
+            }
 
-    // 初始化
-    document.addEventListener('DOMContentLoaded', function() {
-        var container = document.getElementById('classical-quote-display');
+            if (isLoadingShard) {
+                return Promise.resolve(allQuotes.length > 0 ? allQuotes : [defaultQuote]);
+            }
 
-        // 初始动画
-        container.style.opacity = '0';
-        container.style.transform = 'translateY(15px)';
-        container.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            isLoadingShard = true;
 
-        setTimeout(function() {
-            container.style.opacity = '1';
-            container.style.transform = 'translateY(0)';
-        }, 100);
+            return fetch('/quotes/' + shardName + '?v=' + Date.now())
+                .then(function(response) {
+                    if (!response.ok) {
+                        throw new Error('Failed to load shard: ' + shardName);
+                    }
+                    return response.json();
+                })
+                .then(function(data) {
+                    loadedShards[shardName] = data;
+                    allQuotes = allQuotes.concat(data);
+                    console.log('已加载分片 ' + shardName + ': ' + data.length + ' 条名句');
+                    return data;
+                })
+                .catch(function(error) {
+                    console.warn('加载分片失败:', shardName, error);
+                    return [];
+                })
+                .finally(function() {
+                    isLoadingShard = false;
+                });
+        }
 
-        // 显示初始名句
-        displayQuote(getRandomQuote());
-
-        // 刷新按钮事件
-        var refreshBtn = document.getElementById('refresh-quote');
-        if (refreshBtn) {
-            refreshBtn.addEventListener('click', function() {
-                displayQuote(getRandomQuote());
+        function loadFirstShard() {
+            return loadIndex().then(function() {
+                if (shardIndex && shardIndex.shards && shardIndex.shards.length > 0) {
+                    return loadShard(shardIndex.shards[0]);
+                }
+                return Promise.resolve([defaultQuote]);
             });
         }
-    });
+
+        function loadRandomShard() {
+            return loadIndex().then(function() {
+                if (shardIndex && shardIndex.shards && shardIndex.shards.length > 0) {
+                    var randomIndex = Math.floor(Math.random() * shardIndex.shards.length);
+                    var shardName = shardIndex.shards[randomIndex];
+
+                    if (!loadedShards[shardName]) {
+                        return loadShard(shardName);
+                    }
+                }
+                return Promise.resolve(allQuotes.length > 0 ? allQuotes : [defaultQuote]);
+            });
+        }
+
+        function getRandomQuote() {
+            if (allQuotes.length === 0) {
+                return defaultQuote;
+            }
+
+            var index = Math.floor(Math.random() * allQuotes.length);
+            return allQuotes[index];
+        }
+
+        function getRandomQuoteFromRandomShard() {
+            return loadRandomShard().then(function(shardData) {
+                if (shardData && shardData.length > 0) {
+                    var index = Math.floor(Math.random() * shardData.length);
+                    return shardData[index];
+                }
+                return defaultQuote;
+            });
+        }
+
+        function displayQuote(quote) {
+            var textEl = document.getElementById('quote-text');
+            var authorEl = document.getElementById('quote-author');
+            var dynastyEl = document.getElementById('quote-dynasty');
+            var sourceEl = document.getElementById('quote-source');
+
+            if (!textEl || !authorEl || !dynastyEl || !sourceEl) return;
+
+            var container = document.getElementById('classical-quote-display');
+            if (container) {
+                container.style.opacity = '0.6';
+            }
+
+            setTimeout(function() {
+                textEl.textContent = quote.quote || '';
+                authorEl.textContent = quote.author || '';
+                dynastyEl.textContent = quote.dynasty || '';
+                sourceEl.textContent = quote.source || '';
+
+                if (container) {
+                    container.style.opacity = '1';
+                }
+            }, 150);
+        }
+
+        function refreshQuote() {
+            // 每次刷新都有机会加载新的随机分片，确保能访问所有名句
+            // 30% 概率从已加载的名句中选择（快速响应），70% 概率加载新分片
+            var useCached = allQuotes.length > 100 && Math.random() < 0.3;
+
+            if (useCached) {
+                displayQuote(getRandomQuote());
+            } else {
+                getRandomQuoteFromRandomShard().then(function(quote) {
+                    displayQuote(quote);
+                });
+            }
+        }
+
+        function init() {
+            var container = document.getElementById('classical-quote-display');
+            if (!container) return;
+
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(15px)';
+            container.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+            setTimeout(function() {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+                displayQuote(defaultQuote);
+            }, 100);
+
+            var loadFirstShardPromise;
+
+            if ('requestIdleCallback' in window) {
+                loadFirstShardPromise = new Promise(function(resolve) {
+                    requestIdleCallback(function() {
+                        loadFirstShard().then(resolve);
+                    }, { timeout: 2000 });
+                });
+            } else {
+                loadFirstShardPromise = loadFirstShard();
+            }
+
+            loadFirstShardPromise.then(function() {
+                if (allQuotes.length > 0) {
+                    displayQuote(getRandomQuote());
+                }
+            });
+
+            var refreshBtn = document.getElementById('refresh-quote');
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', function() {
+                    refreshQuote();
+                });
+            }
+        }
+
+        return {
+            init: init,
+            getRandomQuote: getRandomQuote,
+            refreshQuote: refreshQuote,
+            loadFirstShard: loadFirstShard,
+            loadRandomShard: loadRandomShard
+        };
+    })();
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', quotesManager.init);
+    } else {
+        quotesManager.init();
+    }
 })();
 </script>
-
-{{ end }}

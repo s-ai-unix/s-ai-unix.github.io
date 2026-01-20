@@ -1,0 +1,18 @@
+{
+  "total_quotes": 5000,
+  "total_shards": 10,
+  "shard_size": 500,
+  "shards": [
+    "quotes_1.json",
+    "quotes_2.json",
+    "quotes_3.json",
+    "quotes_4.json",
+    "quotes_5.json",
+    "quotes_6.json",
+    "quotes_7.json",
+    "quotes_8.json",
+    "quotes_9.json",
+    "quotes_10.json"
+  ],
+  "last_updated": ""
+}
