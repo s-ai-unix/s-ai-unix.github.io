@@ -1,6 +1,6 @@
 ---
 name: universally-updated-skill
-description: Skill synchronization tool for keeping skills in sync across multiple directories. Use when: (1) Creating a new skill that should be available in multiple environments (Claude Code, OpenCode, Hugo Blog), (2) Updating an existing skill and syncing changes to all target directories, (3) Listing available skills that can be synced, (4) Ensuring skill consistency across ~/.claude/skills, ~/.config/opencode/skill, ~/.config/opencode/skills, and Hugo Blog .claude/skills directories.
+description: "Skill synchronization tool for keeping skills in sync across multiple directories. Use when creating a new skill, updating an existing skill, listing available skills, or ensuring skill consistency across Claude Code, OpenCode, and Hugo Blog directories."
 ---
 
 # universally-updated-skill

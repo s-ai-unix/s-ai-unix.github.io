@@ -77,13 +77,17 @@ $$f(x) = \frac{1}{\sqrt{2\pi}}e^{-x^2/2}$$
 直到多年后，这条曲线才被拉普拉斯和高斯重新发掘，并赋予其更深刻的意义。
 
 ```mermaid
-timeline
-    title 正态分布发现史
-    1632 : 伽利略<br>观测误差规律
-    1733 : 棣莫弗<br>二项分布极限
-    1809 : 高斯<br>误差理论
-    1810 : 拉普拉斯<br>中心极限定理
-    1860 : 麦克斯韦<br>对称性推导
+flowchart LR
+    A["1632<br/>伽利略<br/>观测误差规律"] --> B["1733<br/>棣莫弗<br/>二项分布极限"]
+    B --> C["1809<br/>高斯<br/>误差理论"]
+    C --> D["1810<br/>拉普拉斯<br/>中心极限定理"]
+    D --> E["1860<br/>麦克斯韦<br/>对称性推导"]
+
+    style A fill:#FF9500,color:#fff,stroke-width:2px
+    style B fill:#FF9500,color:#fff,stroke-width:2px
+    style C fill:#007AFF,color:#fff,stroke-width:3px
+    style D fill:#34C759,color:#fff,stroke-width:2px
+    style E fill:#34C759,color:#fff,stroke-width:2px
 ```
 
 ---
@@ -299,7 +303,7 @@ flowchart LR
 
    - 约 **68%** 的数据在 $\mu \pm \sigma$ 内（蓝色区域）
    - 约 **95%** 的数据在 $\mu \pm 2\sigma$ 内（蓝色+绿色区域）
-   - 约 **99.7%** ��数据在 $\mu \pm 3\sigma$ 内（全部区域）
+   - 约 **99.7%** 的数据在 $\mu \pm 3\sigma$ 内（全部区域）
 
 4. **线性变换封闭性**：若 $X \sim \mathcal{N}(\mu, \sigma^2)$，则 $aX + b \sim \mathcal{N}(a\mu + b, a^2\sigma^2)$
 5. **可加性**：独立的正态变量之和仍是正态的
