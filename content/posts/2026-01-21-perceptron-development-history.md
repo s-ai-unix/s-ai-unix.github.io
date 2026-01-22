@@ -61,7 +61,7 @@ graph TD
 
 $$
 y = \begin{cases}
-1, & \text{if} \; w \cdot x + b \geq 0 \\
+1, & \text{if} \; w \cdot x + b \geq 0 \\\\
 0, & \text{otherwise}
 \end{cases}
 $$
@@ -110,7 +110,7 @@ $$
 
 $$
 y = \begin{cases}
-1, & \text{如果} \; w_1 x_1 + w_2 x_2 + b \geq 0 \\
+1, & \text{如果} \; w_1 x_1 + w_2 x_2 + b \geq 0 \\\\
 0, & \text{否则}
 \end{cases}
 $$
