@@ -1,6 +1,6 @@
 ---
 name: write-tech-blog
-description: 创建高质量技术博客文章。面向懂微积分和线性代数的读者，使用"娓娓道来"的叙事风格，支持纽约客风格配图和苹果风格 Mermaid 图表，严格执行 LaTeX 数学公式规范。当用户要求"写一篇关于XXX的技术文章"、"给懂微积分和线性代数的人讲XXX"、"写一篇文章娓娓道来"时触发。
+description: 创建高质量技术博客文章。面向懂微积分和线性代数的读者，使用"娓娓道来"的叙事风格，支持纽约客风格配图、Plotly 数理图形和苹果风格 Mermaid 图表，严格执行 LaTeX 数学公式规范。当用户要求"写一篇关于XXX的技术文章"、"给懂微积分和线性代数的人讲XXX"、"写一篇文章娓娓道来"时触发。
 ---
 
 # 技术博客文章写作
@@ -52,7 +52,7 @@ description: 创建高质量技术博客文章。面向懂微积分和线性代�
 
 #### Unsplash 封面图
 
-从 Unsplash 下载纽约客风格的抽象/几何图片：
+从 Unsplash 下载纽约客风格的抽象/几���图片：
 
 ```bash
 curl -sL "[Unsplash URL]" -o static/images/covers/[filename].jpg --max-time 30 --retry 3
@@ -63,7 +63,51 @@ curl -sL "[Unsplash URL]" -o static/images/covers/[filename].jpg --max-time 30 -
 ls -lh static/images/covers/[filename].jpg
 ```
 
-#### Mermaid 图表
+#### 图表生成策略
+
+**数学/物理图形（使用 Plotly）**：
+对于涉及函数图像、几何演化、数据可视化的内容，使用 Plotly 生成专业图形：
+
+```python
+import plotly.graph_objects as go
+import plotly.express as px
+import numpy as np
+
+# 示例：绘制 Ricci Flow 演化
+def plot_ricci_flow_evolution():
+    t = np.linspace(0, 2, 100)
+    radius = np.exp(-2 * t)  # 球面 Ricci Flow 解
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=t, y=radius,
+        mode='lines',
+        name='半径演化',
+        line=dict(color='#007AFF', width=3)
+    ))
+
+    fig.update_layout(
+        title='球面 Ricci Flow 半径演化',
+        xaxis_title='时间 t',
+        yaxis_title='半径 R(t)',
+        template='plotly_white',
+        font=dict(family='Arial, sans-serif', size=14)
+    )
+
+    fig.write_html('static/images/plots/ricci-flow-evolution.html')
+    return fig
+```
+
+**Plotly 图形样式要求**：
+- 使用 `plotly_white` 模板
+- 主色调：苹果蓝色 `#007AFF`
+- 辅助色：绿色 `#34C759`、橙色 `#FF9500`
+- 字体：Arial, sans-serif，字号 14
+- 添加适当的标签和标题
+- 导出为 HTML 文件放在 `static/images/plots/` 目录
+
+**流程图（使用 Mermaid）**：
+对于概念流程、结构关系等非数理图形，使用 Mermaid 图表：
 
 **必须使用苹果风格配色**（见 [MERMAPLE-STYLE.md](references/MERMAPLE-STYLE.md)）：
 - 所有节点文字为白色：`color:#ffffff`
@@ -79,7 +123,7 @@ ls -lh static/images/covers/[filename].jpg
 #### 必做检查清单
 1. ✅ **编码检查**：检查乱码和替换字符（``）
 2. ✅ **数学公式检查**：验证 LaTeX 格式规范
-3. ✅ **图表检查**：Mermaid 图表使用苹果风格
+3. ✅ **图表检查**：Plotly 数理图形专业，Mermaid 图表使用苹果风格
 4. ✅ **图片检查**：封面图大小 > 10KB
 5. ✅ **格式检查**：Front Matter 格式正确
 
@@ -164,7 +208,8 @@ math: true
 2. ✅ **无乱码**：无替换字符，无编码错误
 3. ✅ 数学公式正确渲染
 4. ✅ 配图显示正常（>10KB）
-5. ✅ Mermaid 图表使用苹果风格，文字清晰可见
-6. ✅ 所有数学符号都使用正确的 LaTeX 格式
+5. ✅ **Plotly 图形专业美观**：数学函数图像清晰，配色协调，交互性好
+6. ✅ Mermaid 图表使用苹果风格，文字清晰可见
+7. ✅ 所有数学符号都使用正确的 LaTeX 格式
 
 **注意**：只有在通过 [QUALITY-CHECK.md](references/QUALITY-CHECK.md) 中的所有检查后，文章才能被认为是"完成"的。

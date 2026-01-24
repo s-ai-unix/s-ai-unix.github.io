@@ -84,10 +84,26 @@ EOF
 grep -n 'α\|β\|γ\|×\|→\|∈' content/posts/[文章文件].md
 ```
 
-### 3. Mermaid 图表检查
+### 3. 图表检查
 
-使用 [MERMAPLE-STYLE.md](MERMAPLE-STYLE.md) 验证：
+#### 3.1 Plotly 数理图形检查
 
+数学和物理图形需满足：
+- [ ] 使用 Plotly 生成（非 Mermaid）
+- [ ] 配色符合苹果风格（主色 #007AFF）
+- [ ] 使用 `plotly_white` 模板
+- [ ] 图形保存为 HTML 文件在 `static/images/plots/`
+- [ ] 文件大小 > 5KB（包含 JavaScript）
+- [ ] 在文章中正确嵌入：
+  ```html
+  <div class="plot-container">
+    <iframe src="/images/plots/图形文件.html" width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  ```
+
+#### 3.2 Mermaid 流程图检查
+
+仅用于非数理的流程图、概念图：
 - [ ] 所有节点包含 `color:#ffffff`
 - [ ] 使用苹果风格配色
 - [ ] 边框宽度正确（核心 3px，重要 2px，次要 1px）
@@ -107,6 +123,15 @@ file content/posts/[文章文件].md
 - ✅ 图片大小 > 10KB
 - ✅ 文件编码为 UTF-8
 - ✅ 图片路径正确
+
+#### 3.3 Plotly 图形检查
+
+验证 Plotly 生成的数理图形：
+- ✅ HTML 文件大小 > 5KB
+- ✅ 文件位于 `static/images/plots/` 目录
+- ✅ 使用苹果风格配色
+- ✅ 图表标题和标签清晰
+- ✅ 在文章中正确嵌入 iframe
 
 ### 5. Front Matter 检查
 
@@ -236,7 +261,7 @@ chmod +x check_article.sh
 
 - ✅ **无乱码**：无替换字符，无编码错误
 - ✅ **数学规范**：所有公式符合 LaTeX 规范
-- ✅ **图表正确**：Mermaid 图表使用苹果风格
+- ✅ **Plotly 图形专业**：数理图形美观，配色协调，交互性好
 - ✅ **图片有效**：封面图 > 10KB
 - ✅ **格式正确**：Front Matter 格式正确
 - ✅ **内容完整**：章节完整，逻辑清晰
