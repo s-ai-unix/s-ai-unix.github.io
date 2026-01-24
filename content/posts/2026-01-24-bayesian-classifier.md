@@ -81,14 +81,14 @@ $$\hat{y} = \arg\max_{c_k} P(\mathbf{x}|c_k) P(c_k)$$
 
 ```mermaid
 graph TD
-    subgraph Training["训练阶段"]
+    subgraph Training[训练阶段]
         A["训练数据集"] --> B["估计先验概率 P(c_k)"]
         A --> C["估计条件概率 P(x_i|c_k)"]
         B --> D["存储模型参数"]
         C --> D
     end
 
-    subgraph Prediction["预测阶段"]
+    subgraph Prediction[预测阶段]
         E["新样本 x"] --> F["加载模型参数"]
         D --> F
         F --> G["计算后验概率 P(c_k|x)"]
@@ -96,10 +96,14 @@ graph TD
         H --> I["输出预测类别"]
     end
 
-    style "训练数据集" fill:#007AFF,stroke:#007AFF,stroke-width:3px,color:#ffffff
-    style "新样本 x" fill:#FF9500,stroke:#FF9500,stroke-width:2px,color:#ffffff
-    style "计算后验概率 P(c_k|x)" fill:#34C759,stroke:#34C759,stroke-width:2px,color:#ffffff
-    style "输出预测类别" fill:#007AFF,stroke:#007AFF,stroke-width:3px,color:#ffffff
+    classDef primaryNode fill:#007AFF,stroke:#007AFF,stroke-width:3px,color:#ffffff
+    classDef orangeNode fill:#FF9500,stroke:#FF9500,stroke-width:2px,color:#ffffff
+    classDef greenNode fill:#34C759,stroke:#34C759,stroke-width:2px,color:#ffffff
+
+    class A primaryNode
+    class E orangeNode
+    class G greenNode
+    class I primaryNode
 ```
 
 这个流程图展示了贝叶斯分类器的完整工作流程。训练阶段负责从数据中学习概率分布参数，预测阶段利用这些参数计算后验概率并做出决策。
@@ -265,18 +269,11 @@ graph TD
     C --> X4
     C --> Xd
 
-    subgraph 图例说明["图例说明"]
-        L1["● 类别节点（父节点）"]
-        L2["● 特征节点（子节点）"]
-        L3["→ 条件依赖关系"]
-    end
+    classDef blueNode fill:#007AFF,stroke:#007AFF,stroke-width:3px,color:#ffffff
+    classDef greenNode fill:#34C759,stroke:#34C759,stroke-width:2px,color:#ffffff
 
-    style "类别 C" fill:#007AFF,stroke:#007AFF,stroke-width:3px,color:#ffffff
-    style "特征 X1: viagra" fill:#34C759,stroke:#34C759,stroke-width:2px,color:#ffffff
-    style "特征 X2: lottery" fill:#34C759,stroke:#34C759,stroke-width:2px,color:#ffffff
-    style "特征 X3: hello" fill:#34C759,stroke:#34C759,stroke-width:2px,color:#ffffff
-    style "特征 X4: ..." fill:#34C759,stroke:#34C759,stroke-width:2px,color:#ffffff
-    style "特征 Xd" fill:#34C759,stroke:#34C759,stroke-width:2px,color:#ffffff
+    class C blueNode
+    class X1,X2,X3,X4,Xd greenNode
 ```
 
 在这个网络中，类别节点 $C$ 是唯一的父节点，所有特征节点 $X_i$ 只依赖于类别，而特征之间相互独立。这就是朴素贝叶斯的"朴素"假设在网络结构上的体现。
