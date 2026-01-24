@@ -241,7 +241,9 @@ $$
 2. **M 步**：更新参数
    - $\pi_k^{(t+1)} = \frac{1}{N} \sum_{n=1}^{N} \gamma_{nk}^{(t)}$
    - $\mathbf{\mu}_k^{(t+1)} = \frac{\sum_{n=1}^{N} \gamma_{nk}^{(t)} \mathbf{x}_n}{\sum_{n=1}^{N} \gamma_{nk}^{(t)}}$
-   - $\mathbf{\Sigma}_k^{(t+1)} = \frac{\sum_{n=1}^{N} \gamma_{nk}^{(t)} (\mathbf{x}_n - \mathbf{\mu}_k^{(t+1)})(\mathbf{x}_n - \mathbf{\mu}_k^{(t+1)})^T}{\sum_{n=1}^{N} \gamma_{nk}^{(t)}}$
+   $$
+   \mathbf{\Sigma}_k^{(t+1)} = \frac{\sum_{n=1}^{N} \gamma_{nk}^{(t)} (\mathbf{x}_n - \mathbf{\mu}_k^{(t+1)})(\mathbf{x}_n - \mathbf{\mu}_k^{(t+1)})^T}{\sum_{n=1}^{N} \gamma_{nk}^{(t)}}
+   $$
 
 3. **检查收敛**：如果参数变化很小或对数似然函数变化很小，停止迭代
 
