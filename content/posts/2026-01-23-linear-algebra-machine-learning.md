@@ -51,7 +51,7 @@ T(c\mathbf{u}) = cT(\mathbf{u})
 $$
 
 <div class="plot-container">
-  <iframe src="/images/plots/vector-transformation.html" width="100%" height="500" frameborder="0"></iframe>
+  <img src="/images/plots/vector-transformation.png" alt="线性变换示例" style="width: 100%; height: auto;" />
 </div>
 
 *图1：线性变换示例。蓝色和绿色向量分别表示标准基向量 $\mathbf{e}_1$ 和 $\mathbf{e}_2$，虚线表示经过线性变换后的向量。*
@@ -99,7 +99,7 @@ $$
 其中 $\lambda$ 称为特征值，$\mathbf{v}$ 称为对应的特征向量。特征值告诉我们变换在特征向量方向上的缩放比例。
 
 <div class="plot-container">
-  <iframe src="/images/plots/eigenvectors.html" width="100%" height="500" frameborder="0"></iframe>
+  <img src="/images/plots/eigenvectors.png" alt="对称矩阵的特征向量" style="width: 100%; height: auto;" />
 </div>
 
 *图2：对称矩阵的特征向量。圆经过矩阵变换后变成椭圆，特征向量（绿色和橙色）保持方向不变，只在长度上缩放。*
@@ -146,7 +146,7 @@ $$
 - $\Sigma$ 是对角矩阵，对角线上的元素称为奇异值
 
 <div class="plot-container">
-  <iframe src="/images/plots/svd-visualization.html" width="100%" height="500" frameborder="0"></iframe>
+  <img src="/images/plots/svd-visualization.png" alt="SVD分解可视化" style="width: 100%; height: auto;" />
 </div>
 
 *图6：SVD分解的奇异值分布。蓝色曲线显示各个奇异值的大小，绿色曲线显示累积解释方差。前几个奇异值通常包含了矩阵的大部分信息。*
@@ -219,7 +219,7 @@ $$
 其中 $V_k \in \mathbb{R}^{n \times k}$ 包含前 $k$ 个主成分。
 
 <div class="plot-container">
-  <iframe src="/images/plots/pca-example.html" width="100%" height="500" frameborder="0"></iframe>
+  <img src="/images/plots/pca-example.png" alt="PCA降维示例" style="width: 100%; height: auto;" />
 </div>
 
 *图3：PCA降维示例。左图显示原始二维数据（红色和蓝色两个聚类），右图显示投影到第一个主成分后的结果。蓝色线表示第一主成分方向。*
@@ -292,7 +292,7 @@ $$
 神经网络本质上是一个复合函数，每一层都是一个线性变换加上非线性激活函数。
 
 <div class="plot-container">
-  <iframe src="/images/plots/neural-network-matrices.html" width="100%" height="500" frameborder="0"></iframe>
+  <img src="/images/plots/neural-network-matrices.png" alt="神经网络中的矩阵运算" style="width: 100%; height: auto;" />
 </div>
 
 *图4：神经网络中的矩阵运算。每一层的输出都是权重矩阵、输入向量和偏置向量的线性变换结果。*
@@ -358,7 +358,7 @@ $$
 $$
 
 <div class="plot-container">
-  <iframe src="/images/plots/attention-mechanism.html" width="100%" height="500" frameborder="0"></iframe>
+  <img src="/images/plots/attention-mechanism.png" alt="自注意力机制矩阵计算" style="width: 100%; height: auto;" />
 </div>
 
 *图5：自注意力机制矩阵计算。左上角显示了查询-键乘法得到的注意力分数矩阵，右上角是经过softmax后的注意力权重热力图。*
