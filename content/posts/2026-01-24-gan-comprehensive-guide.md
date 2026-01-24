@@ -50,7 +50,34 @@ GAN 的革命性在于:**不需要显式建模数据分布**。
 
 这是一个**零和博弈**:生成器试图最小化判别器的准确率,而判别器试图最大化准确率。当两者达到平衡时,生成器就"学会"了生成真实样本。
 
-![GAN 架构示意图](/images/math/gan-architecture.png)
+```mermaid
+flowchart LR
+    subgraph 生成器_Generator
+        Z[噪声 z<br/>z ~ p_z]
+        G[生成器 G]
+        Z --> G
+        G --> Fake[伪造样本 x̃<br/>x̃ = Gz]
+    end
+
+    subgraph 判别器_Discriminator
+        Real[真实样本 x<br/>x ~ p_data]
+        FakeIn[伪造样本 x̃]
+        D[判别器 D]
+        Real --> D
+        FakeIn --> D
+        D --> Prob[概率 Dx ∈ 0,1]
+    end
+
+    Fake -.->|输入| FakeIn
+
+    style Z fill:#FF6B6B,stroke:#FF6B6B,stroke-width:3px,color:#fff
+    style G fill:#4ECDC4,stroke:#4ECDC4,stroke-width:2px,color:#fff
+    style Fake fill:#FFE66D,stroke:#FFE66D,stroke-width:2px,color:#333
+    style Real fill:#95E1D3,stroke:#95E1D3,stroke-width:3px,color:#333
+    style D fill:#A8E6CF,stroke:#A8E6CF,stroke-width:2px,color:#333
+    style Prob fill:#DDA0DD,stroke:#DDA0DD,stroke-width:3px,color:#fff
+    style FakeIn fill:#FFE66D,stroke:#FFE66D,stroke-width:2px,color:#333
+```
 
 *图 1：GAN 的架构示意图。生成器将噪声映射为图像，判别器区分真实和伪造样本*
 
