@@ -342,7 +342,7 @@ $$
 \boldsymbol{\mu}_k^{\text{new}} = \frac{\sum_{n=1}^N \gamma_{nk} \mathbf{x}_n}{\sum_{n=1}^N \gamma_{nk}}
 $$
 $$
-\boldsymbol{\Sigma}_k^{\text{new}} = \frac{\sum_{n=1}^N \gamma_{nk} (\mathbf{x}_n - \boldsymbol{\mu}_k^{\text{new}})(\mathbf{x}_n - \boldsymbol{\mu}_k^{\text{new}})^T}{\sum_{n=1}^N \gamma_{nk}}
+\boldsymbol{\Sigma}_k^{\text{new}} = \frac{\sum_{n=1}^N \gamma_{nk} (\mathbf{x}_n - \boldsymbol{\mu}_k^{\text{new}})(\mathbf{x}_n - \boldsymbol{\mu}_k^{\text{new}})^\top}{\sum_{n=1}^N \gamma_{nk}}
 $$
 
 ### 3.3 隐马尔可夫模型（HMM）
@@ -487,10 +487,10 @@ p(f(\mathbf{x}_*) | \mathcal{D}) = \mathcal{N}(\mu_*, \sigma_*^2)
 $$
 其中：
 $$
-\mu_* = \mathbf{k}_*^T (K + \sigma^2 I)^{-1} \mathbf{y}
+\mu_* = \mathbf{k}_*^\top (K + \sigma^2 I)^{-1} \mathbf{y}
 $$
 $$
-\sigma_*^2 = k(\mathbf{x}_*, \mathbf{x}_*) - \mathbf{k}_*^T (K + \sigma^2 I)^{-1} \mathbf{k}_*
+\sigma_*^2 = k(\mathbf{x}_*, \mathbf{x}_*) - \mathbf{k}_*^\top (K + \sigma^2 I)^{-1} \mathbf{k}_*
 $$
 
 <div class="plot-container">
