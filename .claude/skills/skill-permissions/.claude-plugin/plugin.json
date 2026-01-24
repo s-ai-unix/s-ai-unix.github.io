@@ -1,5 +1,0 @@
-{
-  "name": "skill-permissions",
-  "description": "Analyze skill permissions and generate one-time authorization commands",
-  "version": "1.0.0"
-}
