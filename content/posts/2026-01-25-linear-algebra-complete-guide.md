@@ -411,7 +411,7 @@ $$
 
 这就是**正规方程**,解为:
 $$
-\mathbf{w}^{*} = (X^	op X)^{-1} X^	op \mathbf{y}
+\mathbf{w}^* = (X^	op X)^{-1} X^	op \mathbf{y}
 $$
 
 **几何解释**: $X\mathbf{w}$ 是 $X$ 列空间中的向量,正规方程确保 $\mathbf{y} - X\mathbf{w}$ 与列空间正交。
@@ -425,7 +425,7 @@ $$
 
 推导得到:
 $$
-\mathbf{w}^{*} = (X^	op X + \lambda I)^{-1} X^	op \mathbf{y}
+\mathbf{w}^* = (X^	op X + \lambda I)^{-1} X^	op \mathbf{y}
 $$
 
 **几何意义**: $\lambda I$ 确保矩阵正定,等价于:
@@ -1034,7 +1034,7 @@ $$
 
 **强凸情况**:假设 $f$ 是 $L$-光滑且 $\mu$-强凸的,则:
 $$
-\|\mathbf{x}^{(t)} - \mathbf{x}^{*}\|^2 \leq \left(1 - \frac{\mu}{L}\right)^{t} \|\mathbf{x}^{(0)} - \mathbf{x}^{*}\|^2
+\lVert \mathbf{x}^{(t)} - \mathbf{x}^* \rVert^2 \leq \left(1 - \frac{\mu}{L}\right)^{t} \lVert \mathbf{x}^{(0)} - \mathbf{x}^* \rVert^2
 $$
 
 收敛速度依赖于**条件数** $\kappa = L/\mu$:
