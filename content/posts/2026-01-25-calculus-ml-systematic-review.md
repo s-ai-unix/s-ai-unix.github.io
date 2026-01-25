@@ -259,7 +259,7 @@ $$
 
 ![梯度下降轨迹](/images/math/gradient-descent-trajectory.png)
 
-图2：梯度下降在等高线��的优化轨迹。红色箭头显示每次迭代沿负梯度方向移动，最终收敛到最小值（中心点）。
+图2：梯度下降在等高线上的优化轨迹。红色箭头显示每次迭代沿负梯度方向移动，最终收敛到最小值（��心点）。
 
 ![3D损失函数曲面与梯度方向](/images/math/loss-surface-gradient.png)
 
