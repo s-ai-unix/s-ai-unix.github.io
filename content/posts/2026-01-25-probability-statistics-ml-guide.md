@@ -77,10 +77,10 @@ $$
 ```mermaid
 flowchart LR
     subgraph 贝叶斯更新过程
-        Prior[先验分布 P(θ)]
-        Data[观测数据 D]
-        Likelihood[似然函数 P(D|θ)]
-        Posterior[后验分布 P(θ|D)]
+        Prior[先验分布]
+        Data[观测数据]
+        Likelihood[似然函数]
+        Posterior[后验分布]
     end
 
     Prior -->|应用贝叶斯公式| Likelihood
@@ -525,11 +525,11 @@ $$
 ```mermaid
 flowchart LR
     subgraph EM算法流程
-        Start([初始化参数 θ])
-        EStep[E步: 计算后验分布]
-        MStep[M步: 最大化下界]
+        Start([初始化参数])
+        EStep[E步计算后验分布]
+        MStep[M步最大化下界]
         Check{收敛?}
-        Output([输出参数 θ])
+        Output([输出参数])
     end
 
     Start --> EStep
