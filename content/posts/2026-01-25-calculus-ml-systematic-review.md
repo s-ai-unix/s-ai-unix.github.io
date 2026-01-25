@@ -274,7 +274,7 @@ $$
 
 **收敛率**：
 $$
-f(\mathbf{x}^{(t)}) - f(\mathbf{x}^*) \leq \left(1 - \frac{\mu}{L}\right)^t [f(\mathbf{x}^{(0)}) - f(\mathbf{x}^*)]
+f(\mathbf{x}^{(t)}) - f(\mathbf{x}^*) \leq \left(1 - \frac{\mu}{L}\right)^{t} [f(\mathbf{x}^{(0)}) - f(\mathbf{x}^*)]
 $$
 
 这是**线性收敛**（几何收敛）。
