@@ -1,0 +1,208 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>深度学习 | s-ai-unix's Blog</title><meta name=keywords content><meta name=description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta name=author content="s-ai-unix"><link rel=canonical href=https://s-ai-unix.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/><link crossorigin=anonymous href=/assets/css/stylesheet.0833aff7e1cf567ecfb9755701ee95a80535f671e2e1a0a770c9bc20a0a7b5bb.css integrity="sha256-CDOv9+HPVn7PuXVXAe6VqAU19nHi4aCncMm8IKCntbs=" rel="preload stylesheet" as=style><link rel=icon href=https://s-ai-unix.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://s-ai-unix.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://s-ai-unix.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://s-ai-unix.github.io/apple-touch-icon.png><link rel=mask-icon href=https://s-ai-unix.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://s-ai-unix.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml title=rss><link rel=alternate hreflang=en href=https://s-ai-unix.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://s-ai-unix.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><meta property="og:site_name" content="s-ai-unix's Blog"><meta property="og:title" content="深度学习"><meta property="og:description" content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="深度学习"><meta name=twitter:description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><link rel=stylesheet href=https://s-ai-unix.github.io/css/classical-quote.css></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://s-ai-unix.github.io/ accesskey=h title="s-ai-unix's Blog (Alt + H)">s-ai-unix's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://s-ai-unix.github.io/ title="🏠 首页"><span>🏠 首页</span></a></li><li><a href=https://s-ai-unix.github.io/posts/ title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://s-ai-unix.github.io/archives/ title="📁 归档"><span>📁 归档</span></a></li><li><a href=https://s-ai-unix.github.io/tags/ title="🏷️ 标签"><span>🏷️ 标签</span></a></li><li><a href=https://s-ai-unix.github.io/search/ title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://s-ai-unix.github.io/about/ title="👤 关于"><span>👤 关于</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://s-ai-unix.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://s-ai-unix.github.io/categories/>Categories</a></div><h1>深度学习</h1></header><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/calculus-ml-journey.jpg alt=微积分的几何美感></figure><header class=entry-header><h2 class=entry-hint-parent>微积分与机器学习：从变化率到神经网络梯度的完整旅程</h2></header><div class=entry-content><p>引言：为什么需要微积分？ 想象你在山上，想找到最低点。你会怎么做？你会观察脚下的坡度，选择最陡峭的方向迈出一步，然后重复这个过程。这个简单的直觉——沿着负梯度方向走——正是现代人工智能的核心算法。
+从ChatGPT的语言模型到AlphaGo的围棋策略，从图像识别到语音合成，所有这些技术背后都有一个共同的数学基础：微积分。
+微积分研究的是变化。而机器学习本质上是关于优化——通过不断调整参数来减少错误。当我们在高维空间中优化复杂的神经网络时，微积分提供了描述和计算这种变化的精确语言。
+这篇文章将带你深入理解微积分如何驱动现代人工智能。我们不会停留在表面，而是会深入到数学推导的核心，揭示梯度下降、反向传播等算法的数学本质。这是一次从17世纪牛顿和莱布尼茨的发明，到21世纪深度学习革命的完整旅程。
+第一部分：微积分基础理论 1. 导数的本质：从变化率到瞬时变化率 1.1 变化率的直观理解 变化率是人类最早思考的数学问题之一。如果一辆车2小时行驶100公里，平均速度是50公里/小时。但它某一时刻的瞬时速度是多少？
+微积分的答案是：用极限。考虑函数 $f(x)$ 在 $x_0$ 附近的平均变化率： $$ \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} $$
+当 $\Delta x \to 0$ 时，这个平均变化率的极限就是导数： $$ f^{\prime}(x_0) = \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} $$
+1.2 导数的几何意义 几何直观：导数是切线的斜率。在 $x_0$ 处，曲线 $f(x)$ 可以用直线（切线）逼近： $$ f(x) \approx f(x_0) + f^{\prime}(x_0)(x - x_0) $$
+这就是一阶泰勒公式，也是线性化的思想：局部用简单的线性函数逼近复杂的非线性函数。
+严格定义（$\epsilon-\delta$ 语言）： $$ \forall \epsilon > 0, \exists \delta > 0 \text{ s.t. } |\Delta x| &lt; \delta \implies \left|\frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} - f^{\prime}(x_0)\right| &lt; \epsilon $$
+...</p></div><footer class=entry-footer><span title='2026-01-25 19:00:00 +0800 CST'>January 25, 2026</span>&nbsp;·&nbsp;<span>9 min</span>&nbsp;·&nbsp;<span>1716 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 微积分与机器学习：从变化率到神经网络梯度的完整旅程" href=https://s-ai-unix.github.io/posts/2026-01-25-calculus-ml-systematic-review/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/ig-overview.jpg alt=信息几何可视化></figure><header class=entry-header><h2 class=entry-hint-parent>信息几何：在概率空间中寻找最短路径</h2></header><div class=entry-content><p>引言：当概率成为空间上的点 想象一下，你站在一个巨大的画廊里。墙上挂着无数幅画，每一幅画都是一张概率分布的直方图。如果你要量化两幅画之间的"距离"，你会怎么做？直接比较每个柱子的高度差异？还是考虑某种更本质的、统计学意义上的距离？
+这个问题触及了统计学的核心：如何量化两个概率分布之间的差异。传统的做法是使用 KL 散度或互信息，但这些度量缺乏几何直观——它们不是真正的"距离"，也不满足三角不等式。
+信息几何给出了一种全新的视角：将所有概率分布看作一个黎曼流形，每个分布是流形上的一个点，Fisher 信息矩阵定义了这个流形上的度量张量。在这个框架下，我们可以谈论"两点之间的最短路径"（测地线），可以计算"梯度"（自然梯度），可以定义"曲率"（统计流形的曲率）。
+这个领域的诞生可以追溯到 1945 年，印度统计学家 C. R. Rao 提出了 Fisher 信息度量可以作为微分几何的度量张量。此后，法国数学家 Amari 系统性地发展了信息几何的理论，并将其与神经网络、优化算法相结合。
+在这篇文章中，我们将从基础概念开始，系统性地介绍信息几何的核心理论，探讨其在深度学习中的应用，并对未来的发展方向做出展望。
+第一章：几何概率空间 1.1 概率分布作为流形 考虑一个简单的例子：所有零均值、单位方差的一维高斯分布 $\mathcal{N}(0, \sigma^2)$ 可以用一个参数 $\sigma$ 来表示。但如果我们考虑所有可能的高斯分布 $\mathcal{N}(\mu, \sigma^2)$，这就变成了一个二维的空间。
+更一般地，考虑一个参数族 $\mathcal{P} = {p(x \mid \theta) : \theta \in \Theta}$，其中 $\theta \in \mathbb{R}^n$ 是参数。这个参数族可以看作一个 $n$ 维的流形——这就是统计流形。
+关键洞察：每个概率分布不是孤立的对象，而是镶嵌在无穷维分布空间中的一个点。信息几何的任务就是给这个流形装备一个自然的几何结构。
+1.2 Fisher 信息度量 1945 年，C. R. Rao 发现了一个重要的事实：Fisher 信息矩阵可以定义一个黎曼度量。
+定义：对于参数族 $p(x \mid \theta)$，Fisher 信息矩阵定义为：
+$$ I(\theta){ij} = \mathbb{E}{p(x \mid \theta)}\left[\frac{\partial \log p(x \mid \theta)}{\partial \theta_i} \frac{\partial \log p(x \mid \theta)}{\partial \theta_j}\right] $$
+...</p></div><footer class=entry-footer><span title='2026-01-25 15:00:00 +0800 CST'>January 25, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>483 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 信息几何：在概率空间中寻找最短路径" href=https://s-ai-unix.github.io/posts/2026-01-25-information-geometry/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/linear-algebra-journey.jpg alt=线性代数的几何美感></figure><header class=entry-header><h2 class=entry-hint-parent>线性代数：从理论到 AI 应用的完整旅程</h2></header><div class=entry-content><p>引言：为什么线性代数如此重要？ 想象你站在一个开阔的平原上,手中拿着一支箭。这支箭可以指向任何方向,可以伸长或缩短,可以与另一支箭相加。这就是向量的原始概念——一个既有方向又有大小的量。从这样简单的直观出发,人类发展出了一整套描述空间、变换和数据结构的数学语言:线性代数。
+线性代数的美妙之处在于它的简洁性和普遍性。在二维平面上,一个点可以用两个坐标 $(x, y)$ 表示;在三维空间中,需要三个坐标 $(x, y, z)$;而在机器学习中处理的数据可能有一千维、一万维,甚至更高。线性代数提供了一套统一的工具来处理这些高维空间,而且它的规律在任意维数下都保持不变。
+更令人惊讶的是,当你使用 ChatGPT、看 Netflix 推荐、或在 Google 搜索时,背后都有线性代数的身影。深度学习的神经网络本质上就是一系列线性变换和非线性激活的交替组合;推荐系统中的矩阵分解技术直接源自奇异值分解;而搜索引擎的 PageRank 算法则是特征值问题的经典应用。
+在这篇文章中,我们将踏上一段从理论到应用的完整旅程。我们会从向量空间的几何直观出发,理解线性变换的本质,然后逐步深入到机器学习和深度学习的核心算法中。我们不仅会学习"怎么做",更重要的是理解"为什么"——为什么奇异值分解如此强大?为什么梯度下降会收敛?为什么注意力机制能够工作?
+让我们开始这段旅程。
+第一部分:线性代数基础理论 1. 向量空间的本质 1.1 从几何到抽象 在二维平面上,我们习惯用坐标表示向量。向量 $\mathbf{v} = (3, 2)$ 表示从原点出发,沿 $x$ 轴移动 3 个单位,再沿 $y$ 轴移动 2 个单位。但向量的概念远不止于此。
+向量空间的抽象定义只需要 8 条公理:
+加法封闭性: $\mathbf{u} + \mathbf{v}$ 仍在空间中 加法交换律: $\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$ 加法结合律: $(\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})$ 零向量存在: $\mathbf{0} + \mathbf{v} = \mathbf{v}$ 负向量存在: $\mathbf{v} + (-\mathbf{v}) = \mathbf{0}$ 数乘封闭性: $c\mathbf{v}$ 仍在空间中 数乘分配律: $c(\mathbf{u} + \mathbf{v}) = c\mathbf{u} + c\mathbf{v}$ 数乘结合律: $c(d\mathbf{v}) = (cd)\mathbf{v}$ 这个定义看似抽象,但它统一了各种不同的对象:
+...</p></div><footer class=entry-footer><span title='2026-01-25 08:45:00 +0800 CST'>January 25, 2026</span>&nbsp;·&nbsp;<span>14 min</span>&nbsp;·&nbsp;<span>2816 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 线性代数：从理论到 AI 应用的完整旅程" href=https://s-ai-unix.github.io/posts/2026-01-25-linear-algebra-complete-guide/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/vae-network.jpg alt=变分自编码器网络结构示意图></figure><header class=entry-header><h2 class=entry-hint-parent>变分自编码器：从概率建模到深度生成的优雅桥梁</h2></header><div class=entry-content><p>引言：概率与生成的交响曲 想象你在创作一幅肖像画。你观察模特的面容，记住她的眼睛形状、嘴角弧度、颧骨位置——这些是你观察到的具体特征。但当你拿起画笔时，你不仅仅是在复制这些特征，而是在大脑中提取出某种"风格特征"：一种抽象的、压缩的表示。然后，基于这个压缩表示，你重新生成一幅作品。
+这就是自编码器（Autoencoder）的基本思想：将高维数据压缩到低维潜在空间，然后再从潜在空间重建原始数据。但传统的自编码器有一个致命缺陷：它学习的潜在空间是确定性的，这意味着我们无法从潜在空间中生成新的样本——我们只能重建已有的数据。
+2013 年，Kingma 和 Welling 提出了变分自编码器（Variational Autoencoder，VAE），它将变分推断的思想引入深度学习，通过将潜在变量建模为概率分布，使得我们能够：
+学习数据生成模型 从潜在空间采样生成新的、从未见过的样本 控制生成过程（通过操控潜在变量） 这不仅仅是一个算法，更是概率图模型与深度学习的完美结合。让我们一同踏上这段从变分推断到深度生成的优雅之旅。
+第一章：自编码器基础 1.1 自编码器的直观理解 自编码器是一个神经网络，由两部分组成：
+编码器（Encoder）：$z = f_{\text{enc}}(x)$，将输入 $x$ 映射到潜在表示 $z$ 解码器（Decoder）：$\hat{x} = f_{\text{dec}}(z)$，从潜在表示重建输入 训练目标是让重建误差最小化：
+$$\mathcal{L}_{\text{AE}} = | x - \hat{x} |^2$$
+1.2 标准自编码器的局限性 标准自编码器的编码器学习的是一个确定性映射：对于每个输入 $x$，潜在变量 $z$ 是一个固定的向量。这带来两个问题：
+无法生成新样本：因为我们不知道潜在空间的概率分布，无法采样新的 $z$ 来生成 $\hat{x}$ 潜在空间不连续：即使输入 $x_1$ 和 $x_2$ 很相似，它们的潜在表示 $z_1$ 和 $z_2$ 可能相距很远 这些局限性推动我们思考：如果将潜在变量建模为概率分布，情况会怎样？
+第二章：变分推断的核心思想 2.1 生成模型的框架 假设我们有一组观测数据 $\mathbf{x} = {x^{(1)}, x^{(2)}, \ldots, x^{(N)}}$，我们想要学习一个生成模型，其过程如下：
+从某个先验分布 $p(z)$ 中采样潜在变量 $z$ 通过概率分布 $p(x|z)$ 生成观测数据 $x$ 这背后的概率图模型可以表示为：
+...</p></div><footer class=entry-footer><span title='2026-01-24 18:30:00 +0800 CST'>January 24, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>1174 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 变分自编码器：从概率建模到深度生成的优雅桥梁" href=https://s-ai-unix.github.io/posts/2026-01-24-variational-autoencoder/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/gan-abstract.jpg alt=生成对抗网络的抽象艺术表现></figure><header class=entry-header><h2 class=entry-hint-parent>生成对抗网络：从混沌中创造秩序的博弈论</h2></header><div class=entry-content><p>引言：从混沌中创造秩序 想象你是一位艺术鉴赏家,正在试图辨别一幅画作是大师真迹还是现代仿品。你仔细观察笔触、色彩、构图,试图找出破绽。与此同时,另一位艺术家正在努力学习大师的风格,试图创作出能骗过你的作品。这是一个永恒的博弈:一方越来越擅长伪造,另一方越来越擅长辨别。
+这正是生成对抗网络的核心思想。2014年,Ian Goodfellow 在一个学术研讨会上提出了这个想法,当时有人认为这是"在酒吧里想出来的疯狂主意"。然而,这个"疯狂的主意"彻底改变了生成式人工智能的格局。
+第一章：生成问题的本质 在深入 GAN 之前,让我们先理解什么是"生成"问题。假设我们有一个数据集,比如一堆手写数字图片。我们希望创建一个模型,能够生成"看起来像"这些手写数字的新图片。
+这个问题有两个核心挑战:
+数据分布建模: 我们需要学习数据的概率分布 $p_{data}(\mathbf{x})$,其中 $\mathbf{x}$ 表示一个样本。 从分布中采样: 一旦我们学到了分布,我们需要能够从中采样来生成新样本。 1.1 传统生成方法 在 GAN 出现之前,研究者已经尝试了多种方法:
+自编码器: 先将数据压缩到低维空间,然后试图从低维表示重建原始数据。但这种方法生成的样本往往模糊不清。
+玻尔兹曼机: 基于能量函数的方法,通过马尔可夫链蒙特卡洛采样。但训练极其困难,采样效率低。
+变分自编码器 (VAE): 通过变分推断近似后验分布。数学上优美,但生成的图像仍然不够真实。
+这些方法都有一个共同点:它们试图显式地建模数据分布 $p_{data}(\mathbf{x})$。这就像试图精确描述"什么样的数字图像看起来像真实的",这本身就是一个极其困难的问题。
+1.2 GAN 的突破思想 GAN 的革命性在于:不需要显式建模数据分布。
+相反,GAN 将生成问题转化为一个对抗游戏:
+生成器 (Generator, $G$): 从随机噪声 $\mathbf{z} \sim p_z(\mathbf{z})$ 出发,生成伪造样本 $\tilde{\mathbf{x}} = G(\mathbf{z})$。目标:让判别器无法区分真假。
+判别器 (Discriminator, $D$): 接收一个样本 $\mathbf{x}$,判断它是来自真实数据($\mathbf{x} \sim p_{data}$)还是生成器($\tilde{\mathbf{x}} = G(\mathbf{z})$)。输出是概率 $D(\mathbf{x}) \in [0, 1]$。目标:准确区分真假。
+这是一个零和博弈:生成器试图最小化判别器的准确率,而判别器试图最大化准确率。当两者达到平衡时,生成器就"学会"了生成真实样本。
+flowchart LR subgraph 生成器_Generator Z[噪声 zz ~ p_z] G[生成器 G] Z --> G G --> Fake[伪造样本 x̃x̃ = Gz] end subgraph 判别器_Discriminator Real[真实样本 xx ~ p_data] FakeIn[伪造样本 x̃] D[判别器 D] Real --> D FakeIn --> D D --> Prob[概率 Dx ∈ 0,1] end Fake -.->|输入| FakeIn style Z fill:#FF6B6B,stroke:#FF6B6B,stroke-width:3px,color:#fff style G fill:#4ECDC4,stroke:#4ECDC4,stroke-width:2px,color:#fff style Fake fill:#FFE66D,stroke:#FFE66D,stroke-width:2px,color:#333 style Real fill:#95E1D3,stroke:#95E1D3,stroke-width:3px,color:#333 style D fill:#A8E6CF,stroke:#A8E6CF,stroke-width:2px,color:#333 style Prob fill:#DDA0DD,stroke:#DDA0DD,stroke-width:3px,color:#fff style FakeIn fill:#FFE66D,stroke:#FFE66D,stroke-width:2px,color:#333 图 1：GAN 的架构示意图。生成器将噪声映射为图像，判别器区分真实和伪造样本
+...</p></div><footer class=entry-footer><span title='2026-01-24 11:45:00 +0800 CST'>January 24, 2026</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>1458 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 生成对抗网络：从混沌中创造秩序的博弈论" href=https://s-ai-unix.github.io/posts/2026-01-24-gan-comprehensive-guide/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/transformer-architecture.jpg alt="Transformer 架构的艺术化呈现"></figure><header class=entry-header><h2 class=entry-hint-parent>Transformer：重塑AI世界的架构革命</h2></header><div class=entry-content><p>引言 在人工智能的发展历程中，有几个时刻标志着技术范式的根本性转变。2017年10月就是这样一个时刻——Google Research 和多伦多大学的研究者们发表了一篇名为《Attention Is All You Need》的论文，提出了 Transformer 架构。
+这篇论文的标题本身就是一种宣言：在这篇论文中，作者们向世界宣告，在处理序列数据时，注意力机制就是你所需要的一切。这篇论文不仅解决了长期困扰自然语言处理领域的难题，更开创了一个全新的 AI 时代。从 BERT 到 GPT 系列，从 PaLM 到 Claude，支撑现代大语言模型的核心架构都是 Transformer。
+但 Transformer 到底是什么？它为什么如此重要？它是如何工作的？作为一个 AI 领域的深度从业者，我希望通过这篇文章，用最通俗易懂的方式，为你彻底解读这个重塑 AI 世界的重要架构。
+第一章 背景：为什么我们需要 Transformer？ 1.1 序列数据处理的困境 在深入 Transformer 之前，让我们先理解它试图解决的问题。在自然语言处理、语音识别、机器翻译等任务中，我们面对的都是序列数据——句子是一系列词语的序列，语音是一系列声波的序列，DNA 是一系列碱基的序列。
+对于序列数据的处理，传统的做法是使用循环神经网络（RNN）及其变体，如长短期记忆网络（LSTM）和门控循环单元（GRU）。这些网络的设计理念是：按顺序处理序列中的每个元素，将信息一步一步地传递下去。
+RNN 的工作原理：想象你在读一本书。你的眼睛一次看一个字（或者一个词），然后大脑会记住这个字的意思，并结合之前记住的内容来理解整个句子。RNN 就是这样工作的——它按顺序处理输入序列，将之前的信息"记住"在隐藏状态中，然后用于处理下一个输入。
+1.2 RNN 的致命缺陷 然而，RNN 存在几个根本性的问题：
+第一个问题是长距离依赖问题。在处理长序列时，RNN 很难捕获序列前端和序列后端之间的关联。想象一个很长的句子：“那个在巴黎出生的，后来搬到纽约生活的，最后在北京去世的老人，年轻时是个著名的科学家。“要让 RNN 理解"老人"和"年轻时"之间的关系，信息需要从句子的一端传递到另一端。在这个过程中，信息会逐渐衰减，最终可能完全丢失。
+第二个问题是计算效率问题。RNN 必须按顺序处理序列，这意味着第一步计算完成后才能开始第二步。这种串行计算的方式无法充分利用现代 GPU 的并行计算能力。在处理长序列时，计算变得非常耗时。
+第三个问题是梯度消失和梯度爆炸问题。在反向传播过程中，梯度需要通过多个时间步传播。当序列很长时，梯度可能会变得非常小（消失）或非常大（爆炸），导致训练困难。
+1.3 注意力机制的兴起 为了解决 RNN 的问题，研究者们提出了注意力机制（Attention Mechanism）。注意力机制的核心思想是：在处理序列中的每个元素时，我们不应该只依赖之前的信息，而应该能够"回顾"序列中的任意位置。
+注意力的直观理解：想象你在嘈杂的咖啡馆里听朋友说话。即使周围很吵，你的大脑也能够聚焦于朋友的声音，而忽略背景噪音。注意力机制就是模拟这个过程——它让模型学会在处理每个词时，应该"关注"输入序列的哪些部分。
+Bahdanau 等人在 2014 年提出了第一个注意力机制，用于机器翻译。这个注意力机制允许解码器在生成每个目标词时，关注源句子中的相关部分。这大大改善了机器翻译的性能。
+但早期的注意力机制仍然是与 RNN 结合使用的。真正的革命性突破来自于 2017 年的那篇论文——作者们意识到，如果只使用注意力机制，我们就可以完全摆脱 RNN 的束缚。
+...</p></div><footer class=entry-footer><span title='2026-01-21 10:00:00 +0800 CST'>January 21, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>985 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to Transformer：重塑AI世界的架构革命" href=https://s-ai-unix.github.io/posts/2026-01-21-transformer/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/neural-network-evolution.jpg alt=抽象神经网络连接图></figure><header class=entry-header><h2 class=entry-hint-parent>神经网络算法演进：从感知机到 Transformer 的七十年征程</h2></header><div class=entry-content><p>引言：智慧的萌芽 想象一下 1957 年的夏天，康奈尔大学的弗兰克·罗森布拉特（Frank Rosenblatt）在实验室里调试着一台早期的电子计算机。他正在实现一个大胆的想法——能否用数学模型模拟人类的大脑神经元？
+这个想法在当时看起来近乎荒谬。人类大脑由数百亿个神经元组成，神经元之间通过突触连接，形成了一个令人眩晕的复杂网络。但罗森布拉特相信，如果我们能理解单个神经元的基本工作原理，就能一步步构建出能够学习的智能系统。
+那时的学术界对机器学习充满怀疑。“机器怎么可能思考？"——这是当时的主流声音。但罗森布拉特和他的同道们坚持了下来，用数学公式编织着最初的神经之梦。
+今天，当我们面对能够写出论文、创作艺术、驾驶汽车的深度学习系统时，很容易忘记这一切都始于一个简单的线性分类器。让我们放慢脚步，回顾这七十年的征程，感受数学的力量与思想的演进。
+一、感知机：神经网络的起点（1957） 时间：1957 年 - 弗兰克·罗森布拉特 (Frank Rosenblatt)
+历史的起点 1957 年，弗兰克·罗森布拉特在康奈尔航空实验室发明了感知机（Perceptron）。这是第一个能够学习的神经网络模型，被誉为"机器学习的开端”。
+1962 年的《纽约客》杂志甚至专门报道了这个发明，称它为"会思考的机器"。那时的媒体兴奋中充满了对人工智能未来的无限遐想。
+数学形式 单个神经元的工作原理 一个感知机神经元接收 $d$ 维输入 $\mathbf{x} = (x_1, x_2, \ldots, x_d)^T$，每个输入对应一个权重 $w_i$，还有一个偏置 $b$。
+神经元的输出是输入的加权和，然后通过激活函数：
+$$ y = f(z) = f\left(\sum_{i=1}^{d} w_i x_i + b\right) = f(w^T x + b) $$
+其中 $z = \mathbf{w}^T \mathbf{x} + b$ 是净输入（net input）。
+激活函数 在最初的感知机中，激活函数是符号函数（sign function）：
+$$ f(z) = \begin{cases} 1 & \text{if } z \geq 0 \ -1 & \text{if } z &lt; 0 \end{cases} $$
+...</p></div><footer class=entry-footer><span title='2026-01-15 23:55:00 +0800 CST'>January 15, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>1578 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 神经网络算法演进：从感知机到 Transformer 的七十年征程" href=https://s-ai-unix.github.io/posts/2026-01-15-neural-network-evolution/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/ai-neural-network.jpg alt=抽象的神经网络图案></figure><header class=entry-header><h2 class=entry-hint-parent>大语言模型：为什么AI能这么快、这么聪明地回答问题</h2></header><div class=entry-content><p>引言：对话的奇迹 你有没有试过和ChatGPT、Claude、或者国内的文心一言、通义千问对话？当你问它：“帮我写一首关于春天的诗”，或者"解释一下量子力学是什么"，它几乎在几秒钟内就能给出非常棒的回答。
+有时候你甚至会想：它怎么这么快？它是不是有脑子？它是不是真的"理解"我在说什么？
+答案可能出乎你的意料：大语言模型其实在做一件非常简单的事情——但它把这件简单的事情做到了极致。
+今天，我们就来揭开这个"魔术"的面纱。
+核心思想：预测下一个词 大语言模型（Large Language Model，简称LLM）的本质，可以用一句话概括：
+它做的事情就是：给定一段话，预测下一个词最可能是什么。
+听起来是不是太简单了？别急，让我们看个例子。
+一个简单的游戏 假设我给你这句话的前半部分：
+"今天天气真____" 你会怎么填空？
+你可能会想到：“好”、“糟糕”、“热”、“冷”、“适合出门”……这些词都是有可能的。
+再换个句子：
+"我要去超市买_____" 你会猜：苹果、牛奶、面包、蔬菜、日用品……
+再换个：
+"中国位于_____" 这个答案就很明确了：亚洲、东亚。
+你看，人类也在不停地做"预测下一个词"这件事。因为我们读过很多书、说过很多话，所以当我们听到半句话时，脑子里会自动出现最可能的后续。
+从简单到复杂 大语言模型就是把这个"填空游戏"玩到了极致。
+它读过几百万本书、几十亿篇文章、数万亿个句子。所以当你输入一段话，它能极其精准地预测下一个词。
+关键点1：它不是在"思考"，而是在"计算概率"
+比如你问：“什么是量子力学？”
+它会计算：在"什么是量子力学？“这句话后面，最可能出现的词语是什么？
+它会依次生成：“量子力学是一个____"（可能填：“理论”、“学科”、“概念”）→“理论，它描述____"（可能填：“粒子”、“微观世界”、“能量”）→……一层一层地，就生成了完整的回答。
+关键点2：它不是一个词一个词地"想"出来的，而是一次性计算所有可能性
+就像天气预报一样，气象台不会"猜"明天会不会下雨，而是根据大量数据"计算"出下雨的概率。大语言模型也是这样：它不是在"想"下一个词是什么，而是在"计算"所有可能的下一个词的概率。
+这就是为什么它能这么快——因为这是数学计算，不是思考。
+数据：从海量文本中学习 你可能会问：它凭什么知道"什么是量子力学"该怎么回答？
+答案很简单：因为它"读"过关于量子力学的书。
+读了多少书？ GPT-3（一个著名的大语言模型）的训练数据包含：
+几千本书 几百万篇维基百科文章 几十亿个网页 几百万篇学术论文 大量的代码、对话、论坛帖子 总计大约5000亿个单词。
+这是什么概念？假设一个人一生能读5000本书，每本书平均10万字，那就是5000 × 10万 = 5亿个词。GPT-3读的内容是一个人1000辈子才能读完的。
+学到了什么？ 从这些海量文本中，它学到了：
+语言规律：什么是正确的语法、什么是通顺的表达 世界知识：天为什么是蓝的、苹果是什么、历史事件怎么发生的 逻辑关系：因果关系、时间顺序、对比关系 常识推理：水往下流、太阳从东边升起、人类需要喝水 专业领域：数学、物理、编程、医学、法律…… 类比一下：这就像一个从小读遍图书馆所有书、记性特别好、理解能力超强的人。当你在对话中提到某个话题时，它能瞬间调动相关的知识来回答。
+神经网络：像大脑一样的结构 你可能会想：它怎么"记住"这么多东西？
+这要归功于神经网络。
+什么叫"神经网络”？ 神经网络是一种模仿人脑结构的数学模型。
+人脑有约860亿个神经元，这些神经元之间有无数个连接。当我们学习时，神经元之间的连接会"变强"或"变弱”，从而存储信息。
+神经网络也是类似的：
+它有很多"人工神经元”（叫作"节点"） 这些神经元之间有无数个"连接"（每个连接都有一个"权重"） 当它学习时，这些"权重"会不断调整 参数：知识的存储形式 大语言模型有几千亿个参数（parameters）。
+“参数"是什么？你可以把它想象成"记忆单元"或"知识存储点”。
+...</p></div><footer class=entry-footer><span title='2026-01-14 08:50:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>284 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 大语言模型：为什么AI能这么快、这么聪明地回答问题" href=https://s-ai-unix.github.io/posts/2026-01-14-llm-principle-for-students/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/wisconsin-geese-4602386.jpg alt=抽象的几何图案></figure><header class=entry-header><h2 class=entry-hint-parent>梯度、梯度下降与反向传播：从最优化到深度学习的数学引擎</h2></header><div class=entry-content><p>引言：从山路说起 想象你是一名登山者，被困在浓雾笼罩的山坡上，四周一片白茫茫。你手里只有一个指南针，它指向的似乎是你所在位置海拔下降最快的方向。这是你最希望知道的：该往哪个方向迈出第一步，才能尽快走出这座山？
+这就是梯度下降算法最直观的物理类比。你所在的位置，是一个函数在某点的值；你想要的，是找到函数的最小值（山谷的最低点）；而那个指南针，就是梯度——告诉你哪个方向上升最快的向量。
+这个看似简单的思想，却成为了现代人工智能的数学引擎。从AlphaGo击败李世石，到ChatGPT生成流畅的文字，再到自动驾驶汽车的感知系统，背后都依赖着梯度、梯度下降和反向传播这三个核心概念的精密协作。
+但在深入这些概念之前，我们需要先理解一个更基础的数学对象：梯度。
+梯度：地形的最陡方向 历史背景：从Hamilton到向量微积分 梯度的概念并非一蹴而就。它的起源可以追溯到19世纪中叶，那个数学物理大爆发的时代。
+1843年，爱尔兰数学家William Rowan Hamilton（哈密顿）在研究四元数时，引入了一个算子符号$\nabla$，他称之为"nabla"（源自希腊语，意为一种竖琴）。这个倒三角符号后来成为了梯度、散度和旋度的统一表示。
+1850年代，苏格兰数学家James Clerk Maxwell（麦克斯韦）进一步发展了向量微积分理论，他将$\nabla$算子应用于不同的运算：$\nabla \phi$表示梯度，$\nabla \cdot \mathbf{F}$表示散度，$\nabla \times \mathbf{F}$表示旋度。这三大运算构成了现代电磁学理论的数学语言。
+更早之前，法国数学家Augustin-Louis Cauchy（柯西）在1847年就提出了梯度下降算法的雏形，这是最古老的优化算法之一。
+数学定义：偏导数的向量 给定一个多元标量函数 $f: \mathbb{R}^n \rightarrow \mathbb{R}$，它的梯度 $\nabla f$（读作"del f"或"grad f"）定义为：
+$$ \nabla f = \left(\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n}\right)^T $$
+这是一个向量，每个分量是函数对相应变量的偏导数。
+具体计算示例 考虑一个简单的二次函数：$f(x, y) = x^2 + 2y^2 - 4x - 8y + 17$
+计算梯度：
+$$ \frac{\partial f}{\partial x} = 2x - 4, \quad \frac{\partial f}{\partial y} = 4y - 8 $$
+...</p></div><footer class=entry-footer><span title='2026-01-14 08:34:44 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>10 min</span>&nbsp;·&nbsp;<span>2040 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 梯度、梯度下降与反向传播：从最优化到深度学习的数学引擎" href=https://s-ai-unix.github.io/posts/2026-01-14-gradient-descent-backpropagation-overview/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/photo-1620712943543-bcc4688e7485.jpg alt=神经网络连接></figure><header class=entry-header><h2 class=entry-hint-parent>基于神经网络的深度学习算法：从感知机到Transformer的完整指南</h2></header><div class=entry-content><p>引言：从生物启发到智能革命 1943年，Warren McCulloch和Walter Pitts提出了第一个神经元数学模型。他们用一个简单的数学公式模拟了生物神经元的工作方式：接收输入、加权求和、激活输出。这个看似简单的想法，却孕育了后来改变世界的人工智能技术。
+1958年，Frank Rosenblatt发明了感知机（Perceptron），这是第一个可以学习的神经网络。但1969年，Minsky和Papert在《Perceptrons》一书中证明了单层感知机无法解决异或（XOR）问题，这个致命缺陷导致了神经网络研究的第一次寒冬。
+1986年，David Rumelhart、Geoffrey Hinton和Ronald Williams重新发现了反向传播算法，解决了多层网络的训练问题。神经网络迎来了短暂的春天。
+但在90年代到2000年代初，支持向量机（SVM）等传统机器学习算法统治了学术界。神经网络因为数据量不足、计算能力有限、缺乏有效的训练技巧，再次陷入沉寂。
+2012年，ImageNet竞赛上，Hinton的学生Alex Krizhevsky使用深度卷积神经网络AlexNet，以压倒性优势击败了传统方法，分类错误率从26%降低到15.3%。这一年，深度学习时代正式开启。
+从此，深度学习以惊人的速度发展：2014年的VGG、GoogLeNet，2015年的ResNet解决深度退化问题，2017年的Transformer彻底改变自然语言处理，2022年的ChatGPT让全世界见识到大模型的力量。
+本文将从数学原理出发，系统讲解深度学习的核心算法：从基础神经网络到卷积神经网络（CNN），从循环神经网络（RNN）到Transformer，最后探讨未来发展趋势。
+第一章：神经网络的数学基础 1.1 单神经元：感知机的数学模型 1.1.1 前向传播 感知机是最基础的神经网络单元，模拟生物神经元的工作原理。给定输入向量 $x \in \mathbb{R}^d$，权重向量 $w \in \mathbb{R}^d$，偏置 $b \in \mathbb{R}$：
+$$z = w^Tx + b = \sum_{i=1}^d w_i x_i + b$$
+激活函数 $\sigma(z)$ 决定神经元的输出：
+$$a = \sigma(z)$$
+1.1.2 常用激活函数 Sigmoid函数： $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
+导数： $$\sigma’(z) = \sigma(z)(1 - \sigma(z))$$
+性质：
+输出范围：$(0, 1)$ S型曲线，可微 缺点：梯度消失（$| \sigma’(z) | \leq 0.25$），输出不以零为中心 Tanh函数： $$\tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}$$
+...</p></div><footer class=entry-footer><span title='2026-01-14 08:30:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>11 min</span>&nbsp;·&nbsp;<span>2188 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 基于神经网络的深度学习算法：从感知机到Transformer的完整指南" href=https://s-ai-unix.github.io/posts/2026-01-14-deep-learning-algorithms-comprehensive-guide/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://s-ai-unix.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=https://s-ai-unix.github.io/>s-ai-unix's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var n,t=e.innerHTML,s=!1;for(t.indexOf("<em>")!==-1&&(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("</em>")!==-1&&(n=t.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),n=n.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("<em>$")!==-1&&(n=t.replace(/<em>\$/g,"$"),n!==t&&(t=n,s=!0)),t.indexOf("</em>$")!==-1&&(n=t.replace(/<\/em>\$/g,"$"),n!==t&&(t=n,s=!0));t.indexOf("<em>")!==-1&&t.indexOf("</em>")!==-1;){if(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n===t)break;t=n,s=!0}t.indexOf("_{")!==-1&&(n=t.replace(/_{/g,"_{"),n!==t&&(t=n,s=!0)),t.indexOf("}_")!==-1&&(n=t.replace(/}_/g,"}"),n!==t&&(t=n,s=!0)),t.indexOf("\\\\")!==-1&&(n=t.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),n!==t&&(t=n,s=!0)),s&&(e.innerHTML=t)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var n,t=e.innerHTML,s=!1;for(t.indexOf("<em>")!==-1&&(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("</em>")!==-1&&(n=t.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),n=n.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("<em>$")!==-1&&(n=t.replace(/<em>\$/g,"$"),n!==t&&(t=n,s=!0)),t.indexOf("</em>$")!==-1&&(n=t.replace(/<\/em>\$/g,"$"),n!==t&&(t=n,s=!0));t.indexOf("<em>")!==-1&&t.indexOf("</em>")!==-1;){if(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n===t)break;t=n,s=!0}t.indexOf("_{")!==-1&&(n=t.replace(/_{/g,"_{"),n!==t&&(t=n,s=!0)),t.indexOf("}_")!==-1&&(n=t.replace(/}_/g,"}"),n!==t&&(t=n,s=!0)),t.indexOf("\\\\")!==-1&&(n=t.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),n!==t&&(t=n,s=!0)),s&&(e.innerHTML=t)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script></body></html>

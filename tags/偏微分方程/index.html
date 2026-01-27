@@ -1,0 +1,133 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>偏微分方程 | s-ai-unix's Blog</title><meta name=keywords content><meta name=description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta name=author content="s-ai-unix"><link rel=canonical href=https://s-ai-unix.github.io/tags/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/><link crossorigin=anonymous href=/assets/css/stylesheet.0833aff7e1cf567ecfb9755701ee95a80535f671e2e1a0a770c9bc20a0a7b5bb.css integrity="sha256-CDOv9+HPVn7PuXVXAe6VqAU19nHi4aCncMm8IKCntbs=" rel="preload stylesheet" as=style><link rel=icon href=https://s-ai-unix.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://s-ai-unix.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://s-ai-unix.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://s-ai-unix.github.io/apple-touch-icon.png><link rel=mask-icon href=https://s-ai-unix.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://s-ai-unix.github.io/tags/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/index.xml title=rss><link rel=alternate hreflang=en href=https://s-ai-unix.github.io/tags/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://s-ai-unix.github.io/tags/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"><meta property="og:site_name" content="s-ai-unix's Blog"><meta property="og:title" content="偏微分方程"><meta property="og:description" content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="偏微分方程"><meta name=twitter:description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><link rel=stylesheet href=https://s-ai-unix.github.io/css/classical-quote.css></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://s-ai-unix.github.io/ accesskey=h title="s-ai-unix's Blog (Alt + H)">s-ai-unix's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://s-ai-unix.github.io/ title="🏠 首页"><span>🏠 首页</span></a></li><li><a href=https://s-ai-unix.github.io/posts/ title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://s-ai-unix.github.io/archives/ title="📁 归档"><span>📁 归档</span></a></li><li><a href=https://s-ai-unix.github.io/tags/ title="🏷️ 标签"><span>🏷️ 标签</span></a></li><li><a href=https://s-ai-unix.github.io/search/ title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://s-ai-unix.github.io/about/ title="👤 关于"><span>👤 关于</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://s-ai-unix.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://s-ai-unix.github.io/tags/>Tags</a></div><h1>偏微分方程</h1></header><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/pde-overview.jpg alt=偏微分方程可视化></figure><header class=entry-header><h2 class=entry-hint-parent>偏微分方程：描述物理世界的数学语言</h2></header><div class=entry-content><p>引言：方程背后的宇宙图景 想象一下，你向平静的湖面扔下一颗石子。涟漪一圈圈向外扩散，逐渐消失。如果有人问你：用什么数学方程来描述这个现象？你可能会想到一个关于时间和空间的方程——这就是偏微分方程的雏形。
+偏微分方程（Partial Differential Equation, PDE）是描述物理世界的终极语言。它将复杂的时空演化浓缩进几个偏导数的关系中，从热量的扩散到波的传播，从流体的流动到量子的跃迁，无不遵循着偏微分方程的规律。
+PDE 的历史可以追溯到 18 世纪。达朗贝尔、欧拉、伯努利等数学家在研究振动问题时，首次系统性地使用了偏微分方程。到了 19 世纪，傅里叶的热传导理论和纳维-斯托克斯方程的提出，进一步丰富了 PDE 的理论体系。20 世纪，希尔伯特、索伯列夫、施瓦茨等数学家为 PDE 建立了严格的泛函分析基础。
+在这篇文章中，我们将系统地介绍偏微分方程的经典理论。从三大基本方程开始，逐步深入到达朗贝尔公式、极值原理、格林函数，最后探讨薛定谔方程和纳维-斯托克斯方程。我们不仅要理解这些方程的数学形式，更要感受它们所蕴含的物理直觉和美学价值。
+第一章：三大基本方程 偏微分方程的分类源于它们所描述的不同物理现象。椭圆型方程描述平衡状态，抛物型方程描述扩散过程，双曲型方程描述波动传播。这三类方程构成了 PDE 理论的基石。
+1.1 拉普拉斯方程：平衡的语言 拉普拉斯方程是最简单的椭圆型偏微分方程：
+$$ \Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} = 0 $$
+在二维情况下，它简化为：
+$$ \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0 $$
+这个方程描述了什么？它描述的是一种平衡状态——没有源头，没有汇，函数值在任何点的"净流出"为零。
+物理意义：稳态温度分布、静电场、引力势、无源流体流动等都满足拉普拉斯方程。
+调和函数的美学：拉普拉斯方程的解被称为调和函数。它们有一个极其优雅的性质——均值定理：函数在任何点的值等于其周围邻域的平均值。
+图1：调和函数 $u = x^2 - y^2$ 的等值线。注意等值线呈现完美的双曲线形状，体现了拉普拉斯方程描述的对称与平衡。
+1.2 热传导方程：熵增的数学表达 热传导方程是抛物型偏微分方程的代表：
+$$ \frac{\partial u}{\partial t} = \alpha \Delta u = \alpha \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\right) $$
+...</p></div><footer class=entry-footer><span title='2026-01-25 14:00:00 +0800 CST'>January 25, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>631 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 偏微分方程：描述物理世界的数学语言" href=https://s-ai-unix.github.io/posts/2026-01-25-pde-overview/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/ricci-flow-geometry2.jpg alt=几何流中的曲面演化></figure><header class=entry-header><h2 class=entry-hint-parent>Ricci Flow - A Comprehensive Review</h2></header><div class=entry-content><p>Ricci Flow - A Comprehensive Review 引言 想象一个橡皮筋在一张橡胶膜上滑动，随着时间推移，橡胶膜的形状会不断变化，直到达到某种平衡状态。这种"形状随时间演化"的直观想法，正是 Ricci Flow 的核心思想。Ricci Flow 不仅是一个优美的数学概念，更是理解几何结构内在规律的重要工具。
+在 1982 年，数学家 Richard Hamilton 提出了 Ricci Flow 的概念，最初是为了研究流形的几何结构。二十多年后，这一理论被 Grigori Perelman 成功应用于证明庞加莱猜想，彻底改变了几何学的面貌。本文将带您深入了解这个被誉为"几何学中的热方程"的强大工具。
+第一章：预备知识 1.1 流形的基本概念 在讨论 Ricci Flow 之前，我们需要理解流形（Manifold）的概念。简单来说，流形是局部欧几里得的空间，即在每个小邻域内，空间看起来就像 $\mathbb{R}^n$。
+正式定义：一个 $n$ 维流形 $M$ 是一个 Hausdorff 空间，对于每一点 $p \in M$，都存在一个开邻域 $U$ 和一个同胚映射 $\phi: U \to \mathbb{R}^n$。
+1.2 度量张量 流形上的几何结构由度量张量 $g$ 决定。在局部坐标系 ${x^i}$ 中，度量可以表示为一个对称的正定矩阵 $(g_{ij})$，其中 $g_{ij}$ 定义了向量内积：
+$$ \langle X, Y \rangle = g_{ij} X^i Y^j $$
+1.3 黎曼曲率张量 度量张量 $g$ 的导数引出了黎曼曲率张量 $R_{ijkl}$，它衡量了流形的弯曲程度。曲率张量的分量可以通过 Christoffel 符号计算：
+...</p></div><footer class=entry-footer><span title='2026-01-22 08:00:00 +0800 CST'>January 22, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>576 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to Ricci Flow - A Comprehensive Review" href=https://s-ai-unix.github.io/posts/2026-01-22-ricci-flow-comprehensive-review/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/unsplash-laplacian.jpg alt=抽象几何图形></figure><header class=entry-header><h2 class=entry-hint-parent>拉普拉斯方程：数学物理中的优雅平衡</h2></header><div class=entry-content><p>引言：一片平静的水面 想象一个平静的水面，没有风，没有涟漪。如果我们在水面上轻轻滴一滴墨水，墨水会如何扩散？这背后隐藏着一个深刻的数学原理。
+再想象一个均匀导热的金属板，边缘保持恒定温度。时间足够长后，板内部的温度分布会达到一种稳定状态。有趣的是，这种稳定状态有一个共同的数学描述。
+这就是拉普拉斯方程的魔法所在。它描述的是一种完美的"平衡"状态——系统中每一点的数值都与其周围邻居的平均值相等。这个简单的条件，却蕴含着自然界中无数现象的精髓。
+一、历史的足迹 皮埃尔-西蒙·拉普拉斯（Pierre-Simon Laplace，1749-1827）是法国数学家、天文学家和物理学家。他在研究天体力学和引力问题时，首次系统地研究了这个以他名字命名的方程。
+但拉普拉斯方程的发现并非孤立的。在此之前，欧拉（Euler）和达朗贝尔（d’Alembert）已经在流体力学和波动方程的研究中涉及了类似的思想。拉普拉斯的贡献在于他系统性地研究了这个方程，并将其推广到多个变量，使其成为研究各种物理现象的统一框架。
+二、从一维开始：最简单的平衡 让我们从最简单的一维情况开始理解拉普拉斯方程。
+一维拉普拉斯方程 在一维情况下，拉普拉斯方程的形式异常简洁：
+$$ \frac{d^2 u}{dx^2} = 0 $$
+其中 $u(x)$ 是我们要找的函数。
+这个方程说的是什么呢？它的意思是函数的二阶导数为零。在微积分中我们知道，如果二阶导数为零，那么一阶导数必须是常数：
+$$ \frac{du}{dx} = C_1 $$
+再积分一次，我们得到：
+$$ u(x) = C_1 x + C_2 $$
+这告诉我们，在一维情况下，满足拉普拉斯方程的函数只能是线性函数（直线）。
+物理意义 想象一根均匀的导热棒，两端分别保持不同的温度。当热传导达到稳定状态时，温度分布会是怎样的？
+如果棒长为 $L$，左端温度为 $T_1$，右端温度为 $T_2$，那么温度分布 $u(x)$ 满足：
+$$ \frac{d^2 u}{dx^2} = 0, \quad u(0) = T_1, \quad u(L) = T_2 $$
+解这个方程，我们得到：
+$$ u(x) = T_1 + \frac{T_2 - T_1}{L} x $$
+...</p></div><footer class=entry-footer><span title='2026-01-14 22:04:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>665 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 拉普拉斯方程：数学物理中的优雅平衡" href=https://s-ai-unix.github.io/posts/2026-01-14-laplace-equation/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/wave-equation.jpg alt=波动的抽象可视化></figure><header class=entry-header><h2 class=entry-hint-parent>波动方程：从弦振动到宇宙的波动</h2></header><div class=entry-content><p>引言：从一根振动的吉他弦开始 想象一下，你拨动吉他的一根弦。弦开始振动，发出优美的声音。如果你用高速摄像机拍摄这个过程，会看到弦的形状随时间不断变化：向上弯曲，向下弯曲，再向上弯曲……这种运动有什么规律？
+更具体地说，如果已知某个时刻弦的形状，你能预测下一时刻它的形状吗？这个问题看似简单，但它引领我们走向数学物理中最重要的方程之一——波动方程。
+在 18 世纪，几位伟大的数学家——达朗贝尔（d’Alembert）、欧拉（Euler）和伯努利（Bernoulli）——都在思考这个问题。他们的答案不仅解释了弦振动，还为声学、光学、地震学甚至量子力学奠定了基础。
+让我们从这根弦开始，一步步揭开波动方程的面纱。
+第一章：波动的物理本质 什么是波？ 在开始推导方程之前，我们需要明确：什么是波？
+波是振动在空间中的传播。当某个点的物理量（如位移、压力、电场等）随时间振动时，这种振动会影响周围的点，并传播出去。波不需要物质的长距离移动，它传播的是能量和信息。
+想象一下水面上的波纹。当你往平静的水面投一块石子，水并没有整体移动，但波纹会一圈圈扩散开来——这就是波的传播。
+波的分类 波可以分为两大类：
+横波（Transverse Wave）：振动方向与传播方向垂直
+例子：吉他弦振动、光波 特点：弦上下的振动，波沿弦的方向传播 纵波（Longitudinal Wave）：振动方向与传播方向平行
+例子：声波（空气分子的振动） 特点：空气分子沿声音传播方向前后振动 波的基本性质 描述波的几个关键参数：
+频率 $f$：单位时间内振动的次数（单位：赫兹 Hz） 周期 $T = \frac{1}{f}$：完成一次振动所需的时间 波长 $\lambda$：波完成一个周期在空间中传播的距离 波速 $c$：波传播的速度，满足 $c = f\lambda$ 振幅 $A$：波偏离平衡位置的最大值 这些参数不是孤立的，它们通过波动方程联系在一起。
+第二章：一维波动方程的诞生 牛顿第二定律与弦的振动 考虑一根均匀的弦，两端固定（比如吉他弦）。设弦的线密度（单位长度的质量）为 $\rho$，张力为 $T_0$。弦在平衡时是一条直线。
+当弦发生微小振动时，设弦上位置 $x$、时间 $t$ 的横向位移为 $u(x, t)$。我们的目标是推导 $u(x, t)$ 满足的方程。
+取弦上从 $x$ 到 $x + \Delta x$ 的一小段。这一段的长度约为 $\Delta x$，质量为 $\rho \Delta x$。
+根据牛顿第二定律（$F = ma$），这一小段的运动方程为：
+...</p></div><footer class=entry-footer><span title='2026-01-14 22:04:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>1173 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 波动方程：从弦振动到宇宙的波动" href=https://s-ai-unix.github.io/posts/2026-01-14-wave-equation/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/photo-1620641788421-7a1c342ea42e.jpg alt=热传导的抽象可视化></figure><header class=entry-header><h2 class=entry-hint-parent>热传导方程：从一杯咖啡到宇宙的演化</h2></header><div class=entry-content><p>引言：从一杯热咖啡开始 想象一下，你刚泡好一杯热咖啡。咖啡的温度大约是 90°C，而周围的室温是 20°C。随着时间的推移，咖啡会慢慢变凉——这是每个人每天都在经历的现象。但你是否想过，这背后隐藏着怎样的数学规律？
+如果我用温度计每隔一段时间测量咖啡的温度，会发现温度不是突然跳变的，而是平滑地、连续地下降。这种变化不是线性的——刚开始降得快，后来降得慢。为什么？
+答案就隐藏在热传导方程中。这个方程不仅描述了咖啡的冷却，还描述了热量如何在金属棒中传播、如何从太阳内部传到表面，甚至描述了气体分子的扩散、股票价格的波动，以及宇宙中星系的分布。它可能是物理学中应用最广的偏微分方程之一。
+让我们从傅里叶的实验开始，一步步揭开这个方程的面纱。
+第一章：热传导的物理本质 什么是热量？ 在开始推导方程之前，我们需要明确几个概念。热量不是温度，而是能量的传递。温度是物质内部粒子平均动能的量度——温度越高，粒子运动越剧烈。当两个物体接触时，能量会从高温区域流向低温区域，直到两处温度相同。这就是热传导的物理本质。
+早在 19 世纪初，法国数学家让·巴普蒂斯特·约瑟夫·傅里叶（Jean-Baptiste Joseph Fourier） 就开始系统研究这种现象。傅里叶原本是拿破仑时代的数学家，但对热的本质有着浓厚的兴趣。他在 1807 年提出了一个大胆的猜想：
+热流与温度梯度成正比。
+这句话听起来很简单，但它是整个热传导理论的基石。让我们翻译成数学语言。
+傅里叶定律 设 $\mathbf{q}$ 表示热流密度（单位时间内通过单位面积的热量），$T(x, t)$ 表示在位置 $x$、时间 $t$ 时的温度。那么傅里叶定律可以写成：
+$$ \mathbf{q} = -k \nabla T $$
+其中 $k$ 是热导率（thermal conductivity），负号表示热量从高温流向低温。
+在一维情况下，这个公式简化为：
+$$ q = -k \frac{\partial T}{\partial x} $$
+这里的 $\frac{\partial T}{\partial x}$ 是温度对位置的偏导数，也就是温度梯度。如果温度随位置的变化率越大（梯度越大），热流就越大。
+傅里叶定律的一个直观理解是：温度的差异驱动热量的流动，就像电压的差异驱动电流的流动、水位的高低差驱动水的流动一样。这三种现象背后有着深刻的数学相似性。
+第二章：从傅里叶定律到热传导方程 傅里叶定律告诉我们热流与温度梯度的关系，但它还不够——我们想知道温度本身随时间如何变化。这需要将傅里叶定律与另一个物理原理结合：能量守恒。
+能量守恒定律 考虑一段细长的金属棒，横截面积为 $A$，热导率为 $k$，密度为 $\rho$，比热容为 $c$。我们要分析从位置 $x$ 到 $x + \Delta x$ 这一小段在时间 $\Delta t$ 内的热量变化。
+...</p></div><footer class=entry-footer><span title='2026-01-14 21:54:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>889 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 热传导方程：从一杯咖啡到宇宙的演化" href=https://s-ai-unix.github.io/posts/2026-01-14-heat-conduction-equation/></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://s-ai-unix.github.io/>s-ai-unix's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var n,t=e.innerHTML,s=!1;for(t.indexOf("<em>")!==-1&&(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("</em>")!==-1&&(n=t.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),n=n.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("<em>$")!==-1&&(n=t.replace(/<em>\$/g,"$"),n!==t&&(t=n,s=!0)),t.indexOf("</em>$")!==-1&&(n=t.replace(/<\/em>\$/g,"$"),n!==t&&(t=n,s=!0));t.indexOf("<em>")!==-1&&t.indexOf("</em>")!==-1;){if(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n===t)break;t=n,s=!0}t.indexOf("_{")!==-1&&(n=t.replace(/_{/g,"_{"),n!==t&&(t=n,s=!0)),t.indexOf("}_")!==-1&&(n=t.replace(/}_/g,"}"),n!==t&&(t=n,s=!0)),t.indexOf("\\\\")!==-1&&(n=t.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),n!==t&&(t=n,s=!0)),s&&(e.innerHTML=t)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var n,t=e.innerHTML,s=!1;for(t.indexOf("<em>")!==-1&&(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("</em>")!==-1&&(n=t.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),n=n.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("<em>$")!==-1&&(n=t.replace(/<em>\$/g,"$"),n!==t&&(t=n,s=!0)),t.indexOf("</em>$")!==-1&&(n=t.replace(/<\/em>\$/g,"$"),n!==t&&(t=n,s=!0));t.indexOf("<em>")!==-1&&t.indexOf("</em>")!==-1;){if(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n===t)break;t=n,s=!0}t.indexOf("_{")!==-1&&(n=t.replace(/_{/g,"_{"),n!==t&&(t=n,s=!0)),t.indexOf("}_")!==-1&&(n=t.replace(/}_/g,"}"),n!==t&&(t=n,s=!0)),t.indexOf("\\\\")!==-1&&(n=t.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),n!==t&&(t=n,s=!0)),s&&(e.innerHTML=t)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script></body></html>

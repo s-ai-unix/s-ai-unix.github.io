@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff">
+    STRIDE 威胁建模方法
+  </text>
+  <text x="600" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#a0aec0">
+    Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege
+  </text>
+  
+  <!-- Central Icon -->
+  <circle cx="600" cy="280" r="50" fill="#2d2d5a" stroke="#667eea" stroke-width="3"/>
+  <text x="600" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#667eea">S</text>
+  <text x="600" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#a0aec0">STRIDE</text>
+  
+  <!-- Threat Cards - Spherical Arrangement -->
+  <!-- S - Spoofing -->
+  <g transform="translate(600, 130)" filter="url(#glow)">
+    <polygon points="0,-85 80,-45 80,45 0,85 -80,45 -80,-45" fill="#e74c3c"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">S</text>
+    <text x="0" y="-25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Spoofing</text>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ffcccc">伪装攻击</text>
+    <text x="0" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">伪造身份冒充合法用户</text>
+    <text x="0" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">或系统组件</text>
+    <text x="0" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">→ 身份认证</text>
+  </g>
+  
+  <!-- T - Tampering -->
+  <g transform="translate(780, 200)">
+    <polygon points="0,-85 80,-45 80,45 0,85 -80,45 -80,-45" fill="#e67e22"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">T</text>
+    <text x="0" y="-25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Tampering</text>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ffe0b2">篡改攻击</text>
+    <text x="0" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">恶意修改数据、代码</text>
+    <text x="0" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">或通信内容</text>
+    <text x="0" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">→ 数据完整性</text>
+  </g>
+  
+  <!-- R - Repudiation -->
+  <g transform="translate(850, 340)">
+    <polygon points="0,-85 80,-45 80,45 0,85 -80,45 -80,-45" fill="#9b59b6"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">R</text>
+    <text x="0" y="-25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Repudiation</text>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e1bee7">抵赖攻击</text>
+    <text x="0" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">否认执行过某操作</text>
+    <text x="0" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">或产生特定行为</text>
+    <text x="0" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">→ 日志审计</text>
+  </g>
+  
+  <!-- I - Information Disclosure -->
+  <g transform="translate(780, 480)">
+    <polygon points="0,-85 80,-45 80,45 0,85 -80,45 -80,-45" fill="#3498db"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">I</text>
+    <text x="0" y="-25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Information</text>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Disclosure</text>
+    <text x="0" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#bbdefb">信息泄露</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">敏感数据被未授权</text>
+    <text x="0" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">访问或泄露</text>
+    <text x="0" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">→ 加密保护</text>
+  </g>
+  
+  <!-- D - Denial of Service -->
+  <g transform="translate(420, 480)">
+    <polygon points="0,-85 80,-45 80,45 0,85 -80,45 -80,-45" fill="#1abc9c"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">D</text>
+    <text x="0" y="-25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Denial of</text>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Service</text>
+    <text x="0" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#b2dfdb">拒绝服务</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">使系统或服务</text>
+    <text x="0" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">不可用或降级</text>
+    <text x="0" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">→ 可用性保障</text>
+  </g>
+  
+  <!-- E - Elevation of Privilege -->
+  <g transform="translate(350, 340)">
+    <polygon points="0,-85 80,-45 80,45 0,85 -80,45 -80,-45" fill="#e91e63"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">E</text>
+    <text x="0" y="-25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Elevation of</text>
+    <text x="0" y="-10" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Privilege</text>
+    <text x="0" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f8bbd9">权限提升</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">获取超出正常权限</text>
+    <text x="0" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e0e0e0">范围的访问能力</text>
+    <text x="0" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">→ 权限控制</text>
+  </g>
+  
+  <!-- Connection Lines -->
+  <path d="M600,195 L600,185" stroke="#e74c3c" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M680,180 L700,165" stroke="#e67e22" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M750,275 L780,265" stroke="#9b59b6" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M750,385 L780,395" stroke="#3498db" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M680,480 L700,495" stroke="#1abc9c" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M600,465 L600,475" stroke="#e91e63" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M520,495 L500,480" stroke="#1abc9c" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M450,395 L420,385" stroke="#3498db" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M450,275 L420,265" stroke="#9b59b6" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M520,165 L500,180" stroke="#e67e22" stroke-width="2" fill="none" opacity="0.7"/>
+  
+  <!-- Automotive Application Examples -->
+  <g transform="translate(50, 560)">
+    <rect width="1100" height="120" rx="12" fill="#0f0f23" stroke="#2d2d5a" stroke-width="2"/>
+    <text x="550" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">汽车行业应用案例</text>
+    
+    <g transform="translate(80, 50)">
+      <circle cx="20" cy="15" r="8" fill="#e74c3c"/>
+      <text x="20" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">S</text>
+      <text x="100" y="18" font-family="Arial, sans-serif" font-size="11" fill="#e0e0e0">伪造车载系统身份发送欺诈性CAN消息</text>
+    </g>
+    
+    <g transform="translate(80, 80)">
+      <circle cx="20" cy="15" r="8" fill="#e67e22"/>
+      <text x="20" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">T</text>
+      <text x="100" y="18" font-family="Arial, sans-serif" font-size="11" fill="#e0e0e0">篡改OTA升级包注入恶意软件</text>
+    </g>
+    
+    <g transform="translate(580, 50)">
+      <circle cx="20" cy="15" r="8" fill="#3498db"/>
+      <text x="20" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">I</text>
+      <text x="100" y="18" font-family="Arial, sans-serif" font-size="11" fill="#e0e0e0">窃听蓝牙通信获取用户隐私数据</text>
+    </g>
+    
+    <g transform="translate(580, 80)">
+      <circle cx="20" cy="15" r="8" fill="#e91e63"/>
+      <text x="20" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ffffff">E</text>
+      <text x="100" y="18" font-family="Arial, sans-serif" font-size="11" fill="#e0e0e0">利用蓝牙协议漏洞获取系统root权限</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+    STRIDE Threat Modeling | Automotive Cybersecurity Analysis
+  </text>
+</svg>
