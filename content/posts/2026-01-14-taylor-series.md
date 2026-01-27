@@ -383,11 +383,11 @@ $$ \Delta L \approx \frac{1}{2} \frac{\partial^2 L}{\partial w_i^2} w_i^2 $$
 
 在迁移学习中，我们通常预训练一个网络，然后在目标任务上微调。泰勒展开可以帮助我们理解预训练和微调之间的关系。
 
-预训练的目标函数 $L_{\text{pretrain}}(\mathbf{W})$ 和微调的目标函数 $L_{\text{fine}}(\mathbf{W})$ 通常不同。在预训练的最优点 $\mathbf{W}_{\text{pre}}^{\ast}$ 附近，$L_{\text{fine}}$ 的泰勒展开为：
+预训练的目标函数 $L_{\mathrm{pretrain}}(\mathbf{W})$ 和微调的目标函数 $L_{\mathrm{fine}}(\mathbf{W})$ 通常不同。在预训练的最优点 $\mathbf{W}_{\mathrm{pre}}^{\ast}$ 附近，$L_{\mathrm{fine}}$ 的泰勒展开为：
 
-$$ L_{\text{fine}}(\mathbf{W}) \approx L_{\text{fine}}(\mathbf{W}_{\text{pre}}^{\ast}) + \nabla L_{\text{fine}}(\mathbf{W}_{\text{pre}}^{\ast})^{\top}(\mathbf{W} - \mathbf{W}_{\text{pre}}^{\ast}) + \frac{1}{2}(\mathbf{W} - \mathbf{W}_{\text{pre}}^{\ast})^{\top} H_{\text{fine}}(\mathbf{W}_{\text{pre}}^{\ast})(\mathbf{W} - \mathbf{W}_{\text{pre}}^{\ast}) $$
+$$ L_{\mathrm{fine}}(\mathbf{W}) \approx L_{\mathrm{fine}}(\mathbf{W}_{\mathrm{pre}}^{\ast}) + \nabla L_{\mathrm{fine}}(\mathbf{W}_{\mathrm{pre}}^{\ast})^{\top}(\mathbf{W} - \mathbf{W}_{\mathrm{pre}}^{\ast}) + \frac{1}{2}(\mathbf{W} - \mathbf{W}_{\mathrm{pre}}^{\ast})^{\top} H_{\mathrm{fine}}(\mathbf{W}_{\mathrm{pre}}^{\ast})(\mathbf{W} - \mathbf{W}_{\mathrm{pre}}^{\ast}) $$
 
-如果预训练和微调任务相关，$\nabla L_{\text{fine}}(\mathbf{W}_{\text{pre}}^{\ast})$ 会较小，这意味着微调需要的调整较少。这也解释了为什么相关任务之间的迁移学习更有效。
+如果预训练和微调任务相关，$\nabla L_{\mathrm{fine}}(\mathbf{W}_{\mathrm{pre}}^{\ast})$ 会较小，这意味着微调需要的调整较少。这也解释了为什么相关任务之间的迁移学习更有效。
 
 ### 动量法的理解
 
