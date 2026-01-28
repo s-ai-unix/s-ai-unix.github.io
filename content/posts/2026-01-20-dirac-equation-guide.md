@@ -85,7 +85,7 @@ $$ \left(-\frac{1}{c^2}\frac{\partial^2}{\partial t^2} + \nabla^2 - \frac{m^2c^2
 
 然而,这个方程有一个严重的问题,几乎使它被物理学家抛弃。
 
-在量子力学中,波函数的模平方 $|\psi|^2$ 代表找到粒子的概率密度,它必须是非负的。但对于克莱因-戈尔登方程,如果我们尝试定义概率密度为
+在量子力学中,波函数的模平方 $|\psi|^{2}$ 代表找到粒子的概率密度,它必须是非负的。但对于克莱因-戈尔登方程,如果我们尝试定义概率密度为:
 
 $$ \rho = \frac{i\hbar}{2mc^2}\left(\psi^*\frac{\partial\psi}{\partial t} - \psi\frac{\partial\psi^*}{\partial t}\right) $$
 
@@ -103,13 +103,13 @@ $$ \rho = \frac{i\hbar}{2mc^2}\left(\psi^*\frac{\partial\psi}{\partial t} - \psi
 
 1928年,狄拉克提出了一个革命性的想法。他的思路非常独特:**既然相对论能量-动量关系是二次的,那么如果我们能够将其"因子分解"为两个线性因子的乘积会怎样?**
 
-换句话说,狄拉克想要找到某种数学对象 $\bm{\alpha} = (\alpha_1, \alpha_2, \alpha_3)$ 和 $\beta$,使得
+换句话说,狄拉克想要找到某种数学对象 $\boldsymbol{\alpha} = (\alpha_1, \alpha_2, \alpha_3)$ 和 $\beta$,使得
 
-$$ E^2 - p^2c^2 - m^2c^4 = (\beta mc^2 + c\bm{\alpha}\cdot\mathbf{p})(\beta mc^2 - c\bm{\alpha}\cdot\mathbf{p}) = 0 $$
+$$ E^2 - p^2c^2 - m^2c^4 = (\beta mc^2 + c\boldsymbol{\alpha}\cdot\mathbf{p})(\beta mc^2 - c\boldsymbol{\alpha}\cdot\mathbf{p}) = 0 $$
 
 如果这能做到,我们就可以取其中一个因子作为波动方程的基础:
 
-$$ i\hbar\frac{\partial\psi}{\partial t} = \left(c\bm{\alpha}\cdot\hat{\mathbf{p}} + \beta mc^2\right)\psi $$
+$$ i\hbar\frac{\partial\psi}{\partial t} = \left(c\boldsymbol{\alpha}\cdot\hat{\mathbf{p}} + \beta mc^2\right)\psi $$
 
 这个方程中,**时间导数和空间导数都是一阶的**!完全对称!
 
@@ -117,8 +117,8 @@ $$ i\hbar\frac{\partial\psi}{\partial t} = \left(c\bm{\alpha}\cdot\hat{\mathbf{p
 
 让我们展开上面的乘积,看看需要满足什么条件:
 
-$$ (\beta mc^2 + c\bm{\alpha}\cdot\mathbf{p})(\beta mc^2 - c\bm{\alpha}\cdot\mathbf{p}) $$
-$$ = \beta^2m^2c^4 - c^2(\bm{\alpha}\cdot\mathbf{p})^2 + \beta mc^2 \cdot c\bm{\alpha}\cdot\mathbf{p} - c\bm{\alpha}\cdot\mathbf{p} \cdot \beta mc^2 $$
+$$ (\beta mc^2 + c\boldsymbol{\alpha}\cdot\mathbf{p})(\beta mc^2 - c\boldsymbol{\alpha}\cdot\mathbf{p}) $$
+$$ = \beta^2m^2c^4 - c^2(\boldsymbol{\alpha}\cdot\mathbf{p})^2 + \beta mc^2 \cdot c\boldsymbol{\alpha}\cdot\mathbf{p} - c\boldsymbol{\alpha}\cdot\mathbf{p} \cdot \beta mc^2 $$
 
 为了使这个表达式等于 $m^2c^4 - p^2c^2 = m^2c^4 - c^2(p_1^2 + p_2^2 + p_3^2)$,我们需要:
 
@@ -204,9 +204,9 @@ $$ \{\gamma^\mu, \gamma^\nu\} = \gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu = 2g
 
 3. **$\gamma^0\gamma^1 + \gamma^1\gamma^0 = 0$**(反对易性)
 
-### 4.3 与 $\bm{\alpha}$ 和 $\beta$ 的关系
+### 4.3 与 $\boldsymbol{\alpha}$ 和 $\beta$ 的关系
 
-狄拉克最初使用的 $\bm{\alpha} = (\alpha_1, \alpha_2, \alpha_3)$ 和 $\beta$ 可以通过 $\gamma$ 矩阵表示:
+狄拉克最初使用的 $\boldsymbol{\alpha} = (\alpha_1, \alpha_2, \alpha_3)$ 和 $\beta$ 可以通过 $\gamma$ 矩阵表示:
 
 $$ \alpha_i = \gamma^0\gamma^i, \quad \beta = \gamma^0 $$
 
@@ -222,7 +222,7 @@ $$ i\hbar\frac{\partial\psi}{\partial t} = \hat{H}\psi $$
 
 其中哈密顿算符为:
 
-$$ \hat{H} = c\bm{\alpha}\cdot\hat{\mathbf{p}} + \beta mc^2 $$
+$$ \hat{H} = c\boldsymbol{\alpha}\cdot\hat{\mathbf{p}} + \beta mc^2 $$
 
 这个形式与薛定谔方程 $i\hbar\frac{\partial\psi}{\partial t} = \hat{H}\psi$ 非常相似,但有两个关键区别:
 
@@ -257,7 +257,7 @@ $$ \frac{\partial\rho}{\partial t} + \nabla\cdot\mathbf{j} = 0 $$
 
 其中概率流密度为:
 
-$$ \mathbf{j} = c\psi^\dagger\bm{\alpha}\psi $$
+$$ \mathbf{j} = c\psi^\dagger\boldsymbol{\alpha}\psi $$
 
 这保证了概率的守恒性,解决了克莱因-戈尔登方程的根本问题。
 
@@ -277,9 +277,9 @@ $$ \mathbf{L} = \mathbf{r} \times \mathbf{p} $$
 
 以及**自旋角动量**:
 
-$$ \mathbf{S} = \frac{\hbar}{2}\bm{\Sigma} $$
+$$ \mathbf{S} = \frac{\hbar}{2}\boldsymbol{\Sigma} $$
 
-其中 $\bm{\Sigma} = (\Sigma^1, \Sigma^2, \Sigma^3)$,每个分量为 $4 \times 4$ 矩阵:
+其中 $\boldsymbol{\Sigma} = (\Sigma^1, \Sigma^2, \Sigma^3)$,每个分量为 $4 \times 4$ 矩阵:
 
 $$ \Sigma^i = \begin{pmatrix} \sigma_i & 0 \\ 0 & \sigma_i \end{pmatrix}, \quad i = 1, 2, 3 $$
 
@@ -368,7 +368,7 @@ $$ \left[\gamma^\mu(i\hbar\partial_\mu - eA_\mu) - mc\right]\psi = 0 $$
 
 在非相对论极限下,这个方程给出电子的**磁矩**:
 
-$$ \bm{\mu} = g\frac{e}{2m}\mathbf{S} $$
+$$ \boldsymbol{\mu} = g\frac{e}{2m}\mathbf{S} $$
 
 其中**朗德g因子**(Lande g-factor)为:
 
@@ -462,7 +462,7 @@ graph LR
 
 石墨烯中的电子行为可以用**二维狄拉克方程**描述:
 
-$$ v_F\bm{\sigma}\cdot\mathbf{p}\psi = E\psi $$
+$$ v_F\boldsymbol{\sigma}\cdot\mathbf{p}\psi = E\psi $$
 
 其中 $v_F \approx \frac{c}{300}$ 是费米速度(比光速慢约300倍)。
 
