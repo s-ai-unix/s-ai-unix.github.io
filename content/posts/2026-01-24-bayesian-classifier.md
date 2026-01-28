@@ -236,17 +236,17 @@ $$P(c_1) = \frac{100}{500} = 0.2, \quad P(c_0) = 0.8$$
 
 计算对数后验概率：
 
-$$\begin{aligned}
+$$\begin{align}
 \log P(c_1|\mathbf{x}) &\propto \log 0.2 + \log 0.592 + \log 0.495 + \log 0.107 \\
 &= -1.609 - 0.524 - 0.703 - 2.236 \\
 &= -5.072
-\end{aligned}$$
+\end{align}$$
 
-$$\begin{aligned}
+$$\begin{align}
 \log P(c_0|\mathbf{x}) &\propto \log 0.8 + \log 0.015 + \log 0.027 + \log 0.747 \\
 &= -0.223 - 4.200 - 3.612 - 0.292 \\
 &= -8.327
-\end{aligned}$$
+\end{align}$$
 
 因为 $-5.072 > -8.327$，所以分类为**垃圾邮件**。
 

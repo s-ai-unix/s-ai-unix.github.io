@@ -92,12 +92,12 @@ KL 散度有两个重要性质：
 
 **第一步：展开 KL 散度**
 
-$$\begin{aligned}
+$$\begin{align}
 D_{\text{KL}}(q_{\phi}(z|x) \| p(z|x)) &= \mathbb{E}_{z \sim q} \left[ \log \frac{q_{\phi}(z|x)}{p(z|x)} \right] \\
 &= \mathbb{E}_{z \sim q} \left[ \log \frac{q_{\phi}(z|x) p(x)}{p(x, z)} \right] \\
 &= \mathbb{E}_{z \sim q} \left[ \log q_{\phi}(z|x) + \log p(x) - \log p(x, z) \right] \\
 &= \log p(x) + \mathbb{E}_{z \sim q} [\log q_{\phi}(z|x) - \log p(x|z) - \log p(z)]
-\end{aligned}$$
+\end{align}$$
 
 这里的关键步骤是：
 1. 使用贝叶斯公式：$p(z|x) = \frac{p(x,z)}{p(x)}$
@@ -150,11 +150,11 @@ $$\log p(x) = D_{\text{KL}}(q_{\phi}(z|x) \| p(z|x)) + \text{ELBO}$$
 
 对于高斯分布，ELBO 可以展开为两项：
 
-$$\begin{aligned}
+$$\begin{align}
 \text{ELBO} &= \mathbb{E}_{z \sim q} [\log p(x|z) + \log p(z) - \log q_{\phi}(z|x)] \\
 &= \mathbb{E}_{z \sim q} [\log p(x|z)] - \mathbb{E}_{z \sim q} \left[ \log \frac{q_{\phi}(z|x)}{p(z)} \right] \\
 &= \underbrace{\mathbb{E}_{z \sim q} [\log p(x|z)]}_{\text{重建误差项}} - \underbrace{D_{\text{KL}}(q_{\phi}(z|x) \| p(z))}_{\text{正则化项}}
-\end{aligned}$$
+\end{align}$$
 
 **展开详解**：
 1. 第一项 $\mathbb{E}_{z \sim q} [\log p(x|z)]$ 是**重建误差项**，衡量解码器重建 $x$ 的能力
@@ -249,10 +249,10 @@ $$z = \mu + \sigma \odot \epsilon$$
 
 在重参数化后，计算图的梯度流向为：
 
-$$\begin{aligned}
+$$\begin{align}
 \frac{\partial \mathcal{L}}{\partial \mu} &= \frac{\partial \mathcal{L}}{\partial z} \cdot \frac{\partial z}{\partial \mu} = \frac{\partial \mathcal{L}}{\partial z} \\
 \frac{\partial \mathcal{L}}{\partial \sigma} &= \frac{\partial \mathcal{L}}{\partial z} \cdot \frac{\partial z}{\partial \sigma} = \frac{\partial \mathcal{L}}{\partial z} \odot \epsilon
-\end{aligned}$$
+\end{align}$$
 
 因为 $\epsilon$ 是独立于 $\mu$ 和 $\sigma$ 的随机变量，梯度可以顺利传播。
 

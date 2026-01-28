@@ -191,11 +191,11 @@ $$
 使用分部积分法，令 $u = e^{-st}$，$dv = f'(t) dt$
 
 $$
-\begin{aligned}
+\begin{align}
 \mathcal{L}\{f'(t)\} &= \left[ f(t) e^{-st} \right]_0^{\infty} - \int_0^{\infty} f(t) (-s e^{-st}) \, dt \\
 &= -f(0) + s \int_0^{\infty} f(t) e^{-st} \, dt \\
 &= s\mathcal{L}\{f(t)\} - f(0)
-\end{aligned}
+\end{align}
 $$
 
 这就是著名的**微分定理**：在像空间中，微分变成了乘以 $s$（减去初始条件）。

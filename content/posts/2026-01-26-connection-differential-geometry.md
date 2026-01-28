@@ -801,9 +801,12 @@ $$
 
 **直观理解**：如果你先沿 $x$ 方向移动，再沿 $y$ 方向移动；或者反过来，两者的"修正"应该相同（除了路径不交换带来的李括号项）。
 
-#### 2. 度量相容性 $Xlangle Y, Z angle = langle 
-abla_X Y, Z angle + langle Y, 
-abla_X Z angle$
+#### 2. 度量相容性 $Xlangle Y, Z 
+angle = langle 
+abla_X Y, Z 
+angle + langle Y, 
+abla_X Z 
+angle$
 
 这个条件说的是：**平行移动保持向量的长度和夹角不变**。
 
@@ -1439,10 +1442,10 @@ $$
 
 **测地线方程**：
 $$
-\begin{aligned}
+\begin{align}
 \frac{d^2\theta}{dt^2} - \sin\theta \cos\theta \left(\frac{d\phi}{dt}\right)^2 &= 0 \\
 \frac{d^2\phi}{dt^2} + 2\cot\theta \frac{d\theta}{dt} \frac{d\phi}{dt} &= 0
-\end{aligned}
+\end{align}
 $$
 
 **验证**：经线 $\phi = \text{常数}$ 满足方程（因为 $\frac{d\phi}{dt} = 0$），所以经线是测地线——符合直觉！
@@ -1478,10 +1481,10 @@ $$
 
 **测地线方程**：
 $$
-\begin{aligned}
+\begin{align}
 \frac{d^2 r}{dt^2} - r\left(\frac{d\theta}{dt}\right)^2 &= 0 \\
 \frac{d^2\theta}{dt^2} + \frac{2}{r}\frac{dr}{dt}\frac{d\theta}{dt} &= 0
-\end{aligned}
+\end{align}
 $$
 
 **直线 $y = ax + b$ 的极坐标表示**：可以验证它满足这些方程！

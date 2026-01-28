@@ -42,7 +42,7 @@ PCA 的目标是找到一个低维表示，保留数据的大部分信息。关�
 
 ![PCA 投影示意图](/images/math/pca-projection-intuition.png)
 
-*图 1：PCA 的核心思想：将数据投影到方差最大的方向*
+**图 1**：PCA 的核心思想：将数据投影到方差最大的方向
 
 如果我们把这些点投影到不同的直线上，哪种投影方式能最好地保留原始数据的信息？
 
@@ -283,12 +283,19 @@ $$
 利用矩阵迹的性质 $\sum_{i=1}^{n} \|\mathbf{a}_i\|^2 = \text{tr}\left(\sum_{i=1}^{n} \mathbf{a}_i \mathbf{a}_i^{\top}\right)$：
 
 $$
-\begin{aligned}
-\text{Error} &= \sum_{i=1}^{n} \text{tr}\left((\tilde{\mathbf{x}}_i - \mathbf{W}\mathbf{W}^\top \tilde{\mathbf{x}}_i)(\tilde{\mathbf{x}}_i - \mathbf{W}\mathbf{W}^\top \tilde{\mathbf{x}}_i)^\top\right) \\
-&= \text{tr}\left(\sum_{i=1}^{n} \tilde{\mathbf{x}}_i \tilde{\mathbf{x}}_i^\top\right) - 2\text{tr}\left(\mathbf{W}^\top \sum_{i=1}^{n} \tilde{\mathbf{x}}_i \tilde{\mathbf{x}}_i^\top \mathbf{W}\right) + \text{tr}\left(\mathbf{W}^\top \sum_{i=1}^{n} \tilde{\mathbf{x}}_i \tilde{\mathbf{x}}_i^\top \mathbf{W}\right) \\
-&= \text{tr}(n\mathbf{\Sigma}) - \text{tr}(\mathbf{W}^\top n \mathbf{\Sigma} \mathbf{W}) \\
-&= n \left[\text{tr}(\mathbf{\Sigma}) - \text{tr}(\mathbf{W}^\top \mathbf{\Sigma} \mathbf{W})\right]
-\end{aligned}
+\text{Error} = \sum_{i=1}^{n} \text{tr}\left((\tilde{\mathbf{x}}_i - \mathbf{W}\mathbf{W}^\top \tilde{\mathbf{x}}_i)(\tilde{\mathbf{x}}_i - \mathbf{W}\mathbf{W}^\top \tilde{\mathbf{x}}_i)^\top\right)
+$$
+
+$$
+= \text{tr}\left(\sum_{i=1}^{n} \tilde{\mathbf{x}}_i \tilde{\mathbf{x}}_i^\top\right) - 2\text{tr}\left(\mathbf{W}^\top \sum_{i=1}^{n} \tilde{\mathbf{x}}_i \tilde{\mathbf{x}}_i^\top \mathbf{W}\right) + \text{tr}\left(\mathbf{W}^\top \sum_{i=1}^{n} \tilde{\mathbf{x}}_i \tilde{\mathbf{x}}_i^\top \mathbf{W}\right)
+$$
+
+$$
+= \text{tr}(n\mathbf{\Sigma}) - \text{tr}(\mathbf{W}^\top n \mathbf{\Sigma} \mathbf{W})
+$$
+
+$$
+= n \left[\text{tr}(\mathbf{\Sigma}) - \text{tr}(\mathbf{W}^\top \mathbf{\Sigma} \mathbf{W})\right]
 $$
 
 这里我们利用了 $\mathbf{W}\^{\top} \mathbf{W} = \mathbf{I}$（正交矩阵）。
@@ -446,7 +453,7 @@ $$
 
 ![PCA 3D 可视化](/images/math/pca-3d-visualization.png)
 
-*图 2：三维数据的 PCA：椭圆的主轴就是主成分方向*
+**图 2**：三维数据的 PCA：椭圆的主轴就是主成分方向
 
 在这个图中，红色箭头表示第一个主成分（数据"伸展"最厉害的方向），绿色箭头表示第二个主成分（垂直于第一个主成分，且方差次大），蓝色箭头表示第三个主成分（方差最小）。
 

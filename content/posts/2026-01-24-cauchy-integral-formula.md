@@ -23,7 +23,7 @@ $$ \int_{0}^{\infty} \frac{\cos x}{1 + x^2} dx $$
 
 ![复平面上的积分路径](/images/math/complex-plane-contour.png)
 
-*图 1：复平面上的积分路径 $C$，内部包含点 $z_0$*
+**图 1**：复平面上的积分路径 $C$，内部包含点 $z_0$
 
 ## 历史背景：柯西的洞见
 
@@ -78,12 +78,12 @@ $$ \oint_C f(z) dz = 0 $$
 
 这个定理的证明有多种方法，我们用格林定理来说明。设 $f(z) = u(x,y) + i v(x,y)$，则：
 
-$$ \begin{aligned}
+$$ \begin{align}
 \oint_C f(z) dz &= \oint_C (u + i v)(dx + i dy) \\\\
 &= \oint_C (u dx - v dy) + i \oint_C (v dx + u dy) \\\\
 &= -\iint_D \left( \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} \right) dx dy \\\\
 &\quad + i \iint_D \left( \frac{\partial u}{\partial x} - \frac{\partial v}{\partial y} \right) dx dy
-\end{aligned} $$
+\end{align} $$
 
 根据柯西-黎曼方程，被积函数都为零，因此整个积分为零。
 
@@ -111,10 +111,10 @@ $$ \oint_C \frac{f(z)}{z - z_0} dz = \oint_{C_\varepsilon} \frac{f(z)}{z - z_0} 
 
 现在计算右边的积分。在 $C_\varepsilon$ 上，$z = z_0 + \varepsilon e^{i\theta}$，$dz = i \varepsilon e^{i\theta} d\theta$，$\theta \in [0, 2\pi]$。
 
-$$ \begin{aligned}
+$$ \begin{align}
 \oint_{C_\varepsilon} \frac{f(z)}{z - z_0} dz &= \int_0^{2\pi} \frac{f(z_0 + \varepsilon e^{i\theta})}{\varepsilon e^{i\theta}} \cdot i \varepsilon e^{i\theta} d\theta \\\\
 &= i \int_0^{2\pi} f(z_0 + \varepsilon e^{i\theta}) d\theta
-\end{aligned} $$
+\end{align} $$
 
 令 $\varepsilon \to 0$。因为 $f(z)$ 在 $z_0$ 处连续（解析函数必连续），我们有 $f(z_0 + \varepsilon e^{i\theta}) \to f(z_0)$。
 
@@ -154,7 +154,7 @@ $$ f^{(n)}(z_0) = \frac{n!}{2\pi i} \oint_C \frac{f(z)}{(z - z_0)^{n+1}} dz $$
 
 ![向量场 $1/(z-z_0)$](/images/math/vector-field-1-z.png)
 
-*图 2：函数 $1/(z-z_0)$ 的向量场，$z_0$ 处的奇点像一个"源头"*
+**图 2**：函数 $1/(z-z_0)$ 的向量场，$z_0$ 处的奇点像一个"源头"
 
 当我们沿一个包含 $z_0$ 的闭曲线积分 $\frac{1}{z - z_0}$ 时，实际上是在测量这个向量场的"环流"。直观上，这个环流应该与绕原点的圈数有关，正好是 $2\pi i$。
 
@@ -170,7 +170,7 @@ $$ f(z_0) = \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + re^{i\theta}) d\theta $$
 
 ![柯西积分公式的几何直观：圆周收缩到点](/images/math/circles-shrinking.png)
 
-*图 3：柯西积分公式的几何直观：随着半径减小，积分路径收缩到点 $z_0$*
+**图 3**：柯西积分公式的几何直观：随着半径减小，积分路径收缩到点 $z_0$
 
 ## 深入应用：留数定理
 
@@ -248,11 +248,11 @@ $$ \frac{f(\zeta)}{\zeta - z} = \sum_{n=0}^{\infty} \frac{f(\zeta)}{(\zeta - z_0
 
 代入柯西积分公式：
 
-$$ \begin{aligned}
+$$ \begin{align}
 f(z) &= \frac{1}{2\pi i} \oint_C \frac{f(\zeta)}{\zeta - z} d\zeta \\\\
 &= \frac{1}{2\pi i} \sum_{n=0}^{\infty} \left[ \oint_C \frac{f(\zeta)}{(\zeta - z_0)^{n+1}} d\zeta \right] (z - z_0)^n \\\\
 &= \sum_{n=0}^{\infty} \frac{f^{(n)}(z_0)}{n!} (z - z_0)^n
-\end{aligned} $$
+\end{align} $$
 
 这就是泰勒级数展开！我们用柯西积分公式导出了实函数泰勒级数的复版本。
 

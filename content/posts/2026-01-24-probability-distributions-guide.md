@@ -84,7 +84,7 @@ $$
 
 ![二项分布](/images/math/binomial-distributions.png)
 
-*图 1：不同参数下的二项分布*
+**图 1**：不同参数下的二项分布
 
 从图像中可以观察到几个有趣的性质：
 
@@ -132,11 +132,11 @@ $$
 让我们逐步推导：
 
 $$
-\begin{aligned}
+\begin{align}
 P(X = k) &= \frac{n!}{k!(n-k)!} p^k (1-p)^{n-k} \\\\
 &= \frac{n(n-1)(n-2)\cdots(n-k+1)}{k!} \left(\frac{\lambda}{n}\right)^k \left(1 - \frac{\lambda}{n}\right)^{n-k} \\\\
 &= \frac{n(n-1)(n-2)\cdots(n-k+1)}{n^k} \cdot \frac{\lambda^k}{k!} \cdot \left(1 - \frac{\lambda}{n}\right)^{n-k} \\\\
-\end{aligned}
+\end{align}
 $$
 
 现在，我们让 $n \to \infty$：
@@ -166,12 +166,12 @@ $$
 泊松分布的期望和方差有简洁的推导方法。首先，计算期望：
 
 $$
-\begin{aligned}
+\begin{align}
 E[X] &= \sum_{k=0}^{\infty} k \cdot \frac{\lambda^k e^{-\lambda}}{k!} \\\\
 &= e^{-\lambda} \sum_{k=0}^{\infty} k \cdot \frac{\lambda^k}{k!} \\\\
 &= e^{-\lambda} \sum_{k=1}^{\infty} \frac{\lambda^k}{(k-1)!} \quad (\text{注意 } k=0 \text{ 项为零}) \\\\
 &= e^{-\lambda} \lambda \sum_{k=1}^{\infty} \frac{\lambda^{k-1}}{(k-1)!} \\\\
-\end{aligned}
+\end{align}
 $$
 
 令 $j = k-1$，则：
@@ -185,13 +185,13 @@ $$
 接下来计算 $E[X^2]$：
 
 $$
-\begin{aligned}
+\begin{align}
 E[X^2] &= \sum_{k=0}^{\infty} k^2 \cdot \frac{\lambda^k e^{-\lambda}}{k!} \\\\
 &= e^{-\lambda} \sum_{k=0}^{\infty} k^2 \cdot \frac{\lambda^k}{k!} \\\\
 &= e^{-\lambda} \sum_{k=0}^{\infty} k(k-1+1) \cdot \frac{\lambda^k}{k!} \\\\
 &= e^{-\lambda} \left[\sum_{k=0}^{\infty} k(k-1) \cdot \frac{\lambda^k}{k!} + \sum_{k=0}^{\infty} k \cdot \frac{\lambda^k}{k!}\right] \\\\
 &= e^{-\lambda} \left[\sum_{k=2}^{\infty} \frac{\lambda^k}{(k-2)!} + \sum_{k=0}^{\infty} k \cdot \frac{\lambda^k}{k!}\right] \\\\
-\end{aligned}
+\end{align}
 $$
 
 第一个求和：
@@ -219,7 +219,7 @@ $$
 
 ![泊松分布](/images/math/poisson-distributions.png)
 
-*图 2：不同参数下的泊松分布*
+**图 2**：不同参数下的泊松分布
 
 从图像中可以观察到：
 
@@ -328,21 +328,21 @@ $$
 我们可以使用一个巧妙的技巧——二重积分和极坐标变换：
 
 $$
-\begin{aligned}
+\begin{align}
 I^2 &= \left(\int_{-\infty}^{\infty} e^{-x^2/2} dx\right) \left(\int_{-\infty}^{\infty} e^{-y^2/2} dy\right) \\\\
 &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{-(x^2+y^2)/2} dx dy
-\end{aligned}
+\end{align}
 $$
 
 转换为极坐标：$x = r\cos\theta$, $y = r\sin\theta$, $dx dy = r dr d\theta$：
 
 $$
-\begin{aligned}
+\begin{align}
 I^2 &= \int_{0}^{2\pi} \int_{0}^{\infty} e^{-r^2/2} r dr d\theta \\\\
 &= \int_{0}^{2\pi} \left[-e^{-r^2/2}\right]_{0}^{\infty} d\theta \\\\
 &= \int_{0}^{2\pi} 1 \cdot d\theta \\\\
 &= 2\pi
-\end{aligned}
+\end{align}
 $$
 
 因此，$I = \sqrt{2\pi}$。这解释了为什么归一化常数包含 $\sqrt{2\pi}$。
@@ -360,20 +360,20 @@ $$
 方差为：
 
 $$
-\begin{aligned}
+\begin{align}
 \text{Var}(Z) &= E[Z^2] - (E[Z])^2 = E[Z^2] \\\\
 &= \int_{-\infty}^{\infty} x^2 \cdot \frac{1}{\sqrt{2\pi}} e^{-x^2/2} dx \\\\
-\end{aligned}
+\end{align}
 $$
 
 使用分部积分：设 $u = x$, $dv = x e^{-x^2/2} dx$，则 $du = dx$, $v = -e^{-x^2/2}$：
 
 $$
-\begin{aligned}
+\begin{align}
 E[Z^2] &= \frac{1}{\sqrt{2\pi}} \left[-x e^{-x^2/2}\right]_{-\infty}^{\infty} + \int_{-\infty}^{\infty} e^{-x^2/2} dx \\\\
 &= 0 + \sqrt{2\pi} \cdot \frac{1}{\sqrt{2\pi}} \\\\
 &= 1
-\end{aligned}
+\end{align}
 $$
 
 对于一般正态分布 $X = \sigma Z + \mu$，我们有：
@@ -386,7 +386,7 @@ $$
 
 ![正态分布](/images/math/normal-distributions.png)
 
-*图 3：不同参数下的正态分布*
+**图 3**：不同参数下的正态分布
 
 从图像中可以观察到：
 
@@ -462,12 +462,12 @@ $$
 让我们验证这个性质：
 
 $$
-\begin{aligned}
+\begin{align}
 P(T > s + t \mid T > s) &= \frac{P(T > s + t)}{P(T > s)} \\\\
 &= \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} \\\\
 &= e^{-\lambda t} \\\\
 &= P(T > t)
-\end{aligned}
+\end{align}
 $$
 
 指数分布是唯一具有无记忆性的连续分布（几何分布是唯一具有无记忆性的离散分布）。
@@ -477,11 +477,11 @@ $$
 指数分布的期望：
 
 $$
-\begin{aligned}
+\begin{align}
 E[T] &= \int_{0}^{\infty} t \cdot \lambda e^{-\lambda t} dt \\\\
 &= \lambda \cdot \frac{1}{\lambda^2} \quad (\text{利用 } \int_{0}^{\infty} t e^{-\lambda t} dt = \frac{1}{\lambda^2}) \\\\
 &= \frac{1}{\lambda}
-\end{aligned}
+\end{align}
 $$
 
 这个结果很直观：如果事件以速率 $\lambda$ 发生，那么平均等待时间就是 $\frac{1}{\lambda}$。
@@ -489,11 +489,11 @@ $$
 计算 $E[T^2]$：
 
 $$
-\begin{aligned}
+\begin{align}
 E[T^2] &= \int_{0}^{\infty} t^2 \cdot \lambda e^{-\lambda t} dt \\\\
 &= \lambda \cdot \frac{2}{\lambda^3} \quad (\text{利用 } \int_{0}^{\infty} t^2 e^{-\lambda t} dt = \frac{2}{\lambda^3}) \\\\
 &= \frac{2}{\lambda^2}
-\end{aligned}
+\end{align}
 $$
 
 方差为：
@@ -510,7 +510,7 @@ $$
 
 ![指数分布](/images/math/exponential-distributions.png)
 
-*图 4：不同参数下的指数分布*
+**图 4**：不同参数下的指数分布
 
 从图像中可以观察到：
 

@@ -157,13 +157,13 @@ $$
 
 根据贝叶斯公式：
 $$
-\begin{aligned}
+\begin{align}
 P(D|T^+) &= \frac{P(T^+|D) \cdot P(D)}{P(T^+|D) \cdot P(D) + P(T^+|\neg D) \cdot P(\neg D)} \\
 &= \frac{0.95 \times 0.01}{0.95 \times 0.01 + 0.05 \times 0.99} \\
 &= \frac{0.0095}{0.0095 + 0.0495} \\
 &= \frac{0.0095}{0.059} \\
 &\approx 0.161
-\end{aligned}
+\end{align}
 $$
 
 所以即使测试阳性，真正患病的概率只有约16.1%！

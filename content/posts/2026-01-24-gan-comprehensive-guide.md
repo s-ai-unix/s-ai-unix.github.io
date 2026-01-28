@@ -79,7 +79,7 @@ flowchart LR
     style FakeIn fill:#FFE66D,stroke:#FFE66D,stroke-width:2px,color:#333
 ```
 
-*图 1：GAN 的架构示意图。生成器将噪声映射为图像，判别器区分真实和伪造样本*
+**图 1**：GAN 的架构示意图。生成器将噪声映射为图像，判别器区分真实和伪造样本
 
 ## 第二章：数学框架与目标函数
 
@@ -394,7 +394,7 @@ $$W(p_r, p_g) = \inf_{\gamma \in \Pi(p_r, p_g)} \mathbb{E}_{(\mathbf{x}, \mathbf
 
 ![Wasserstein 距离的直观理解](/images/math/wasserstein-distance.png)
 
-*图 2：Wasserstein 距离的几何直观。我们需要将真实分布的质量移动到生成分布的位置，最小化所需的"功"*
+**图 2**：Wasserstein 距离的几何直观。我们需要将真实分布的质量移动到生成分布的位置，最小化所需的"功"
 
 **关键优势**:
 
@@ -427,7 +427,7 @@ $$\bar{\mathbf{W}}_{SN} = \frac{\mathbf{W}}{\sigma(\mathbf{W})}$$
 
 ![JS 散度 vs Wasserstein 距离](/images/math/js-vs-wasserstein.png)
 
-*图 3：JS 散度与 Wasserstein 距离的对比。当两个分布没有重叠时，JS 散度饱和而 Wasserstein 距离继续提供有意义的梯度*
+**图 3**：JS 散度与 Wasserstein 距离的对比。当两个分布没有重叠时，JS 散度饱和而 Wasserstein 距离继续提供有意义的梯度
 
 **JS 散度的局限**:
 - 当 $p_r$ 和 $p_g$ 没有重叠时,JS 散度为 $\log 2$
@@ -623,7 +623,7 @@ $$G(\mathbf{z}(\alpha))$$
 
 ![潜空间插值](/images/math/latent-interpolation.png)
 
-*图 4：潜空间插值的可视化。通过在两个噪声向量之间线性插值，我们可以获得从一种图像到另一种图像的平滑过渡*
+**图 4**：潜空间插值的可视化。通过在两个噪声向量之间线性插值，我们可以获得从一种图像到另一种图像的平滑过渡
 
 **数学解释**:
 - $\alpha = 0$: 第一张图像 $G(\mathbf{z}_1)$
@@ -657,7 +657,7 @@ GAN 的训练损失曲线有独特的模式。
 
 ![GAN 训练损失曲线](/images/math/gan-training-loss.png)
 
-*图 5：典型的 GAN 训练损失曲线。判别器和生成器的损失会相互振荡，最终趋于平衡*
+**图 5**：典型的 GAN 训练损失曲线。判别器和生成器的损失会相互振荡，最终趋于平衡
 
 **观察**:
 - 判别器损失:先下降,然后稳定在某个值附近

@@ -90,12 +90,12 @@ $$
 我们要求的是 $P(D \mid T)$（后验概率）：
 
 $$
-\begin{aligned}
+\begin{align}
 P(D \mid T) &= \frac{P(T \mid D) \cdot P(D)}{P(T \mid D) \cdot P(D) + P(T \mid \neg D) \cdot P(\neg D)} \\
 &= \frac{0.99 \times 0.01}{0.99 \times 0.01 + 0.01 \times 0.99} \\
 &= \frac{0.0099}{0.0099 + 0.0099} \\
 &= 0.5
-\end{aligned}
+\end{align}
 $$
 
 这是一个令人惊讶的结果：即使检测方法的准确率达到 $99\%$，阳性检测结果也只有 $50\%$ 的概率真正患病！这个例子说明了贝叶斯公式的重要性：我们不能只看检测方法的准确性，还要考虑基础患病率（先验概率）。
@@ -204,31 +204,31 @@ $$
 对数似然函数为：
 
 $$
-\begin{aligned}
+\begin{align}
 \ell(\mu, \sigma^2) &= \sum_{i=1}^{n} \log \left(\frac{1}{\sqrt{2\pi}\sigma} \exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)\right) \\
 &= \sum_{i=1}^{n} \left(-\frac{1}{2}\log(2\pi) - \frac{1}{2}\log(\sigma^2) - \frac{(x_i-\mu)^2}{2\sigma^2}\right) \\
 &= -\frac{n}{2}\log(2\pi) - \frac{n}{2}\log(\sigma^2) - \frac{1}{2\sigma^2}\sum_{i=1}^{n} (x_i-\mu)^2
-\end{aligned}
+\end{align}
 $$
 
 对 $\mu$ 求导并令导数为 $0$：
 
 $$
-\begin{aligned}
+\begin{align}
 \frac{\partial \ell}{\partial \mu} &= \frac{1}{\sigma^2} \sum_{i=1}^{n} (x_i - \mu) = 0 \\
 \Rightarrow \sum_{i=1}^{n} (x_i - \hat{\mu}) &= 0 \\
 \Rightarrow \hat{\mu} &= \frac{1}{n}\sum_{i=1}^{n} x_i
-\end{aligned}
+\end{align}
 $$
 
 对 $\sigma^2$ 求导并令导数为 $0$：
 
 $$
-\begin{aligned}
+\begin{align}
 \frac{\partial \ell}{\partial \sigma^2} &= -\frac{n}{2\sigma^2} + \frac{1}{2(\sigma^2)^2}\sum_{i=1}^{n} (x_i-\mu)^2 = 0 \\
 \Rightarrow \frac{1}{\hat{\sigma}^2} &= \frac{1}{n\hat{\sigma}^4}\sum_{i=1}^{n} (x_i-\hat{\mu})^2 \\
 \Rightarrow \hat{\sigma}^2 &= \frac{1}{n}\sum_{i=1}^{n} (x_i-\hat{\mu})^2
-\end{aligned}
+\end{align}
 $$
 
 **应用**：逻辑回归、线性回归等监督学习算法本质上都是 MLE 估计。例如，逻辑回归假设 $y_i \mid x_i \sim \text{Bernoulli}(\sigma(w^\top x_i))$，然后通过最大化对数似然来估计参数 $w$。
@@ -276,19 +276,19 @@ $$
 取对数：
 
 $$
-\begin{aligned}
+\begin{align}
 \log p(w \mid X, y) &\propto \sum_{i=1}^{n} \log \mathcal{N}(y_i \mid w^\top x_i, \sigma^2) + \log \mathcal{N}(w \mid 0, \lambda^{-1} I) \\
 &\propto -\frac{1}{2\sigma^2}\sum_{i=1}^{n} (y_i - w^\top x_i)^2 - \frac{\lambda}{2} w^\top w + \text{constant}
-\end{aligned}
+\end{align}
 $$
 
 最大化后验等价于最小化负对数后验：
 
 $$
-\begin{aligned}
+\begin{align}
 w_{\text{MAP}} &= \arg\min_{w} \left(\sum_{i=1}^{n} (y_i - w^\top x_i)^2 + \lambda \sigma^2 w^\top w\right) \\
 &= \arg\min_{w} \left(\lVert y - Xw\rVert^2 + \alpha \lVert w\rVert^2\right)
-\end{aligned}
+\end{align}
 $$
 
 其中 $\alpha = \lambda \sigma^2$。
@@ -378,10 +378,10 @@ $$
 **例子**：二分类问题。设 $y \in \{0, 1\}$ 是真实标签，$\hat{y} = \sigma(w^\top x)$ 是预测概率。交叉熵损失为：
 
 $$
-\begin{aligned}
+\begin{align}
 L &= -\sum_{i=1}^{n} [y_i \log \hat{y}_i + (1 - y_i) \log(1 - \hat{y}_i)] \\
 &= -\sum_{i=1}^{n} [y_i \log \sigma(w^\top x_i) + (1 - y_i) \log(1 - \sigma(w^\top x_i))]
-\end{aligned}
+\end{align}
 $$
 
 这正是逻辑回归的标准损失函数。
@@ -407,10 +407,10 @@ $$
 **似然函数**：
 
 $$
-\begin{aligned}
+\begin{align}
 L(w) &= \prod_{i=1}^{n} P(y_i \mid x_i, w) \\
 &= \prod_{i=1}^{n} [\sigma(w^\top x_i)]^{y_i} [1 - \sigma(w^\top x_i)]^{1-y_i}
-\end{aligned}
+\end{align}
 $$
 
 **对数似然**：

@@ -816,12 +816,12 @@ $$
 麦克斯韦方程组完美体现了三者：
 
 $$
-\begin{aligned}
+\begin{align}
 \nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0} & \text{（电场的散度 = 电荷密度）} \\
 \nabla \cdot \mathbf{B} &= 0 & \text{（磁场的散度 = 0，无磁单极子）} \\
 \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} & \text{（电场的旋度 = 磁场的变化率）} \\
 \nabla \times \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t} & \text{（磁场的旋度 = 电流 + 电场变化率）}
-\end{aligned}
+\end{align}
 $$
 
 这四个方程统一了电学和磁学，预言了电磁波的存在。

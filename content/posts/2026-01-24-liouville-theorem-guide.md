@@ -23,7 +23,7 @@ cover:
 
 ![常数函数与有界函数](/images/math/constant-function.png)
 
-*图 1：常数函数与实数域中的有界函数对比*
+**图 1**：常数函数与实数域中的有界函数对比
 
 ## 历史背景：约瑟夫·刘维尔及其贡献
 
@@ -168,7 +168,7 @@ $$ |f'(z)| \leq \lim_{R \to \infty} \frac{M}{R} = 0 $$
 
 ![整函数的增长性](/images/math/entire-function-growth.png)
 
-*图 2：不同整函数的增长速度对比*
+**图 2**：不同整函数的增长速度对比
 
 ### 常数函数
 
@@ -180,7 +180,7 @@ $$ |f'(z)| \leq \lim_{R \to \infty} \frac{M}{R} = 0 $$
 
 ![多项式模长分布](/images/math/polynomial-modulus.png)
 
-*图 3：多项式 $|z^2+1|$ 的模长分布*
+**图 3**：多项式 $|z^2+1|$ 的模长分布
 
 ### 指数函数
 
@@ -195,7 +195,7 @@ $$ |f'(z)| \leq \lim_{R \to \infty} \frac{M}{R} = 0 $$
 
 ![指数函数模长分布](/images/math/exp-modulus.png)
 
-*图 4：指数函数 $|\exp(z)|$ 的模长分布*
+**图 4**：指数函数 $|\exp(z)|$ 的模长分布
 
 ### 有界性的含义
 

@@ -110,11 +110,11 @@ $$
 Frenet和Serrett发现，这个变化可以用一组简洁而优美的方程描述：
 
 $$
-\begin{aligned}
+\begin{align}
 \frac{d\mathbf{T}}{ds} &= \kappa \mathbf{N} \\
 \frac{d\mathbf{N}}{ds} &= -\kappa \mathbf{T} + \tau \mathbf{B} \\
 \frac{d\mathbf{B}}{ds} &= -\tau \mathbf{N}
-\end{aligned}
+\end{align}
 $$
 
 这组方程就是著名的**Frenet-Serret公式**。其中：
@@ -387,10 +387,10 @@ $$
 在Frenet坐标系中，车辆的运动可以描述为：
 
 $$
-\begin{aligned}
+\begin{align}
 \dot{s} &= \frac{v \cos(\theta - \theta_{\text{ref}})}{1 - \kappa(s) d} \\
 \dot{d} &= v \sin(\theta - \theta_{\text{ref}})
-\end{aligned}
+\end{align}
 $$
 
 其中：
@@ -533,10 +533,10 @@ MPC的核心优势在于它能**显式处理约束**（如：$v_{\text{min}} \le
 一个简单的比例-微分（PD）控制器：
 
 $$
-\begin{aligned}
+\begin{align}
 v_d &= v_{\text{ref}} + k_p^s (s_{\text{ref}} - s) + k_d^s (\dot{s}_{\text{ref}} - \dot{s}) \\
 \omega &= k_p^d (0 - d) + k_d^d (0 - \dot{d})
-\end{aligned}
+\end{align}
 $$
 
 其中：

@@ -216,10 +216,10 @@ graph TD
 从数学上看，多层感知机的决策函数变成了复合函数的形式：
 
 $$
-\begin{aligned}
+\begin{align}
 f(x) = \sigma(&w^{(2)}_1 \cdot \sigma(w^{(1)}_{11} x_1 + w^{(1)}_{12} x_2 + b^{(1)}_1) \\
 &+ w^{(2)}_2 \cdot \sigma(w^{(1)}_{21} x_1 + w^{(1)}_{22} x_2 + b^{(1)}_2) + b^{(2)})
-\end{aligned}
+\end{align}
 $$
 
 其中 $\sigma$ 是激活函数（如 Sigmoid 或 ReLU）。这个函数不再是简单的线性函数 $w \cdot x + b$，而是一个**非线性复合函数**。

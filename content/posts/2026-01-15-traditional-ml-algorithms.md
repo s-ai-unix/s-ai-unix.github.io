@@ -71,19 +71,19 @@ $$
 **第四步：令偏导为零**
 
 $$
-\begin{aligned}
+\begin{align}
 \frac{\partial L}{\partial w_0} &= 0 \Rightarrow \sum_{i=1}^{n} [y_i - (w_0 + w_1 x_i)] = 0 \\
 &\Rightarrow \sum_{i=1}^{n} y_i - n w_0 - w_1 \sum_{i=1}^{n} x_i = 0 \\
 &\Rightarrow n w_0 + w_1 \sum_{i=1}^{n} x_i = \sum_{i=1}^{n} y_i
-\end{aligned}
+\end{align}
 $$
 
 $$
-\begin{aligned}
+\begin{align}
 \frac{\partial L}{\partial w_1} &= 0 \Rightarrow \sum_{i=1}^{n} x_i [y_i - (w_0 + w_1 x_i)] = 0 \\
 &\Rightarrow \sum_{i=1}^{n} x_i y_i - w_0 \sum_{i=1}^{n} x_i - w_1 \sum_{i=1}^{n} x_i^2 = 0 \\
 &\Rightarrow w_0 \sum_{i=1}^{n} x_i + w_1 \sum_{i=1}^{n} x_i^2 = \sum_{i=1}^{n} x_i y_i
-\end{aligned}
+\end{align}
 $$
 
 **第五步：解线性方程组**
@@ -97,12 +97,12 @@ $$
 代入第二个方程：
 
 $$
-\begin{aligned}
+\begin{align}
 (\bar{y} - w_1 \bar{x}) \sum_{i=1}^{n} x_i + w_1 \sum_{i=1}^{n} x_i^2 &= \sum_{i=1}^{n} x_i y_i \\
 \bar{y} n \bar{x} - w_1 n \bar{x}^2 + w_1 \sum_{i=1}^{n} x_i^2 &= \sum_{i=1}^{n} x_i y_i \\
 w_1 \left(\sum_{i=1}^{n} x_i^2 - n \bar{x}^2\right) &= \sum_{i=1}^{n} x_i y_i - n \bar{x} \bar{y} \\
 w_1 &= \frac{\sum_{i=1}^{n} x_i y_i - n \bar{x} \bar{y}}{\sum_{i=1}^{n} x_i^2 - n \bar{x}^2}
-\end{aligned}
+\end{align}
 $$
 
 这就是著名的**最小二乘估计**。
@@ -122,10 +122,10 @@ $$
 展开损失函数：
 
 $$
-\begin{aligned}
+\begin{align}
 L(\mathbf{w}) &= (\mathbf{y} - \mathbf{X}\mathbf{w})^T (\mathbf{y} - \mathbf{X}\mathbf{w}) \\
 &= \mathbf{y}^T \mathbf{y} - \mathbf{y}^T \mathbf{X}\mathbf{w} - \mathbf{w}^T \mathbf{X}^T \mathbf{y} + \mathbf{w}^T \mathbf{X}^T \mathbf{X} \mathbf{w}
-\end{aligned}
+\end{align}
 $$
 
 注意 $\mathbf{y}^T \mathbf{X}\mathbf{w}$ 是标量，等于其转置 $\mathbf{w}^T \mathbf{X}^T \mathbf{y}$，因此：
@@ -137,10 +137,10 @@ $$
 求梯度：
 
 $$
-\begin{aligned}
+\begin{align}
 \nabla_{\mathbf{w}} L(\mathbf{w}) &= \nabla_{\mathbf{w}} (\mathbf{y}^T \mathbf{y}) - 2 \nabla_{\mathbf{w}} (\mathbf{w}^T \mathbf{X}^T \mathbf{y}) + \nabla_{\mathbf{w}} (\mathbf{w}^T \mathbf{X}^T \mathbf{X} \mathbf{w}) \\
 &= 0 - 2 \mathbf{X}^T \mathbf{y} + 2 \mathbf{X}^T \mathbf{X} \mathbf{w}
-\end{aligned}
+\end{align}
 $$
 
 令梯度为零：
@@ -237,9 +237,9 @@ $$
 取对数简化计算：
 
 $$
-\begin{aligned}
+\begin{align}
 \ell(\mathbf{w}) = \log \mathcal{L}(\mathbf{w}) &= \sum_{i=1}^{n} \left[ y_i \log p(\mathbf{x}_i) + (1 - y_i) \log(1 - p(\mathbf{x}_i)) \right]
-\end{aligned}
+\end{align}
 $$
 
 **第六步：计算梯度**
@@ -247,12 +247,12 @@ $$
 我们需要计算 $\frac{\partial \ell}{\partial w}$。首先计算 $\frac{\partial p(x)}{\partial w}$：
 
 $$
-\begin{aligned}
+\begin{align}
 p(x) &= \frac{1}{1 + e^{-w^T x}} \\
 \frac{\partial p(x)}{\partial w} &= -\frac{1}{(1 + e^{-w^T x})^2} \cdot \frac{\partial}{\partial w} (1 + e^{-w^T x}) \\
 &= -\frac{1}{(1 + e^{-w^T x})^2} \cdot e^{-w^T x} \cdot (-x) \\
 &= \frac{e^{-w^T x}}{(1 + e^{-w^T x})^2} x
-\end{aligned}
+\end{align}
 $$
 
 注意到：
@@ -298,13 +298,13 @@ $$
 对于逻辑回归：
 
 $$
-\begin{aligned}
+\begin{align}
 \text{logit}(P(y=1|\mathbf{x})) &= \ln\left(\frac{P(y=1|\mathbf{x})}{1 - P(y=1|\mathbf{x})}\right) \\
 &= \ln\left(\frac{\sigma(\mathbf{w}^T \mathbf{x})}{1 - \sigma(\mathbf{w}^T \mathbf{x})}\right) \\
 &= \ln\left(\frac{\frac{1}{1 + e^{-\mathbf{w}^T \mathbf{x}}}}{\frac{e^{-\mathbf{w}^T \mathbf{x}}}{1 + e^{-\mathbf{w}^T \mathbf{x}}}}\right) \\
 &= \ln(e^{\mathbf{w}^T \mathbf{x}}) \\
 &= \mathbf{w}^T \mathbf{x}
-\end{aligned}
+\end{align}
 $$
 
 这表明：logit 变换后，概率的对数几率（log-odds）与特征呈线性关系。
@@ -682,10 +682,10 @@ $$
 因此，SVM 的优化问题是：
 
 $$
-\begin{aligned}
+\begin{align}
 \min_{\mathbf{w}, b} \quad & \frac{1}{2} \|\mathbf{w}\|^2 \\
 \text{s.t.} \quad & y_i (\mathbf{w}^T \mathbf{x}_i + b) \geq 1, \quad i = 1, \ldots, n
-\end{aligned}
+\end{align}
 $$
 
 目标函数加 $\frac{1}{2}$ 是为了求导方便（$\|\mathbf{w}\|^2$ 的导数是 $2\mathbf{w}$，乘 $\frac{1}{2}$ 后导数是 $\mathbf{w}$）。
@@ -725,11 +725,11 @@ $$
 对偶问题是：
 
 $$
-\begin{aligned}
+\begin{align}
 \max_{\alpha} \quad & \sum_{i=1}^{n} \alpha_i - \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n} \alpha_i \alpha_j y_i y_j \mathbf{x}_i^T \mathbf{x}_j \\
 \text{s.t.} \quad & \alpha_i \geq 0, \quad i = 1, \ldots, n \\
 & \sum_{i=1}^{n} \alpha_i y_i = 0
-\end{aligned}
+\end{align}
 $$
 
 **第五步：预测**
@@ -747,11 +747,11 @@ $$
 实际数据可能不是线性可分的。引入松弛变量 $\xi_i \geq 0$：
 
 $$
-\begin{aligned}
+\begin{align}
 \min_{\mathbf{w}, b, \xi} \quad & \frac{1}{2} \|\mathbf{w}\|^2 + C \sum_{i=1}^{n} \xi_i \\
 \text{s.t.} \quad & y_i (\mathbf{w}^T \mathbf{x}_i + b) \geq 1 - \xi_i, \quad i = 1, \ldots, n \\
 & \xi_i \geq 0, \quad i = 1, \ldots, n
-\end{aligned}
+\end{align}
 $$
 
 其中 $C$ 是惩罚参数，控制对错分类的容忍度。
@@ -964,7 +964,7 @@ Bagging 减少方差的推导：
 Bagging 预测为 $\hat{f} = \frac{1}{T} \sum_{t=1}^{T} f_t$，其方差为：
 
 $$
-\begin{aligned}
+\begin{align}
 \text{Var}(\hat{f}) &= \text{Var}\left(\frac{1}{T} \sum_{t=1}^{T} f_t\right) \\
 &= \frac{1}{T^2} \text{Var}\left(\sum_{t=1}^{T} f_t\right) \\
 &= \frac{1}{T^2} \left( \sum_{t=1}^{T} \text{Var}(f_t) + 2 \sum_{i < j} \text{Cov}(f_i, f_j) \right) \\
@@ -972,7 +972,7 @@ $$
 &= \frac{1}{T^2} \left( T \sigma^2 + T(T-1) \rho \sigma^2 \right) \\
 &= \frac{\sigma^2}{T} + \frac{T-1}{T} \rho \sigma^2 \\
 &= \rho \sigma^2 + \frac{1 - \rho}{T} \sigma^2
-\end{aligned}
+\end{align}
 $$
 
 当 $T \to \infty$，$\text{Var}(\hat{f}) \to \rho \sigma^2$。

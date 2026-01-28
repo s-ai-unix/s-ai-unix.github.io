@@ -251,10 +251,10 @@ $$
 不可压缩流体的纳维-斯托克斯方程为：
 
 $$
-\begin{aligned}
+\begin{align}
 \frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla) \mathbf{u} &= -\frac{1}{\rho} \nabla p + \nu \Delta \mathbf{u} + \mathbf{f} \\
 \nabla \cdot \mathbf{u} &= 0
-\end{aligned}
+\end{align}
 $$
 
 其中：

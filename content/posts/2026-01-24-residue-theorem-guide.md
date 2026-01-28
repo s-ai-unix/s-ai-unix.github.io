@@ -55,7 +55,7 @@ $$ f(z) = u(x, y) + i v(x, y) $$
 
 ![复平面](/images/math/complex-plane.png)
 
-*图 1：复平面上的点表示复数 $z = x + iy$*
+**图 1**：复平面上的点表示复数 $z = x + iy$
 
 ### 解析函数
 
@@ -141,7 +141,7 @@ $$ c_n = \frac{1}{2\pi i} \oint_{\gamma} \frac{f(z)}{(z - z_0)^{n+1}} dz $$
 
 ![洛朗级数收敛域](/images/math/laurent-series-region.png)
 
-*图 2：洛朗级数的环形收敛域*
+**图 2**：洛朗级数的环形收敛域
 
 ### 洛朗级数的分解
 
@@ -189,7 +189,7 @@ $$ \oint_{\gamma} f(z) dz = 2\pi i \sum_{k=1}^{n} \text{Res}_{z=z_k} f(z) $$
 
 ![围道积分路径](/images/math/contour-integral.png)
 
-*图 3：围道积分路径与奇点*
+**图 3**：围道积分路径与奇点
 
 ### 留数定理的推导
 
@@ -255,7 +255,7 @@ $$ \text{Res}_{z=z_0} f(z) = \frac{1}{(m-1)!} \lim_{z \to z_0} \frac{d^{m-1}}{dz
 
 ![留数可视化](/images/math/residue-visualization.png)
 
-*图 4：函数 $f(z) = \frac{1}{z-1}$ 在奇点附近的行为*
+**图 4**：函数 $f(z) = \frac{1}{z-1}$ 在奇点附近的行为
 
 留数有一个直观的几何解释。想象你在复平面上围绕一个奇点行走，记录函数值的"累积旋转"。这个累积旋转的量度就是留数。
 
