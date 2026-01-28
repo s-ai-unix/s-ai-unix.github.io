@@ -44,13 +44,11 @@ math: true
 
 定义三个基本量：
 
-$$
-\begin{aligned}
-E &= \frac{\partial \mathbf{r}}{\partial u} \cdot \frac{\partial \mathbf{r}}{\partial u} = x_u^2 + y_u^2 + z_u^2 \\
-F &= \frac{\partial \mathbf{r}}{\partial u} \cdot \frac{\partial \mathbf{r}}{\partial v} = x_u x_v + y_u y_v + z_u z_v \\
-G &= \frac{\partial \mathbf{r}}{\partial v} \cdot \frac{\partial \mathbf{r}}{\partial v} = x_v^2 + y_v^2 + z_v^2
-\end{aligned}
-$$
+$$E = \frac{\partial \mathbf{r}}{\partial u} \cdot \frac{\partial \mathbf{r}}{\partial u} = x_u^2 + y_u^2 + z_u^2$$
+
+$$F = \frac{\partial \mathbf{r}}{\partial u} \cdot \frac{\partial \mathbf{r}}{\partial v} = x_u x_v + y_u y_v + z_u z_v$$
+
+$$G = \frac{\partial \mathbf{r}}{\partial v} \cdot \frac{\partial \mathbf{r}}{\partial v} = x_v^2 + y_v^2 + z_v^2$$
 
 这三个量 $E, F, G$ 组成了**第一基本形式**：
 
@@ -76,7 +74,7 @@ $$
 
 ![测地线 vs 普通曲线](/images/math/intrinsic-geodesic.png)
 
-*图1：球面上的测地线（蓝色）是大圆弧，是连接两点的最短路径。普通曲线（红色）不是最短的。注意测地线看起来像"直的"——这在球面上很直观。*
+图1：球面上的测地线（蓝色）是大圆弧，是连接两点的最短路径。普通曲线（红色）不是最短的。注意测地线看起来像"直的"——这在球面上很直观。
 
 ## 第二章：外蕴几何——嵌入空间的视角
 
@@ -98,13 +96,11 @@ $$
 
 其中：
 
-$$
-\begin{aligned}
-L &= \frac{\partial^2 \mathbf{r}}{\partial u^2} \cdot \mathbf{n} \\
-M &= \frac{\partial^2 \mathbf{r}}{\partial u \partial v} \cdot \mathbf{n} \\
-N &= \frac{\partial^2 \mathbf{r}}{\partial v^2} \cdot \mathbf{n}
-\end{aligned}
-$$
+$$L = \frac{\partial^2 \mathbf{r}}{\partial u^2} \cdot \mathbf{n}$$
+
+$$M = \frac{\partial^2 \mathbf{r}}{\partial u \partial v} \cdot \mathbf{n}$$
+
+$$N = \frac{\partial^2 \mathbf{r}}{\partial v^2} \cdot \mathbf{n}$$
 
 **直观理解**：第二基本形式告诉我们，曲面在不同方向上的"弯曲程度"。
 
@@ -136,11 +132,11 @@ $$
 
 ![正曲率（球面型）](/images/math/intrinsic-gaussian-pos.png)
 
-*图2：正高斯曲率的等值线（如球面）。曲面上的"碗状"区域对应于正的高斯曲率。*
+图2：正高斯曲率的等值线（如球面）。曲面上的"碗状"区域对应于正的高斯曲率。
 
 ![负曲率（马鞍面型）](/images/math/intrinsic-gaussian-neg.png)
 
-*图3：负高斯曲率的等值线（如马鞍面）。曲面呈马鞍形状，向两个相反方向弯曲。*
+图3：负高斯曲率的等值线（如马鞍面）。曲面呈马鞍形状，向两个相反方向弯曲。
 
 ### 3.3 三种基本曲率
 
@@ -156,11 +152,11 @@ $$
 
 ![圆柱面：可展开成平面](/images/math/intrinsic-cylinder.png)
 
-*图4：圆柱面的高斯曲率为 0，可以展开成平面而不改变内蕴度量。这是抛物型曲面的典型特征。*
+图4：圆柱面的高斯曲率为 0，可以展开成平面而不改变内蕴度量。这是抛物型曲面的典型特征。
 
 ![球面：正曲率不可展开](/images/math/intrinsic-sphere.png)
 
-*图5：球面的高斯曲率为正，无法展开成平面。任何试图将球面摊平的操作都会产生撕裂或拉伸。*
+图5：球面的高斯曲率为正，无法展开成平面。任何试图将球面摊平的操作都会产生撕裂或拉伸。
 
 ## 第四章：曲率的直观理解
 
@@ -218,7 +214,7 @@ $$
 
 ![马鞍面：负曲率](/images/math/intrinsic-saddle.png)
 
-*图6：马鞍面具有负的高斯曲率。注意其形状像一个骑手，向一个方向凸起，向另一个方向凹陷。*
+图6：马鞍面具有负的高斯曲率。注意其形状像一个骑手，向一个方向凸起，向另一个方向凹陷。
 
 **高斯曲率**：在这个例子中，高斯曲率是负的（$K = -4$），这意味着马鞍面上的几何性质与平面或球面完全不同。
 
