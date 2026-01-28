@@ -16,7 +16,7 @@ math: true
 
 1928年的秋天,剑桥大学。一位26岁的年轻物理学家保罗·狄拉克(Paul Dirac)正面临着物理学界最根本的问题之一:如何将**量子力学**与**狭义相对论**统一起来?
 
-当时的物理学界似乎被分裂成两个不相容的世界。一边是薛定谔方程,它在描述原子中的电子行为时取得了巨大成功,但只在低速情况下有效;另一边是爱因斯坦��狭义相对论,它精确地描述了高速运动物体的行为。问题是——这两个理论在数学结构上似乎根本无法协调。
+当时的物理学界似乎被分裂成两个不相容的世界。一边是薛定谔方程,它在描述原子中的电子行为时取得了巨大成功,但只在低速情况下有效;另一边是爱因斯坦的狭义相对论,它精确地描述了高速运动物体的行为。问题是——这两个理论在数学结构上似乎根本无法协调。
 
 让我们从这个困境出发,一步步理解狄拉克是如何通过数学的纯粹美感,找到了连接这两个世界的桥梁。
 
@@ -85,7 +85,7 @@ $$ \left(-\frac{1}{c^2}\frac{\partial^2}{\partial t^2} + \nabla^2 - \frac{m^2c^2
 
 然而,这个方程有一个严重的问题,几乎使它被物理学家抛弃。
 
-在量子力学中,波函数的模平方 $|\psi|^2$ 代表找到粒子的概率密度,它必须是非负的。但对于克莱因-戈尔登方程,如果我们尝试定义概率密度为:
+在量子力学中,波函数的模平方 $|\psi|^2$ 代表找到粒子的概率密度,它必须是非负的。但对于克莱因-戈尔登方程,如果我们尝试定义概率密度为
 
 $$ \rho = \frac{i\hbar}{2mc^2}\left(\psi^*\frac{\partial\psi}{\partial t} - \psi\frac{\partial\psi^*}{\partial t}\right) $$
 
@@ -103,13 +103,13 @@ $$ \rho = \frac{i\hbar}{2mc^2}\left(\psi^*\frac{\partial\psi}{\partial t} - \psi
 
 1928年,狄拉克提出了一个革命性的想法。他的思路非常独特:**既然相对论能量-动量关系是二次的,那么如果我们能够将其"因子分解"为两个线性因子的乘积会怎样?**
 
-换句话说,狄拉克想要找到某种数学对象 $\boldsymbol{\alpha} = (\alpha_1, \alpha_2, \alpha_3)$ 和 $\beta$,使得:
+换句话说,狄拉克想要找到某种数学对象 $\bm{\alpha} = (\alpha_1, \alpha_2, \alpha_3)$ 和 $\beta$,使得
 
-$$ E^2 - p^2c^2 - m^2c^4 = (\beta mc^2 + c\boldsymbol{\alpha}\cdot\mathbf{p})(\beta mc^2 - c\boldsymbol{\alpha}\cdot\mathbf{p}) = 0 $$
+$$ E^2 - p^2c^2 - m^2c^4 = (\beta mc^2 + c\bm{\alpha}\cdot\mathbf{p})(\beta mc^2 - c\bm{\alpha}\cdot\mathbf{p}) = 0 $$
 
 如果这能做到,我们就可以取其中一个因子作为波动方程的基础:
 
-$$ i\hbar\frac{\partial\psi}{\partial t} = \left(c\boldsymbol{\alpha}\cdot\hat{\mathbf{p}} + \beta mc^2\right)\psi $$
+$$ i\hbar\frac{\partial\psi}{\partial t} = \left(c\bm{\alpha}\cdot\hat{\mathbf{p}} + \beta mc^2\right)\psi $$
 
 这个方程中,**时间导数和空间导数都是一阶的**!完全对称!
 
@@ -117,8 +117,8 @@ $$ i\hbar\frac{\partial\psi}{\partial t} = \left(c\boldsymbol{\alpha}\cdot\hat{\
 
 让我们展开上面的乘积,看看需要满足什么条件:
 
-$$ (\beta mc^2 + c\boldsymbol{\alpha}\cdot\mathbf{p})(\beta mc^2 - c\boldsymbol{\alpha}\cdot\mathbf{p}) $$
-$$ = \beta^2m^2c^4 - c^2(\boldsymbol{\alpha}\cdot\mathbf{p})^2 + \beta mc^2 \cdot c\boldsymbol{\alpha}\cdot\mathbf{p} - c\boldsymbol{\alpha}\cdot\mathbf{p} \cdot \beta mc^2 $$
+$$ (\beta mc^2 + c\bm{\alpha}\cdot\mathbf{p})(\beta mc^2 - c\bm{\alpha}\cdot\mathbf{p}) $$
+$$ = \beta^2m^2c^4 - c^2(\bm{\alpha}\cdot\mathbf{p})^2 + \beta mc^2 \cdot c\bm{\alpha}\cdot\mathbf{p} - c\bm{\alpha}\cdot\mathbf{p} \cdot \beta mc^2 $$
 
 为了使这个表达式等于 $m^2c^4 - p^2c^2 = m^2c^4 - c^2(p_1^2 + p_2^2 + p_3^2)$,我们需要:
 
@@ -147,7 +147,7 @@ $$ = \beta^2m^2c^4 - c^2(\boldsymbol{\alpha}\cdot\mathbf{p})^2 + \beta mc^2 \cdo
 
 这意味着波函数 $\psi$ 不能是一个简单的数(标量),而必须是一个**四分量的对象**:
 
-$$ \psi = \begin{pmatrix} \psi_1 \\\\ \psi_2 \\\\ \psi_3 \\\\ \psi_4 \end{pmatrix} $$
+$$ \psi = \begin{pmatrix} \psi_1 \\ \psi_2 \\ \psi_3 \\ \psi_4 \end{pmatrix} $$
 
 这在当时是非常大胆的想法——波函数不仅是一个数,而是一个有四个分量的"旋量"!
 
@@ -171,17 +171,17 @@ graph LR
 
 虽然有很多种方式表示这些 $4 \times 4$ 矩阵,但最常用的是**狄拉克-泡利表示**。我们定义四个 $\gamma$ 矩阵:
 
-$$ \gamma^0 = \begin{pmatrix} I & 0 \\\\ 0 & -I \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & -1 \end{pmatrix} $$
+$$ \gamma^0 = \begin{pmatrix} I & 0 \\ 0 & -I \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{pmatrix} $$
 
-$$ \gamma^1 = \begin{pmatrix} 0 & \sigma_1 \\\\ -\sigma_1 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & -1 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \end{pmatrix} $$
+$$ \gamma^1 = \begin{pmatrix} 0 & \sigma_1 \\ -\sigma_1 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \\ 0 & -1 & 0 & 0 \\ -1 & 0 & 0 & 0 \end{pmatrix} $$
 
-$$ \gamma^2 = \begin{pmatrix} 0 & \sigma_2 \\\\ -\sigma_2 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 & -i \\\\ 0 & 0 & i & 0 \\\\ 0 & i & 0 & 0 \\\\ -i & 0 & 0 & 0 \end{pmatrix} $$
+$$ \gamma^2 = \begin{pmatrix} 0 & \sigma_2 \\ -\sigma_2 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 & -i \\ 0 & 0 & i & 0 \\ 0 & i & 0 & 0 \\ -i & 0 & 0 & 0 \end{pmatrix} $$
 
-$$ \gamma^3 = \begin{pmatrix} 0 & \sigma_3 \\\\ -\sigma_3 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \end{pmatrix} $$
+$$ \gamma^3 = \begin{pmatrix} 0 & \sigma_3 \\ -\sigma_3 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & -1 \\ -1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{pmatrix} $$
 
 其中 $I$ 是 $2 \times 2$ 单位矩阵,$\sigma_i$ 是**泡利矩阵**(Pauli matrices):
 
-$$ \sigma_1 = \begin{pmatrix} 0 & 1 \\\\ 1 & 0 \end{pmatrix}, \quad \sigma_2 = \begin{pmatrix} 0 & -i \\\\ i & 0 \end{pmatrix}, \quad \sigma_3 = \begin{pmatrix} 1 & 0 \\\\ 0 & -1 \end{pmatrix} $$
+$$ \sigma_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad \sigma_2 = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad \sigma_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $$
 
 ### 4.2 克利福德代数
 
@@ -198,15 +198,15 @@ $$ \{\gamma^\mu, \gamma^\nu\} = \gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu = 2g
 让我们验证几个关键关系:
 
 1. **$(\gamma^0)^2 = I$**:
-   $$ \gamma^0\gamma^0 = \begin{pmatrix} I & 0 \\\\ 0 & -I \end{pmatrix}\begin{pmatrix} I & 0 \\\\ 0 & -I \end{pmatrix} = \begin{pmatrix} I^2 & 0 \\\\ 0 & (-I)^2 \end{pmatrix} = \begin{pmatrix} I & 0 \\\\ 0 & I \end{pmatrix} = I $$
+   $$ \gamma^0\gamma^0 = \begin{pmatrix} I & 0 \\ 0 & -I \end{pmatrix}\begin{pmatrix} I & 0 \\ 0 & -I \end{pmatrix} = \begin{pmatrix} I^2 & 0 \\ 0 & (-I)^2 \end{pmatrix} = \begin{pmatrix} I & 0 \\ 0 & I \end{pmatrix} = I $$
 
 2. **$(\gamma^1)^2 = -I$**(验证与 $g^{11} = -1$ 一致)
 
 3. **$\gamma^0\gamma^1 + \gamma^1\gamma^0 = 0$**(反对易性)
 
-### 4.3 与 $\boldsymbol{\alpha}$ 和 $\beta$ 的关系
+### 4.3 与 $\bm{\alpha}$ 和 $\beta$ 的关系
 
-狄拉克最初使用的 $\boldsymbol{\alpha} = (\alpha_1, \alpha_2, \alpha_3)$ 和 $\beta$ 可以通过 $\gamma$ 矩阵表示:
+狄拉克最初使用的 $\bm{\alpha} = (\alpha_1, \alpha_2, \alpha_3)$ 和 $\beta$ 可以通过 $\gamma$ 矩阵表示:
 
 $$ \alpha_i = \gamma^0\gamma^i, \quad \beta = \gamma^0 $$
 
@@ -222,7 +222,7 @@ $$ i\hbar\frac{\partial\psi}{\partial t} = \hat{H}\psi $$
 
 其中哈密顿算符为:
 
-$$ \hat{H} = c\boldsymbol{\alpha}\cdot\hat{\mathbf{p}} + \beta mc^2 $$
+$$ \hat{H} = c\bm{\alpha}\cdot\hat{\mathbf{p}} + \beta mc^2 $$
 
 这个形式与薛定谔方程 $i\hbar\frac{\partial\psi}{\partial t} = \hat{H}\psi$ 非常相似,但有两个关键区别:
 
@@ -257,7 +257,7 @@ $$ \frac{\partial\rho}{\partial t} + \nabla\cdot\mathbf{j} = 0 $$
 
 其中概率流密度为:
 
-$$ \mathbf{j} = c\psi^\dagger\boldsymbol{\alpha}\psi $$
+$$ \mathbf{j} = c\psi^\dagger\bm{\alpha}\psi $$
 
 这保证了概率的守恒性,解决了克莱因-戈尔登方程的根本问题。
 
@@ -277,15 +277,15 @@ $$ \mathbf{L} = \mathbf{r} \times \mathbf{p} $$
 
 以及**自旋角动量**:
 
-$$ \mathbf{S} = \frac{\hbar}{2}\boldsymbol{\Sigma} $$
+$$ \mathbf{S} = \frac{\hbar}{2}\bm{\Sigma} $$
 
-其中 $\boldsymbol{\Sigma} = (\Sigma^1, \Sigma^2, \Sigma^3)$，每个分量为 $4 \times 4$ 矩阵:
+其中 $\bm{\Sigma} = (\Sigma^1, \Sigma^2, \Sigma^3)$,每个分量为 $4 \times 4$ 矩阵:
 
-$$ \Sigma^i = \begin{pmatrix} \sigma_i & 0 \\\\ 0 & \sigma_i \end{pmatrix}, \quad i = 1, 2, 3 $$
+$$ \Sigma^i = \begin{pmatrix} \sigma_i & 0 \\ 0 & \sigma_i \end{pmatrix}, \quad i = 1, 2, 3 $$
 
 例如:
 
-$$ \Sigma^1 = \begin{pmatrix} \sigma_1 & 0 \\\\ 0 & \sigma_1 \end{pmatrix} = \begin{pmatrix} 0 & 1 & 0 & 0 \\\\ 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{pmatrix} $$
+$$ \Sigma^1 = \begin{pmatrix} \sigma_1 & 0 \\ 0 & \sigma_1 \end{pmatrix} = \begin{pmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix} $$
 
 可以证明,总角动量 $\mathbf{J} = \mathbf{L} + \mathbf{S}$ 在狄拉克方程下是守恒的:
 
@@ -345,10 +345,10 @@ $$ E = \pm\sqrt{p^2c^2 + m^2c^4} $$
 
 狄拉克旋量的四个分量有明确的物理意义。在**标准表示**(Dirac-Pauli representation)中:
 
-$$ \psi = \begin{pmatrix} \psi_1 \\\\ \psi_2 \\\\ \psi_3 \\\\ \psi_4 \end{pmatrix} = \begin{pmatrix} \phi \\\\ \chi \end{pmatrix} $$
+$$ \psi = \begin{pmatrix} \psi_1 \\ \psi_2 \\ \psi_3 \\ \psi_4 \end{pmatrix} = \begin{pmatrix} \phi \\ \chi \end{pmatrix} $$
 
-- **上半部分** $\phi = \begin{pmatrix} \psi_1 \\\\ \psi_2 \end{pmatrix}$:描述**电子**的两个自旋态(自旋向上和向下)
-- **下半部分** $\chi = \begin{pmatrix} \psi_3 \\\\ \psi_4 \end{pmatrix}$:描述**正电子**的两个自旋态
+- **上半部分** $\phi = \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix}$:描述**电子**的两个自旋态(自旋向上和向下)
+- **下半部分** $\chi = \begin{pmatrix} \psi_3 \\ \psi_4 \end{pmatrix}$:描述**正电子**的两个自旋态
 
 在**非相对论极限**(速度远小于光速)下,上下分量退耦:
 - 上分量 $\phi$ 满足泡利方程(描述电子)
@@ -368,7 +368,7 @@ $$ \left[\gamma^\mu(i\hbar\partial_\mu - eA_\mu) - mc\right]\psi = 0 $$
 
 在非相对论极限下,这个方程给出电子的**磁矩**:
 
-$$ \boldsymbol{\mu} = g\frac{e}{2m}\mathbf{S} $$
+$$ \bm{\mu} = g\frac{e}{2m}\mathbf{S} $$
 
 其中**朗德g因子**(Lande g-factor)为:
 
@@ -462,7 +462,7 @@ graph LR
 
 石墨烯中的电子行为可以用**二维狄拉克方程**描述:
 
-$$ v_F\boldsymbol{\sigma}\cdot\mathbf{p}\psi = E\psi $$
+$$ v_F\bm{\sigma}\cdot\mathbf{p}\psi = E\psi $$
 
 其中 $v_F \approx \frac{c}{300}$ 是费米速度(比光速慢约300倍)。
 
@@ -510,7 +510,7 @@ graph TB
 
 近年来,**拓扑绝缘体**(Topological Insulators)和**外尔半金属**(Weyl Semimetals)的发现,再次将狄拉克方程带到研究前沿。
 
-这些材料中的准粒子可��用狄拉克方程或**外尔方程**(Weyl equation,无质量的狄拉克方程)描述,具有:
+这些材料中的准粒子可以用狄拉克方程或**外尔方程**(Weyl equation,无质量的狄拉克方程)描述,具有:
 1. **受拓扑保护的表面态**——非常稳定,不易受到杂质和缺陷的影响
 2. **超高电导率**——可能用于下一代电子器件
 3. **量子计算的潜在应用**——拓扑量子计算
