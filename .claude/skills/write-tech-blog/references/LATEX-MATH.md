@@ -41,7 +41,10 @@ $$
 
 ### 2. 向量
 - ✅ 正确：`$\mathbf{x}$`, `$\mathbf{w}$`, `$\vec{v}$`
+- ✅ 希腊字母向量：`$\mathbf{\lambda}$`, `$\mathbf{\theta}$`（使用 `\mathbf` 而非 `\boldsymbol`）
 - ❌ 错误：`x`, `w`, `v`（未包裹，未标记为向量）
+
+**注意**：`\boldsymbol` 命令在某些 MathJax 配置中需要额外的 `boldsymbol` 扩展支持，可能显示为源码。建议使用 `\mathbf` 命令，兼容性更好。
 
 ### 3. 上标和下标
 - ✅ 正确：`$x^{(1)}$`, `$w_{ij}$`, `$\sigma'$`, `$f_t$`
@@ -109,6 +112,8 @@ $$
 | `α_{ij} = 0.5` | `$\alpha_{ij} = 0.5$` | 希腊字母未包裹 |
 | `f_t 接近 1` | `$f_t$ 接近 1` | 下标变量未包裹 |
 | `1-NN 算法` | `1{-}NN 算法` 或 `1NN 算法` | 连字符在下标中导致歧义 |
+| `\\[8pt]` | `\\` | cases 环境中方括号被误解析，导致换行失败 |
+| `\boldsymbol{\lambda}` | `\mathbf{\lambda}` | `\boldsymbol` 需要额外宏包支持，可能显示为源码 |
 
 ## 最佳实践
 
@@ -173,6 +178,30 @@ $$
 E &= mc^2 \\
   &= \sqrt{p^2c^2 + m^2c^4}
 \end{align}
+$$
+```
+
+### cases 环境中的换行间距
+
+在 `cases` 环境中使用 `\\[间距]` 添加垂直间距时，方括号 `[8pt]` 会被 MathJax 误解析为数学符号，导致换行失败或渲染异常。
+
+- ❌ 错误：
+```latex
+$$
+\begin{cases}
+\frac{\partial F}{\partial x} = 0 \\[8pt]
+\frac{\partial G}{\partial x} = 0
+\end{cases}
+$$
+```
+
+- ✅ 正确：使用简单的 `\\` 或增加行内空间
+```latex
+$$
+\begin{cases}
+\frac{\partial F}{\partial x} = 0 \\
+\frac{\partial G}{\partial x} = 0
+\end{cases}
 $$
 ```
 
