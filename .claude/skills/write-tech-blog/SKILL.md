@@ -145,6 +145,79 @@ def plot_ricci_flow_evolution():
    - 使用 `scale=2` 导出高清图（适合 Retina 屏幕）
    - 推荐尺寸：800x600 或 900x450（scale=2 后为 1600x1200 或 1800x900）
 
+#### 图片压缩要求（必须执行）
+
+**为什么需要压缩**：
+- 原始 Plotly 图片可能很大（单张 100-500KB）
+- 博客仓库体积会迅速膨胀（可能超过 100MB）
+- 每次 `git push` 变慢，GitHub Pages 部署变慢
+
+**压缩目标**：
+- PNG 图表：压缩后 10-50KB（节省 50-80%）
+- JPG 封面：压缩后 100-300KB（节省 30-50%）
+- 单张图片不超过 500KB
+
+**首次安装工具**（只需执行一次）：
+
+```bash
+# macOS
+brew install pngquant
+
+# Ubuntu/Debian
+sudo apt-get install pngquant
+```
+
+**生成图片时直接压缩**（推荐做法）：
+
+在 Python 脚本中生成 Plotly 图片后，立即压缩：
+
+```python
+import subprocess
+import os
+
+def save_and_compress(fig, filepath):
+    """保存并压缩图片"""
+    # 先保存
+    fig.write_image(filepath, scale=2)
+    
+    # 立即压缩
+    if filepath.endswith('.png'):
+        subprocess.run([
+            'pngquant', '--quality=70-85', '--force', 
+            '--output', filepath, filepath
+        ], check=False)
+    
+    print(f"✅ 已保存并压缩: {filepath}")
+
+# 使用示例
+save_and_compress(fig, 'static/images/plots/my-plot.png')
+```
+
+**批量压缩新图片**（文章完成后）：
+
+```bash
+# 只压缩 plots 目录下修改过的图片（今天生成的）
+find static/images/plots -name "*.png" -mtime -1 -exec pngquant --quality=70-85 --force --output {} {} \;
+
+# 或者使用项目脚本（压缩全部，跳过已压缩的）
+python3 scripts/compress_images.py
+```
+
+**压缩策略**：
+- **PNG**: 使用 `pngquant` 压缩到 70-85% 质量
+- **JPG**: 使用 Pillow 压缩到 85% 质量，最大宽度 1920px
+
+**验证压缩效果**：
+
+```bash
+# 查看图片大小
+ls -lh static/images/plots/*.png
+
+# 好的压缩效果示例：
+# 压缩前：300KB → 压缩后：60KB（节省 80%）
+# 压缩前：150KB → 压缩后：30KB（节省 80%）
+```
+
 **正误对比示例**（决策树节点）：
 
 ```python
