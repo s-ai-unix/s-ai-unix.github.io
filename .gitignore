@@ -12,3 +12,10 @@ hugo_stats.json
 *.log
 *.swp
 *~
+
+# Image backup directory (created by compress_images.py)
+/static/images_backup_*/
+
+# Large source images (keep only compressed versions)
+# Uncomment if you want to ignore original high-res images
+# /static/images/originals/
