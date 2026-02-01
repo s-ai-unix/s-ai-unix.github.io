@@ -145,6 +145,32 @@ def plot_ricci_flow_evolution():
    - 使用 `scale=2` 导出高清图（适合 Retina 屏幕）
    - 推荐尺寸：800x600 或 900x450（scale=2 后为 1600x1200 或 1800x900）
 
+#### 图片路径规范（关键）
+
+**Hugo 环境下的路径要求**：
+在 Hugo 静态站点中，文章页面的 URL 可能是嵌套路径（如 `/posts/2026-02-01-epsilon-delta/`），因此图片路径**必须使用以 `/` 开头的绝对路径**。
+
+**正例与反例**：
+
+```markdown
+❌ 错误：相对路径
+![图片描述](images/plots/my-plot.png)
+![图片描述](../static/images/plots/my-plot.png)
+
+✅ 正确：绝对路径（以 / 开头）
+![图片描述](/images/plots/my-plot.png)
+```
+
+**原理说明**：
+- Hugo 生成的文章页面可能在 `/posts/YYYY-MM-DD-title/` 路径下
+- 相对路径 `images/plots/xxx.png` 会被解析为 `/posts/YYYY-MM-DD-title/images/plots/xxx.png`
+- 绝对路径 `/images/plots/xxx.png` 始终指向站点根目录下的正确位置
+
+**检查清单**：
+- [ ] 所有图片路径以 `/images/` 开头
+- [ ] 不包含 `static/` 前缀（Hugo 会自动映射 static 目录到根）
+- [ ] 文件名与 plots 目录中的实际文件一致
+
 #### 图片压缩要求（必须执行）
 
 **为什么需要压缩**：
