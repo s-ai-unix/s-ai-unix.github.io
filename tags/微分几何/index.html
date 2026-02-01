@@ -1,0 +1,196 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>微分几何 | s-ai-unix's Blog</title><meta name=keywords content><meta name=description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta name=author content="s-ai-unix"><link rel=canonical href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/><link crossorigin=anonymous href=/assets/css/stylesheet.0833aff7e1cf567ecfb9755701ee95a80535f671e2e1a0a770c9bc20a0a7b5bb.css integrity="sha256-CDOv9+HPVn7PuXVXAe6VqAU19nHi4aCncMm8IKCntbs=" rel="preload stylesheet" as=style><link rel=icon href=https://s-ai-unix.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://s-ai-unix.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://s-ai-unix.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://s-ai-unix.github.io/apple-touch-icon.png><link rel=mask-icon href=https://s-ai-unix.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/index.xml title=rss><link rel=alternate hreflang=en href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"><meta property="og:site_name" content="s-ai-unix's Blog"><meta property="og:title" content="微分几何"><meta property="og:description" content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="微分几何"><meta name=twitter:description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><link rel=stylesheet href=https://s-ai-unix.github.io/css/classical-quote.css></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://s-ai-unix.github.io/ accesskey=h title="s-ai-unix's Blog (Alt + H)">s-ai-unix's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://s-ai-unix.github.io/ title="🏠 首页"><span>🏠 首页</span></a></li><li><a href=https://s-ai-unix.github.io/posts/ title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://s-ai-unix.github.io/archives/ title="📁 归档"><span>📁 归档</span></a></li><li><a href=https://s-ai-unix.github.io/tags/ title="🏷️ 标签"><span>🏷️ 标签</span></a></li><li><a href=https://s-ai-unix.github.io/search/ title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://s-ai-unix.github.io/about/ title="👤 关于"><span>👤 关于</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://s-ai-unix.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://s-ai-unix.github.io/tags/>Tags</a></div><h1>微分几何</h1></header><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/poincare-volume-form-cover.jpg alt=几何抽象背景></figure><header class=entry-header><h2 class=entry-hint-parent>Poincaré的洞察：体积元的定向与外微分形式的诞生</h2></header><div class=entry-content><p>引言：一个看似平凡的发现 1890年代末，巴黎的学术圈正沉浸在分析学的繁荣之中。法国数学家亨利·庞加莱（Henri Poincaré, 1854-1912）坐在书桌前，凝视着多重积分的变换公式。在旁人看来，这只是一个技术性的细节问题——如何计算曲面积分、体积分在坐标变换下的行为？
+然而，Poincaré敏锐地意识到一个被前人忽视的事实：多重积分的体积元应该有一个正负定向。
+这一看似平凡的看法使得多重积分在坐标变换下原来有些拖泥带水的变换公式，有了一个精练的形式，并使Newton-Leibniz公式的推广，步入了坦途。
+这一发现看似微不足道——不过是给积分测度加上一个正负号而已——但它却如同一把钥匙，打开了通往现代微分几何的大门。它直接催生了外微分形式（differential forms）的概念，为Stokes定理、de Rham上同调、甚至是现代物理学中的规范场论奠定了基础。
+让我们循着历史的足迹，探寻这一发现的来龙去脉。
+第一章：Poincaré之前的多重积分 1.1 单变量的辉煌与局限 让我们先回到单变量微积分的美好时代。Newton和Leibniz在17世纪末创立的微积分基本定理告诉我们：
+$$ \int_a^b f’(x) , dx = f(b) - f(a) $$
+这个公式之所以优美，在于它将区间 $[a,b]$ 上的积分与边界 ${a, b}$ 上的函数值联系起来。更妙的是，它暗示了积分具有某种"定向"的性质：从 $a$ 到 $b$ 的积分，与从 $b$ 到 $a$ 的积分差一个负号：
+$$ \int_b^a f(x) , dx = -\int_a^b f(x) , dx $$
+然而，当数学家们尝试将这一框架推广到多变量时，他们遇到了意想不到的困难。
+1.2 早期的多重积分变换 考虑一个二重积分：
+$$ I = \iint_D f(x,y) , dx , dy $$
+假设我们进行坐标变换 $(x,y) \mapsto (u,v)$，其中 $x = x(u,v)$，$y = y(u,v)$。在18、19世纪，数学家们知道变换公式涉及雅可比行列式（Jacobian determinant）：
+...</p></div><footer class=entry-footer><span title='2026-02-01 18:47:22 +0800 CST'>February 1, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>894 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to Poincaré的洞察：体积元的定向与外微分形式的诞生" href=https://s-ai-unix.github.io/posts/2026-02-01-poincare-volume-form/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>从弯曲到一致性：微分几何中的芬切尔定理与舒尔定理</h2></header><div class=entry-content><p>引言：从古希腊到现代几何 在古希腊的亚历山大图书馆里，数学家们就已经开始思考曲线和曲面的性质。欧几里得的《几何原本》建立了几何学的公理体系，但那是关于直线的几何——平坦的、规则的、完美的。然而，自然界中却充满了弯曲：行星轨道、海岸线、山脉的轮廓，甚至光线在引力场中的路径。
+当我们从平坦的欧几里得空间迈向弯曲的几何世界时，一个自然的问题浮现：如何量化"弯曲"？一条曲线究竟有多"弯曲"？一个曲面在哪个方向最"弯曲"？
+这个问题催生了微分几何的诞生。从高斯的曲面理论到黎曼的一般流形，数学家们发展了一套精妙的语言来描述弯曲。在这个过程中，两个深刻定理脱颖而出：芬切尔定理（Fenchel’s Theorem）和舒尔定理（Schur’s Theorem）。
+芬切尔定理，由 Werner Fenchel 在 1929 年证明，给出了闭曲线弯曲程度的一个基本下界：任何简单闭曲线的全曲率至少为 $2\pi$。这个数字 $2\pi$ 不仅仅是圆周的长度，更蕴含着拓扑学的深刻含义——它与曲线的"旋转"次数有关。
+而舒尔定理，由 Friedrich Schur 在 1917 年发现，则在更高维度的黎曼几何中提供了一个关于"一致性"的深刻洞察。它告诉我们：如果一个空间在某个方向的弯曲程度最大，那么其他方向的弯曲程度如何。这是比较几何学（Comparison Geometry）的开端。
+本文将从曲线的基本概念开始，娓娓道来地介绍这两条定理。我们将看到，数学的优美不仅在于其严谨性，更在于它揭示了自然界中深刻的统一性。
+第一章：曲线的几何——曲率与 Frenet 标架 在进入芬切尔定理之前，我们需要掌握描述曲线弯曲的基本工具。让我们从最直观的概念开始。
+1.1 参数化曲线 设 $\gamma: [a, b] \to \mathbb{R}^3$ 是一条可微曲线。为了简化讨论，我们通常假设曲线是正则的（regular），即 $\gamma’(t) \neq 0$ 对所有 $t$ 成立。这里 $\gamma’(t)$ 是曲线的切向量，它告诉我们曲线在参数 $t$ 处的方向。
+为了消除参数化对曲线描述的影响，我们常常使用弧长参数化。设 $s(t)$ 是从起点 $\gamma(a)$ 到 $\gamma(t)$ 的弧长：
+$$ s(t) = \int_a^t \lVert \gamma’(\tau) \rVert , d\tau $$
+反函数 $t(s)$ 允许我们将曲线表示为弧长的函数 $\gamma(s)$。弧长参数化的优点是切向量具有单位长度：
+$$ \lVert \frac{d\gamma}{ds} \rVert = \frac{ds}{dt} \cdot \left\lVert \frac{d\gamma}{dt} \right\rVert^{-1} = 1 $$
+...</p></div><footer class=entry-footer><span title='2026-01-29 20:50:00 +0800 CST'>January 29, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>1246 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 从弯曲到一致性：微分几何中的芬切尔定理与舒尔定理" href=https://s-ai-unix.github.io/posts/2026-01-29-fenchel-schur-theorems/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/1555255707-c07966088b7b.jpg alt=Monge-Ampere方程与最优传输></figure><header class=entry-header><h2 class=entry-hint-parent>蒙日-安培方程：从经典几何到现代分析的系统综述</h2></header><div class=entry-content><p>引言：一个跨越两个半世纪的数学传奇 1771年，法国数学家加斯帕尔·蒙日（Gaspard Monge）在研究曲面和曲线理论时，写下了一个看似简单的方程。他或许不会想到，这个方程将在接下来的两个半世纪里，成为连接微分几何、偏微分方程、变分法和概率论的深刻纽带，并最终在2018年帮助阿莱西奥·菲加利（Alessio Figalli）获得菲尔兹奖。
+这个方程就是蒙日-安培方程（Monge-Ampère Equation）。
+图1：蒙日-安培方程从18世纪到现代的发展历程，涵盖了几何、分析和应用数学的多个里程碑。
+蒙日-安培方程的特殊之处在于它的完全非线性特性。与拉普拉斯方程或热方程这类线性方程不同，蒙日-安培方程涉及未知函数二阶导数的行列式——这是所有二阶导数的非线性组合。这种结构既带来了深刻的数学挑战，也赋予了它独特的几何意义。
+在本文中，我们将从三个维度深入探索这一优美的数学对象：
+历史维度：从蒙日的几何洞察到现代正则性理论 理论维度：方程的结构、椭圆性理论和解的适定性 应用维度：从凸几何到最优传输，从气象学到机器学习 第一章：历史渊源——从蒙日到现代 1.1 蒙日的几何洞察（1771-1807） 加斯帕尔·蒙日（1746-1818）是法国大革命时期的杰出数学家，被誉为画法几何的奠基人。他对曲面的研究源于工程学的实际问题：如何在二维平面上精确表示三维物体？
+1771年，蒙日在论文《Memoire sur les developpées, les rayons de courbure et les différens genres d’inflexions des courbes à double courbure》中首次研究了一类涉及曲面曲率的偏微分方程。他考虑的核心问题是：给定曲面的曲率信息，能否重建曲面本身？
+蒙日的洞察在于认识到曲面的高斯曲率与函数二阶导数之间的深刻联系。对于一个由 $z = u(x, y)$ 给出的曲面，其高斯曲率 $K$ 可以表示为：
+$$ K = \frac{u_{xx}u_{yy} - u_{xy}^2}{(1 + u_x^2 + u_y^2)^2} $$ 分子中的 $u_{xx}u_{yy} - u_{xy}^2$ 正是函数 $u$ 的Hessian行列式——蒙日-安培方程的核心结构。
+1.2 安培的分析贡献（1820s） 安德烈-玛丽·安培（André-Marie Ampère，1775-1836）更为人熟知的是他在电磁学方面的贡献（电流单位"安培"即以他命名）。但在1820年代，安培对蒙日的方程进行了系统的分析研究，将其推广到更一般的形式。
+安培考虑了方程的一般二阶形式：
+$$ A(u_{xx}u_{yy} - u_{xy}^2) + Bu_{xx} + Cu_{xy} + Du_{yy} + E = 0 $$ 其中系数 $A, B, C, D, E$ 可以依赖于 $(x, y, u, u_x, u_y)$。当 $A \neq 0$ 时，方程具有典型的蒙日-安培结构。
+...</p></div><footer class=entry-footer><span title='2026-01-29 19:30:00 +0800 CST'>January 29, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>1027 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 蒙日-安培方程：从经典几何到现代分析的系统综述" href=https://s-ai-unix.github.io/posts/2026-01-29-monge-ampere-equation-detailed-introduction/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/singularity-theorem-cover.jpg alt=黑洞奇点与时空结构></figure><header class=entry-header><h2 class=entry-hint-parent>彭罗斯-霍金奇点定理：广义相对论的终极边界</h2></header><div class=entry-content><p>引言：时空的终极命运 1965年的一个春日，年轻的数学家罗杰·彭罗斯（Roger Penrose）正坐在剑桥大学的一个咖啡馆里，凝视着手中咖啡杯里旋转的泡沫。那一刻，一个改变物理学史的洞见在他脑海中闪现：如果一个恒星坍缩得足够致密，奇点的形成将是不可避免的——这不是由于某种特殊的对称性假设，而是源于引力的普遍性质。
+这个洞见最终发展成了著名的彭罗斯奇点定理（Penrose Singularity Theorem），它与斯蒂芬·霍金（Stephen Hawking）在1970年证明的霍金奇点定理一起，构成了广义相对论中最深刻的成果之一。彭罗斯因此在2020年获得了诺贝尔物理学奖，表彰他"发现黑洞形成是广义相对论的稳健预言"。
+但是，这些定理究竟说了什么？它们如何证明？又对我们的宇宙理解意味着什么？
+让我们从一个简单的观察开始：在牛顿引力理论中，如果向太空中抛掷一个球，它可能会落回地面，也可能逃逸到无穷远，这取决于初速度。但在广义相对论中，情况变得更为微妙——一旦物质足够集中，时空本身就会"撕裂"，产生奇点。
+图1：时空中的光锥结构。光锥将时空划分为未来、过去和类空区域，是理解因果结构的基石。
+在本文中，我们将踏上一段深入的数学物理之旅，从微分几何的基础概念出发，逐步构建理解奇点定理所需的理论框架，最终揭示这些定理的深刻内涵。
+第一章：预备知识——时空的数学结构 1.1 什么是时空？ 在广义相对论中，时空是一个四维的洛伦兹流形 $(M, g)$，其中：
+$M$ 是一个四维光滑流形 $g$ 是一个洛伦兹度规，其符号差为 $(-, +, +, +)$ 或 $(+, -, -, -)$ 这意味着在每一点 $p \in M$，度规 $g_p$ 在切空间 $T_p M$ 上定义了一个内积，允许我们计算向量的"长度"和"夹角"。但与黎曼几何不同，洛伦兹度规可以取负值，这导致了类时（timelike）、类光（null）和类空（spacelike）向量的区分。
+$$ g(v, w) = g_{\mu\nu} v^{\mu} w^{\nu} $$ 对于任意向量 $v \in T_p M$：
+若 $g(v, v) &lt; 0$：$v$ 是类时向量（对应实物体的世界线） 若 $g(v, v) = 0$：$v$ 是类光向量（对应光线的世界线） 若 $g(v, v) > 0$：$v$ 是类空向量（连接同时事件的线） 1.2 测地线与自由落体 在广义相对论中，不受外力的粒子沿测地线运动。测地线是"最直"的曲线，满足测地线方程：
+...</p></div><footer class=entry-footer><span title='2026-01-29 19:00:00 +0800 CST'>January 29, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>624 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 彭罗斯-霍金奇点定理：广义相对论的终极边界" href=https://s-ai-unix.github.io/posts/2026-01-29-penrose-hawking-singularity-theorems/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/minimal-surface-cover.jpg alt=极小曲面></figure><header class=entry-header><h2 class=entry-hint-parent>极小曲面：从肥皂泡到数学之美</h2></header><div class=entry-content><p>引言：肥皂泡的数学秘密 小时候，我们都玩过吹肥皂泡。当肥皂泡漂浮在空中时，它那薄膜表面在阳光下闪烁着彩虹般的光芒。但你有没有想过：*为什么肥皂泡总是球形？
+答案藏在数学中。肥皂泡的表面张力使得薄膜尽可能地"收缩"，以达到能量最小的稳定状态。对于封闭的肥皂泡，球形是表面积最小的形状——这就是为什么肥皂泡总是圆的。
+但如果我们用金属丝弯成不同的形状，再蘸上肥皂液，会得到什么样的曲面呢？
+1776年，意大利数学家拉格朗日（Joseph-Louis Lagrange）首次提出了这个问题：给定空间中的一条闭合曲线，寻找张在这条曲线上且面积最小的曲面。这就是极小曲面问题的起源。
+从那个简单的肥皂泡开始，极小曲面理论已经发展成为微分几何中最美丽、最深刻的分支之一。它不仅有着优雅的数学结构，还在建筑学、材料科学、生物学等领域有着广泛的应用。
+让我们一起走进这个弯曲而优雅的数学世界。
+第一章：什么是极小曲面？ 1.1 直观理解 极小曲面（Minimal Surface）是局部上面积最小的曲面。更准确地说：
+一个曲面 $S$ 称为极小曲面，如果它在每一点的平均曲率（mean curvature）都为零。
+平均曲率是什么？ 让我们先建立直观理解。
+想象你在一个曲面的某一点上。如果你沿着不同的方向切开这个曲面，会得到不同的曲线，每条曲线在该点都有一个曲率。所有这些曲率的平均值（实际上是主曲率的算术平均）就是平均曲率 $H$。
+图 1：平均曲率描述了曲面在某一点向各个方向弯曲的程度。椭圆抛物面处处向同一方向弯曲（$H > 0$），而双曲抛物面在不同方向上弯曲方向相反。
+对于极小曲面，$H = 0$ 意味着在每个点，曲面向相反方向弯曲的程度恰好抵消。这种"鞍形"结构使得曲面在所有方向上的拉伸达到平衡。
+1.2 物理意义：面积最小化 极小曲面的名称来源于其变分性质：
+极小曲面是面积泛函的临界点（critical point）。
+这是什么意思？想象你在曲面 $S$ 上做一个微小的变形，就像轻轻按压肥皂膜。如果 $S$ 是极小曲面，那么在变形的一阶近似下，面积不变。
+图 2：变分原理示意。极小曲面在微小扰动下，面积的一阶变分为零，对应于稳定平衡状态。
+1.3 高斯曲率与平均曲率 对于曲面上的每一点，存在两个互相垂直的主方向，沿这两个方向的曲率分别达到最大值 $k_1$ 和最小值 $k_2$。这两个曲率称为主曲率。
+高斯曲率：$K = k_1 \cdot k_2$
+平均曲率：$H = \frac{k_1 + k_2}{2}$
+极小曲面的定义：$H = 0$
+这一观察给出了极小曲面的一个重要特征：极小曲面的高斯曲率处处非正（$K \leq 0$）。
+第二章：从变分法到极小曲面方程 2.1 Plateau 问题 比利时物理学家约瑟夫·普拉托（Joseph Plateau）在19世纪进行了一系列关于肥皂膜的实验。他发现，将金属丝框架浸入肥皂液后形成的薄膜，总是对应于张在框架上的面积最小的曲面。
+...</p></div><footer class=entry-footer><span title='2026-01-29 08:31:25 +0800 CST'>January 29, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>168 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 极小曲面：从肥皂泡到数学之美" href=https://s-ai-unix.github.io/posts/2026-01-29-minimal-surfaces/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/differential-geometry-deep-learning.jpg alt=微分几何与深度学习></figure><header class=entry-header><h2 class=entry-hint-parent>微分几何与深度学习：从流形假设到几何深度学习</h2></header><div class=entry-content><p>引言：当深度学习遇见弯曲的空间 2012年，AlexNet 在 ImageNet 竞赛中以压倒性优势获胜，深度学习正式进入大众视野。此后，神经网络在各种任务上展现出惊人能力：图像识别、语音识别、机器翻译、游戏对战……但有一个问题始终困扰着研究者：为什么神经网络能够如此有效地学习？
+答案或许藏在数据的本质结构中。想象你正在看一张人脸照片——1000 $\times$ 1000 像素的图像意味着这是一个百万维的空间中的点。但所有人脸照片都分布在这个百万维空间的一个极小子集上。为什么？因为真实的人脸受到物理规律的约束：两只眼睛在鼻子两侧，嘴巴在鼻子下方，等等。
+这个子集不是随机的散点集合，而是一个流形（manifold）——一个局部看起来像欧几里得空间，但整体上可能弯曲、扭转的几何对象。
+流形假设（Manifold Hypothesis）是连接微分几何与深度学习的桥梁：
+真实世界的高维数据往往分布在一个低维流形上。
+这个假设解释了为什么深度学习能够成功，也指明了改进的方向。从流形学习的早期算法，到现代的几何深度学习，微分几何正在成为理解神经网络本质的重要语言。
+让我们从最基本的流形概念开始，逐步揭开这层神秘的面纱。
+第一章：流形假设——数据的几何本质 1.1 什么是流形？ 在正式定义之前，让我们从一个直观的例子开始。
+想象一只蚂蚁生活在地球表面。对于这只蚂蚁来说，地面看起来是平的——它可以向前、向后、向左、向右移动。只有当它旅行了很长距离后，才会意识到这个世界是弯曲的（比如绕地球一圈回到原点）。
+流形正是这种"局部平坦，整体弯曲"的空间。数学上，一个 $n$ 维流形 $\mathcal{M}$ 是一个拓扑空间，其中每一点 $p \in \mathcal{M}$ 都有一个邻域，同胚于 $\mathbb{R}^n$。
+关键特性：
+局部坐标：在任何小区域内，我们可以用 $n$ 个坐标 $(x^1, x^2, \ldots, x^n)$ 描述位置 过渡函数：不同坐标系统之间的变换必须是光滑的 全局结构：局部坐标片可以"缝合"成复杂的整体结构 图1：流形学习的核心思想——高维数据（如瑞士卷）实际上分布在一个低维流形上，学习的目标就是"展开"这个流形，发现其内在的低维结构。
+1.2 数据流形：从高维到低维 现在回到深度学习。考虑以下例子：
+MNIST 手写数字：每个图像是 $28 \times 28 = 784$ 维的向量。但所有"3"的图像并不随机分布在 784 维空间中——它们形成了一个高度结构化的集合。写下"3"的方式虽然变化多端，但受到人体解剖学和书写习惯的约束。
+人脸图像：如引言所述，人脸图像分布在由身份、表情、光照、角度等参数控制的低维流形上。这些参数可能有几十个，但远小于百万级的像素维度。
+词向量：自然语言处理中的词嵌入将词汇映射到连续向量空间。语义相近的词在向量空间中也相近，形成某种几何结构。
+流形维数的估计：如何确定数据流形的维数？这是一个活跃的研究领域。常用方法包括：
+主成分分析（PCA）：线性估计 本征维数估计：基于最近邻距离的统计方法 分形维数：对于复杂结构的数据 1.3 为什么流形结构重要？ 理解数据的流形结构对深度学习有多方面的意义：
+1. 维度灾难的缓解
+在 $d$ 维欧几里得空间中，要覆盖单位立方体到精度 $\epsilon$，需要 $O(\epsilon^{-d})$ 个样本。这就是维度灾难。
+...</p></div><footer class=entry-footer><span title='2026-01-28 23:54:26 +0800 CST'>January 28, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>738 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 微分几何与深度学习：从流形假设到几何深度学习" href=https://s-ai-unix.github.io/posts/2026-01-28-differential-geometry-deep-learning/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/differential-geometry-autonomous-driving.jpg alt="微分几何与自动驾驶 cover image"></figure><header class=entry-header><h2 class=entry-hint-parent>弯曲的道路，智能的决策：微分几何如何赋能自动驾驶</h2></header><div class=entry-content><p>引言：当数学遇见自动驾驶 想象你正在驾驶一辆汽车行驶在蜿蜒的山路上。前方是一个急转弯，你需要减速、打方向、保持车道——这一系列看似简单的动作，实际上涉及复杂的几何判断：道路的曲率如何？转弯半径是多少？轮胎与地面的摩擦力能否提供足够的向心力？
+现在，把驾驶员换成自动驾驶系统。它没有了人类的直觉和经验，必须依靠数学模型来理解这个世界。微分几何——这门研究曲线、曲面和弯曲空间的数学分支，正是自动驾驶系统的"眼睛"和"大脑"背后的理论基础。
+从古希腊欧几里得研究直线和平面，到高斯发现曲面可以"内蕴地"研究，再到黎曼建立起 $n$ 维弯曲空间的一般理论，微分几何经历了两千多年的发展。而今天，这门古老的数学正以全新的方式赋能现代科技：它帮助自动驾驶汽车理解道路的几何结构，规划平滑的行驶轨迹，感知周围环境的三维形态。
+本文将带你走进微分几何与自动驾驶的交汇点，看看抽象的数学概念如何在现实世界中大放异彩。
+第一章：微分几何的核心概念回顾 1.1 曲线：道路的一维模型 一条道路可以抽象为三维空间中的一条参数曲线：
+$$ \mathbf{r}(t) = (x(t), y(t), z(t)) $$
+其中 $t$ 是参数，可以是时间，也可以是弧长。对于自动驾驶而言，我们最关心的是曲线的两个几何量：切向量和曲率。
+切向量告诉我们道路在每一点的"方向"：
+$$ \mathbf{T}(t) = \frac{d\mathbf{r}/dt}{\lVert d\mathbf{r}/dt \rVert} $$
+汽车的前进方向应该与切向量对齐，这是最基本的控制要求。
+曲率则告诉我们道路弯曲的程度。对于以弧长 $s$ 参数化的曲线，曲率定义为：
+$$ \kappa(s) = \left\lVert \frac{d\mathbf{T}}{ds} \right\rVert = \left\lVert \frac{d^2\mathbf{r}}{ds^2} \right\rVert $$
+曲率的倒数 $\rho = 1/\kappa$ 称为曲率半径。当汽车以速度 $v$ 通过曲率为 $\kappa$ 的路段时，所需的向心加速度为 $a = v^2 \kappa$。这就是为什么急转弯需要减速——曲率越大，所需的向心力越大。
+1.2 曲面：路面的二维模型 实际的道路不是一个简单的曲线，而是一个曲面。我们可以用参数方程描述：
+$$ \mathbf{r}(u, v) = (x(u, v), y(u, v), z(u, v)) $$
+...</p></div><footer class=entry-footer><span title='2026-01-28 23:42:32 +0800 CST'>January 28, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>831 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 弯曲的道路，智能的决策：微分几何如何赋能自动驾驶" href=https://s-ai-unix.github.io/posts/2026-01-28-differential-geometry-autonomous-driving/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/jacobian-hessian-cover.jpg alt="Jacobian and Hessian Matrices cover image"></figure><header class=entry-header><h2 class=entry-hint-parent>雅可比矩阵与黑塞矩阵：多变量微积分的双璧</h2></header><div class=entry-content><p>引言 当我们从单变量微积分迈向多变量微积分时，一个核心问题浮现出来：如何描述多元函数的变化？在单变量情形中，导数 $f’(x)$ 告诉我们函数在某点的瞬时变化率。但当函数 $f: \mathbb{R}^n \to \mathbb{R}^m$ 拥有多个输入和输出时，情况变得复杂起来。
+想象一下，你正在攀登一座山峰。在任何一个位置，你都想知道：
+哪个方向最陡峭？（梯度的方向） 这个陡峭程度在各个方向如何变化？（曲率的描述） 雅可比矩阵和黑塞矩阵正是回答这些问题的数学工具。它们是多变量微积分中的"双璧"——一个描述一阶变化（线性近似），一个描述二阶变化（曲率特性）。从牛顿法到神经网络训练，从机器人运动学到广义相对论，这对"双璧"无处不在。
+第一章：从一维到多维 1.1 单变量函数的局限性 回顾单变量微积分，函数 $f: \mathbb{R} \to \mathbb{R}$ 在点 $x$ 处的导数定义为：
+$$ f’(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$
+这个定义告诉我们函数在 $x$ 处的瞬时变化率。几何上，它表示函数曲线在该点切线的斜率。
+但当函数有多个输入时，例如 $f(x, y) = x^2 + y^2$，我们可以问：
+沿 $x$ 方向的变化率是多少？ 沿 $y$ 方向的变化率是多少？ 沿任意方向的变化率是多少？ 这就引出了偏导数的概念。
+1.2 偏导数与方向导数 函数 $f(x_1, x_2, \ldots, x_n)$ 关于 $x_i$ 的偏导数定义为：
+$$ \frac{\partial f}{\partial x_i} = \lim_{h \to 0} \frac{f(x_1, \ldots, x_i+h, \ldots, x_n) - f(x_1, \ldots, x_i, \ldots, x_n)}{h} $$
+...</p></div><footer class=entry-footer><span title='2026-01-28 21:54:27 +0800 CST'>January 28, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>879 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 雅可比矩阵与黑塞矩阵：多变量微积分的双璧" href=https://s-ai-unix.github.io/posts/2026-01-28-jacobian-hessian-matrices/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/differential-geometry-surface-theory-cover.jpg alt=微分几何曲面论></figure><header class=entry-header><h2 class=entry-hint-parent>曲面论的系统综述：从第一基本型到高斯绝妙定理</h2></header><div class=entry-content><p>引言：从曲面测量的问题出发 在欧几里得空间中，平面几何的研究已经相当完善。然而，当我们把目光投向弯曲的曲面——地球的球面、马鞍形的双曲抛物面、或者更一般的任意光滑曲面时，许多在平面上理所当然的性质突然变得复杂起来。
+一个朴素的问题：给定曲面上的两点 $A$ 和 $B$，如何测量它们之间的距离？在平面上，答案是简单的直线段长度。但在曲面上，“直线"的概念本身就需要重新审视。更重要的是，如果我们只允许在曲面上"行走”（不能离开曲面穿越三维空间），我们能测量的几何量是什么？这些量与曲面在三维空间中的嵌入方式有什么关系？
+这些问题引导高斯（Carl Friedrich Gauss）在1827年发表了奠基性论文《关于曲面的一般研究》，开创了现代微分几何的曲面理论。高斯的天才洞察在于：曲面上存在着两类几何量——一类是"内蕴的"（intrinsic），只依赖于曲面本身的几何结构；另一类是"外蕴的"（extrinsic），依赖于曲面在三维空间中的具体嵌入方式。
+本文将系统地介绍曲面论的核心框架，重点阐述第一基本型和第二基本型的深刻意义，揭示它们如何从测量问题中自然涌现，并最终导向高斯那令人惊叹的"绝妙定理"（Theorema Egregium）。
+第一章：曲面的参数化表示 1.1 从隐式到参数化 在三维欧几里得空间 $\mathbb{R}^3$ 中，一个曲面可以用隐式方程表示：
+$$ F(x, y, z) = 0 $$
+例如，半径为 $R$ 的球面由 $x^2 + y^2 + z^2 = R^2$ 定义。然而，对于微分几何的研究，参数化表示更为便利：
+$$ \mathbf{r}(u, v) = (x(u, v), y(u, v), z(u, v)) $$
+其中 $(u, v) \in D \subset \mathbb{R}^2$ 是参数域。这种表示将二维参数域"贴"到三维空间中，形成曲面。
+图1：鞍面 $z = x^2 - y^2$ 的参数化表示，展示了坐标曲线和切平面。在点 $P$ 处，$u$-曲线（绿色）和 $v$-曲线（蓝色）张成了切平面。
+1.2 切向量与切平面 在参数化表示下，曲面上一点的切向量可以通过对参数求偏导得到：
+$$ \mathbf{r}_u = \frac{\partial \mathbf{r}}{\partial u}, \quad \mathbf{r}_v = \frac{\partial \mathbf{r}}{\partial v} $$
+...</p></div><footer class=entry-footer><span title='2026-01-28 20:20:00 +0800 CST'>January 28, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>882 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 曲面论的系统综述：从第一基本型到高斯绝妙定理" href=https://s-ai-unix.github.io/posts/2026-01-28-surface-theory-differential-geometry/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/curve-theory-cover.jpg alt="微分几何曲线论 cover image"></figure><header class=entry-header><h2 class=entry-hint-parent>微分几何曲线论：从直观到严格</h2></header><div class=entry-content><p>微分几何曲线论：从直观到严格 引言 当我们用一支笔在纸上流畅地画出一道曲线时，我们直觉上能够感受到它的弯曲程度——有些地方笔直延伸，有些地方急剧转弯。这种对"弯曲"的直观感受，正是曲率（Curvature）概念的萌芽。而当我们将这支笔在三维空间中舞动，曲线不仅能在平面内弯曲，还能"扭出"平面，这种"扭曲"的程度就是挠率（Torsion）。
+曲线论（Theory of Curves）是微分几何的基石，它研究如何用微积分工具精确描述和分析曲线的局部与整体性质。从古希腊阿波罗尼奥斯的圆锥曲线，到牛顿的自然哲学，再到现代广义相对论中的世界线，曲线论始终是连接几何直观与分析严格的桥梁。
+本文将带领读者从参数曲线的基本概念出发，逐步深入到曲率、挠率的定义与计算，探索Frenet标架这一强大的分析工具，最终揭示曲线论在物理学、工程学和计算机图形学中的深刻应用。
+图1：各种参数曲线示例。直线、圆、椭圆、抛物线、双曲线和摆线都可以用参数方程统一描述。
+第一章：参数曲线与正则性 1.1 曲线的参数表示 在微分几何中，曲线最自然的描述方式是参数方程。一条空间曲线可以表示为从实数区间到三维欧氏空间的映射：
+$$ \mathbf{r}: I \subset \mathbb{R} \to \mathbb{R}^3, \quad t \mapsto \mathbf{r}(t) = (x(t), y(t), z(t)) $$
+其中 $t$ 称为参数，可以是时间、弧长或任意其他物理量。这种表示方式比显式方程 $y = f(x)$ 更加灵活，能够描述自相交的曲线（如摆线）和垂直切线的情况。
+例1.1（圆柱螺旋线）：
+$$ \mathbf{r}(t) = (a \cos t, a \sin t, bt), \quad t \in \mathbb{R} $$
+其中 $a > 0$ 是圆柱半径，$b$ 控制螺旋的疏密。当 $b = 0$ 时退化为圆；当 $a \to 0$ 时趋近于 $z$ 轴。
+图2：圆柱螺旋线及其切向量。虚线表示在 $xy$ 平面的投影，红色箭头表示某点处的单位切向量。
+...</p></div><footer class=entry-footer><span title='2026-01-28 19:58:21 +0800 CST'>January 28, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>778 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 微分几何曲线论：从直观到严格" href=https://s-ai-unix.github.io/posts/2026-01-28-curve-theory-differential-geometry/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=https://s-ai-unix.github.io/>s-ai-unix's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var t,n=e.innerHTML,s=!1;for(n.indexOf("<em>")!==-1&&(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("</em>")!==-1&&(t=n.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),t=t.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("<em>$")!==-1&&(t=n.replace(/<em>\$/g,"$"),t!==n&&(n=t,s=!0)),n.indexOf("</em>$")!==-1&&(t=n.replace(/<\/em>\$/g,"$"),t!==n&&(n=t,s=!0));n.indexOf("<em>")!==-1&&n.indexOf("</em>")!==-1;){if(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t===n)break;n=t,s=!0}n.indexOf("_{")!==-1&&(t=n.replace(/_{/g,"_{"),t!==n&&(n=t,s=!0)),n.indexOf("}_")!==-1&&(t=n.replace(/}_/g,"}"),t!==n&&(n=t,s=!0)),n.includes("</em>{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),n.includes("<em>{\\mathrm{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),(n.includes("</em>")||n.includes("<em>"))&&(t=n.replace(/(\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$[^$]*?)<em>/g,"$1"),t=t.replace(/<em>([^$]*?\$)/g,"$1"),t=t.replace(/(\$[^$]*?)<\/em>/g,"$1"),t=t.replace(/<\/em>([^$]*?\$)/g,"$1"),t!==n&&(n=t,s=!0)),n.indexOf("\\\\")!==-1&&(t=n.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),t!==n&&(n=t,s=!0)),s&&(e.innerHTML=n)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",packages:{"[+]":["noerrors","noundefined","boldsymbol"]},macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var t,n=e.innerHTML,s=!1;for(n.indexOf("<em>")!==-1&&(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("</em>")!==-1&&(t=n.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),t=t.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("<em>$")!==-1&&(t=n.replace(/<em>\$/g,"$"),t!==n&&(n=t,s=!0)),n.indexOf("</em>$")!==-1&&(t=n.replace(/<\/em>\$/g,"$"),t!==n&&(n=t,s=!0));n.indexOf("<em>")!==-1&&n.indexOf("</em>")!==-1;){if(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t===n)break;n=t,s=!0}n.indexOf("_{")!==-1&&(t=n.replace(/_{/g,"_{"),t!==n&&(n=t,s=!0)),n.indexOf("}_")!==-1&&(t=n.replace(/}_/g,"}"),t!==n&&(n=t,s=!0)),n.includes("</em>{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),n.includes("<em>{\\mathrm{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),(n.includes("</em>")||n.includes("<em>"))&&(t=n.replace(/(\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$[^$]*?)<em>/g,"$1"),t=t.replace(/<em>([^$]*?\$)/g,"$1"),t=t.replace(/(\$[^$]*?)<\/em>/g,"$1"),t=t.replace(/<\/em>([^$]*?\$)/g,"$1"),t!==n&&(n=t,s=!0)),n.indexOf("\\\\")!==-1&&(t=n.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),t!==n&&(n=t,s=!0)),s&&(e.innerHTML=n)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",packages:{"[+]":["noerrors","noundefined","boldsymbol"]},macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script></body></html>

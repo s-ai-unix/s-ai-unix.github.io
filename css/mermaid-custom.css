@@ -1,0 +1,62 @@
+/*
+ * Mermaid 图表样式 - 一次性彻底解决黑色背景问题
+ *
+ * 解决方案：
+ * 1. Hugo render hook 让 mermaid 不经过 chroma 高亮
+ * 2. 白色包装器完全覆盖父容器背景
+ * 3. CSS 确保所有元素背景正确
+ */
+
+/* === Mermaid 包装器：白色背景，覆盖所有黑色 === */
+.mermaid-wrapper {
+  background: #ffffff !important;
+  padding: 2rem 1rem !important;
+  margin: 2rem 0 !important;
+  width: 100% !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+  box-sizing: border-box !important;
+}
+
+/* === Mermaid 容器本身 === */
+.mermaid {
+  text-align: center !important;
+  background: transparent !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* === Mermaid 内部所有元素背景透明 === */
+.mermaid,
+.mermaid *,
+.mermaid > *,
+.mermaid svg,
+.mermaid svg > *,
+.mermaid g,
+.mermaid g > *,
+.mermaid text,
+.mermaid path,
+.mermaid rect,
+.mermaid circle,
+.mermaid ellipse,
+.mermaid polygon,
+.mermaid line,
+.mermaid foreignObject {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* === subgraph (cluster) 背景设置为浅灰 === */
+.mermaid .cluster rect {
+  fill: #fafafa !important;
+  stroke: #e0e0e0 !important;
+  stroke-width: 1px !important;
+}
+
+/* === 确保 SVG 图表居中 === */
+.mermaid svg {
+  display: block !important;
+  margin: 0 auto !important;
+}
+

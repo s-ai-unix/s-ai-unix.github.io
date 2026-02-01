@@ -1,0 +1,163 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>深度学习 | s-ai-unix's Blog</title><meta name=keywords content><meta name=description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta name=author content="s-ai-unix"><link rel=canonical href=https://s-ai-unix.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/><link crossorigin=anonymous href=/assets/css/stylesheet.0833aff7e1cf567ecfb9755701ee95a80535f671e2e1a0a770c9bc20a0a7b5bb.css integrity="sha256-CDOv9+HPVn7PuXVXAe6VqAU19nHi4aCncMm8IKCntbs=" rel="preload stylesheet" as=style><link rel=icon href=https://s-ai-unix.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://s-ai-unix.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://s-ai-unix.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://s-ai-unix.github.io/apple-touch-icon.png><link rel=mask-icon href=https://s-ai-unix.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://s-ai-unix.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml title=rss><link rel=alternate hreflang=en href=https://s-ai-unix.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://s-ai-unix.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><meta property="og:site_name" content="s-ai-unix's Blog"><meta property="og:title" content="深度学习"><meta property="og:description" content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="深度学习"><meta name=twitter:description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><link rel=stylesheet href=https://s-ai-unix.github.io/css/classical-quote.css></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://s-ai-unix.github.io/ accesskey=h title="s-ai-unix's Blog (Alt + H)">s-ai-unix's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://s-ai-unix.github.io/ title="🏠 首页"><span>🏠 首页</span></a></li><li><a href=https://s-ai-unix.github.io/posts/ title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://s-ai-unix.github.io/archives/ title="📁 归档"><span>📁 归档</span></a></li><li><a href=https://s-ai-unix.github.io/tags/ title="🏷️ 标签"><span>🏷️ 标签</span></a></li><li><a href=https://s-ai-unix.github.io/search/ title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://s-ai-unix.github.io/about/ title="👤 关于"><span>👤 关于</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://s-ai-unix.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://s-ai-unix.github.io/tags/>Tags</a></div><h1>深度学习</h1></header><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/ai-neural-network.jpg alt=抽象的神经网络图案></figure><header class=entry-header><h2 class=entry-hint-parent>大语言模型：为什么AI能这么快、这么聪明地回答问题</h2></header><div class=entry-content><p>引言：对话的奇迹 你有没有试过和ChatGPT、Claude、或者国内的文心一言、通义千问对话？当你问它：“帮我写一首关于春天的诗”，或者"解释一下量子力学是什么"，它几乎在几秒钟内就能给出非常棒的回答。
+有时候你甚至会想：它怎么这么快？它是不是有脑子？它是不是真的"理解"我在说什么？
+答案可能出乎你的意料：大语言模型其实在做一件非常简单的事情——但它把这件简单的事情做到了极致。
+今天，我们就来揭开这个"魔术"的面纱。
+核心思想：预测下一个词 大语言模型（Large Language Model，简称LLM）的本质，可以用一句话概括：
+它做的事情就是：给定一段话，预测下一个词最可能是什么。
+听起来是不是太简单了？别急，让我们看个例子。
+一个简单的游戏 假设我给你这句话的前半部分：
+"今天天气真____" 你会怎么填空？
+你可能会想到：“好”、“糟糕”、“热”、“冷”、“适合出门”……这些词都是有可能的。
+再换个句子：
+"我要去超市买_____" 你会猜：苹果、牛奶、面包、蔬菜、日用品……
+再换个：
+"中国位于_____" 这个答案就很明确了：亚洲、东亚。
+你看，人类也在不停地做"预测下一个词"这件事。因为我们读过很多书、说过很多话，所以当我们听到半句话时，脑子里会自动出现最可能的后续。
+从简单到复杂 大语言模型就是把这个"填空游戏"玩到了极致。
+它读过几百万本书、几十亿篇文章、数万亿个句子。所以当你输入一段话，它能极其精准地预测下一个词。
+关键点1：它不是在"思考"，而是在"计算概率"
+比如你问：“什么是量子力学？”
+它会计算：在"什么是量子力学？“这句话后面，最可能出现的词语是什么？
+它会依次生成：“量子力学是一个____"（可能填：“理论”、“学科”、“概念”）→“理论，它描述____"（可能填：“粒子”、“微观世界”、“能量”）→……一层一层地，就生成了完整的回答。
+关键点2：它不是一个词一个词地"想"出来的，而是一次性计算所有可能性
+就像天气预报一样，气象台不会"猜"明天会不会下雨，而是根据大量数据"计算"出下雨的概率。大语言模型也是这样：它不是在"想"下一个词是什么，而是在"计算"所有可能的下一个词的概率。
+这就是为什么它能这么快——因为这是数学计算，不是思考。
+数据：从海量文本中学习 你可能会问：它凭什么知道"什么是量子力学"该怎么回答？
+答案很简单：因为它"读"过关于量子力学的书。
+读了多少书？ GPT-3（一个著名的大语言模型）的训练数据包含：
+几千本书 几百万篇维基百科文章 几十亿个网页 几百万篇学术论文 大量的代码、对话、论坛帖子 总计大约5000亿个单词。
+这是什么概念？假设一个人一生能读5000本书，每本书平均10万字，那就是5000 × 10万 = 5亿个词。GPT-3读的内容是一个人1000辈子才能读完的。
+学到了什么？ 从这些海量文本中，它学到了：
+语言规律：什么是正确的语法、什么是通顺的表达 世界知识：天为什么是蓝的、苹果是什么、历史事件怎么发生的 逻辑关系：因果关系、时间顺序、对比关系 常识推理：水往下流、太阳从东边升起、人类需要喝水 专业领域：数学、物理、编程、医学、法律…… 类比一下：这就像一个从小读遍图书馆所有书、记性特别好、理解能力超强的人。当你在对话中提到某个话题时，它能瞬间调动相关的知识来回答。
+神经网络：像大脑一样的结构 你可能会想：它怎么"记住"这么多东西？
+这要归功于神经网络。
+什么叫"神经网络”？ 神经网络是一种模仿人脑结构的数学模型。
+人脑有约860亿个神经元，这些神经元之间有无数个连接。当我们学习时，神经元之间的连接会"变强"或"变弱”，从而存储信息。
+神经网络也是类似的：
+它有很多"人工神经元”（叫作"节点"） 这些神经元之间有无数个"连接"（每个连接都有一个"权重"） 当它学习时，这些"权重"会不断调整 参数：知识的存储形式 大语言模型有几千亿个参数（parameters）。
+“参数"是什么？你可以把它想象成"记忆单元"或"知识存储点”。
+...</p></div><footer class=entry-footer><span title='2026-01-14 08:50:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>284 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 大语言模型：为什么AI能这么快、这么聪明地回答问题" href=https://s-ai-unix.github.io/posts/2026-01-14-llm-principle-for-students/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/wisconsin-geese-4602386.jpg alt=抽象的几何图案></figure><header class=entry-header><h2 class=entry-hint-parent>梯度、梯度下降与反向传播：从最优化到深度学习的数学引擎</h2></header><div class=entry-content><p>引言：从山路说起 想象你是一名登山者，被困在浓雾笼罩的山坡上，四周一片白茫茫。你手里只有一个指南针，它指向的似乎是你所在位置海拔下降最快的方向。这是你最希望知道的：该往哪个方向迈出第一步，才能尽快走出这座山？
+这就是梯度下降算法最直观的物理类比。你所在的位置，是一个函数在某点的值；你想要的，是找到函数的最小值（山谷的最低点）；而那个指南针，就是梯度——告诉你哪个方向上升最快的向量。
+这个看似简单的思想，却成为了现代人工智能的数学引擎。从AlphaGo击败李世石，到ChatGPT生成流畅的文字，再到自动驾驶汽车的感知系统，背后都依赖着梯度、梯度下降和反向传播这三个核心概念的精密协作。
+但在深入这些概念之前，我们需要先理解一个更基础的数学对象：梯度。
+梯度：地形的最陡方向 历史背景：从Hamilton到向量微积分 梯度的概念并非一蹴而就。它的起源可以追溯到19世纪中叶，那个数学物理大爆发的时代。
+1843年，爱尔兰数学家William Rowan Hamilton（哈密顿）在研究四元数时，引入了一个算子符号$\nabla$，他称之为"nabla"（源自希腊语，意为一种竖琴）。这个倒三角符号后来成为了梯度、散度和旋度的统一表示。
+1850年代，苏格兰数学家James Clerk Maxwell（麦克斯韦）进一步发展了向量微积分理论，他将$\nabla$算子应用于不同的运算：$\nabla \phi$表示梯度，$\nabla \cdot \mathbf{F}$表示散度，$\nabla \times \mathbf{F}$表示旋度。这三大运算构成了现代电磁学理论的数学语言。
+更早之前，法国数学家Augustin-Louis Cauchy（柯西）在1847年就提出了梯度下降算法的雏形，这是最古老的优化算法之一。
+数学定义：偏导数的向量 给定一个多元标量函数 $f: \mathbb{R}^n \rightarrow \mathbb{R}$，它的梯度 $\nabla f$（读作"del f"或"grad f"）定义为：
+$$ \nabla f = \left(\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n}\right)^T $$
+这是一个向量，每个分量是函数对相应变量的偏导数。
+具体计算示例 考虑一个简单的二次函数：$f(x, y) = x^2 + 2y^2 - 4x - 8y + 17$
+计算梯度：
+$$ \frac{\partial f}{\partial x} = 2x - 4, \quad \frac{\partial f}{\partial y} = 4y - 8 $$
+...</p></div><footer class=entry-footer><span title='2026-01-14 08:34:44 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>10 min</span>&nbsp;·&nbsp;<span>2040 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 梯度、梯度下降与反向传播：从最优化到深度学习的数学引擎" href=https://s-ai-unix.github.io/posts/2026-01-14-gradient-descent-backpropagation-overview/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/photo-1620712943543-bcc4688e7485.jpg alt=神经网络连接></figure><header class=entry-header><h2 class=entry-hint-parent>基于神经网络的深度学习算法：从感知机到Transformer的完整指南</h2></header><div class=entry-content><p>引言：从生物启发到智能革命 1943年，Warren McCulloch和Walter Pitts提出了第一个神经元数学模型。他们用一个简单的数学公式模拟了生物神经元的工作方式：接收输入、加权求和、激活输出。这个看似简单的想法，却孕育了后来改变世界的人工智能技术。
+1958年，Frank Rosenblatt发明了感知机（Perceptron），这是第一个可以学习的神经网络。但1969年，Minsky和Papert在《Perceptrons》一书中证明了单层感知机无法解决异或（XOR）问题，这个致命缺陷导致了神经网络研究的第一次寒冬。
+1986年，David Rumelhart、Geoffrey Hinton和Ronald Williams重新发现了反向传播算法，解决了多层网络的训练问题。神经网络迎来了短暂的春天。
+但在90年代到2000年代初，支持向量机（SVM）等传统机器学习算法统治了学术界。神经网络因为数据量不足、计算能力有限、缺乏有效的训练技巧，再次陷入沉寂。
+2012年，ImageNet竞赛上，Hinton的学生Alex Krizhevsky使用深度卷积神经网络AlexNet，以压倒性优势击败了传统方法，分类错误率从26%降低到15.3%。这一年，深度学习时代正式开启。
+从此，深度学习以惊人的速度发展：2014年的VGG、GoogLeNet，2015年的ResNet解决深度退化问题，2017年的Transformer彻底改变自然语言处理，2022年的ChatGPT让全世界见识到大模型的力量。
+本文将从数学原理出发，系统讲解深度学习的核心算法：从基础神经网络到卷积神经网络（CNN），从循环神经网络（RNN）到Transformer，最后探讨未来发展趋势。
+第一章：神经网络的数学基础 1.1 单神经元：感知机的数学模型 1.1.1 前向传播 感知机是最基础的神经网络单元，模拟生物神经元的工作原理。给定输入向量 $x \in \mathbb{R}^d$，权重向量 $w \in \mathbb{R}^d$，偏置 $b \in \mathbb{R}$：
+$$z = w^Tx + b = \sum_{i=1}^d w_i x_i + b$$
+激活函数 $\sigma(z)$ 决定神经元的输出：
+$$a = \sigma(z)$$
+1.1.2 常用激活函数 Sigmoid函数： $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
+导数： $$\sigma’(z) = \sigma(z)(1 - \sigma(z))$$
+性质：
+输出范围：$(0, 1)$ S型曲线，可微 缺点：梯度消失（$| \sigma’(z) | \leq 0.25$），输出不以零为中心 Tanh函数： $$\tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}$$
+...</p></div><footer class=entry-footer><span title='2026-01-14 08:30:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>11 min</span>&nbsp;·&nbsp;<span>2188 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 基于神经网络的深度学习算法：从感知机到Transformer的完整指南" href=https://s-ai-unix.github.io/posts/2026-01-14-deep-learning-algorithms-comprehensive-guide/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/rl-network.jpg alt=神经网络连接示意图></figure><header class=entry-header><h2 class=entry-hint-parent>强化学习：从试错到智能的数学之旅</h2></header><div class=entry-content><p>引言：试错的智慧 想象一下，你第一次玩《超级马里奥》这款游戏。屏幕上的小人在管道和蘑菇之间跳跃，你必须不断尝试：有时候跳得太早撞到了蘑菇，有时候跳得太晚掉进了坑里。但随着尝试次数的增多，你逐渐掌握了时机——你知道什么时候该加速，什么时候该按跳跃键。
+这种通过试错来学习的过程，就是强化学习（Reinforcement Learning, RL）的核心思想。不同于监督学习从标注好的数据中学习，强化学习通过与环境的交互来获取反馈，并逐渐优化自己的行为策略。
+从数学的角度看，强化学习可以被视为一个优化问题：智能体（Agent）需要在环境中选择动作（Action），以最大化累积奖励（Reward）。这个过程可以用概率论和微积分的语言来精确描述。
+本文将带你踏上这段数学之旅，从马尔可夫决策过程（MDP）的基础框架出发，逐步推导经典的Q-learning、Policy Gradient和Actor-Critic算法，最后探讨强化学习的应用场景和未来前景。
+第一章：强化学习的基本框架 1.1 核心概念 在正式进入数学推导之前，让我们先建立一个直观的图像。想象一只老鼠在迷宫中寻找奶酪：
+智能体（Agent）：这只老鼠 环境（Environment）：迷宫 状态（State）：老鼠在迷宫中的位置 动作（Action）：老鼠可以向前后左右移动 奖励（Reward）：找到奶酪+10分，撞墙-1分，每走一步-0.1分（鼓励快速找到） 智能体的目标是学习一个策略（Policy），即在不同状态下选择最优的动作，以最大化长期累积奖励。
+1.2 数学表示 现在让我们用数学语言来描述这个框架。一个强化学习问题通常由以下元组表示：
+$$ (S, A, P, R, \gamma) $$
+其中：
+$S$：状态空间（State Space） $A$：动作空间（Action Space） $P$：状态转移概率（Transition Probability） $R$：奖励函数（Reward Function） $\gamma$：折扣因子（Discount Factor），$\gamma \in [0,1]$ 状态转移概率 $P(s’|s,a)$ 表示在状态 $s$ 执行动作 $a$ 后，转移到状态 $s’$ 的概率：
+$$ P(s’|s,a) = \mathbb{P}[S_{t+1} = s’ | S_t = s, A_t = a] $$
+奖励函数 $R(s,a)$ 可以定义为：
+$$ R(s,a) = \mathbb{E}[R_{t+1} | S_t = s, A_t = a] $$
+...</p></div><footer class=entry-footer><span title='2026-01-14 08:30:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>1291 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 强化学习：从试错到智能的数学之旅" href=https://s-ai-unix.github.io/posts/2026-01-14-reinforcement-learning-comprehensive-guide/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/1620641788421-7a1c342ea42e.jpg alt=流形的可视化></figure><header class=entry-header><h2 class=entry-hint-parent>流形：从弯曲空间到深度学习与机器人学的漫游</h2></header><div class=entry-content><p>引言：当空间开始弯曲 想象一下，你是一只生活在二维平面上的蚂蚁。你可以自由地在平面上行走，测量距离，画出直线和三角形。你所知道的几何——欧几里得几何——似乎是那么完美、那么自洽。
+现在，让我们把这只蚂蚁放到一个巨大的篮球表面。
+蚂蚁会发现什么呢？首先，它会发现"直线"不再存在。如果它一直往前走，最终会回到起点——它走的是"大圆"，而不是直线。其次，它会发现三角形的内角和不再是180度，而是大于180度。最神奇的是，如果它足够聪明，它可以通过测量距离和角度来发现这个空间的曲率——尽管它从未"跳出"过这个二维曲面。
+这就是内蕴几何的魔力，也是流形（Manifold）概念的起点。
+在接下来的篇幅中，我将带你进行一次从19世纪的几何革命到21世纪人工智能的漫游。我们会看到：
+流形的诞生：高斯和黎曼如何改变了我们对空间的理解 流形的数学：为什么流形是"局部平坦、整体弯曲"的几何对象 流形在深度学习：从流形假设到球面Embedding 流形在机器人学：从四元数到SLAM 实战案例：四个让你真正理解流形威力的例子 准备好了吗？让我们开始这段跨越时空的数学之旅。
+第一章：几何的危机与重生 1.1 欧几里得的第五公设 公元前300年，亚历山大港的数学家欧几里得写下了《几何原本》——这部奠定了西方科学基础的巨著。欧几里得从五条公设出发，推导出无数深刻的几何定理。其中第五条公设——平行公设——却让数学家们困惑了两千多年。
+平行公设：如果一条直线与两条直线相交，且同侧内角之和小于两个直角，则这两条直线在该侧无限延伸后必定相交。
+这条公设看起来比其他公设复杂得多。数学家们不禁想问：它能否从前四条公设中推导出来？如果可以，那它就不是真正的公设；如果不可以，那是否存在一种"非欧几里得几何"，其中平行公设不成立？
+1.2 罗巴切夫斯基的革命 1829年，俄罗斯数学家罗巴切夫斯基（Nikolai Lobachevsky）发表了第一篇非欧几何的论文。他假设过一点可以作多条平行线，由此推导出一套完整的几何体系——双曲几何。
+在双曲几何中：
+三角形的内角和小于180度 相似三角形只有大小完全相同才算相似 不存在矩形，因为四边形的内角和小于360度 罗巴切夫斯基的发现彻底改变了数学家对几何本质的认识：几何不是关于"真实空间"的真理，而是关于某种抽象结构的逻辑系统。
+1.3 高斯的绝妙定理 几乎在同一时间，德国数学家高斯也在思考类似的问题。高斯不仅是一个理论家，还是一个实测工作者——他参与了汉诺威的大地测量。在测量中，高斯意识到一个深刻的问题：地球表面的几何能告诉我们什么？
+1827年，高斯发表了绝妙定理（Theorema Egregium）：曲面的高斯曲率是一个内蕴不变量——它完全由曲面自身的几何性质决定，与曲面如何嵌入周围空间无关。
+这个定理的惊人之处在于：曲率不是"外部"观察者看到的弯曲，而是曲面"内部"几何结构的必然结果。一只生活在曲面上的蚂蚁，通过测量距离和角度，可以计算出它所在空间的曲率——即使它永远无法"看到"曲面在三维空间中的弯曲方式。
+高斯的工作开创了内蕴几何的新时代，为流形的诞生奠定了基础。
+1.4 黎曼的推广 1854年，高斯的学生黎曼（Bernhard Riemann）在哥廷根大学发表了著名的就职演讲《论作为几何学基础的假设》。黎曼将高斯的二维曲面理论推广到任意维数，创立了黎曼几何。
+黎曼的核心思想是：几何不在于"空间是什么"，而在于"我们如何测量空间中的距离"。
+黎曼提出用一个度规张量（Metric Tensor）来描述空间的几何性质。度规告诉我们如何在空间的每一点测量距离和角度。有了度规，我们就可以定义：
+曲线的长度 向量的点积 角度和面积 平行移动 测地线（最直的曲线） 黎曼几何成为了20世纪物理学的基石。1915年，爱因斯坦用黎曼几何描述时空的弯曲，建立了广义相对论。
+第二章：流形的数学定义 2.1 什么是流形？ 在数学中，流形（Manifold）是一个抽象的空间概念。直观地说，流形是一个"局部看起来像欧几里得空间"的空间。
+流形的定义：
+一个 $n$ 维流形 $M$ 是一个满足以下条件的拓扑空间：
+局部欧几里得性：对于 $M$ 中的每一点 $p$，存在一个开集 $U \subseteq M$ 包含 $p$，以及一个从 $U$ 到 $\mathbb{R}^n$ 的开集的同胚映射（称为坐标图）： $$\varphi: U \to \mathbb{R}^n$$
+...</p></div><footer class=entry-footer><span title='2026-01-12 23:10:00 +0800 CST'>January 12, 2026</span>&nbsp;·&nbsp;<span>10 min</span>&nbsp;·&nbsp;<span>2090 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 流形：从弯曲空间到深度学习与机器人学的漫游" href=https://s-ai-unix.github.io/posts/2026-01-12-manifold-deep-learning-robotics/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://s-ai-unix.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/page/2/>«&nbsp;Prev&nbsp;</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=https://s-ai-unix.github.io/>s-ai-unix's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var t,n=e.innerHTML,s=!1;for(n.indexOf("<em>")!==-1&&(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("</em>")!==-1&&(t=n.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),t=t.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("<em>$")!==-1&&(t=n.replace(/<em>\$/g,"$"),t!==n&&(n=t,s=!0)),n.indexOf("</em>$")!==-1&&(t=n.replace(/<\/em>\$/g,"$"),t!==n&&(n=t,s=!0));n.indexOf("<em>")!==-1&&n.indexOf("</em>")!==-1;){if(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t===n)break;n=t,s=!0}n.indexOf("_{")!==-1&&(t=n.replace(/_{/g,"_{"),t!==n&&(n=t,s=!0)),n.indexOf("}_")!==-1&&(t=n.replace(/}_/g,"}"),t!==n&&(n=t,s=!0)),n.includes("</em>{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),n.includes("<em>{\\mathrm{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),(n.includes("</em>")||n.includes("<em>"))&&(t=n.replace(/(\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$[^$]*?)<em>/g,"$1"),t=t.replace(/<em>([^$]*?\$)/g,"$1"),t=t.replace(/(\$[^$]*?)<\/em>/g,"$1"),t=t.replace(/<\/em>([^$]*?\$)/g,"$1"),t!==n&&(n=t,s=!0)),n.indexOf("\\\\")!==-1&&(t=n.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),t!==n&&(n=t,s=!0)),s&&(e.innerHTML=n)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",packages:{"[+]":["noerrors","noundefined","boldsymbol"]},macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var t,n=e.innerHTML,s=!1;for(n.indexOf("<em>")!==-1&&(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("</em>")!==-1&&(t=n.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),t=t.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("<em>$")!==-1&&(t=n.replace(/<em>\$/g,"$"),t!==n&&(n=t,s=!0)),n.indexOf("</em>$")!==-1&&(t=n.replace(/<\/em>\$/g,"$"),t!==n&&(n=t,s=!0));n.indexOf("<em>")!==-1&&n.indexOf("</em>")!==-1;){if(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t===n)break;n=t,s=!0}n.indexOf("_{")!==-1&&(t=n.replace(/_{/g,"_{"),t!==n&&(n=t,s=!0)),n.indexOf("}_")!==-1&&(t=n.replace(/}_/g,"}"),t!==n&&(n=t,s=!0)),n.includes("</em>{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),n.includes("<em>{\\mathrm{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),(n.includes("</em>")||n.includes("<em>"))&&(t=n.replace(/(\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$[^$]*?)<em>/g,"$1"),t=t.replace(/<em>([^$]*?\$)/g,"$1"),t=t.replace(/(\$[^$]*?)<\/em>/g,"$1"),t=t.replace(/<\/em>([^$]*?\$)/g,"$1"),t!==n&&(n=t,s=!0)),n.indexOf("\\\\")!==-1&&(t=n.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),t!==n&&(n=t,s=!0)),s&&(e.innerHTML=n)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",packages:{"[+]":["noerrors","noundefined","boldsymbol"]},macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script></body></html>
