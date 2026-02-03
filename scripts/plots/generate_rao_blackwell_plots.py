@@ -783,8 +783,10 @@ def plot_history():
     # 时间线占满整个宽度
     x_min, x_max = 1920, 1960
     
-    # 分配y位置避免重叠：远离开来点，交错分布
-    y_positions = [1.2, -1.0, 1.0, -1.2, 0.7, -0.7, 1.4]  # 自定义分布
+    # 分配y位置避免重叠：远离开来点，交错分布，最大化填充画布
+    # 1945,1946,1947,1949,1950密集区域需要充分分散
+    # 顺序对应：1922, 1945, 1946, 1947, 1950, 1949, 1953
+    y_positions = [4.0, -4.0, 2.5, -5.5, 1.0, -2.5, 5.5]  # 充分分散密集区域
     
     for i, (year, event, desc, color) in enumerate(events):
         y_pos = y_positions[i]
@@ -795,7 +797,7 @@ def plot_history():
             x=[year],
             y=[0],
             mode='markers',
-            marker=dict(size=16, color=color, line=dict(color='white', width=2)),
+            marker=dict(size=28, color=color, line=dict(color='white', width=3)),
             showlegend=False,
             hoverinfo='text',
             hovertext=f'{year}: {event}'
@@ -808,16 +810,16 @@ def plot_history():
             mode='text',
             text=[str(year)],
             textposition='top center' if y_offset > 0 else 'bottom center',
-            textfont=dict(size=11, color='#333', family='Arial Black'),
+            textfont=dict(size=18, color='#333', family='Arial Black'),
             showlegend=False
         ))
         
         # 连接线
         fig.add_trace(go.Scatter(
             x=[year, year],
-            y=[0.05 if y_offset > 0 else -0.05, y_pos * 0.75],
+            y=[0.1 if y_offset > 0 else -0.1, y_pos * 0.85],
             mode='lines',
-            line=dict(color=color, width=1.5),
+            line=dict(color=color, width=3),
             showlegend=False
         ))
         
@@ -840,18 +842,18 @@ def plot_history():
             mode='text',
             text=[short_event],
             textposition='top center' if y_offset > 0 else 'bottom center',
-            textfont=dict(size=10, color='#222', family='Arial'),
+            textfont=dict(size=16, color='#222', family='Arial'),
             showlegend=False
         ))
         
         # 描述
         fig.add_trace(go.Scatter(
             x=[year],
-            y=[y_pos - 0.25 if y_offset > 0 else y_pos + 0.25],
+            y=[y_pos - 0.5 if y_offset > 0 else y_pos + 0.5],
             mode='text',
             text=[desc],
             textposition='top center' if y_offset > 0 else 'bottom center',
-            textfont=dict(size=8, color='#666'),
+            textfont=dict(size=12, color='#666'),
             showlegend=False
         ))
     
@@ -860,7 +862,7 @@ def plot_history():
         x=[x_min - 1, x_max + 1],
         y=[0, 0],
         mode='lines',
-        line=dict(color='#888', width=2.5),
+        line=dict(color='#888', width=4),
         showlegend=False
     ))
     
@@ -881,35 +883,35 @@ def plot_history():
     
     # 阶段标签
     fig.add_annotation(
-        x=1932.5, y=1.8,
+        x=1932.5, y=4.8,
         text='充分性概念发展',
         showarrow=False,
-        font=dict(size=12, color='#007AFF'),
+        font=dict(size=18, color='#007AFF'),
         bgcolor='rgba(255,255,255,0.9)',
         bordercolor='#007AFF',
-        borderwidth=1,
-        borderpad=3
+        borderwidth=2,
+        borderpad=5
     )
     
     fig.add_annotation(
-        x=1950, y=1.8,
+        x=1950, y=4.8,
         text='RB定理与完善',
         showarrow=False,
-        font=dict(size=12, color='#FF3B30'),
+        font=dict(size=18, color='#FF3B30'),
         bgcolor='rgba(255,255,255,0.9)',
         bordercolor='#FF3B30',
-        borderwidth=1,
-        borderpad=3
+        borderwidth=2,
+        borderpad=5
     )
     
     fig.update_layout(
         template='plotly_white',
-        font=dict(family='Arial, sans-serif', size=10),
+        font=dict(family='Arial, sans-serif', size=14),
         width=1400,
         height=480,
         title=dict(
             text='Rao-Blackwell定理发展历程（1922-1953）',
-            font=dict(size=20, family='Arial'),
+            font=dict(size=28, family='Arial'),
             x=0.5
         ),
         xaxis=dict(
@@ -926,9 +928,9 @@ def plot_history():
             showgrid=False,
             showticklabels=False,
             zeroline=False,
-            range=[-1.8, 2.2]
+            range=[-6.5, 6.5]
         ),
-        margin=dict(l=40, r=40, t=80, b=50),
+        margin=dict(l=60, r=60, t=60, b=40),
         paper_bgcolor='white',
         plot_bgcolor='white'
     )
