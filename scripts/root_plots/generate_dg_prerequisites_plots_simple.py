@@ -9,7 +9,7 @@ from plotly.subplots import make_subplots
 import subprocess
 import os
 
-OUTPUT_DIR = "static/images/plots"
+OUTPUT_DIR = "../static/images/plots"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 

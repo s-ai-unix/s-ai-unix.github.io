@@ -259,7 +259,7 @@ def plot_value_landscape():
 
 def main():
     """生成所有配图"""
-    output_dir = 'static/images/plots'
+    output_dir = '../static/images/plots'
     os.makedirs(output_dir, exist_ok=True)
     
     print("开始生成 GAN 文章配图...\n")

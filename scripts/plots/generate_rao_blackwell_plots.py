@@ -764,7 +764,7 @@ def plot_umvue():
 
 
 def plot_history():
-    """图5：历史发展"""
+    """图5：历史发展 - 全屏水平时间线"""
     fig = go.Figure()
     
     events = [
@@ -779,87 +779,161 @@ def plot_history():
     
     events.sort(key=lambda x: x[0])
     years = [e[0] for e in events]
-    y_pos = list(range(len(events)))
+    
+    # 时间线占满整个宽度
+    x_min, x_max = 1920, 1960
+    
+    # 分配y位置避免重叠：远离开来点，交错分布
+    y_positions = [1.2, -1.0, 1.0, -1.2, 0.7, -0.7, 1.4]  # 自定义分布
     
     for i, (year, event, desc, color) in enumerate(events):
+        y_pos = y_positions[i]
+        y_offset = 1 if y_pos > 0 else -1
+        
+        # 标记点（在时间线上）
         fig.add_trace(go.Scatter(
             x=[year],
-            y=[i],
+            y=[0],
             mode='markers',
-            marker=dict(size=18, color=color, line=dict(color='white', width=2)),
+            marker=dict(size=16, color=color, line=dict(color='white', width=2)),
             showlegend=False,
             hoverinfo='text',
             hovertext=f'{year}: {event}'
         ))
         
+        # 年份标签
         fig.add_trace(go.Scatter(
-            x=[year + 1.5],
-            y=[i],
+            x=[year],
+            y=[0.12 if y_offset > 0 else -0.12],
             mode='text',
-            text=[event],
-            textposition='middle left',
-            textfont=dict(size=11, color='#333'),
+            text=[str(year)],
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=11, color='#333', family='Arial Black'),
             showlegend=False
         ))
         
+        # 连接线
         fig.add_trace(go.Scatter(
-            x=[year + 1.5],
-            y=[i - 0.35],
+            x=[year, year],
+            y=[0.05 if y_offset > 0 else -0.05, y_pos * 0.75],
+            mode='lines',
+            line=dict(color=color, width=1.5),
+            showlegend=False
+        ))
+        
+        # 简化事件名称
+        short_names = {
+            'Fisher《论理论统计学的数学基础》': 'Fisher《理论统计学基础》',
+            'Rao《信息线与估计的精确性》': 'Rao《信息线与估计精确性》',
+            'Blackwell《条件期望与充分统计量》': 'Blackwell《条件期望》',
+            'Lehmann-Scheffe定理': 'Lehmann-Scheffe定理',
+            'Cramer-Rao不等式': 'Cramer-Rao不等式',
+            'Rao《高级统计方法》': 'Rao《高级统计方法》',
+            'Lehmann《检验统计假设》': 'Lehmann《统计假设检验》'
+        }
+        short_event = short_names.get(event, event)
+        
+        # 事件名称 - 分行显示
+        fig.add_trace(go.Scatter(
+            x=[year],
+            y=[y_pos],
+            mode='text',
+            text=[short_event],
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=10, color='#222', family='Arial'),
+            showlegend=False
+        ))
+        
+        # 描述
+        fig.add_trace(go.Scatter(
+            x=[year],
+            y=[y_pos - 0.25 if y_offset > 0 else y_pos + 0.25],
             mode='text',
             text=[desc],
-            textposition='middle left',
-            textfont=dict(size=9, color='#666'),
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=8, color='#666'),
             showlegend=False
         ))
     
+    # 主时间线
     fig.add_trace(go.Scatter(
-        x=years,
-        y=y_pos,
+        x=[x_min - 1, x_max + 1],
+        y=[0, 0],
         mode='lines',
-        line=dict(color='#ccc', width=2),
+        line=dict(color='#888', width=2.5),
         showlegend=False
     ))
     
+    # 阶段背景色块
     fig.add_vrect(
         x0=1920, x1=1945,
-        fillcolor='rgba(0, 122, 255, 0.1)',
+        fillcolor='rgba(0, 122, 255, 0.06)',
         line_width=0,
-        annotation_text='充分性概念发展',
-        annotation_position='top'
+        layer='below'
     )
     
     fig.add_vrect(
         x0=1945, x1=1955,
-        fillcolor='rgba(255, 59, 48, 0.1)',
+        fillcolor='rgba(255, 59, 48, 0.06)',
         line_width=0,
-        annotation_text='RB定理与完善',
-        annotation_position='bottom'
+        layer='below'
+    )
+    
+    # 阶段标签
+    fig.add_annotation(
+        x=1932.5, y=1.8,
+        text='充分性概念发展',
+        showarrow=False,
+        font=dict(size=12, color='#007AFF'),
+        bgcolor='rgba(255,255,255,0.9)',
+        bordercolor='#007AFF',
+        borderwidth=1,
+        borderpad=3
+    )
+    
+    fig.add_annotation(
+        x=1950, y=1.8,
+        text='RB定理与完善',
+        showarrow=False,
+        font=dict(size=12, color='#FF3B30'),
+        bgcolor='rgba(255,255,255,0.9)',
+        bordercolor='#FF3B30',
+        borderwidth=1,
+        borderpad=3
     )
     
     fig.update_layout(
         template='plotly_white',
-        font=dict(family='Arial, sans-serif', size=12),
-        width=1100,
-        height=550,
+        font=dict(family='Arial, sans-serif', size=10),
+        width=1400,
+        height=480,
         title=dict(
             text='Rao-Blackwell定理发展历程（1922-1953）',
-            font=dict(size=18)
+            font=dict(size=20, family='Arial'),
+            x=0.5
         ),
         xaxis=dict(
             title='年份',
             tickmode='linear',
-            dtick=10,
-            range=[1918, 1960]
+            dtick=5,
+            range=[x_min - 1.5, x_max + 1.5],
+            showgrid=True,
+            gridcolor='rgba(200,200,200,0.3)',
+            gridwidth=1,
+            zeroline=False
         ),
         yaxis=dict(
             showgrid=False,
             showticklabels=False,
-            zeroline=False
+            zeroline=False,
+            range=[-1.8, 2.2]
         ),
-        margin=dict(l=50, r=350, t=100, b=60)
+        margin=dict(l=40, r=40, t=80, b=50),
+        paper_bgcolor='white',
+        plot_bgcolor='white'
     )
     
-    save_and_compress(fig, f'{OUTPUT_DIR}/rao_blackwell_history.png', width=1100, height=550)
+    save_and_compress(fig, f'{OUTPUT_DIR}/rao_blackwell_history.png', width=1400, height=480)
     return fig
 
 

@@ -504,19 +504,19 @@ def plot_lln_clt_relationship():
 
 
 def plot_historical_timeline():
-    """图5：历史发展时间线"""
+    """图5：历史发展时间线 - 全屏布局"""
     fig = go.Figure()
     
     events = [
         (1713, '伯努利《猜度术》', '弱大数定律', '#007AFF'),
-        (1837, '泊松大数定律', '独立不同分布', '#34C759'),
-        (1867, '切比雪夫不等式', '概率论严格化', '#FF9500'),
-        (1909, '波莱尔强大数定律', '几乎必然收敛', '#AF52DE'),
-        (1933, '柯尔莫哥洛夫公理化', '现代概率论基础', '#FF3B30'),
         (1733, '棣莫弗-拉普拉斯', '二项分布正态近似', '#007AFF'),
         (1812, '拉普拉斯《分析概率论》', '一般CLT雏形', '#34C759'),
+        (1837, '泊松大数定律', '独立不同分布', '#34C759'),
+        (1867, '切比雪夫不等式', '概率论严格化', '#FF9500'),
         (1901, '李雅普诺夫CLT', '特征函数方法', '#FF9500'),
+        (1909, '波莱尔强大数定律', '几乎必然收敛', '#AF52DE'),
         (1922, '林德伯格-莱维CLT', '独立同分布CLT', '#AF52DE'),
+        (1933, '柯尔莫哥洛夫公理化', '现代概率论基础', '#FF3B30'),
         (1935, '林德伯格-费勒CLT', '充要条件', '#FF3B30'),
     ]
     
@@ -524,92 +524,163 @@ def plot_historical_timeline():
     events.sort(key=lambda x: x[0])
     
     years = [e[0] for e in events]
-    y_pos = list(range(len(events)))
+    x_min, x_max = 1690, 1960
+    
+    # 分配y位置避免重叠：LLN在上(正)，CLT在下(负)，更大间距
+    y_positions = [1.6, -1.2, 1.3, -0.9, 1.0, -0.6, 0.7, -1.5, 1.4, -1.8]
     
     for i, (year, event, desc, color) in enumerate(events):
-        # 事件点
+        y_pos = y_positions[i]
+        y_offset = 1 if y_pos > 0 else -1
+        
+        # 事件点（在时间线上）
         fig.add_trace(go.Scatter(
             x=[year],
-            y=[i],
+            y=[0],
             mode='markers',
-            marker=dict(size=18, color=color, line=dict(color='white', width=2)),
+            marker=dict(size=28, color=color, line=dict(color='white', width=4)),
             showlegend=False,
             hoverinfo='text',
             hovertext=f'{year}: {event}'
         ))
         
+        # 年份标签
+        fig.add_trace(go.Scatter(
+            x=[year],
+            y=[0.22 if y_offset > 0 else -0.22],
+            mode='text',
+            text=[str(year)],
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=20, color='#333', family='Arial Black'),
+            showlegend=False
+        ))
+        
+        # 连接线
+        fig.add_trace(go.Scatter(
+            x=[year, year],
+            y=[0.1 if y_offset > 0 else -0.1, y_pos * 0.75],
+            mode='lines',
+            line=dict(color=color, width=3),
+            showlegend=False
+        ))
+        
+        # 简化事件名称
+        short_names = {
+            '伯努利《猜度术》': '伯努利《猜度术》',
+            '棣莫弗-拉普拉斯': '棣莫弗-拉普拉斯',
+            '拉普拉斯《分析概率论》': '拉普拉斯《分析概率论》',
+            '泊松大数定律': '泊松大数定律',
+            '切比雪夫不等式': '切比雪夫不等式',
+            '李雅普诺夫CLT': '李雅普诺夫CLT',
+            '波莱尔强大数定律': '波莱尔强大数定律',
+            '林德伯格-莱维CLT': '林德伯格-莱维CLT',
+            '柯尔莫哥洛夫公理化': '柯尔莫哥洛夫公理化',
+            '林德伯格-费勒CLT': '林德伯格-费勒CLT'
+        }
+        short_event = short_names.get(event, event)
+        
         # 事件名称
         fig.add_trace(go.Scatter(
-            x=[year + 8],
-            y=[i],
+            x=[year],
+            y=[y_pos],
             mode='text',
-            text=[event],
-            textposition='middle left',
-            textfont=dict(size=11, color='#333'),
+            text=[short_event],
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=18, color='#222', family='Arial'),
             showlegend=False
         ))
         
         # 描述
         fig.add_trace(go.Scatter(
-            x=[year + 8],
-            y=[i - 0.35],
+            x=[year],
+            y=[y_pos - 0.55 if y_offset > 0 else y_pos + 0.55],
             mode='text',
             text=[desc],
-            textposition='middle left',
-            textfont=dict(size=9, color='#666'),
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=14, color='#666'),
             showlegend=False
         ))
     
-    # 连接线
+    # 主时间线
     fig.add_trace(go.Scatter(
-        x=years,
-        y=y_pos,
+        x=[x_min, x_max],
+        y=[0, 0],
         mode='lines',
-        line=dict(color='#ccc', width=2),
+        line=dict(color='#888', width=2.5),
         showlegend=False
     ))
     
     # 添加LLN和CLT区域标记
     fig.add_vrect(
         x0=1700, x1=1850,
-        fillcolor='rgba(0, 122, 255, 0.1)',
+        fillcolor='rgba(0, 122, 255, 0.06)',
         line_width=0,
-        annotation_text='大数定律发展期',
-        annotation_position='top'
+        layer='below'
     )
     
     fig.add_vrect(
         x0=1700, x1=1940,
-        fillcolor='rgba(52, 199, 89, 0.1)',
+        fillcolor='rgba(52, 199, 89, 0.06)',
         line_width=0,
-        annotation_text='中心极限定理发展期',
-        annotation_position='bottom'
+        layer='below'
+    )
+    
+    # 阶段标签
+    fig.add_annotation(
+        x=1775, y=2.5,
+        text='大数定律发展期',
+        showarrow=False,
+        font=dict(size=22, color='#007AFF'),
+        bgcolor='rgba(255,255,255,0.9)',
+        bordercolor='#007AFF',
+        borderwidth=3,
+        borderpad=8
+    )
+    
+    fig.add_annotation(
+        x=1820, y=-2.5,
+        text='中心极限定理发展期',
+        showarrow=False,
+        font=dict(size=22, color='#34C759'),
+        bgcolor='rgba(255,255,255,0.9)',
+        bordercolor='#34C759',
+        borderwidth=3,
+        borderpad=8
     )
     
     fig.update_layout(
         template='plotly_white',
-        font=dict(family='Arial, sans-serif', size=12),
-        width=1150,
-        height=700,
+        font=dict(family='Arial, sans-serif', size=16),
+        width=2400,
+        height=1000,
         title=dict(
             text='大数定律与中心极限定理的发展历程（1713-1935）',
-            font=dict(size=18)
+            font=dict(size=32, family='Arial'),
+            x=0.5
         ),
         xaxis=dict(
-            title='年份',
+            title=dict(text='年份', font=dict(size=20)),
             tickmode='linear',
-            dtick=50,
-            range=[1690, 1960]
+            dtick=20,
+            range=[x_min, x_max],
+            showgrid=True,
+            gridcolor='rgba(200,200,200,0.3)',
+            gridwidth=1,
+            zeroline=False,
+            tickfont=dict(size=16)
         ),
         yaxis=dict(
             showgrid=False,
             showticklabels=False,
-            zeroline=False
+            zeroline=False,
+            range=[-2.8, 2.8]
         ),
-        margin=dict(l=50, r=350, t=100, b=60)
+        margin=dict(l=100, r=100, t=140, b=100),
+        paper_bgcolor='white',
+        plot_bgcolor='white'
     )
     
-    save_and_compress(fig, f'{OUTPUT_DIR}/lln_clt_history.png', width=1150, height=700)
+    save_and_compress(fig, f'{OUTPUT_DIR}/lln_clt_history.png', width=2400, height=1000)
     return fig
 
 

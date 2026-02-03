@@ -67,10 +67,10 @@ def plot_mobius_strip():
     ax.legend(loc='lower right')
     
     plt.tight_layout()
-    plt.savefig('static/images/plots/mobius-strip.png', dpi=150, bbox_inches='tight', 
+    plt.savefig('../static/images/plots/mobius-strip.png', dpi=150, bbox_inches='tight', 
                 facecolor='white', edgecolor='none')
     plt.close()
-    compress_png('static/images/plots/mobius-strip.png')
+    compress_png('../static/images/plots/mobius-strip.png')
 
 
 def plot_open_sets():
@@ -134,10 +134,10 @@ def plot_open_sets():
     ax.set_title('开集的基本性质：任意并、有限交', fontsize=12, fontweight='bold')
     
     plt.tight_layout()
-    plt.savefig('static/images/plots/open-sets.png', dpi=150, bbox_inches='tight',
+    plt.savefig('../static/images/plots/open-sets.png', dpi=150, bbox_inches='tight',
                 facecolor='white', edgecolor='none')
     plt.close()
-    compress_png('static/images/plots/open-sets.png')
+    compress_png('../static/images/plots/open-sets.png')
 
 
 def plot_continuity():
@@ -212,10 +212,10 @@ def plot_continuity():
     ax.set_title('连续性的拓扑定义', fontsize=12, fontweight='bold')
     
     plt.tight_layout()
-    plt.savefig('static/images/plots/continuity.png', dpi=150, bbox_inches='tight',
+    plt.savefig('../static/images/plots/continuity.png', dpi=150, bbox_inches='tight',
                 facecolor='white', edgecolor='none')
     plt.close()
-    compress_png('static/images/plots/continuity.png')
+    compress_png('../static/images/plots/continuity.png')
 
 
 def plot_homeomorphism():
@@ -266,10 +266,10 @@ def plot_homeomorphism():
     ax.set_title('同胚映射：圆与正方形拓扑等价', fontsize=14, fontweight='bold')
     
     plt.tight_layout()
-    plt.savefig('static/images/plots/homeomorphism.png', dpi=150, bbox_inches='tight',
+    plt.savefig('../static/images/plots/homeomorphism.png', dpi=150, bbox_inches='tight',
                 facecolor='white', edgecolor='none')
     plt.close()
-    compress_png('static/images/plots/homeomorphism.png')
+    compress_png('../static/images/plots/homeomorphism.png')
 
 
 def plot_compactness():
@@ -320,10 +320,10 @@ def plot_compactness():
     ax.set_title('非紧致：开区间 (a,b)', fontsize=12, fontweight='bold')
     
     plt.tight_layout()
-    plt.savefig('static/images/plots/compactness.png', dpi=150, bbox_inches='tight',
+    plt.savefig('../static/images/plots/compactness.png', dpi=150, bbox_inches='tight',
                 facecolor='white', edgecolor='none')
     plt.close()
-    compress_png('static/images/plots/compactness.png')
+    compress_png('../static/images/plots/compactness.png')
 
 
 def plot_connectedness():
@@ -390,10 +390,10 @@ def plot_connectedness():
     ax.set_title('不连通空间', fontsize=12, fontweight='bold')
     
     plt.tight_layout()
-    plt.savefig('static/images/plots/connectedness.png', dpi=150, bbox_inches='tight',
+    plt.savefig('../static/images/plots/connectedness.png', dpi=150, bbox_inches='tight',
                 facecolor='white', edgecolor='none')
     plt.close()
-    compress_png('static/images/plots/connectedness.png')
+    compress_png('../static/images/plots/connectedness.png')
 
 
 def plot_manifold_concept():
@@ -451,10 +451,10 @@ def plot_manifold_concept():
     ax.set_title('坐标卡像', fontsize=12, fontweight='bold')
     
     plt.tight_layout()
-    plt.savefig('static/images/plots/manifold-concept.png', dpi=150, bbox_inches='tight',
+    plt.savefig('../static/images/plots/manifold-concept.png', dpi=150, bbox_inches='tight',
                 facecolor='white', edgecolor='none')
     plt.close()
-    compress_png('static/images/plots/manifold-concept.png')
+    compress_png('../static/images/plots/manifold-concept.png')
 
 
 def plot_euler_characteristic():
@@ -522,15 +522,15 @@ def plot_euler_characteristic():
     ax.set_title('环面', fontsize=12, fontweight='bold')
     
     plt.tight_layout()
-    plt.savefig('static/images/plots/euler-characteristic.png', dpi=150, bbox_inches='tight',
+    plt.savefig('../static/images/plots/euler-characteristic.png', dpi=150, bbox_inches='tight',
                 facecolor='white', edgecolor='none')
     plt.close()
-    compress_png('static/images/plots/euler-characteristic.png')
+    compress_png('../static/images/plots/euler-characteristic.png')
 
 
 def main():
     """生成所有配图"""
-    output_dir = 'static/images/plots'
+    output_dir = '../static/images/plots'
     os.makedirs(output_dir, exist_ok=True)
     
     print("正在生成拓扑学配图...")

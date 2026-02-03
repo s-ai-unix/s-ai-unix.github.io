@@ -22,46 +22,137 @@ def save_and_compress(fig, filepath, width=800, height=500, scale=2):
 
 
 def plot_mobius_strip_2d():
-    """绘制莫比乌斯带的2D投影示意"""
-    # 生成莫比乌斯带的轮廓线
-    theta = np.linspace(0, 4*np.pi, 300)
-    x = np.cos(theta) * (1 + 0.3*np.cos(theta/2))
-    y = np.sin(theta) * (1 + 0.3*np.cos(theta/2))
-    
+    """绘制莫比乌斯带的2D投影示意 - 正确显示扭转结构"""
     fig = go.Figure()
     
-    # 莫比乌斯带主体
+    # 莫比乌斯带参数方程（3D投影到2D）
+    # u: 沿带长度方向 [0, 2π]
+    # v: 沿带宽方向 [-w, w]
+    u = np.linspace(0, 2*np.pi, 200)
+    w = 0.3  # 半宽度
+    
+    # 计算莫比乌斯带的两条边缘（上边缘和下边缘）
+    # 参数方程: 
+    # x = (1 + v*cos(u/2)) * cos(u)
+    # y = (1 + v*cos(u/2)) * sin(u)
+    # z = v * sin(u/2)
+    
+    # 上边缘 (v = w)
+    x_top = (1 + w * np.cos(u/2)) * np.cos(u)
+    y_top = (1 + w * np.cos(u/2)) * np.sin(u)
+    z_top = w * np.sin(u/2)
+    
+    # 下边缘 (v = -w)
+    x_bot = (1 - w * np.cos(u/2)) * np.cos(u)
+    y_bot = (1 - w * np.cos(u/2)) * np.sin(u)
+    z_bot = -w * np.sin(u/2)
+    
+    # 中心线 (v = 0)
+    x_center = np.cos(u)
+    y_center = np.sin(u)
+    z_center = np.zeros_like(u)
+    
+    # 使用3D投影到2D: 使用x和y坐标，用颜色表示z深度（扭转效果）
+    # 上边缘
     fig.add_trace(go.Scatter(
-        x=x, y=y,
+        x=x_top, y=y_top,
+        mode='lines',
+        line=dict(color='#007AFF', width=4),
+        name='上边缘',
+        showlegend=False
+    ))
+    
+    # 下边缘
+    fig.add_trace(go.Scatter(
+        x=x_bot, y=y_bot,
+        mode='lines',
+        line=dict(color='#34C759', width=4),
+        name='下边缘',
+        showlegend=False
+    ))
+    
+    # 用填充区域表示带子
+    # 合并上下边缘点（上边缘正向，下边缘反向）
+    x_fill = np.concatenate([x_top, x_bot[::-1]])
+    y_fill = np.concatenate([y_top, y_bot[::-1]])
+    
+    fig.add_trace(go.Scatter(
+        x=x_fill, y=y_fill,
+        mode='lines',
+        line=dict(color='#007AFF', width=0),
+        fill='toself', fillcolor='rgba(0, 122, 255, 0.25)',
+        name='莫比乌斯带',
+        showlegend=False
+    ))
+    
+    # 重新绘制边缘线（在填充层之上）
+    fig.add_trace(go.Scatter(
+        x=x_top, y=y_top,
         mode='lines',
         line=dict(color='#007AFF', width=3),
-        fill='toself', fillcolor='rgba(0, 122, 255, 0.2)',
-        name='莫比乌斯带'
+        showlegend=False
     ))
     
-    # 中心线
-    theta_c = np.linspace(0, 2*np.pi, 150)
-    x_c = np.cos(theta_c)
-    y_c = np.sin(theta_c)
     fig.add_trace(go.Scatter(
-        x=x_c, y=y_c,
+        x=x_bot, y=y_bot,
+        mode='lines',
+        line=dict(color='#34C759', width=3),
+        showlegend=False
+    ))
+    
+    # 中心线（虚线）
+    fig.add_trace(go.Scatter(
+        x=x_center, y=y_center,
         mode='lines',
         line=dict(color='#FF3B30', width=2, dash='dash'),
-        name='中心线'
+        name='中心线',
+        showlegend=True
     ))
     
-    # 箭头表示绕一圈回到对面
-    fig.add_annotation(x=1, y=0, ax=0.7, ay=0,
-                       showarrow=True, arrowhead=2, arrowcolor='#FF9500',
-                       arrowwidth=2)
+    # 添加关键点标记：起点和终点（在中心线上是同一个点，但在带子上是"对面"）
+    # 起点 (u=0)
+    fig.add_trace(go.Scatter(
+        x=[1], y=[0],
+        mode='markers+text',
+        marker=dict(size=12, color='#FF9500', symbol='circle'),
+        text=['起点 A'],
+        textposition='top right',
+        textfont=dict(size=11, color='#333333'),
+        showlegend=False
+    ))
+    
+    # 沿中心线走一圈后的位置（在带子上是"背面"）
+    # 用箭头表示路径
+    fig.add_annotation(x=-0.7, y=0.7, ax=-0.3, ay=0.3,
+                       showarrow=True, arrowhead=2, arrowcolor='#FF3B30',
+                       arrowwidth=2, arrowsize=1.5)
+    
+    # 添加说明文字
+    fig.add_annotation(x=-0.9, y=0.9, text='绕一圈后<br>回到"背面"',
+                       showarrow=False, font=dict(size=10, color='#666666'),
+                       align='left')
+    
+    # 添加粘合点标记（展示扭转粘合）
+    fig.add_trace(go.Scatter(
+        x=[1.3], y=[0],
+        mode='markers+text',
+        marker=dict(size=8, color='#AF52DE', symbol='diamond'),
+        text=['粘合处'],
+        textposition='bottom right',
+        textfont=dict(size=9, color='#666666'),
+        showlegend=False
+    ))
     
     fig.update_layout(
-        title=dict(text='莫比乌斯带：沿中心线走一圈，回到起始点的"背面"', font=dict(size=14)),
-        xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+        title=dict(text='莫比乌斯带：单侧不可定向曲面', font=dict(size=16)),
+        xaxis=dict(showgrid=False, zeroline=False, showticklabels=False, 
+                   scaleanchor='y', scaleratio=1),
         yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
         template='plotly_white',
         showlegend=True,
-        width=700, height=500
+        legend=dict(x=0.02, y=0.02, bgcolor='rgba(255,255,255,0.8)'),
+        width=700, height=600,
+        margin=dict(l=50, r=50, t=80, b=50)
     )
     
     return fig
@@ -328,7 +419,7 @@ def plot_manifold_concept():
 
 def main():
     """生成所有配图"""
-    output_dir = 'static/images/plots'
+    output_dir = '../static/images/plots'
     os.makedirs(output_dir, exist_ok=True)
     
     print("正在生成拓扑学配图...")

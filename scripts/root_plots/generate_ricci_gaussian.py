@@ -34,5 +34,5 @@ fig.update_layout(
     showlegend=True
 )
 
-fig.write_image('static/images/plots/ricci-flow-gaussian-curvature.png', scale=2)
+fig.write_image('../static/images/plots/ricci-flow-gaussian-curvature.png', scale=2)
 print("完成!")

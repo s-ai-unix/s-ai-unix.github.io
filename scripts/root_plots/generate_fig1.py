@@ -72,5 +72,5 @@ fig1.update_layout(
     )
 )
 
-fig1.write_image('static/images/math/complex-plane-contour.png', scale=2)
+fig1.write_image('../static/images/math/complex-plane-contour.png', scale=2)
 print("Figure 1 created")

@@ -145,31 +145,31 @@ $$E_\theta[g(T)] = 0 \text{ 对所有 } \theta \implies g(T) = 0 \text{ a.s.}$$
 
 **定理**（Rao-Blackwell）：设 $\delta(X)$ 是 $g(\theta)$ 的一个无偏估计量，$T(X)$ 是 $\theta$ 的充分统计量。定义：
 
-$$\delta^*(T) = E[\delta(X) \mid T]$$
+$$\delta^{\ast}(T) = E[\delta(X) \mid T]$$
 
 则：
 
-1. **无偏性保持**：$E_\theta[\delta^*(T)] = g(\theta)$
-2. **方差减小**：$\text{Var}_\theta(\delta^*) \leq \text{Var}_\theta(\delta)$，等号成立当且仅当 $\delta^* = \delta$ a.s.
+1. **无偏性保持**：$E_\theta[\delta^{\ast}(T)] = g(\theta)$
+2. **方差减小**：$\text{Var}_\theta(\delta^{\ast}) \leq \text{Var}_\theta(\delta)$，等号成立当且仅当 $\delta^{\ast} = \delta$ a.s.
 
 **关键点**：
-- 条件期望只依赖于 $T$，因此 $\delta^*$ 是一个"合法"的估计量
-- 由于 $T$ 是充分的，条件分布不依赖于 $\theta$，所以 $\delta^*$ 可以计算
+- 条件期望只依赖于 $T$，因此 $\delta^{\ast}$ 是一个"合法"的估计量
+- 由于 $T$ 是充分的，条件分布不依赖于 $\theta$，所以 $\delta^{\ast}$ 可以计算
 - 方差严格减小，除非原始估计量已经是 $T$ 的函数
 
 ## 2.2 定理的完整证明
 
 **证明**：
 
-**步骤1：$\delta^*$ 是良好定义的估计量**
+**步骤1：$\delta^{\ast}$ 是良好定义的估计量**
 
-由于 $T$ 是充分的，给定 $T=t$ 时 $X$ 的条件分布不依赖于 $\theta$。因此 $\delta^*(t) = E[\delta(X) \mid T=t]$ 可以计算（不涉及 $\theta$），所以 $\delta^*$ 是一个估计量。
+由于 $T$ 是充分的，给定 $T=t$ 时 $X$ 的条件分布不依赖于 $\theta$。因此 $\delta^{\ast}(t) = E[\delta(X) \mid T=t]$ 可以计算（不涉及 $\theta$），所以 $\delta^{\ast}$ 是一个估计量。
 
 **步骤2：无偏性保持**
 
 由全期望公式：
 
-$$E_\theta[\delta^*(T)] = E_\theta[E[\delta(X) \mid T]] = E_\theta[\delta(X)] = g(\theta)$$
+$$E_\theta[\delta^{\ast}(T)] = E_\theta[E[\delta(X) \mid T]] = E_\theta[\delta(X)] = g(\theta)$$
 
 最后一步利用了 $\delta$ 的无偏性。
 
@@ -177,13 +177,13 @@ $$E_\theta[\delta^*(T)] = E_\theta[E[\delta(X) \mid T]] = E_\theta[\delta(X)] = 
 
 利用**条件方差公式**（全方差公式）：
 
-$$\text{Var}(\delta) = E[\text{Var}(\delta \mid T)] + \text{Var}(E[\delta \mid T]) = E[\text{Var}(\delta \mid T)] + \text{Var}(\delta^*)$$
+$$\text{Var}(\delta) = E[\text{Var}(\delta \mid T)] + \text{Var}(E[\delta \mid T]) = E[\text{Var}(\delta \mid T)] + \text{Var}(\delta^{\ast})$$
 
 由于 $\text{Var}(\delta \mid T) \geq 0$，所以 $E[\text{Var}(\delta \mid T)] \geq 0$。
 
 因此：
 
-$$\text{Var}(\delta) \geq \text{Var}(\delta^*)$$
+$$\text{Var}(\delta) \geq \text{Var}(\delta^{\ast})$$
 
 **步骤4：等号成立条件**
 
@@ -191,7 +191,7 @@ $$\text{Var}(\delta) \geq \text{Var}(\delta^*)$$
 
 这意味着在给定 $T$ 的条件下，$\delta$ 是常数（不随机），即 $\delta$ 是 $T$ 的函数。
 
-因此 $\delta = h(T)$，则 $\delta^* = E[h(T) \mid T] = h(T) = \delta$。
+因此 $\delta = h(T)$，则 $\delta^{\ast} = E[h(T) \mid T] = h(T) = \delta$。
 
 证毕。
 
@@ -199,7 +199,7 @@ $$\text{Var}(\delta) \geq \text{Var}(\delta^*)$$
 
 **方差分解公式**揭示了方差缩减的来源：
 
-$$\text{Var}(\delta) = \underbrace{\text{Var}(\delta^*)}_{\text{系统方差}} + \underbrace{E[\text{Var}(\delta \mid T)]}_{\text{随机噪声}}$$
+$$\text{Var}(\delta) = \underbrace{\text{Var}(\delta^{\ast})}_{\text{系统方差}} + \underbrace{E[\text{Var}(\delta \mid T)]}_{\text{随机噪声}}$$
 
 Rao-Blackwell化消除了"随机噪声"部分，只保留了"系统方差"。
 
@@ -215,13 +215,13 @@ Rao-Blackwell化消除了"随机噪声"部分，只保留了"系统方差"。
 
 - Rao-Blackwell化：
   
-  $$\delta^* = E[X_1 \mid \bar{X}] = \bar{X}$$
+  $$\delta^{\ast} = E[X_1 \mid \bar{X}] = \bar{X}$$
   
   （由于对称性，$E[X_i \mid \bar{X}] = \bar{X}$ 对所有 $i$）
 
 - 改进后：
-  - $E[\delta^*] = \mu$（无偏）
-  - $\text{Var}(\delta^*) = \frac{1}{n}$
+  - $E[\delta^{\ast}] = \mu$（无偏）
+  - $\text{Var}(\delta^{\ast}) = \frac{1}{n}$
 
 **方差缩减**：从1降到 $1/n$，缩减因子为 $n$。
 
@@ -236,12 +236,12 @@ $$\langle \delta_1, \delta_2 \rangle = \text{Cov}(\delta_1, \delta_2)$$
 **关键观察**：
 - 给定充分统计量 $T$ 的条件期望 $E[\cdot \mid T]$ 是 $\mathcal{H}$ 上的一个**投影算子**
 - 它将任何估计量投影到"$T$ 的函数"这个子空间上
-- 这个投影保持无偏性（因为 $E[\delta^*] = E[\delta]$）
+- 这个投影保持无偏性（因为 $E[\delta^{\ast}] = E[\delta]$）
 - 投影最小化方差（因为投影是正交分解）
 
 **几何图示**：
 
-$\delta^*$ 是 $\delta$ 在"$T$ 的函数"子空间上的正交投影，因此方差最小。
+$\delta^{\ast}$ 是 $\delta$ 在"$T$ 的函数"子空间上的正交投影，因此方差最小。
 
 # 第三章：Lehmann-Scheffe定理与UMVUE
 
@@ -249,10 +249,10 @@ $\delta^*$ 是 $\delta$ 在"$T$ 的函数"子空间上的正交投影，因此�
 
 ## 3.1 一致最小方差无偏估计（UMVUE）
 
-**定义**：估计量 $\delta^*$ 称为 $g(\theta)$ 的**一致最小方差无偏估计**（Uniformly Minimum Variance Unbiased Estimator, UMVUE），如果：
+**定义**：估计量 $\delta^{\ast}$ 称为 $g(\theta)$ 的**一致最小方差无偏估计**（Uniformly Minimum Variance Unbiased Estimator, UMVUE），如果：
 
-1. **无偏性**：$E_\theta[\delta^*] = g(\theta)$ 对所有 $\theta$
-2. **最优性**：对任何其他无偏估计量 $\delta$，$\text{Var}_\theta(\delta^*) \leq \text{Var}_\theta(\delta)$ 对所有 $\theta$
+1. **无偏性**：$E_\theta[\delta^{\ast}] = g(\theta)$ 对所有 $\theta$
+2. **最优性**：对任何其他无偏估计量 $\delta$，$\text{Var}_\theta(\delta^{\ast}) \leq \text{Var}_\theta(\delta)$ 对所有 $\theta$
 
 UMVUE是频率学派估计理论中的"圣杯"——它在所有无偏估计量中具有最小方差。
 
@@ -261,7 +261,7 @@ UMVUE是频率学派估计理论中的"圣杯"——它在所有无偏估计量�
 **定理**（Lehmann-Scheffe）：设 $T$ 是完备充分统计量，$\delta(T)$ 是 $g(\theta)$ 的无偏估计量。则：
 
 1. $\delta(T)$ 是唯一的UMVUE
-2. 对任何其他无偏估计量 $\tilde{\delta}$，通过Rao-Blackwell化得到 $\delta^* = E[\tilde{\delta} \mid T]$，有 $\delta^* = \delta(T)$ a.s.
+2. 对任何其他无偏估计量 $\tilde{\delta}$，通过Rao-Blackwell化得到 $\delta^{\ast} = E[\tilde{\delta} \mid T]$，有 $\delta^{\ast} = \delta(T)$ a.s.
 
 **证明**：
 
@@ -287,9 +287,9 @@ UMVUE是频率学派估计理论中的"圣杯"——它在所有无偏估计量�
 
 **步骤2**：找到一个**任意无偏估计量** $\tilde{\delta}$（可能很粗糙）
 
-**步骤3**：计算**Rao-Blackwell化**：$\delta^* = E[\tilde{\delta} \mid T]$
+**步骤3**：计算**Rao-Blackwell化**：$\delta^{\ast} = E[\tilde{\delta} \mid T]$
 
-**结果**：$\delta^*$ 就是UMVUE
+**结果**：$\delta^{\ast}$ 就是UMVUE
 
 ## 3.4 Cramer-Rao下界
 
@@ -310,7 +310,7 @@ $$\text{Var}(\delta) \geq \frac{[g'(\theta)]^2}{I(\theta)}$$
 Rao-Blackwell化能减少多少方差？这取决于原始估计量与充分统计量的关系。
 
 **极端情况1**：原始估计量已经是充分统计量的函数
-- 此时 $\delta = h(T)$，$\delta^* = \delta$
+- 此时 $\delta = h(T)$，$\delta^{\ast} = \delta$
 - 方差缩减为0
 
 **极端情况2**：原始估计量与充分统计量"正交"
@@ -320,7 +320,7 @@ Rao-Blackwell化能减少多少方差？这取决于原始估计量与充分统�
 
 方差缩减比例为：
 
-$$\frac{\text{Var}(\delta) - \text{Var}(\delta^*)}{\text{Var}(\delta)} = \frac{E[\text{Var}(\delta \mid T)]}{\text{Var}(\delta)}$$
+$$\frac{\text{Var}(\delta) - \text{Var}(\delta^{\ast})}{\text{Var}(\delta)} = \frac{E[\text{Var}(\delta \mid T)]}{\text{Var}(\delta)}$$
 
 这等于条件方差占总方差的比例。
 
@@ -332,12 +332,12 @@ $$\frac{\text{Var}(\delta) - \text{Var}(\delta^*)}{\text{Var}(\delta)} = \frac{E
 
 **估计 $\mu$**：
 - 原始：$\delta = X_1$，$\text{Var} = \sigma^2$
-- RB化：$\delta^* = \bar{X}$，$\text{Var} = \sigma^2/n$
+- RB化：$\delta^{\ast} = \bar{X}$，$\text{Var} = \sigma^2/n$
 - 缩减因子：$n$
 
 **估计 $\sigma^2$**：
 - 原始：$\delta = (X_1 - X_2)^2/2$，$\text{Var} = 3\sigma^4/2$
-- RB化：$\delta^* = S^2$，$\text{Var} = 2\sigma^4/(n-1)$
+- RB化：$\delta^{\ast} = S^2$，$\text{Var} = 2\sigma^4/(n-1)$
 - 缩减因子：$\approx 3n/4$
 
 ## 4.3 模拟研究
@@ -350,7 +350,7 @@ $$\frac{\text{Var}(\delta) - \text{Var}(\delta^*)}{\text{Var}(\delta)} = \frac{E
 |--------|------------|------------|
 | $\delta = X_1$ | 1.00 | 0.98 |
 | $\delta = (X_1 + X_2)/2$ | 0.50 | 0.51 |
-| $\delta^* = \bar{X}$ (RB) | 0.05 | 0.05 |
+| $\delta^{\ast} = \bar{X}$ (RB) | 0.05 | 0.05 |
 
 模拟结果证实了理论：RB化显著降低方差。
 

@@ -68,5 +68,5 @@ fig2.update_layout(
     )
 )
 
-fig2.write_image('static/images/math/vector-field-1-z.png', scale=2)
+fig2.write_image('../static/images/math/vector-field-1-z.png', scale=2)
 print("Figure 2 created")

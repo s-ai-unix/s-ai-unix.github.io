@@ -135,7 +135,7 @@ $$\pi(\theta) = P_\theta(\text{拒绝 } H_0)$$
 - 当 $\theta \in \Theta_0$ 时，$\pi(\theta)$ 应该小（不超过 $\alpha$）
 - 当 $\theta \in \Theta_1$ 时，$\pi(\theta)$ 应该大（接近1）
 
-**一致最优势**（Uniformly Most Powerful, UMP）：若检验 $\phi^*$ 对所有 $\theta \in \Theta_1$ 的功效都不小于任何其他水平 $\alpha$ 检验的功效，则称 $\phi^*$ 是UMP检验。
+**一致最优势**（Uniformly Most Powerful, UMP）：若检验 $\phi^{\ast}$ 对所有 $\theta \in \Theta_1$ 的功效都不小于任何其他水平 $\alpha$ 检验的功效，则称 $\phi^{\ast}$ 是UMP检验。
 
 # 第二章：Neyman-Pearson引理
 
@@ -182,42 +182,42 @@ $$\phi(\mathbf{x}) = \begin{cases} 1 & \text{if } \Lambda(\mathbf{x}) > k \\ \ga
 
 **证明**（简化版，使用Neyman-Pearson基本引理）：
 
-设 $\phi$ 是上述定义的LRT，$\phi^*$ 是任意其他水平 $\alpha$ 检验。我们需要证明：
+设 $\phi$ 是上述定义的LRT，$\phi^{\ast}$ 是任意其他水平 $\alpha$ 检验。我们需要证明：
 
-$$E_{\theta_1}[\phi(\mathbf{x})] \geq E_{\theta_1}[\phi^*(\mathbf{x})]$$
+$$E_{\theta_1}[\phi(\mathbf{x})] \geq E_{\theta_1}[\phi^{\ast}(\mathbf{x})]$$
 
 **关键步骤**：
 
 考虑差值：
 
-$$\int (\phi - \phi^*)(L_1 - kL_0) d\mu$$
+$$\int (\phi - \phi^{\ast})(L_1 - kL_0) d\mu$$
 
 其中 $L_0 = L(\theta_0; \mathbf{x})$，$L_1 = L(\theta_1; \mathbf{x})$。
 
 根据LRT的定义：
-- 当 $L_1 > kL_0$ 时，$\phi = 1 \geq \phi^*$，所以 $(\phi - \phi^*) \geq 0$ 且 $(L_1 - kL_0) > 0$
-- 当 $L_1 < kL_0$ 时，$\phi = 0 \leq \phi^*$，所以 $(\phi - \phi^*) \leq 0$ 且 $(L_1 - kL_0) < 0$
+- 当 $L_1 > kL_0$ 时，$\phi = 1 \geq \phi^{\ast}$，所以 $(\phi - \phi^{\ast}) \geq 0$ 且 $(L_1 - kL_0) > 0$
+- 当 $L_1 < kL_0$ 时，$\phi = 0 \leq \phi^{\ast}$，所以 $(\phi - \phi^{\ast}) \leq 0$ 且 $(L_1 - kL_0) < 0$
 - 当 $L_1 = kL_0$ 时，被积函数为0
 
 因此：
 
-$$(\phi - \phi^*)(L_1 - kL_0) \geq 0 \quad \text{对所有 } \mathbf{x}$$
+$$(\phi - \phi^{\ast})(L_1 - kL_0) \geq 0 \quad \text{对所有 } \mathbf{x}$$
 
 积分得：
 
-$$\int (\phi - \phi^*)(L_1 - kL_0) d\mu \geq 0$$
+$$\int (\phi - \phi^{\ast})(L_1 - kL_0) d\mu \geq 0$$
 
 展开：
 
-$$\int (\phi - \phi^*)L_1 d\mu \geq k \int (\phi - \phi^*)L_0 d\mu$$
+$$\int (\phi - \phi^{\ast})L_1 d\mu \geq k \int (\phi - \phi^{\ast})L_0 d\mu$$
 
-左边是 $E_{\theta_1}[\phi - \phi^*]$，右边是 $k \cdot E_{\theta_0}[\phi - \phi^*]$。
+左边是 $E_{\theta_1}[\phi - \phi^{\ast}]$，右边是 $k \cdot E_{\theta_0}[\phi - \phi^{\ast}]$。
 
-由于 $\phi$ 和 $\phi^*$ 都是水平 $\alpha$ 检验，$E_{\theta_0}[\phi] = E_{\theta_0}[\phi^*] = \alpha$，所以右边为0。
+由于 $\phi$ 和 $\phi^{\ast}$ 都是水平 $\alpha$ 检验，$E_{\theta_0}[\phi] = E_{\theta_0}[\phi^{\ast}] = \alpha$，所以右边为0。
 
 因此：
 
-$$E_{\theta_1}[\phi] \geq E_{\theta_1}[\phi^*]$$
+$$E_{\theta_1}[\phi] \geq E_{\theta_1}[\phi^{\ast}]$$
 
 证毕。
 

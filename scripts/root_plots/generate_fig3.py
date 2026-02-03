@@ -48,5 +48,5 @@ fig3.update_layout(
     )
 )
 
-fig3.write_image('static/images/math/circles-shrinking.png', scale=2)
+fig3.write_image('../static/images/math/circles-shrinking.png', scale=2)
 print("Figure 3 created")

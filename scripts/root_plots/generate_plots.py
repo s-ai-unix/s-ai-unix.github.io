@@ -10,7 +10,7 @@ from scipy.stats import norm, binom, poisson
 import os
 
 # 创建输出目录
-os.makedirs('static/images/plots', exist_ok=True)
+os.makedirs('../static/images/plots', exist_ok=True)
 
 # ========== 1. 正态分布的 PDF ==========
 def plot_normal_distribution():
@@ -54,7 +54,7 @@ def plot_normal_distribution():
         height=500
     )
 
-    fig.write_html('static/images/plots/normal-distribution.html')
+    fig.write_html('../static/images/plots/normal-distribution.html')
     print("✅ 正态分布图形已生成")
     return fig
 
@@ -102,7 +102,7 @@ def plot_binomial_distribution():
         height=500
     )
 
-    fig.write_html('static/images/plots/binomial-distribution.html')
+    fig.write_html('../static/images/plots/binomial-distribution.html')
     print("✅ 二项分布图形已生成")
     return fig
 
@@ -170,7 +170,7 @@ def plot_central_limit_theorem():
         height=500
     )
 
-    fig.write_html('static/images/plots/central-limit-theorem.html')
+    fig.write_html('../static/images/plots/central-limit-theorem.html')
     print("✅ 中心极限定理图形已生成")
     return fig
 
@@ -217,7 +217,7 @@ def plot_poisson_distribution():
         height=500
     )
 
-    fig.write_html('static/images/plots/poisson-distribution.html')
+    fig.write_html('../static/images/plots/poisson-distribution.html')
     print("✅ 泊松分布图形已生成")
     return fig
 
@@ -255,7 +255,7 @@ def plot_cross_entropy_loss():
         height=500
     )
 
-    fig.write_html('static/images/plots/cross-entropy-loss.html')
+    fig.write_html('../static/images/plots/cross-entropy-loss.html')
     print("✅ 交叉熵损失图形已生成")
     return fig
 
@@ -290,7 +290,7 @@ def plot_kl_divergence():
         height=500
     )
 
-    fig.write_html('static/images/plots/kl-divergence.html')
+    fig.write_html('../static/images/plots/kl-divergence.html')
     print("✅ KL 散度图形已生成")
     return fig
 
@@ -331,7 +331,7 @@ def plot_entropy():
         height=500
     )
 
-    fig.write_html('static/images/plots/entropy.html')
+    fig.write_html('../static/images/plots/entropy.html')
     print("✅ 熵函数图形已生成")
     return fig
 

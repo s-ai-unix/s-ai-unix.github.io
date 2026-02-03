@@ -3,7 +3,7 @@ import numpy as np
 import plotly.graph_objects as go
 import os
 
-os.makedirs('static/images/math', exist_ok=True)
+os.makedirs('../static/images/math', exist_ok=True)
 
 theta = np.linspace(0, 2*np.pi, 500)
 r = 2
@@ -76,7 +76,7 @@ fig1.update_layout(
     )
 )
 
-fig1.write_image('static/images/math/complex-plane-contour.png', scale=2)
+fig1.write_image('../static/images/math/complex-plane-contour.png', scale=2)
 print("Figure 1 created: complex-plane-contour.png")
 
 fig2 = go.Figure()
@@ -141,7 +141,7 @@ fig2.update_layout(
     )
 )
 
-fig2.write_image('static/images/math/vector-field-1-z.png', scale=2)
+fig2.write_image('../static/images/math/vector-field-1-z.png', scale=2)
 print("Figure 2 created: vector-field-1-z.png")
 
 fig3 = go.Figure()
@@ -191,7 +191,7 @@ fig3.update_layout(
     )
 )
 
-fig3.write_image('static/images/math/circles-shrinking.png', scale=2)
+fig3.write_image('../static/images/math/circles-shrinking.png', scale=2)
 print("Figure 3 created: circles-shrinking.png")
 
 print("\nAll figures created successfully!")

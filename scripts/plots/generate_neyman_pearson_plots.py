@@ -505,7 +505,7 @@ def plot_ump_example():
 
 
 def plot_history_timeline():
-    """图4：历史发展时间线"""
+    """图4：历史发展时间线 - 全屏布局"""
     fig = go.Figure()
     
     events = [
@@ -520,90 +520,163 @@ def plot_history_timeline():
     ]
     
     events.sort(key=lambda x: x[0])
-    
     years = [e[0] for e in events]
-    y_pos = list(range(len(events)))
+    
+    # 时间线占满整个宽度
+    x_min, x_max = 1895, 2000
+    
+    # 分配y位置避免重叠：交错分布
+    y_positions = [1.0, -0.9, 0.8, -0.7, 0.6, -0.5, 0.9, -1.1]
     
     for i, (year, event, desc, color) in enumerate(events):
+        y_pos = y_positions[i]
+        y_offset = 1 if y_pos > 0 else -1
+        
+        # 标记点（在时间线上）
         fig.add_trace(go.Scatter(
             x=[year],
-            y=[i],
+            y=[0],
             mode='markers',
-            marker=dict(size=18, color=color, line=dict(color='white', width=2)),
+            marker=dict(size=16, color=color, line=dict(color='white', width=2)),
             showlegend=False,
             hoverinfo='text',
             hovertext=f'{year}: {event}'
         ))
         
+        # 年份标签
         fig.add_trace(go.Scatter(
-            x=[year + 2],
-            y=[i],
+            x=[year],
+            y=[0.12 if y_offset > 0 else -0.12],
             mode='text',
-            text=[event],
-            textposition='middle left',
-            textfont=dict(size=11, color='#333'),
+            text=[str(year)],
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=11, color='#333', family='Arial Black'),
             showlegend=False
         ))
         
+        # 连接线
         fig.add_trace(go.Scatter(
-            x=[year + 2],
-            y=[i - 0.35],
+            x=[year, year],
+            y=[0.05 if y_offset > 0 else -0.05, y_pos * 0.65],
+            mode='lines',
+            line=dict(color=color, width=1.5),
+            showlegend=False
+        ))
+        
+        # 简化事件名称
+        short_names = {
+            '皮尔逊《科学的哲学》': '皮尔逊《科学的哲学》',
+            'Neyman-Pearson引理': 'NP引理',
+            'Neyman-Pearson论文': 'NP论文',
+            'Karlin-Rubin定理': 'Karlin-Rubin定理',
+            'Neyman置信区间': 'Neyman置信区间',
+            'Wald序列分析': 'Wald序贯分析',
+            'Lehmann《检验统计假设》': 'Lehmann《检验统计假设》',
+            'Berger《统计决策理论》': 'Berger《决策理论》'
+        }
+        short_event = short_names.get(event, event)
+        
+        # 事件名称
+        fig.add_trace(go.Scatter(
+            x=[year],
+            y=[y_pos],
+            mode='text',
+            text=[short_event],
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=10, color='#222', family='Arial'),
+            showlegend=False
+        ))
+        
+        # 描述
+        fig.add_trace(go.Scatter(
+            x=[year],
+            y=[y_pos - 0.25 if y_offset > 0 else y_pos + 0.25],
             mode='text',
             text=[desc],
-            textposition='middle left',
-            textfont=dict(size=9, color='#666'),
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=8, color='#666'),
             showlegend=False
         ))
     
+    # 主时间线
     fig.add_trace(go.Scatter(
-        x=years,
-        y=y_pos,
+        x=[x_min, x_max],
+        y=[0, 0],
         mode='lines',
-        line=dict(color='#ccc', width=2),
+        line=dict(color='#888', width=2.5),
         showlegend=False
     ))
     
-    # 添加时期标记
+    # 阶段背景色块
     fig.add_vrect(
         x0=1900, x1=1930,
-        fillcolor='rgba(0, 122, 255, 0.1)',
+        fillcolor='rgba(0, 122, 255, 0.06)',
         line_width=0,
-        annotation_text='早期发展',
-        annotation_position='top'
+        layer='below'
     )
     
     fig.add_vrect(
         x0=1928, x1=1950,
-        fillcolor='rgba(255, 59, 48, 0.1)',
+        fillcolor='rgba(255, 59, 48, 0.06)',
         line_width=0,
-        annotation_text='NP框架形成',
-        annotation_position='bottom'
+        layer='below'
+    )
+    
+    # 阶段标签
+    fig.add_annotation(
+        x=1915, y=1.5,
+        text='早期发展',
+        showarrow=False,
+        font=dict(size=12, color='#007AFF'),
+        bgcolor='rgba(255,255,255,0.9)',
+        bordercolor='#007AFF',
+        borderwidth=1,
+        borderpad=3
+    )
+    
+    fig.add_annotation(
+        x=1939, y=1.5,
+        text='NP框架形成',
+        showarrow=False,
+        font=dict(size=12, color='#FF3B30'),
+        bgcolor='rgba(255,255,255,0.9)',
+        bordercolor='#FF3B30',
+        borderwidth=1,
+        borderpad=3
     )
     
     fig.update_layout(
         template='plotly_white',
-        font=dict(family='Arial, sans-serif', size=12),
-        width=1100,
-        height=600,
+        font=dict(family='Arial, sans-serif', size=10),
+        width=1400,
+        height=480,
         title=dict(
             text='Neyman-Pearson理论发展历程（1900-1988）',
-            font=dict(size=18)
+            font=dict(size=20, family='Arial'),
+            x=0.5
         ),
         xaxis=dict(
             title='年份',
             tickmode='linear',
-            dtick=20,
-            range=[1895, 2000]
+            dtick=10,
+            range=[x_min, x_max],
+            showgrid=True,
+            gridcolor='rgba(200,200,200,0.3)',
+            gridwidth=1,
+            zeroline=False
         ),
         yaxis=dict(
             showgrid=False,
             showticklabels=False,
-            zeroline=False
+            zeroline=False,
+            range=[-1.6, 1.9]
         ),
-        margin=dict(l=50, r=350, t=100, b=60)
+        margin=dict(l=40, r=40, t=80, b=50),
+        paper_bgcolor='white',
+        plot_bgcolor='white'
     )
     
-    save_and_compress(fig, f'{OUTPUT_DIR}/neyman_pearson_history.png', width=1100, height=600)
+    save_and_compress(fig, f'{OUTPUT_DIR}/neyman_pearson_history.png', width=1400, height=480)
     return fig
 
 

@@ -987,7 +987,7 @@ def plot_learning_pathway():
 
 
 def plot_historical_development():
-    """图8：微分几何发展历史时间线"""
+    """图8：微分几何发展历史时间线 - 全屏布局超大版"""
     fig = go.Figure()
     
     # 时间线数据
@@ -1004,78 +1004,183 @@ def plot_historical_development():
         (2002, '佩雷尔曼证明庞加莱猜想', '里奇流方法', '#FF9500'),
     ]
     
+    events.sort(key=lambda x: x[0])
     years = [e[0] for e in events]
-    y_pos = list(range(len(events)))
+    x_min, x_max = 1680, 2020
     
-    # 绘制时间线
+    # 分配y位置避免重叠：交错分布，更大范围填充画布
+    y_positions = [5.5, -4.0, 4.8, -3.2, 4.0, -2.5, 3.2, -5.5, 4.5, -6.2]
+    
     for i, (year, event, desc, color) in enumerate(events):
-        # 点
+        y_pos = y_positions[i]
+        y_offset = 1 if y_pos > 0 else -1
+        
+        # 事件点（在时间线上）
         fig.add_trace(go.Scatter(
-            x=[year], y=[i],
+            x=[year],
+            y=[0],
             mode='markers',
-            marker=dict(
-                size=20,
-                color=color,
-                line=dict(color='white', width=2)
-            ),
+            marker=dict(size=48, color=color, line=dict(color='white', width=5)),
             showlegend=False,
             hoverinfo='text',
             hovertext=f'{year}: {event}'
         ))
         
+        # 年份标签
+        fig.add_trace(go.Scatter(
+            x=[year],
+            y=[0.25 if y_offset > 0 else -0.25],
+            mode='text',
+            text=[str(year)],
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=32, color='#333', family='Arial Black'),
+            showlegend=False
+        ))
+        
+        # 连接线
+        fig.add_trace(go.Scatter(
+            x=[year, year],
+            y=[0.15 if y_offset > 0 else -0.15, y_pos * 0.85],
+            mode='lines',
+            line=dict(color=color, width=6),
+            showlegend=False
+        ))
+        
+        # 简化事件名称
+        short_names = {
+            '牛顿《自然哲学的数学原理》': '牛顿原理',
+            '欧拉解决哥尼斯堡七桥问题': '欧拉七桥问题',
+            '高斯《曲面的一般研究》': '高斯《曲面研究》',
+            '黎曼的就职演讲': '黎曼就职演讲',
+            '克里斯托费尔发展张量分析': '克里斯托费尔',
+            '列维-奇维塔平行移动': '列维-奇维塔',
+            '爱因斯坦广义相对论': '爱因斯坦相对论',
+            '陈省身示性类理论': '陈省身示性类',
+            '丘成桐证明卡拉比猜想': '丘成桐卡拉比猜想',
+            '佩雷尔曼证明庞加莱猜想': '佩雷尔曼庞加莱猜想'
+        }
+        short_event = short_names.get(event, event)
+        
         # 事件名称
         fig.add_trace(go.Scatter(
-            x=[year + 5], y=[i],
+            x=[year],
+            y=[y_pos],
             mode='text',
-            text=[event],
-            textposition='middle left',
-            textfont=dict(size=11, color='#333'),
+            text=[short_event],
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=28, color='#222', family='Arial'),
             showlegend=False
         ))
         
         # 描述
         fig.add_trace(go.Scatter(
-            x=[year + 5], y=[i - 0.3],
+            x=[year],
+            y=[y_pos - 0.6 if y_offset > 0 else y_pos + 0.6],
             mode='text',
             text=[desc],
-            textposition='middle left',
-            textfont=dict(size=9, color='#666'),
+            textposition='top center' if y_offset > 0 else 'bottom center',
+            textfont=dict(size=20, color='#666'),
             showlegend=False
         ))
     
-    # 连接线
+    # 主时间线
     fig.add_trace(go.Scatter(
-        x=years,
-        y=y_pos,
+        x=[x_min, x_max],
+        y=[0, 0],
         mode='lines',
-        line=dict(color='#ccc', width=2),
+        line=dict(color='#888', width=6),
         showlegend=False
     ))
     
+    # 添加时期背景
+    fig.add_vrect(
+        x0=1680, x1=1800,
+        fillcolor='rgba(0, 122, 255, 0.06)',
+        line_width=0,
+        layer='below'
+    )
+    
+    fig.add_vrect(
+        x0=1800, x1=1950,
+        fillcolor='rgba(175, 82, 222, 0.06)',
+        line_width=0,
+        layer='below'
+    )
+    
+    fig.add_vrect(
+        x0=1950, x1=2020,
+        fillcolor='rgba(255, 59, 48, 0.06)',
+        line_width=0,
+        layer='below'
+    )
+    
+    # 时期标签
+    fig.add_annotation(
+        x=1740, y=6.5,
+        text='经典时期',
+        showarrow=False,
+        font=dict(size=32, color='#007AFF'),
+        bgcolor='rgba(255,255,255,0.9)',
+        bordercolor='#007AFF',
+        borderwidth=3,
+        borderpad=8
+    )
+    
+    fig.add_annotation(
+        x=1875, y=-6.5,
+        text='黎曼几何时期',
+        showarrow=False,
+        font=dict(size=32, color='#AF52DE'),
+        bgcolor='rgba(255,255,255,0.9)',
+        bordercolor='#AF52DE',
+        borderwidth=3,
+        borderpad=8
+    )
+    
+    fig.add_annotation(
+        x=1985, y=6.5,
+        text='现代发展',
+        showarrow=False,
+        font=dict(size=32, color='#FF3B30'),
+        bgcolor='rgba(255,255,255,0.9)',
+        bordercolor='#FF3B30',
+        borderwidth=3,
+        borderpad=8
+    )
+    
     fig.update_layout(
         template='plotly_white',
-        font=dict(family='Arial, sans-serif', size=12),
-        width=1100,
-        height=600,
+        font=dict(family='Arial, sans-serif', size=16),
+        width=2600,
+        height=1100,
         title=dict(
             text='微分几何发展历程（1687-2002）',
-            font=dict(size=18)
+            font=dict(size=48, family='Arial'),
+            x=0.5
         ),
         xaxis=dict(
-            title='年份',
+            title=dict(text='年份', font=dict(size=28)),
             tickmode='linear',
-            dtick=50,
-            range=[1680, 2020]
+            dtick=30,
+            range=[x_min, x_max],
+            showgrid=True,
+            gridcolor='rgba(200,200,200,0.3)',
+            gridwidth=1,
+            zeroline=False,
+            tickfont=dict(size=24)
         ),
         yaxis=dict(
             showgrid=False,
             showticklabels=False,
-            zeroline=False
+            zeroline=False,
+            range=[-7.2, 7.2]
         ),
-        margin=dict(l=50, r=300, t=80, b=60)
+        margin=dict(l=200, r=60, t=80, b=60),
+        paper_bgcolor='white',
+        plot_bgcolor='white'
     )
     
-    save_and_compress(fig, f'{OUTPUT_DIR}/historical_development.png', width=1100, height=600)
+    save_and_compress(fig, f'{OUTPUT_DIR}/historical_development.png', width=2600, height=1100)
     return fig
 
 
