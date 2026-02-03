@@ -104,14 +104,49 @@ $$f(x \mid T=t; \theta) = \frac{g(t, \theta) h(x)}{g(t, \theta) \int_{T(x)=t} h(
 
 ## 1.3 常见分布的充分统计量
 
-| 分布 | 参数 | 充分统计量 |
-|------|------|-----------|
-| $N(\mu, \sigma^2)$ | $\mu$ (已知$\sigma^2$) | $\bar{X} = \frac{1}{n}\sum X_i$ |
-| $N(\mu, \sigma^2)$ | $(\mu, \sigma^2)$ | $(\bar{X}, \sum(X_i - \bar{X})^2)$ |
-| Bernoulli($p$) | $p$ | $\sum X_i$ |
-| Poisson($\lambda$) | $\lambda$ | $\sum X_i$ |
-| Uniform($0, \theta$) | $\theta$ | $X_{(n)} = \max X_i$ |
-| Exp($\lambda$) | $\lambda$ | $\sum X_i$ |
+<div style="overflow-x: auto; margin: 1.5em 0;">
+<table style="width: 100%; font-size: 1.05em; border-collapse: collapse;">
+<thead>
+<tr style="border-bottom: 2px solid var(--border);">
+<th style="width: 25%; padding: 12px 16px; text-align: center; font-weight: 600;">分布</th>
+<th style="width: 35%; padding: 12px 16px; text-align: center; font-weight: 600;">参数</th>
+<th style="width: 40%; padding: 12px 16px; text-align: center; font-weight: 600;">充分统计量</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 10px 16px; text-align: center;">$N(\mu, \sigma^2)$</td>
+<td style="padding: 10px 16px; text-align: center;">$\mu$ (已知$\sigma^2$)</td>
+<td style="padding: 10px 16px; text-align: center;">$\bar{X} = \frac{1}{n}\sum X_i$</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border); background-color: rgba(128,128,128,0.08);">
+<td style="padding: 10px 16px; text-align: center;">$N(\mu, \sigma^2)$</td>
+<td style="padding: 10px 16px; text-align: center;">$(\mu, \sigma^2)$</td>
+<td style="padding: 10px 16px; text-align: center;">$(\bar{X}, \sum(X_i - \bar{X})^2)$</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 10px 16px; text-align: center;">Bernoulli($p$)</td>
+<td style="padding: 10px 16px; text-align: center;">$p$</td>
+<td style="padding: 10px 16px; text-align: center;">$\sum X_i$</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border); background-color: rgba(128,128,128,0.08);">
+<td style="padding: 10px 16px; text-align: center;">Poisson($\lambda$)</td>
+<td style="padding: 10px 16px; text-align: center;">$\lambda$</td>
+<td style="padding: 10px 16px; text-align: center;">$\sum X_i$</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 10px 16px; text-align: center;">Uniform($0, \theta$)</td>
+<td style="padding: 10px 16px; text-align: center;">$\theta$</td>
+<td style="padding: 10px 16px; text-align: center;">$X_{(n)} = \max X_i$</td>
+</tr>
+<tr>
+<td style="padding: 10px 16px; text-align: center;">Exp($\lambda$)</td>
+<td style="padding: 10px 16px; text-align: center;">$\lambda$</td>
+<td style="padding: 10px 16px; text-align: center;">$\sum X_i$</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 **例子**：二项分布
 
