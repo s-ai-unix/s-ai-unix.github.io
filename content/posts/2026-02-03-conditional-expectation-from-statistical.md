@@ -1,5 +1,5 @@
 ---
-title: "Conditional Expectation: From Statistical Foundations to Deep Learning Applications"
+title: "条件期望：从统计基础到深度学习应用"
 date: 2026-02-03T20:00:00+08:00
 draft: false
 description: "系统综述条件期望的数学基础、统计推导过程及其在机器学习和深度学习中的深刻应用"

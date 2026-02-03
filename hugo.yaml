@@ -92,6 +92,8 @@ params:
       url: "mailto:isunix1989@gmail.com"
     - name: github
       url: "https://github.com/s-ai-unix"
+    - name: rss
+      url: "/index.xml"
 
   # Giscus 评论系统配置
   giscus:
