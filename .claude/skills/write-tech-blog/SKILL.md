@@ -65,6 +65,24 @@ ls -lh static/images/covers/[filename].jpg
 
 #### 图表生成策略
 
+**画图脚本存放位置（重要）**：
+
+所有用于生成图表的 Python 脚本**必须**存放在博客主目录下的 `scripts/` 子目录中，**不要**直接放在博客主目录下：
+
+```
+✅ 正确：scripts/generate_xxx_plots.py
+❌ 错误：generate_xxx_plots.py（放在主目录）
+```
+
+**为什么需要这样做**：
+- 保持项目根目录整洁，避免脚本文件散落
+- 方便后续查找和管理所有绘图脚本
+- 与 `create_blog.py` 等工具脚本保持一致的存放规范
+
+**命名规范**：
+- 使用描述性名称：`generate_[主题]_plots.py`
+- 例如：`generate_bayesian_plots.py`, `generate_ricci_flow_plots.py`
+
 **数学/物理图形（使用 Plotly）**：
 对于涉及函数图像、几何演化、数据可视化的内容，使用 Plotly 生成专业图形：
 
