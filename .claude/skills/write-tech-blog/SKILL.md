@@ -484,6 +484,30 @@ math: true
 
 ## 常见问题
 
+### Blockquote CSS 类语法错误
+
+**症状**：文章中显示 `{:.term-block}` 或 `{: .class-name}` 这样的原始文本
+
+**原因**：使用了 Jekyll/Liquid 的语法（如 `{:.term-block}`），但 Hugo 不支持这种语法
+
+**解决**：使用原生 HTML `<blockquote>` 标签代替
+
+```markdown
+❌ 错误：Jekyll 语法（Hugo 不支持）
+> **设计哲学**：文字内容...
+{: .term-block}
+
+✅ 正确：Hugo 兼容的 HTML
+<blockquote class="term-block">
+  <p><strong>设计哲学</strong>：文字内容...</p>
+</blockquote>
+```
+
+**检查方法**：
+```bash
+grep -n "{: " content/posts/你的文章.md
+```
+
 ### 数学公式不显示或渲染错误
 
 **症状**：公式显示为原始代码（如 `$x$`）
