@@ -1,0 +1,274 @@
+#!/usr/bin/env python3
+"""
+并发版配图生成脚本 - 使用线程池加速生成
+
+性能提升：
+- 原版：串行生成，12张图 = 29秒 × 12 = 348秒（约6分钟）
+- 并发版：3并发，12张图 = 29秒 × 4批 = 116秒（约2分钟）
+"""
+import json
+import re
+import sys
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
+import threading
+
+# 添加共享库路径
+shared_lib_path = str(Path.home() / '.claude' / 'skills' / 'shared-lib')
+sys.path.insert(0, shared_lib_path)
+
+from image_api import ImageGenerator
+
+# 全局锁保护markdown文件的读写
+markdown_lock = threading.Lock()
+
+
+def parse_h2_sections(markdown_path):
+    """解析markdown中的所有H2标题"""
+    with open(markdown_path, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+
+    sections = []
+    current_h2 = None
+    current_line_num = 0
+
+    for i, line in enumerate(lines, 1):
+        h2_match = re.match(r'^##\s+(.+)$', line.strip())
+        if h2_match:
+            if current_h2:
+                sections.append((current_h2, current_line_num))
+            current_h2 = h2_match.group(1)
+            current_line_num = i
+
+    if current_h2:
+        sections.append((current_h2, current_line_num))
+
+    return sections
+
+
+def insert_image_into_markdown(markdown_path, h2_title, image_path):
+    """在H2标题后插入图片引用（线程安全，防重复）"""
+    with markdown_lock:  # 🔒 保护文件读写
+        with open(markdown_path, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+
+        # 找到H2标题
+        for i, line in enumerate(lines):
+            if re.match(rf'^##\s+{re.escape(h2_title)}\s*$', line.strip()):
+                # 检查下一行是否已有图片（更严格的检查）
+                if i + 1 < len(lines):
+                    next_line = lines[i + 1].strip()
+                    # 检查是否已有该图片引用
+                    if next_line.startswith('![') and image_path in next_line:
+                        return False  # 已存在相同图片
+                    # 检查是否有其他illustration图片（避免重复插入）
+                    if 'illustration_' in next_line:
+                        return False  # 已有其他配图
+
+                # 插入图片
+                image_md = f"\n![{h2_title}]({image_path})\n\n"
+                lines.insert(i + 1, image_md)
+
+                # 写回文件
+                with open(markdown_path, 'w', encoding='utf-8') as f:
+                    f.writelines(lines)
+                return True  # 插入成功
+
+        return False  # 未找到标题
+
+
+def generate_single_image(task):
+    """生成单张图片的任务函数"""
+    idx, section, markdown_path, abs_output_dir, output_dir, provider, skip_existing = task
+
+    h2_title = section['h2_title']
+    visual_desc = section['visual_description']
+    caption = section.get('caption', '')
+
+    # 图片路径
+    image_filename = f"illustration_{idx}.png"
+    image_output_path = abs_output_dir / image_filename
+    image_rel_path = f"{output_dir}/{image_filename}"
+
+    result = {
+        'idx': idx,
+        'h2_title': h2_title,
+        'success': False,
+        'message': '',
+        'image_path': image_rel_path,
+        'elapsed': 0
+    }
+
+    # 检查是否需要分析
+    if visual_desc == "待Claude分析填写..." or not visual_desc.strip():
+        result['message'] = "⚠️  跳过：未填写visual_description"
+        return result
+
+    # 跳过已存在
+    if skip_existing and image_output_path.exists():
+        result['success'] = True
+        result['message'] = "⏭️  图片已存在，跳过"
+        insert_image_into_markdown(markdown_path, h2_title, image_rel_path)
+        return result
+
+    start_time = time.time()
+
+    try:
+        # 生成图片
+        generator = ImageGenerator(provider=provider)
+        image_url, used_provider = generator.generate_newyorker_style(
+            visual_strategy=visual_desc,
+            caption=caption,
+            aspect_ratio='16:9',
+            max_retries=2  # 控制重试次数
+        )
+
+        # 保存图片
+        generator.save_image(image_url, str(image_output_path))
+
+        # 插入到markdown
+        inserted = insert_image_into_markdown(markdown_path, h2_title, image_rel_path)
+
+        elapsed = time.time() - start_time
+        result['success'] = True
+        result['elapsed'] = elapsed
+
+        if inserted:
+            result['message'] = f"✅ 成功 ({used_provider}, {elapsed:.1f}秒)"
+        else:
+            result['message'] = f"✅ 图片生成成功，但未插入（可能已存在）({used_provider}, {elapsed:.1f}秒)"
+
+    except Exception as e:
+        elapsed = time.time() - start_time
+        result['elapsed'] = elapsed
+        error_msg = str(e)
+        # 友好的错误信息
+        if 'timeout' in error_msg.lower():
+            result['message'] = f"❌ 超时: API响应时间过长"
+        elif '503' in error_msg or '500' in error_msg:
+            result['message'] = f"❌ API服务不可用"
+        else:
+            result['message'] = f"❌ 失败: {error_msg[:60]}"
+
+    return result
+
+
+def generate_from_config_parallel(
+    markdown_path,
+    config_path="visual_config.json",
+    output_dir="images/illustrations",
+    provider='jimeng',  # 默认使用jimeng（gemini当前不可用）
+    skip_existing=True,
+    max_workers=3  # 并发数
+):
+    """
+    并发生成所有配图
+
+    Args:
+        max_workers: 并发线程数（建议3-4，避免API限流）
+    """
+    markdown_path = Path(markdown_path)
+    config_path = markdown_path.parent / config_path
+
+    # 1. 读取配置
+    if not config_path.exists():
+        print(f"❌ 配置文件不存在: {config_path}")
+        return 0
+
+    with open(config_path, 'r', encoding='utf-8') as f:
+        config = json.load(f)
+
+    sections = config['sections']
+    print(f"\n📋 读取配置: {len(sections)} 个章节")
+    print(f"⚡ 并发设置: {max_workers} 线程")
+
+    # 2. 创建输出目录
+    abs_output_dir = markdown_path.parent / output_dir
+    abs_output_dir.mkdir(parents=True, exist_ok=True)
+
+    # 3. 准备任务列表
+    tasks = []
+    for idx, section in enumerate(sections, 1):
+        tasks.append((idx, section, markdown_path, abs_output_dir, output_dir, provider, skip_existing))
+
+    # 4. 并发生成
+    success_count = 0
+    total_time = 0
+    results = []
+
+    print(f"\n🚀 开始并发生成...\n")
+    start_total = time.time()
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # 提交所有任务
+        future_to_task = {executor.submit(generate_single_image, task): task for task in tasks}
+
+        # 收集结果（按完成顺序）
+        for future in as_completed(future_to_task):
+            result = future.result()
+            results.append(result)
+
+            # 实时显示进度
+            print(f"[{result['idx']}/{len(tasks)}] {result['h2_title'][:20]}... {result['message']}")
+
+            if result['success']:
+                success_count += 1
+                total_time += result['elapsed']
+
+    elapsed_total = time.time() - start_total
+
+    # 5. 排序结果并总结
+    results.sort(key=lambda x: x['idx'])
+
+    print("\n" + "="*70)
+    print(f"✨ 完成！成功生成 {success_count}/{len(sections)} 张配图")
+    print(f"⏱️  总耗时: {elapsed_total:.1f}秒")
+    if success_count > 0:
+        print(f"📊 平均每张: {total_time/success_count:.1f}秒（API时间）")
+        print(f"🚀 加速比: {total_time/elapsed_total:.1f}x（理论值:{max_workers}x）")
+    print(f"\n📁 图片保存在: {output_dir}")
+    print(f"📄 Markdown已更新: {markdown_path.name}")
+
+    return success_count
+
+
+def main():
+    """命令行入口"""
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='并发版纽约客风格配图生成器',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+示例用法：
+  python generate_illustrations_parallel.py article.md --workers 4
+        """
+    )
+
+    parser.add_argument('markdown', help='Markdown文件路径')
+    parser.add_argument('--config', default='visual_config.json',
+                       help='配置文件路径（默认: visual_config.json）')
+    parser.add_argument('--output-dir', default='images/illustrations',
+                       help='图片输出目录（默认: images/illustrations）')
+    parser.add_argument('--provider', choices=['jimeng', 'gemini', 'auto'],
+                       default='jimeng', help='图片生成API（默认: jimeng）')
+    parser.add_argument('--workers', type=int, default=3,
+                       help='并发线程数（默认: 3）')
+    parser.add_argument('--no-skip', action='store_true',
+                       help='重新生成已存在的图片')
+
+    args = parser.parse_args()
+
+    generate_from_config_parallel(
+        markdown_path=args.markdown,
+        config_path=args.config,
+        output_dir=args.output_dir,
+        provider=args.provider,
+        skip_existing=not args.no_skip,
+        max_workers=args.workers
+    )
+
+
+if __name__ == '__main__':
+    main()
