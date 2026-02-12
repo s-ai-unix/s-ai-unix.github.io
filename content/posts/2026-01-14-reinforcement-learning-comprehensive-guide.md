@@ -19,6 +19,8 @@ cover:
 
 从数学的角度看，强化学习可以被视为一个优化问题：智能体（Agent）需要在环境中选择动作（Action），以最大化累积奖励（Reward）。这个过程可以用概率论和微积分的语言来精确描述。
 
+**强化学习的本质可以用一个简洁的公式概括**：`最优决策 = 即时奖励 + γ × 未来价值的期望`。这个公式贯穿了从 Q-learning 到 Actor-Critic 的所有算法，它告诉我们：当下的最优选择，不仅要考虑眼前的收益，更要权衡未来的可能性。这种思维方式不仅适用于机器学习，也适用于人生规划、企业战略和投资决策。
+
 本文将带你踏上这段数学之旅，从马尔可夫决策过程（MDP）的基础框架出发，逐步推导经典的Q-learning、Policy Gradient和Actor-Critic算法，最后探讨强化学习的应用场景和未来前景。
 
 ## 第一章：强化学习的基本框架
@@ -35,6 +37,10 @@ cover:
 
 智能体的目标是学习一个**策略（Policy）**，即在不同状态下选择最优的动作，以最大化长期累积奖励。
 
+![MDP框架](/images/plots/rl-mdp-framework.png)
+
+**图1**：马尔可夫决策过程的基本框架。智能体在状态 $s_t$ 执行动作 $a_t$，环境返回奖励 $r_{t+1}$ 并转移到新状态 $s_{t+1}$。
+
 ### 1.2 数学表示
 
 现在让我们用数学语言来描述这个框架。一个强化学习问题通常由以下元组表示：
@@ -48,15 +54,62 @@ $$ (S, A, P, R, \gamma) $$
 - $R$：奖励函数（Reward Function）
 - $\gamma$：折扣因子（Discount Factor），$\gamma \in [0,1]$
 
+#### 状态空间与动作空间
+
+**状态空间** $S$ 可以是离散的或连续的：
+- **离散状态空间**：例如棋盘游戏中的每个棋局配置，$S = \{s_1, s_2, \ldots, s_n\}$
+- **连续状态空间**：例如机器人的关节角度和速度，$S \subseteq \mathbb{R}^n$
+
+**动作空间** $A$ 同样可以是离散或连续的：
+- **离散动作空间**：例如围棋中的每个落子位置，$A = \{a_1, a_2, \ldots, a_m\}$
+- **连续动作空间**：例如机械臂的关节扭矩，$A \subseteq \mathbb{R}^m$
+
+#### 状态转移概率
+
 **状态转移概率** $P(s'|s,a)$ 表示在状态 $s$ 执行动作 $a$ 后，转移到状态 $s'$ 的概率：
 
 $$ P(s'|s,a) = \mathbb{P}[S_{t+1} = s' | S_t = s, A_t = a] $$
+
+这个概率分布完全描述了环境的动态特性。在许多实际问题中，我们并不知道 $P(s'|s,a)$ 的具体形式，这就是为什么需要**免模型**（model-free）算法。
+
+#### 奖励函数
 
 **奖励函数** $R(s,a)$ 可以定义为：
 
 $$ R(s,a) = \mathbb{E}[R_{t+1} | S_t = s, A_t = a] $$
 
+更一般地，奖励可以依赖于三元组 $(s, a, s')$：
+
+$$ R(s,a,s') = \mathbb{E}[R_{t+1} | S_t = s, A_t = a, S_{t+1} = s'] $$
+
+奖励函数是强化学习中最关键的设计要素之一。一个好的奖励函数应该：
+1. **明确目标**：清晰地表达我们希望智能体达成的目标
+2. **可塑性**（Shaping）：提供中间反馈，而不仅仅是终局奖励
+3. **避免奖励黑客**（Reward Hacking）：防止智能体找到意外的捷径
+
+**实践启示**：在实际应用中，奖励函数的设计往往比算法选择更重要。一个精心设计的奖励函数，即使用简单的 Q-learning 也能取得好效果；而一个糟糕的奖励函数，即使用最先进的算法也难以成功。这就像教育孩子：正确的激励机制（奖励函数）比严格的规则（算法）更能引导出期望的行为。
+
+#### 折扣因子的深入理解
+
 **折扣因子** $\gamma$ 的作用是权衡短期奖励和长期奖励。$\gamma$ 越接近 1，智能体越看重长期回报；$\gamma$ 越接近 0，智能体越关注即时奖励。
+
+![折扣因子影响](/images/plots/rl-discount-factor.png)
+
+**图2**：不同折扣因子 $\gamma$ 对累积奖励的影响。$\gamma = 0.9$ 时，10步后的奖励权重降至约35%；$\gamma = 0.99$ 时，权重仍保持约90%。
+
+从数学角度看，折扣因子有几个重要作用：
+
+1. **数学收敛性**：当 $\gamma < 1$ 时，无限累积奖励 $\sum_{t=0}^{\infty} \gamma^t r_t$ 有界，保证了价值函数的收敛性。
+
+2. **不确定性建模**：$\gamma$ 可以理解为每一步继续的概率。如果智能体在每一步有 $(1-\gamma)$ 的概率终止，那么折扣累积奖励等价于期望总奖励。
+
+3. **时间偏好**：在经济学中，$\gamma$ 反映了对未来收益的时间偏好（time preference）。
+
+**定理（折扣累积奖励的有界性）**：如果奖励有界，即 $|r_t| \leq R_{\max}$，且 $\gamma < 1$，那么累积奖励有界：
+
+$$ \left| \sum_{t=0}^{\infty} \gamma^t r_t \right| \leq \sum_{t=0}^{\infty} \gamma^t R_{\max} = \frac{R_{\max}}{1-\gamma} $$
+
+**证明**：利用几何级数求和公式 $\sum_{t=0}^{\infty} \gamma^t = \frac{1}{1-\gamma}$（当 $|\gamma| < 1$ 时）。
 
 ## 第二章：马尔可夫决策过程（MDP）
 
@@ -68,6 +121,8 @@ $$ \mathbb{P}[S_{t+1} | S_t, A_t, S_{t-1}, A_{t-1}, \ldots, S_0, A_0] = \mathbb{
 
 这个假设看似简单，但它大大简化了问题。如果状态转移满足马尔可夫性，我们就不需要记住整个历史轨迹，只需要知道当前状态即可做出决策。
 
+**这里隐藏着一个深刻的认知转变**：从"给定规则执行"到"通过试错发现规则"。传统的程序设计是人类定义规则，机器执行；而强化学习是机器通过与环境交互，自己发现最优的行为规则。这种范式转变，让人工智能从"被动执行"走向"主动学习"。
+
 ### 2.2 策略（Policy）
 
 **策略** $\pi(a|s)$ 是一个概率分布，表示在状态 $s$ 下选择动作 $a$ 的概率：
@@ -75,6 +130,8 @@ $$ \mathbb{P}[S_{t+1} | S_t, A_t, S_{t-1}, A_{t-1}, \ldots, S_0, A_0] = \mathbb{
 $$ \pi(a|s) = \mathbb{P}[A_t = a | S_t = s] $$
 
 策略可以是**确定性**的（deterministic），即 $\pi(s)$ 直接给出一个确定动作；也可以是**随机性**的（stochastic），即 $\pi(a|s)$ 给出选择各个动作的概率。
+
+**一个反直觉的发现**：最优策略不一定是确定性的。在某些情况下，随机策略反而能获得更高的累积奖励。这是因为随机性本身就是一种探索机制，它帮助智能体避免陷入局部最优。这个思想在后续的策略梯度方法中会得到充分体现。
 
 ### 2.3 价值函数（Value Function）
 
@@ -98,23 +155,91 @@ $$ V^\pi(s) = \sum_{a \in A} \pi(a|s) Q^\pi(s,a) $$
 
 ### 2.4 贝尔曼方程
 
-现在我们进入强化学习的核心部分——贝尔曼方程。
+现在我们进入强化学习的核心部分——贝尔曼方程（Bellman Equation）。这个方程以数学家理查德·贝尔曼（Richard Bellman）命名，他在1950年代提出了动态规划理论。
 
-**贝尔曼期望方程**（Bellman Expectation Equation）：
+#### 贝尔曼期望方程的推导
+
+**贝尔曼期望方程**（Bellman Expectation Equation）描述了价值函数的递归结构。让我们从定义出发推导这个方程。
+
+状态价值函数的定义是：
+
+$$ V^\pi(s) = \mathbb{E}_\pi \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} \Big| S_0 = s \right] $$
+
+我们可以将这个无限求和分解为第一步和后续步骤：
+
+$$ V^\pi(s) = \mathbb{E}_\pi [R_1 + \gamma R_2 + \gamma^2 R_3 + \cdots | S_0 = s] $$
+
+$$ V^\pi(s) = \mathbb{E}_\pi [R_1 | S_0 = s] + \gamma \mathbb{E}_\pi [R_2 + \gamma R_3 + \cdots | S_0 = s] $$
+
+注意到后半部分实际上是从状态 $S_1$ 开始的价值函数：
+
+$$ V^\pi(s) = \mathbb{E}_\pi [R_1 | S_0 = s] + \gamma \mathbb{E}_\pi [V^\pi(S_1) | S_0 = s] $$
+
+现在展开期望，对所有可能的动作和下一状态求和：
 
 $$ V^\pi(s) = \sum_{a} \pi(a|s) \sum_{s'} P(s'|s,a) [R(s,a,s') + \gamma V^\pi(s')] $$
 
-这个方程描述了递归关系：当前状态的价值，等于所有可能动作的价值加权，而每个动作的价值又包括即时奖励和下一状态的价值（ discounted ）。
+这就是**贝尔曼期望方程**。它告诉我们：当前状态的价值等于所有可能动作的价值加权平均，而每个动作的价值包括即时奖励和下一状态的折扣价值。
+
+![贝尔曼方程](/images/plots/rl-bellman-equation.png)
+
+**图3**：贝尔曼方程的递归结构。当前状态的价值通过即时奖励和后续状态的价值递归定义。
+
+#### Q函数的贝尔曼方程
 
 同样，我们可以写出 Q 函数的贝尔曼期望方程：
 
 $$ Q^\pi(s,a) = \sum_{s'} P(s'|s,a) [R(s,a,s') + \gamma V^\pi(s')] $$
 
-将 $V^\pi(s')$ 的表达式代入，我们可以得到：
+将 $V^\pi(s') = \sum_{a'} \pi(a'|s') Q^\pi(s',a')$ 代入，我们得到：
 
 $$ Q^\pi(s,a) = \sum_{s'} P(s'|s,a) [R(s,a,s') + \gamma \sum_{a'} \pi(a'|s') Q^\pi(s',a')] $$
 
-这两个方程是价值函数的核心，它们建立了一个**递归关系**，使我们能够通过迭代求解价值函数。
+#### 贝尔曼方程的矩阵形式
+
+对于有限状态空间，贝尔曼期望方程可以写成矩阵形式。定义：
+- $V^\pi \in \mathbb{R}^{|S|}$：价值向量
+- $R^\pi \in \mathbb{R}^{|S|}$：期望奖励向量，$(R^\pi)_s = \sum_a \pi(a|s) R(s,a)$
+- $P^\pi \in \mathbb{R}^{|S| \times |S|}$：转移矩阵，$(P^\pi)_{ss'} = \sum_a \pi(a|s) P(s'|s,a)$
+
+那么贝尔曼期望方程可以写成：
+
+$$ V^\pi = R^\pi + \gamma P^\pi V^\pi $$
+
+这是一个线性方程组，可以直接求解：
+
+$$ V^\pi = (I - \gamma P^\pi)^{-1} R^\pi $$
+
+其中 $I$ 是单位矩阵。当 $\gamma < 1$ 时，$(I - \gamma P^\pi)$ 可逆。
+
+#### 贝尔曼方程的不动点性质
+
+贝尔曼期望方程定义了一个**贝尔曼期望算子** $T^\pi$：
+
+$$ (T^\pi V)(s) = \sum_{a} \pi(a|s) \sum_{s'} P(s'|s,a) [R(s,a,s') + \gamma V(s')] $$
+
+价值函数 $V^\pi$ 是这个算子的不动点，即 $T^\pi V^\pi = V^\pi$。
+
+**定理（贝尔曼期望算子的收缩性）**：贝尔曼期望算子 $T^\pi$ 是一个 $\gamma$-收缩映射，即对于任意两个价值函数 $V_1$ 和 $V_2$：
+
+$$ \|T^\pi V_1 - T^\pi V_2\|_\infty \leq \gamma \|V_1 - V_2\|_\infty $$
+
+其中 $\|V\|_\infty = \max_s |V(s)|$ 是无穷范数。
+
+**证明**：对于任意状态 $s$：
+
+$$
+\begin{aligned}
+|(T^\pi V_1)(s) - (T^\pi V_2)(s)| &= \left| \sum_{a} \pi(a|s) \sum_{s'} P(s'|s,a) \gamma [V_1(s') - V_2(s')] \right| \\\\
+&\leq \sum_{a} \pi(a|s) \sum_{s'} P(s'|s,a) \gamma |V_1(s') - V_2(s')| \\\\
+&\leq \gamma \|V_1 - V_2\|_\infty \sum_{a} \pi(a|s) \sum_{s'} P(s'|s,a) \\\\
+&= \gamma \|V_1 - V_2\|_\infty
+\end{aligned}
+$$
+
+由于这对所有状态 $s$ 成立，我们有 $\|T^\pi V_1 - T^\pi V_2\|_\infty \leq \gamma \|V_1 - V_2\|_\infty$。
+
+根据**巴拿赫不动点定理**（Banach Fixed Point Theorem），收缩映射有唯一的不动点，且可以通过迭代 $V_{k+1} = T^\pi V_k$ 收敛到这个不动点。这就是**策略评估**（Policy Evaluation）算法的理论基础。
 
 ### 2.5 最优价值函数
 
@@ -145,6 +270,32 @@ Q-learning 是基于价值的算法的代表，它的核心思想是**直接学�
 
 Q-learning 是一个**免模型**（model-free）算法，这意味着它不需要知道状态转移概率 $P(s'|s,a)$ 和奖励函数 $R(s,a,s')$，只需要通过与环境的交互来学习。
 
+#### 探索与利用的权衡
+
+在学习 Q 函数的过程中，智能体面临一个根本性的困境：**探索-利用权衡**（Exploration-Exploitation Tradeoff）。
+
+- **利用**（Exploitation）：选择当前已知的最优动作，以获得最大即时奖励
+- **探索**（Exploration）：尝试未知或不确定的动作，以发现可能更好的策略
+
+**这个困境在生活中无处不在**：选择熟悉的餐厅还是尝试新餐厅？坚持现有职业还是探索新领域？在企业战略中，是深耕现有市场（利用）还是开拓新业务（探索）？强化学习告诉我们：最优策略是让探索随时间衰减——早期广泛探索，后期精准利用。这种"先探索后利用"的智慧，适用于几乎所有需要在不确定性中做决策的场景。
+
+![探索与利用](/images/plots/rl-exploration-exploitation.png)
+
+**图4**：探索-利用权衡。纯利用可能陷入局部最优，纯探索效率低下，需要在两者之间找到平衡。
+
+常用的探索策略包括：
+
+1. **ε-贪心策略**（ε-greedy）：以概率 $\epsilon$ 随机选择动作，以概率 $1-\epsilon$ 选择最优动作
+   $$ a_t = \begin{cases} \arg\max_a Q(s_t,a) & \text{with probability } 1-\epsilon \\ \text{random action} & \text{with probability } \epsilon \end{cases} $$
+
+2. **Boltzmann探索**（Softmax）：根据 Q 值的 softmax 分布选择动作
+   $$ \pi(a|s) = \frac{\exp(Q(s,a)/\tau)}{\sum_{a'} \exp(Q(s,a')/\tau)} $$
+   其中 $\tau$ 是温度参数，$\tau \to 0$ 时趋向贪心，$\tau \to \infty$ 时趋向均匀随机。
+
+3. **UCB探索**（Upper Confidence Bound）：选择具有最高上界置信区间的动作
+   $$ a_t = \arg\max_a \left[ Q(s_t,a) + c\sqrt{\frac{\ln t}{N(s_t,a)}} \right] $$
+   其中 $N(s_t,a)$ 是动作 $a$ 在状态 $s_t$ 被选择的次数，$c$ 是探索系数。
+
 ### 3.2 Q-learning 的更新规则
 
 假设我们在时间步 $t$ 观察到状态 $s_t$，执行动作 $a_t$，获得奖励 $r_t$，并转移到状态 $s_{t+1}$。Q-learning 的更新规则如下：
@@ -163,18 +314,102 @@ TD 误差可以理解为"我们期望得到的"与"我们当前估计的"之间�
 
 Q-learning 的一个重要性质是：在满足一定条件下，Q 值会收敛到最优 Q 函数 $Q^{\ast}(s,a)$。
 
-**定理**：如果满足以下条件：
+**定理（Q-learning收敛性）**：如果满足以下条件：
 1. 所有状态-动作对 $(s,a)$ 都被无限次访问
-2. 学习率 $\alpha_t$ 满足 $\sum_t \alpha_t = \infty$ 且 $\sum_t \alpha_t^2 < \infty$
+2. 学习率 $\alpha_t$ 满足 Robbins-Monro 条件：
+   - $\sum_{t=0}^{\infty} \alpha_t(s,a) = \infty$ （保证收敛）
+   - $\sum_{t=0}^{\infty} \alpha_t^2(s,a) < \infty$ （保证方差有界）
 3. 折扣因子 $\gamma < 1$（或者问题是有限折扣的）
 
 那么 Q-learning 的 Q 值以概率 1 收敛到 $Q^{\ast}$。
 
-**证明思路**：
-1. 定义 $Q_t$ 为第 t 步的 Q 值估计
-2. 可以将 Q-learning 的更新表示为：
-   $$ Q_{t+1}(s_t,a_t) = (1-\alpha_t) Q_t(s_t,a_t) + \alpha_t [r_t + \gamma \max_{a'} Q_t(s_{t+1},a')] $$
-3. 利用随机逼近理论（stochastic approximation），可以证明 Q-learning 收敛到贝尔曼最优方程的不动点
+#### 详细证明
+
+**证明**：我们将使用随机逼近理论（Stochastic Approximation Theory）来证明这个定理。
+
+**步骤1：定义贝尔曼最优算子**
+
+首先定义贝尔曼最优算子 $T^{\ast}$：
+
+$$ (T^{\ast} Q)(s,a) = \mathbb{E}_{s' \sim P(\cdot|s,a)}[R(s,a,s') + \gamma \max_{a'} Q(s',a')] $$
+
+最优 Q 函数 $Q^{\ast}$ 是这个算子的不动点：$T^{\ast} Q^{\ast} = Q^{\ast}$。
+
+**步骤2：证明 $T^{\ast}$ 是收缩映射**
+
+对于任意两个 Q 函数 $Q_1$ 和 $Q_2$，我们有：
+
+$$
+|(T^{\ast} Q_1)(s,a) - (T^{\ast} Q_2)(s,a)| = \left| \mathbb{E}_{s'}[\gamma \max_{a'} Q_1(s',a') - \gamma \max_{a'} Q_2(s',a')] \right|
+$$
+
+$$
+\leq \mathbb{E}_{s'}[\gamma |\max_{a'} Q_1(s',a') - \max_{a'} Q_2(s',a')|]
+$$
+
+$$
+\leq \gamma \mathbb{E}_{s'}[\max_{a'} |Q_1(s',a') - Q_2(s',a')|]
+$$
+
+$$
+\leq \gamma \|Q_1 - Q_2\|_\infty
+$$
+
+第三个不等号使用了 $|\max_a f(a) - \max_a g(a)| \leq \max_a |f(a) - g(a)|$。
+
+因此 $T^{\ast}$ 是 $\gamma$-收缩映射：
+
+$$ \|T^{\ast} Q_1 - T^{\ast} Q_2\|_\infty \leq \gamma \|Q_1 - Q_2\|_\infty $$
+
+**步骤3：将Q-learning写成随机逼近形式**
+
+Q-learning 的更新可以写成：
+
+$$ Q_{t+1}(s_t,a_t) = Q_t(s_t,a_t) + \alpha_t [r_t + \gamma \max_{a'} Q_t(s_{t+1},a') - Q_t(s_t,a_t)] $$
+
+定义 TD 目标：
+
+$$ y_t = r_t + \gamma \max_{a'} Q_t(s_{t+1},a') $$
+
+那么更新可以写成：
+
+$$ Q_{t+1}(s_t,a_t) = (1-\alpha_t) Q_t(s_t,a_t) + \alpha_t y_t $$
+
+注意 $\mathbb{E}[y_t | s_t, a_t] = (T^{\ast} Q_t)(s_t,a_t)$，因此：
+
+$$ Q_{t+1}(s,a) = Q_t(s,a) + \alpha_t [(T^{\ast} Q_t)(s,a) - Q_t(s,a) + \epsilon_t] $$
+
+其中 $\epsilon_t = y_t - (T^{\ast} Q_t)(s_t,a_t)$ 是噪声项，满足 $\mathbb{E}[\epsilon_t | \mathcal{F}_t] = 0$。
+
+**步骤4：应用随机逼近收敛定理**
+
+根据 Robbins-Monro 随机逼近定理，如果：
+1. $T^{\ast}$ 是收缩映射（已证明）
+2. 学习率满足 $\sum_t \alpha_t = \infty$ 且 $\sum_t \alpha_t^2 < \infty$
+3. 噪声项有界：$\mathbb{E}[\epsilon_t^2 | \mathcal{F}_t] < C$
+4. 所有状态-动作对被无限次访问
+
+那么 $Q_t \to Q^{\ast}$ 以概率 1。
+
+![Q-learning收敛](/images/plots/rl-qlearning-convergence.png)
+
+**图5**：Q-learning在简单网格世界中的收敛过程。随着迭代次数增加，Q值逐渐收敛到最优值。
+
+#### 学习率的选择
+
+Robbins-Monro 条件对学习率的要求看似严格，但实际上有很多满足条件的选择：
+
+1. **调和级数**：$\alpha_t = \frac{1}{t}$
+   - 满足 $\sum_t \frac{1}{t} = \infty$ 和 $\sum_t \frac{1}{t^2} < \infty$
+   - 但收敛速度较慢
+
+2. **多项式衰减**：$\alpha_t = \frac{1}{t^\beta}$，其中 $0.5 < \beta \leq 1$
+   - $\beta = 0.6$ 是常用选择
+
+3. **状态-动作对计数**：$\alpha_t(s,a) = \frac{1}{N_t(s,a)}$
+   - 其中 $N_t(s,a)$ 是状态-动作对 $(s,a)$ 被访问的次数
+
+在实践中，常常使用固定的小学习率（如 $\alpha = 0.01$），虽然不满足理论收敛条件，但在非平稳环境中表现更好。
 
 这个定理保证了 Q-learning 的理论基础，但在实际应用中，我们需要考虑状态空间的问题。
 
@@ -220,6 +455,22 @@ $$ J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}[R(\tau)] $$
 $$ \nabla_\theta J(\theta) = \mathbb{E}_{\pi_\theta} \left[ \nabla_\theta \log \pi_\theta(a|s) Q^\pi(s,a) \right] $$
 
 这个定理告诉我们，策略的梯度等于对数策略的梯度与动作价值的乘积的期望。
+
+![Policy Gradient](/images/plots/rl-policy-gradient.png)
+
+**图6**：策略梯度方法的直观理解。通过增加高回报动作的概率，减少低回报动作的概率，策略逐渐优化。
+
+#### 为什么使用对数梯度？
+
+策略梯度定理中使用 $\nabla_\theta \log \pi_\theta(a|s)$ 而不是 $\nabla_\theta \pi_\theta(a|s)$ 有几个重要原因：
+
+1. **数值稳定性**：对数函数将乘法转换为加法，避免了概率连乘导致的数值下溢。
+
+2. **似然比技巧**（Likelihood Ratio Trick）：利用恒等式 $\nabla_\theta \pi_\theta = \pi_\theta \nabla_\theta \log \pi_\theta$，我们可以将梯度写成期望形式，便于蒙特卡洛估计。
+
+3. **自然梯度解释**：$\nabla_\theta \log \pi_\theta(a|s)$ 可以理解为参数空间中的"得分函数"（score function），它指向使动作 $a$ 概率增加最快的方向。
+
+4. **与最大似然估计的联系**：策略梯度可以看作加权的最大似然估计，权重由 Q 值决定。
 
 **证明**：
 
@@ -312,6 +563,50 @@ Actor-Critic 算法结合了两者的优点：
 - **Critic**：负责评估动作价值，使用值函数方法
 
 Critic 为 Actor 提供低方差的梯度估计，而 Actor 利用这个梯度更新策略。
+
+![Actor-Critic架构](/images/plots/rl-actor-critic.png)
+
+**图7**：Actor-Critic架构。Actor根据当前策略选择动作，Critic评估动作的价值，两者协同优化。
+
+#### 偏差-方差权衡
+
+在强化学习中，我们面临**偏差-方差权衡**（Bias-Variance Tradeoff）：
+
+1. **蒙特卡洛方法**（如REINFORCE）：
+   - 使用完整轨迹的实际回报 $G_t = \sum_{k=t}^{T} \gamma^{k-t} r_k$
+   - **无偏**：$\mathbb{E}[G_t] = Q^\pi(s_t,a_t)$
+   - **高方差**：不同轨迹的回报差异很大
+
+2. **时序差分方法**（如Q-learning）：
+   - 使用单步估计 $r_t + \gamma V(s_{t+1})$
+   - **有偏**：依赖于 $V(s_{t+1})$ 的估计误差
+   - **低方差**：只依赖单步转移
+
+3. **n步TD方法**：
+   - 使用 n 步回报 $G_t^{(n)} = \sum_{k=0}^{n-1} \gamma^k r_{t+k} + \gamma^n V(s_{t+n})$
+   - 在偏差和方差之间取得平衡
+
+Actor-Critic 通过使用 Critic 的价值估计来降低方差，同时保持相对较低的偏差。
+
+#### TD(λ)：统一的视角
+
+**TD(λ)** 算法通过引入**资格迹**（Eligibility Trace）统一了蒙特卡洛和时序差分方法。
+
+定义 **λ-回报**：
+
+$$ G_t^\lambda = (1-\lambda) \sum_{n=1}^{\infty} \lambda^{n-1} G_t^{(n)} $$
+
+其中 $G_t^{(n)}$ 是 n 步回报。当 $\lambda = 0$ 时，$G_t^\lambda = G_t^{(1)}$（TD方法）；当 $\lambda = 1$ 时，$G_t^\lambda = G_t$（蒙特卡洛方法）。
+
+资格迹 $e_t(s)$ 记录了状态 $s$ 对当前时刻的"贡献"：
+
+$$ e_t(s) = \gamma \lambda e_{t-1}(s) + \mathbb{1}[s_t = s] $$
+
+TD(λ) 的更新规则为：
+
+$$ V(s) \leftarrow V(s) + \alpha \delta_t e_t(s), \quad \forall s $$
+
+其中 $\delta_t = r_t + \gamma V(s_{t+1}) - V(s_t)$ 是 TD 误差。
 
 ### 5.2 Advantage Actor-Critic (A2C)
 
