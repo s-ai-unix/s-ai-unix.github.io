@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="layer1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="layer2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d68910;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="layer3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e8449;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="layer4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2471a3;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff">
+    纵深防御安全架构
+  </text>
+  <text x="600" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#a0aec0">
+    Defense in Depth Security Architecture
+  </text>
+  
+  <!-- Shield Icon -->
+  <g transform="translate(600, 115)">
+    <path d="M0,-35 L30,-25 L30,10 Q30,35 0,50 Q-30,35 -30,10 L-30,-25 Z" fill="url(#layer4)" stroke="#fff" stroke-width="2"/>
+    <text x="0" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#ffffff">🛡️</text>
+  </g>
+  
+  <!-- Defense Layers -->
+  <!-- Layer 4: Policy & Governance -->
+  <g transform="translate(150, 160)" filter="url(#shadow)">
+    <rect width="900" height="90" rx="12" fill="url(#layer4)"/>
+    <text x="60" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">第四层</text>
+    <text x="60" y="58" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">策略与治理</text>
+    <text x="60" y="78" font-family="Arial, sans-serif" font-size="10" fill="#bbdefb">Policy & Governance</text>
+    
+    <g transform="translate(200, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">安全策略</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#90caf9">Security Policy</text>
+    </g>
+    <g transform="translate(340, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">风险管理</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#90caf9">Risk Management</text>
+    </g>
+    <g transform="translate(480, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">合规审计</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#90caf9">Compliance Audit</text>
+    </g>
+    <g transform="translate(620, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">安全培训</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#90caf9">Security Training</text>
+    </g>
+  </g>
+  
+  <!-- Layer 3: Application -->
+  <g transform="translate(150, 265)" filter="url(#shadow)">
+    <rect width="900" height="90" rx="12" fill="url(#layer3)"/>
+    <text x="60" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">第三层</text>
+    <text x="60" y="58" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">应用安全</text>
+    <text x="60" y="78" font-family="Arial, sans-serif" font-size="10" fill="#c8e6c9">Application Security</text>
+    
+    <g transform="translate(200, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">安全编码</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#a5d6a7">Secure Coding</text>
+    </g>
+    <g transform="translate(340, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">输入验证</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#a5d6a7">Input Validation</text>
+    </g>
+    <g transform="translate(480, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">代码签名</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#a5d6a7">Code Signing</text>
+    </g>
+    <g transform="translate(620, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">渗透测试</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#a5d6a7">Penetration Test</text>
+    </g>
+  </g>
+  
+  <!-- Layer 2: Network -->
+  <g transform="translate(150, 370)" filter="url(#shadow)">
+    <rect width="900" height="90" rx="12" fill="url(#layer2)"/>
+    <text x="60" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a1a2e">第二层</text>
+    <text x="60" y="58" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a1a2e">网络安全</text>
+    <text x="60" y="78" font-family="Arial, sans-serif" font-size="10" fill="#7f6000">Network Security</text>
+    
+    <g transform="translate(200, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.3"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">通信加密</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f9a825">TLS/mTLS</text>
+    </g>
+    <g transform="translate(340, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.3"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">入侵检测</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f9a825">IDS/IPS</text>
+    </g>
+    <g transform="translate(480, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.3"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">网络隔离</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f9a825">Segmentation</text>
+    </g>
+    <g transform="translate(620, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.3"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">协议安全</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f9a825">Secure Protocol</text>
+    </g>
+  </g>
+  
+  <!-- Layer 1: Hardware/Firmware -->
+  <g transform="translate(150, 475)" filter="url(#shadow)">
+    <rect width="900" height="90" rx="12" fill="url(#layer1)"/>
+    <text x="60" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">第一层</text>
+    <text x="60" y="58" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">硬件与固件</text>
+    <text x="60" y="78" font-family="Arial, sans-serif" font-size="10" fill="#ffcdd2">Hardware & Firmware</text>
+    
+    <g transform="translate(200, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">安全启动</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ef9a9a">Secure Boot</text>
+    </g>
+    <g transform="translate(340, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">HSM/Secure Element</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ef9a9a">硬件安全模块</text>
+    </g>
+    <g transform="translate(480, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">固件签名</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ef9a9a">Firmware Signing</text>
+    </g>
+    <g transform="translate(620, 15)">
+      <rect width="130" height="60" rx="6" fill="#1a1a2e" opacity="0.4"/>
+      <text x="65" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">防篡改保护</text>
+      <text x="65" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ef9a9a">Tamper Proof</text>
+    </g>
+  </g>
+  
+  <!-- Attack Flow Indicator -->
+  <g transform="translate(1080, 200)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="10" fill="#ef5350" transform="rotate(90)">🔴 攻击者</text>
+    <path d="M20,180 L20,250 L-20,300" stroke="#ef5350" stroke-width="3" fill="none" stroke-dasharray="8,4"/>
+    <polygon points="-25,305 -15,295 -20,300" fill="#ef5350"/>
+  </g>
+  
+  <!-- Principle Box -->
+  <g transform="translate(50, 590)">
+    <rect width="1100" height="95" rx="12" fill="#0f0f23" stroke="#2d2d5a" stroke-width="2"/>
+    <text x="550" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">纵深防御核心原则</text>
+    
+    <g transform="translate(100, 50)">
+      <circle cx="15" cy="15" r="12" fill="#667eea"/>
+      <text x="15" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">1</text>
+      <text x="100" y="20" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">层层设防：每层独立防护，单层失效不影响整体安全</text>
+    </g>
+    
+    <g transform="translate(100, 75)">
+      <circle cx="15" cy="15" r="12" fill="#f093fb"/>
+      <text x="15" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1a1a2e">2</text>
+      <text x="100" y="20" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">互补保护：不同层级采用不同类型的安全控制措施</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+    Defense in Depth | Multi-layered Security Architecture
+  </text>
+</svg>

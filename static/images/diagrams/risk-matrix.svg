@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff">
+    汽车网络安全风险评估矩阵
+  </text>
+  <text x="600" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#a0aec0">
+    Threat Probability × Impact Severity = Risk Level
+  </text>
+  
+  <!-- Matrix Table -->
+  <g transform="translate(100, 120)">
+    <!-- Header Row -->
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="#2d2d5a"/>
+    <text x="90" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">可能性 ↓ / 影响 →</text>
+    
+    <rect x="180" y="0" width="180" height="50" rx="8" fill="#1e3a5f"/>
+    <text x="270" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4fc3f7">S0</text>
+    <text x="270" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#90caf9">无伤害</text>
+    
+    <rect x="360" y="0" width="180" height="50" rx="8" fill="#1e3a5f"/>
+    <text x="450" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ffb74d">S1</text>
+    <text x="450" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ffcc80">轻微伤害</text>
+    
+    <rect x="540" y="0" width="180" height="50" rx="8" fill="#1e3a5f"/>
+    <text x="630" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ff8a65">S2</text>
+    <text x="630" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ffab91">严重伤害</text>
+    
+    <rect x="720" y="0" width="180" height="50" rx="8" fill="#1e3a5f"/>
+    <text x="810" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ef5350">S3</text>
+    <text x="810" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ef9a9a">致命伤害</text>
+    
+    <!-- Row E4 -->
+    <g transform="translate(0, 50)">
+      <rect x="0" y="0" width="180" height="70" rx="8" fill="#4a148c"/>
+      <text x="90" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ce93d8">E4</text>
+      <text x="90" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e1bee7">极高概率</text>
+      <rect x="180" y="0" width="180" height="70" rx="8" fill="#2e7d32"/>
+      <text x="270" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">QM</text>
+      <rect x="360" y="0" width="180" height="70" rx="8" fill="#f9a825"/>
+      <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a1a2e">ASIL A</text>
+      <rect x="540" y="0" width="180" height="70" rx="8" fill="#ef6c00"/>
+      <text x="630" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">ASIL B</text>
+      <rect x="720" y="0" width="180" height="70" rx="8" fill="#c62828"/>
+      <text x="810" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">ASIL D</text>
+    </g>
+    
+    <!-- Row E3 -->
+    <g transform="translate(0, 120)">
+      <rect x="0" y="0" width="180" height="70" rx="8" fill="#6a1b9a"/>
+      <text x="90" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ba68c8">E3</text>
+      <text x="90" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e1bee7">高概率</text>
+      <rect x="180" y="0" width="180" height="70" rx="8" fill="#2e7d32"/>
+      <text x="270" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">QM</text>
+      <rect x="360" y="0" width="180" height="70" rx="8" fill="#f9a825"/>
+      <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a1a2e">ASIL A</text>
+      <rect x="540" y="0" width="180" height="70" rx="8" fill="#ef6c00"/>
+      <text x="630" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">ASIL B</text>
+      <rect x="720" y="0" width="180" height="70" rx="8" fill="#c62828"/>
+      <text x="810" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">ASIL D</text>
+    </g>
+    
+    <!-- Row E2 -->
+    <g transform="translate(0, 190)">
+      <rect x="0" y="0" width="180" height="70" rx="8" fill="#4527a0"/>
+      <text x="90" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9575cd">E2</text>
+      <text x="90" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#d1c4e9">中等概率</text>
+      <rect x="180" y="0" width="180" height="70" rx="8" fill="#2e7d32"/>
+      <text x="270" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">QM</text>
+      <rect x="360" y="0" width="180" height="70" rx="8" fill="#f9a825"/>
+      <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a1a2e">ASIL A</text>
+      <rect x="540" y="0" width="180" height="70" rx="8" fill="#f9a825"/>
+      <text x="630" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a1a2e">ASIL B</text>
+      <rect x="720" y="0" width="180" height="70" rx="8" fill="#ef6c00"/>
+      <text x="810" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">ASIL C</text>
+    </g>
+    
+    <!-- Row E1 -->
+    <g transform="translate(0, 260)">
+      <rect x="0" y="0" width="180" height="70" rx="8" fill="#512da8"/>
+      <text x="90" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7e57c2">E1</text>
+      <text x="90" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#b39ddb">低概率</text>
+      <rect x="180" y="0" width="180" height="70" rx="8" fill="#2e7d32"/>
+      <text x="270" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">QM</text>
+      <rect x="360" y="0" width="180" height="70" rx="8" fill="#2e7d32"/>
+      <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">QM</text>
+      <rect x="540" y="0" width="180" height="70" rx="8" fill="#f9a825"/>
+      <text x="630" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a1a2e">ASIL A</text>
+      <rect x="720" y="0" width="180" height="70" rx="8" fill="#f9a825"/>
+      <text x="810" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a1a2e">ASIL B</text>
+    </g>
+    
+    <!-- Row E0 -->
+    <g transform="translate(0, 330)">
+      <rect x="0" y="0" width="180" height="70" rx="8" fill="#5e35b1"/>
+      <text x="90" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9575cd">E0</text>
+      <text x="90" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#d1c4e9">极低概率</text>
+      <rect x="180" y="0" width="180" height="70" rx="8" fill="#2e7d32"/>
+      <text x="270" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">QM</text>
+      <rect x="360" y="0" width="180" height="70" rx="8" fill="#2e7d32"/>
+      <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">QM</text>
+      <rect x="540" y="0" width="180" height="70" rx="8" fill="#2e7d32"/>
+      <text x="630" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">QM</text>
+      <rect x="720" y="0" width="180" height="70" rx="8" fill="#2e7d32"/>
+      <text x="810" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">QM</text>
+    </g>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(100, 500)">
+    <rect width="550" height="180" rx="12" fill="#0f0f23" stroke="#2d2d5a" stroke-width="2"/>
+    <text x="275" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">评级维度说明</text>
+    
+    <!-- Severity -->
+    <g transform="translate(20, 50)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ff8a65">严重度 (S)</text>
+      <text x="0" y="25" font-family="Arial, sans-serif" font-size="11" fill="#a0aec0">S3: 致命或幸存者极少</text>
+      <text x="0" y="42" font-family="Arial, sans-serif" font-size="11" fill="#a0aec0">S2: 严重伤害(危及生命但可存活)</text>
+      <text x="0" y="59" font-family="Arial, sans-serif" font-size="11" fill="#a0aec0">S1: 轻微或中等伤害</text>
+      <text x="0" y="76" font-family="Arial, sans-serif" font-size="11" fill="#a0aec0">S0: 无伤害</text>
+    </g>
+    
+    <!-- Exposure -->
+    <g transform="translate(280, 50)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4fc3f7">暴露率 (E)</text>
+      <text x="0" y="25" font-family="Arial, sans-serif" font-size="11" fill="#a0aec0">E4: 极高概率(>99%车辆生命周期)</text>
+      <text x="0" y="42" font-family="Arial, sans-serif" font-size="11" fill="#a0aec0">E3: 高概率(>90%车辆生命周期)</text>
+      <text x="0" y="59" font-family="Arial, sans-serif" font-size="11" fill="#a0aec0">E2: 中等概率(>50%车辆生命周期)</text>
+      <text x="0" y="76" font-family="Arial, sans-serif" font-size="11" fill="#a0aec0">E1: 低概率 | E0: 极低概率</text>
+    </g>
+  </g>
+  
+  <!-- Risk Level Legend -->
+  <g transform="translate(680, 500)">
+    <rect width="420" height="180" rx="12" fill="#0f0f23" stroke="#2d2d5a" stroke-width="2"/>
+    <text x="210" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">风险等级与应对</text>
+    
+    <g transform="translate(20, 50)">
+      <rect width="180" height="35" rx="4" fill="#c62828"/>
+      <text x="90" y="23" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">ASIL D - 高风险</text>
+      <text x="210" y="23" font-family="Arial, sans-serif" font-size="10" fill="#ef9a9a">立即采取缓解措施</text>
+    </g>
+    
+    <g transform="translate(20, 95)">
+      <rect width="180" height="35" rx="4" fill="#ef6c00"/>
+      <text x="90" y="23" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">ASIL C - 中高风险</text>
+      <text x="210" y="23" font-family="Arial, sans-serif" font-size="10" fill="#ffcc80">优先制定缓解计划</text>
+    </g>
+    
+    <g transform="translate(20, 140)">
+      <rect width="180" height="35" rx="4" fill="#f9a825"/>
+      <text x="90" y="23" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1a1a2e">ASIL A/B - 中等风险</text>
+      <text x="210" y="23" font-family="Arial, sans-serif" font-size="10" fill="#fff59d">纳入安全需求管理</text>
+    </g>
+    
+    <g transform="translate(20, 185)">
+      <rect width="180" height="35" rx="4" fill="#2e7d32"/>
+      <text x="90" y="23" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">QM - 低风险</text>
+      <text x="210" y="23" font-family="Arial, sans-serif" font-size="10" fill="#a5d6a7">常规质量管理</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+    Risk Assessment Matrix | ISO/SAE 21434 Compliant
+  </text>
+</svg>

@@ -1,0 +1,143 @@
+```mermaid
+graph TD
+    subgraph 输入层 ["📥 输入阶段"]
+        A[原始数据] --> B{预处理}
+        B -->|清洗| C[数据清洗]
+        B -->|增强| D[数据增强]
+    end
+
+    subgraph 核心层 ["⚙️ 核心处理"]
+        C --> E["🎯 特征提取"]
+        D --> E
+        E --> F{核心模块}
+        F -->|分支1| G[模块A]
+        F -->|分支2| H[模块B]
+        F -->|分支3| I[模块C]
+    end
+
+    subgraph 输出层 ["📤 输出阶段"]
+        G --> J[结果融合]
+        H --> J
+        I --> J
+        J --> K{后处理}
+        K -->|置信度| L[置信度估计]
+        K -->|阈值| M[阈值判断]
+        L --> N[最终输出]
+        M --> N
+    end
+
+    style A fill:#e3f2fd
+    style E fill:#fff3e0
+    style F fill:#f3e5f5
+    style N fill:#e8f5e9
+
+    classDef input fill:#e3f2fd,stroke:#1976d2
+    classDef process fill:#fff3e0,stroke:#f57c00
+    classDef decision fill:#f3e5f5,stroke:#7b1fa2
+    classDef output fill:#e8f5e9,stroke:#388e3c
+```
+
+---
+
+## 架构图模板
+
+```mermaid
+graph TB
+    subgraph Client ["客户端"]
+        UI[用户界面]
+        API[API网关]
+    end
+
+    subgraph Service ["服务层"]
+        Auth[认证服务]
+        Load[负载均衡]
+        Cache[缓存层]
+    end
+
+    subgraph Core ["核心业务"]
+        Process[业务处理]
+        Logic[规则引擎]
+        ML[ML推理]
+    end
+
+    subgraph Data ["数据层"]
+        DB[(数据库)]
+        Queue[消息队列]
+        Storage[对象存储]
+    end
+
+    UI --> API
+    API --> Auth
+    Auth --> Load
+    Load --> Cache
+    Cache --> Process
+    Process --> Logic
+    Process --> ML
+    Process --> DB
+    Logic --> Queue
+    ML --> Storage
+```
+
+---
+
+## 时序图模板
+
+```mermaid
+sequenceDiagram
+    participant U as 用户
+    participant A as 客户端
+    participant B as 服务端
+    participant D as 数据库
+
+    U->>A: 请求操作
+    A->>B: 发送请求
+    B->>B: 验证参数
+    alt 参数有效
+        B->>D: 查询数据
+        D-->>B: 返回结果
+        B-->>A: 处理成功
+        A-->>U: 展示结果
+    else 参数无效
+        B-->>A: 错误信息
+        A-->>U: 显示错误
+    end
+```
+
+---
+
+## 状态图模板
+
+```mermaid
+stateDiagram-v2
+    [*] --> 初始状态
+
+    初始状态 --> 处理中: 触发事件
+    处理中 --> 等待中: 需要外部输入
+    等待中 --> 处理中: 收到输入
+
+    处理中 --> 成功: 完成处理
+    处理中 --> 失败: 发生错误
+
+    成功 --> [*]
+    失败 --> 初始状态: 重试
+
+    state 处理中 {
+        子任务1
+        子任务2
+    }
+```
+
+---
+
+## 使用说明
+
+```bash
+# 转换为 PNG
+mmdc -i diagram.mmd -o diagram.png
+
+# 设置高度
+mmdc -i diagram.mmd -o diagram.png -H 800
+
+# 设置主题
+mmdc -i diagram.mmd -o diagram.png --theme dark
+```

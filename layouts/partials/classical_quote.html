@@ -1,0 +1,257 @@
+{{/* 国学经典名句组件 - 分片懒加载版本 */}}
+
+<div class="classical-quote-container" id="classical-quote-display">
+    <blockquote class="classical-quote">
+        <p class="quote-text" id="quote-text">正在加载名句...</p>
+        <footer class="quote-footer">
+            <cite class="quote-author">
+                <span class="author-name" id="quote-author"></span>
+                <span class="dynasty" id="quote-dynasty"></span>
+            </cite>
+            <div class="quote-source" id="quote-source"></div>
+        </footer>
+    </blockquote>
+    <button class="refresh-quote-btn" id="refresh-quote" title="刷新名句" aria-label="刷新名句">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 2v6h-6"></path>
+            <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+            <path d="M3 22v-6h6"></path>
+            <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+        </svg>
+    </button>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    var quotesManager = (function() {
+        var loadedShards = {};
+        var shardIndex = null;
+        var allQuotes = [];
+        var isIndexLoaded = false;
+        var isLoadingShard = false;
+
+        var defaultQuote = {
+            quote: "学而时习之，不亦说乎？有朋自远方来，不亦乐乎？",
+            author: "孔子",
+            source: "《论语·学而》",
+            dynasty: "春秋"
+        };
+
+        function loadIndex() {
+            if (isIndexLoaded) return Promise.resolve(shardIndex);
+
+            console.log('开始加载名言索引...');
+            return fetch('/quotes/quotes_index.json?v=' + Date.now())
+                .then(function(response) {
+                    if (!response.ok) {
+                        throw new Error('Failed to load index, status: ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(function(data) {
+                    shardIndex = data;
+                    isIndexLoaded = true;
+                    console.log('✓ 已加载分片索引: ' + data.total_shards + ' 个分片，共 ' + data.total_quotes + ' 条名句');
+                    return shardIndex;
+                })
+                .catch(function(error) {
+                    console.error('✗ 加载索引失败:', error);
+                    // 返回一个默认的索引结构，确保后续逻辑能正常执行
+                    return {
+                        total_quotes: 0,
+                        total_shards: 0,
+                        shards: []
+                    };
+                });
+        }
+
+        function loadShard(shardName) {
+            if (loadedShards[shardName]) {
+                console.log('分片 ' + shardName + ' 已加载，使用缓存');
+                return Promise.resolve(loadedShards[shardName]);
+            }
+
+            if (isLoadingShard) {
+                console.log('正在加载其他分片，返回当前已加载的名句');
+                return Promise.resolve(allQuotes.length > 0 ? allQuotes : [defaultQuote]);
+            }
+
+            isLoadingShard = true;
+            console.log('开始加载分片:', shardName);
+
+            return fetch('/quotes/' + shardName + '?v=' + Date.now())
+                .then(function(response) {
+                    if (!response.ok) {
+                        throw new Error('Failed to load shard: ' + shardName);
+                    }
+                    return response.json();
+                })
+                .then(function(data) {
+                    loadedShards[shardName] = data;
+                    // 使用 push 方法而不是 concat，确保原数组被修改
+                    for (var i = 0; i < data.length; i++) {
+                        allQuotes.push(data[i]);
+                    }
+                    console.log('✓ 已���载分片 ' + shardName + ': ' + data.length + ' 条名句 (总计: ' + allQuotes.length + ' 条)');
+                    return allQuotes; // 返回 allQuotes 而不是 data
+                })
+                .catch(function(error) {
+                    console.error('✗ 加载分片失败:', shardName, error.message);
+                    // 返回空数组而不是失败
+                    return [];
+                })
+                .finally(function() {
+                    isLoadingShard = false;
+                });
+        }
+
+        function loadFirstShard() {
+            return loadIndex().then(function() {
+                if (shardIndex && shardIndex.shards && shardIndex.shards.length > 0) {
+                    return loadShard(shardIndex.shards[0]);
+                }
+                return Promise.resolve([defaultQuote]);
+            });
+        }
+
+        function loadRandomShard() {
+            return loadIndex().then(function() {
+                if (shardIndex && shardIndex.shards && shardIndex.shards.length > 0) {
+                    var randomIndex = Math.floor(Math.random() * shardIndex.shards.length);
+                    var shardName = shardIndex.shards[randomIndex];
+
+                    if (!loadedShards[shardName]) {
+                        return loadShard(shardName);
+                    }
+                }
+                return Promise.resolve(allQuotes.length > 0 ? allQuotes : [defaultQuote]);
+            });
+        }
+
+        function getRandomQuote() {
+            if (allQuotes.length === 0) {
+                return defaultQuote;
+            }
+
+            var index = Math.floor(Math.random() * allQuotes.length);
+            return allQuotes[index];
+        }
+
+        function getRandomQuoteFromRandomShard() {
+            return loadRandomShard().then(function(shardData) {
+                if (shardData && shardData.length > 0) {
+                    var index = Math.floor(Math.random() * shardData.length);
+                    return shardData[index];
+                }
+                return defaultQuote;
+            });
+        }
+
+        function displayQuote(quote) {
+            var textEl = document.getElementById('quote-text');
+            var authorEl = document.getElementById('quote-author');
+            var dynastyEl = document.getElementById('quote-dynasty');
+            var sourceEl = document.getElementById('quote-source');
+
+            if (!textEl || !authorEl || !dynastyEl || !sourceEl) return;
+
+            var container = document.getElementById('classical-quote-display');
+            if (container) {
+                container.style.opacity = '0.6';
+            }
+
+            setTimeout(function() {
+                textEl.textContent = quote.quote || '';
+                authorEl.textContent = quote.author || '';
+                dynastyEl.textContent = quote.dynasty || '';
+                sourceEl.textContent = quote.source || '';
+
+                if (container) {
+                    container.style.opacity = '1';
+                }
+            }, 150);
+        }
+
+        function refreshQuote() {
+            // 每次刷新都有机会加载新的随机分片，确保能访问所有名句
+            // 30% 概率从已加载的名句中选择（快速响应），70% 概率加载新分片
+            var useCached = allQuotes.length > 100 && Math.random() < 0.3;
+
+            if (useCached) {
+                displayQuote(getRandomQuote());
+            } else {
+                getRandomQuoteFromRandomShard().then(function(quote) {
+                    displayQuote(quote);
+                });
+            }
+        }
+
+        function init() {
+            console.log('初始化名言组件...');
+            var container = document.getElementById('classical-quote-display');
+            if (!container) {
+                console.error('✗ 未找到名言容器元素');
+                return;
+            }
+
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(15px)';
+            container.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+            setTimeout(function() {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+                displayQuote(defaultQuote);
+            }, 100);
+
+            // 直接加载，不使用 requestIdleCallback
+            console.log('开始加载第一个名言分片...');
+            loadFirstShard().then(function(shardData) {
+                console.log('分片加载完成，当前名句数量:', allQuotes.length, '，返回数据:', shardData ? shardData.length : 0, '条');
+                if (allQuotes.length > 0) {
+                    var randomQuote = getRandomQuote();
+                    console.log('显示随机名句:', randomQuote.quote.substring(0, 20) + '...');
+                    displayQuote(randomQuote);
+                } else {
+                    console.warn('⚠ 未加载到任何名句，使用默认名句');
+                    // 如果 allQuotes 为空但 shardData 有数据，说明 concat 没生效
+                    if (shardData && shardData.length > 0) {
+                        console.warn('检测到数据分离问题，shardData 有', shardData.length, '条但 allQuotes 为空');
+                        allQuotes = shardData; // 直接赋值作为后备方案
+                        displayQuote(getRandomQuote());
+                    }
+                }
+            }).catch(function(error) {
+                console.error('加载名句出错:', error);
+            });
+
+            var refreshBtn = document.getElementById('refresh-quote');
+            if (refreshBtn) {
+                console.log('✓ 刷新按钮事件已绑定');
+                refreshBtn.addEventListener('click', function() {
+                    console.log('刷新按钮被点击');
+                    refreshQuote();
+                });
+            } else {
+                console.error('✗ 未找到刷新按钮');
+            }
+        }
+
+        return {
+            init: init,
+            getRandomQuote: getRandomQuote,
+            refreshQuote: refreshQuote,
+            loadFirstShard: loadFirstShard,
+            loadRandomShard: loadRandomShard
+        };
+    })();
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', quotesManager.init);
+    } else {
+        quotesManager.init();
+    }
+})();
+</script>

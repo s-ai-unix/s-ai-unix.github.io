@@ -1,0 +1,476 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>VScode Remote远程开发完全指南 | s-ai-unix's Blog</title><meta name=keywords content="系统管理,Python"><meta name=description content="全面介绍VScode Remote Development功能,实现远程服务器开发的极致体验"><meta name=author content="s-ai-unix"><link rel=canonical href=https://s-ai-unix.github.io/posts/2019-07-24-vscode-remote-development-guide/><link crossorigin=anonymous href=/assets/css/stylesheet.0833aff7e1cf567ecfb9755701ee95a80535f671e2e1a0a770c9bc20a0a7b5bb.css integrity="sha256-CDOv9+HPVn7PuXVXAe6VqAU19nHi4aCncMm8IKCntbs=" rel="preload stylesheet" as=style><link rel=icon href=https://s-ai-unix.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://s-ai-unix.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://s-ai-unix.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://s-ai-unix.github.io/apple-touch-icon.png><link rel=mask-icon href=https://s-ai-unix.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://s-ai-unix.github.io/posts/2019-07-24-vscode-remote-development-guide/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://s-ai-unix.github.io/posts/2019-07-24-vscode-remote-development-guide/"><meta property="og:site_name" content="s-ai-unix's Blog"><meta property="og:title" content="VScode Remote远程开发完全指南"><meta property="og:description" content="全面介绍VScode Remote Development功能,实现远程服务器开发的极致体验"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-07-24T15:28:32+08:00"><meta property="article:modified_time" content="2019-07-24T15:28:32+08:00"><meta property="article:tag" content="系统管理"><meta property="article:tag" content="Python"><meta property="og:image" content="https://s-ai-unix.github.io/images/covers/1498050108023-c5249f4df085.jpg"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://s-ai-unix.github.io/images/covers/1498050108023-c5249f4df085.jpg"><meta name=twitter:title content="VScode Remote远程开发完全指南"><meta name=twitter:description content="全面介绍VScode Remote Development功能,实现远程服务器开发的极致体验"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://s-ai-unix.github.io/posts/"},{"@type":"ListItem","position":2,"name":"VScode Remote远程开发完全指南","item":"https://s-ai-unix.github.io/posts/2019-07-24-vscode-remote-development-guide/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"VScode Remote远程开发完全指南","name":"VScode Remote远程开发完全指南","description":"全面介绍VScode Remote Development功能,实现远程服务器开发的极致体验","keywords":["系统管理","Python"],"articleBody":"前言 最近要给别的团队A,在AWS的EC2上面去搭建一个算法的开发环境。鉴于自己之前在AWS上都是使用的Linux,在和团队A讨论了之后,最后决定建个Linux的EC2。\n但是在基本的Python和数据分析和算法开发的环境都搭建好了之后,团队A的同学又提了没有IDE,影响效率。\n没有办法,得考虑是不是换个Windows的EC2了。这个时候VS Code Remote Development comes to my rescue。\n试用了下来,感觉这个VS Code Remote Development是个神器啊。\n什么是VScode Remote Development VScode Remote Development是VScode的一个扩展功能,允许你:\n使用容器、远程机器或Windows Subsystem for Linux (WSL)作为全职开发环境 在远程环境中运行扩展和工具 使用本地VScode的所有功能,就像在本地开发一样 三种Remote模式 Remote - SSH:通过SSH连接到远程机器 Remote - Containers:使用Docker容器作为开发环境 Remote - WSL:连接到Windows上的Linux子系统 本文主要介绍Remote - SSH,这是最常用的模式。\n为什么使用Remote Development 传统远程开发的痛点 没有IDE:只能使用vim或emacs,学习曲线陡峭 文件传输麻烦:需要频繁使用scp或rsync 调试困难:无法使用图形化调试工具 本地和远程环境不一致:容易产生\"在我机器上能跑\"的问题 协作困难:难以分享开发环境 Remote Development的优势 完整的IDE体验:使用本地VScode连接远程服务器 无缝的文件操作:直接编辑远程文件,就像本地文件一样 强大的调试功能:完整的断点、变量查看等功能 环境一致性:直接在远程环境中开发 扩展支持:大部分扩展都可以在远程环境运行 安装和配置 1. 系统要求 本地机器:\nWindows 7/8/10/11 macOS 10.12+ Linux (Desktop) 远程机器:\n运行SSH服务器 可以是Linux、macOS或其他Unix-like系统 2. 安装扩展 在本地VScode中安装\"Remote - SSH\"扩展:\n1. 打开VScode 2. 点击左侧扩展图标 (Ctrl+Shift+X) 3. 搜索 \"Remote - SSH\" 4. 点击安装 ```text ### 3. 配置SSH **生成SSH密钥**(如果还没有): ```bash # 生成SSH密钥对 ssh-keygen -t rsa -b 4096 -C \"your_email@example.com\" # 将公钥复制到远程服务器 ssh-copy-id user@remote-host # 或者手动复制 cat ~/.ssh/id_rsa.pub | ssh user@remote-host \"mkdir -p ~/.ssh \u0026\u0026 cat \u003e\u003e ~/.ssh/authorized_keys\" ```text **配置SSH主机**: ```bash # 编辑SSH配置文件 nano ~/.ssh/config # 添加以下内容 Host remote-server HostName your-server-ip User your-username IdentityFile ~/.ssh/id_rsa Port 22 ```text ### 4. 连接到远程服务器 **方法1:使用命令面板** ```text 1. 按F1或Ctrl+Shift+P打开命令面板 2. 输入 \"Remote-SSH: Connect to Host\" 3. 选择要连接的主机 4. 新窗口打开,连接到远程服务器 ```text **方法2:使用侧边栏** ```text 1. 点击左侧远程资源管理器图标 2. 选择要连接的主机 3. 点击连接 ```text ## 常用功能 ### 1. 文件操作 连接成功后,你可以: ```bash # 打开远程文件夹 File -\u003e Open Folder # 选择远程服务器上的文件夹 # 创建新文件 # 在文件浏览器中右键 -\u003e New File # 编辑文件 # 直接在编辑器中编辑,自动保存到远程服务器 ```text ### 2. 终端操作 VScode提供集成的终端: ```bash # 打开终端 Ctrl + ` 或 View -\u003e Terminal # 在远程服务器上执行命令 pwd # 显示远程服务器的当前目录 ls # 列出远程服务器的文件 # 运行Python脚本 python script.py # 运行Jupyter notebook jupyter notebook ```text ### 3. 调试功能 **配置调试**: ```json // .vscode/launch.json { \"version\": \"0.2.0\", \"configurations\": [ { \"name\": \"Python: Current File\", \"type\": \"python\", \"request\": \"launch\", \"program\": \"${file}\", \"console\": \"integratedTerminal\" } ] } ```text **使用调试器**: ```text 1. 在代码行号左侧点击设置断点 2. 按F5开始调试 3. 查看变量、调用栈等 4. 使用调试控制台执行代码 ```text ### 4. 扩展安装 远程扩展会自动安装在远程服务器上: ```bash # 安装Python扩展 # 在本地安装后,会自动在远程服务器安装 # 查看已安装的扩展 Extensions -\u003e Show Local Extensions (过滤) Extensions -\u003e Show Remote Extensions ```text ## 实战案例 ### 案例1:远程Python开发 **场景**:在远程服务器上开发Python项目 **步骤**: 1. **连接到远程服务器** ```text Remote-SSH: Connect to Host -\u003e remote-server ```text 2. **打开项目文件夹```text File -\u003e Open Folder -\u003e /home/user/project\n3. **配置Pytho```text器** ```bash Ctrl + Shift + P -\u003e Python: Select Interpreter 选择远程服务器上的Python环境 ```text 4. **编写代码** ```python # main.py import numpy as np import pandas as pd def process_data(filename): data = pd.read_csv(filename) result = data.groupby('category').sum() return result if __name__ == '__main__': result = process_data('data.csv') print(result) ```text 5. **运行和调试** ```bash # 在终端运行 python main.py # 或使用调试器 # 设置断点,按F5运行 ```text ### 案例2:远程Jupyter Notebook **场景**:在远程服务器上使用Jupyter Notebook **步骤**: 1. **在远程终端启动Jupyter** ```bash jupyter notebook --no-browser --port=8888 ```text 2. **设置端口转发** ```bash # 在本地机器上运行 ssh -N -f -L localhost:8888:localhost:8888 user@remote-server ```text 3. **```text浏览器访问** http://localhost:8888\n### 案例3:远程Docker开发 **场景**:在远程服务器的Docker容器中开发 **步骤**: 1. **使用Remote - Containers扩展** ```text **连接到远程容器** Remote-Containers: Attach to Running Container 在容器中开发 # Dockerfile FROM python:3.8 WORKDIR /app COPY requirements.txt . RUN pip install -r requirements.txt COPY . . CMD [\"python\", \"main.py\"] ```text ## 高级技巧 ### 1. 多个SSH配置 管理多个远程服务器: ```bash # ~/.ssh/config Host project-dev HostName dev.example.com User devuser IdentityFile ~/.ssh/dev_key Host project-prod HostName prod.example.com User produser IdentityFile ~/.ssh/prod_key Host aws-server HostName ec2-xx-xx-xx-xx.compute.amazonaws.com User ubuntu IdentityFile ~/.ssh/aws_key.pem ```text ### 2. 端口转发 转发远程端口到本地: ```bash # 在远程终端运行服务 python -m http.server 8000 # 在本地VScode中 # 端口会自动提示转发 # 或手动配置:Forward a Port ```text ### 3. 同步本地和远程设置 使用settings.json同步配置: ```json { \"remote.SSH.enableRemoteCommand\": true, \"remote.SSH.showLoginTerminal\": true, \"python.pythonPath\": \"/usr/bin/python3\" } ```text ### 4. 使用Git 在远程服务器上使用Git: ```bash # 在远程终端 git init git add . git commit -m \"Initial commit\" git push origin main ```text ## 常见问题 ### 1. 连接超时 **问题**:无法连接到远程服务器 **解决**: ```bash # 检查SSH连接 ssh user@remote-host # 检查SSH配置 cat ~/.ssh/config # 使用verbose模式调试 ssh -vvv user@remote-host ```text ### 2. 扩展不工作 **问题**:某些扩展在远程不工作 **解决**: - 检查扩展是否支持Remote - 在远程服务器上手动安装扩展 - 查看扩展文档 ### 3. 权限问题 **问题**:文件权限错误 **解决**: ```bash # 修改文件权限 chmod +x script.sh # 修改文件所有者 sudo chown user:group file ```text ### 4. 性能问题 **问题**:远程响应慢 **解决**: - 检查网络连接 - 减少文件监视 - 优化大文件操作 ## 最佳实践 ### 1. SSH密钥管理 ```bash # 为不同的服务器使用不同的密钥 ssh-keygen -t rsa -f ~/.ssh/project_key # 使用ssh-agent管理密钥 eval \"$(ssh-agent -s)\" ssh-add ~/.ssh/project_key ```text ### 2. 环境配置 使用`.vscode`文件夹管理项目配置: ```text .vscode/ ├── settings.json # 项目设置 ├── launch.json # 调试配置 ├── tasks.json # 任务配置 └── extensions.json # 推荐扩展 ```text ### 3. 版本控制 ```text # 使用.gitignore忽略本地配置 .vscode/ *.pyc __py__/ ```text ### 4. 文档化 ```markdown # README.md ## 环境要求 - Python 3.8+ - Node.js 14+ ## 快速开始 1. 安装依赖: pip install -r requirements.txt 2. 配置环境: cp .env.example .env 3. 运行服务: python main.py ```text ## 参考资源 ### 官方文档 - [Visual Studio Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) - [Remote SSH](https://code.visualstudio.com/docs/remote/ssh) - [Remote Containers](https://code.visualstudio.com/docs/remote/containers) - [Remote WSL](https://code.visualstudio.com/docs/remote/wsl) ### 中文教程 - [VSCode Remote SSH 使用指南](https://www.jianshu.com/p/0f2fb935a9a1) - [VSCode Remote 开发环境配置](https://zhuanlan.zhihu.com/p/68664042) ## 总结 VScode Remote Development是一个革命性的工具,它让远程开发变得和本地开发一样方便。通过Remote - SSH,你可以: - 在本地使用VScode的全部功能 - 直接编辑远程服务器上的文件 - 使用强大的调试和测试工具 - 保持开发环境的一致性 对于需要在远程服务器上工作的开发者来说,这是一个必备的工具。 \u003e 实践建议:花时间配置好SSH密钥和VScode设置,这会让你的远程开发体验更加流畅。 ","wordCount":"722","inLanguage":"en","image":"https://s-ai-unix.github.io/images/covers/1498050108023-c5249f4df085.jpg","datePublished":"2019-07-24T15:28:32+08:00","dateModified":"2019-07-24T15:28:32+08:00","author":{"@type":"Person","name":"s-ai-unix"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://s-ai-unix.github.io/posts/2019-07-24-vscode-remote-development-guide/"},"publisher":{"@type":"Organization","name":"s-ai-unix's Blog","logo":{"@type":"ImageObject","url":"https://s-ai-unix.github.io/favicon.ico"}}}</script><link rel=stylesheet href=https://s-ai-unix.github.io/css/classical-quote.css></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://s-ai-unix.github.io/ accesskey=h title="s-ai-unix's Blog (Alt + H)">s-ai-unix's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://s-ai-unix.github.io/ title="🏠 首页"><span>🏠 首页</span></a></li><li><a href=https://s-ai-unix.github.io/posts/ title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://s-ai-unix.github.io/archives/ title="📁 归档"><span>📁 归档</span></a></li><li><a href=https://s-ai-unix.github.io/tags/ title="🏷️ 标签"><span>🏷️ 标签</span></a></li><li><a href=https://s-ai-unix.github.io/search/ title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://s-ai-unix.github.io/about/ title="👤 关于"><span>👤 关于</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://s-ai-unix.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://s-ai-unix.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">VScode Remote远程开发完全指南</h1><div class=post-description>全面介绍VScode Remote Development功能,实现远程服务器开发的极致体验</div><div class=post-meta><span title='2019-07-24 15:28:32 +0800 CST'>July 24, 2019</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>722 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></div></header><figure class=entry-cover><a href=https://s-ai-unix.github.io/images/covers/1498050108023-c5249f4df085.jpg target=_blank rel="noopener noreferrer"><img loading=eager src=https://s-ai-unix.github.io/images/covers/1498050108023-c5249f4df085.jpg alt=VSCode远程开发></a><figcaption>VSCode Remote：远程开发的极致体验</figcaption></figure><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#%e5%89%8d%e8%a8%80 aria-label=前言>前言</a></li><li><a href=#%e4%bb%80%e4%b9%88%e6%98%afvscode-remote-development aria-label="什么是VScode Remote Development">什么是VScode Remote Development</a><ul><li><a href=#%e4%b8%89%e7%a7%8dremote%e6%a8%a1%e5%bc%8f aria-label=三种Remote模式>三种Remote模式</a></li></ul></li><li><a href=#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bd%bf%e7%94%a8remote-development aria-label="为什么使用Remote Development">为什么使用Remote Development</a><ul><li><a href=#%e4%bc%a0%e7%bb%9f%e8%bf%9c%e7%a8%8b%e5%bc%80%e5%8f%91%e7%9a%84%e7%97%9b%e7%82%b9 aria-label=传统远程开发的痛点>传统远程开发的痛点</a></li><li><a href=#remote-development%e7%9a%84%e4%bc%98%e5%8a%bf aria-label="Remote Development的优势">Remote Development的优势</a></li></ul></li><li><a href=#%e5%ae%89%e8%a3%85%e5%92%8c%e9%85%8d%e7%bd%ae aria-label=安装和配置>安装和配置</a><ul><li><a href=#1-%e7%b3%bb%e7%bb%9f%e8%a6%81%e6%b1%82 aria-label="1. 系统要求">1. 系统要求</a></li><li><a href=#2-%e5%ae%89%e8%a3%85%e6%89%a9%e5%b1%95 aria-label="2. 安装扩展">2. 安装扩展</a></li></ul></li></ul></div></details></div><div class=post-content><h2 id=前言>前言<a hidden class=anchor aria-hidden=true href=#前言>#</a></h2><p>最近要给别的团队A,在AWS的EC2上面去搭建一个算法的开发环境。鉴于自己之前在AWS上都是使用的Linux,在和团队A讨论了之后,最后决定建个Linux的EC2。</p><p>但是在基本的Python和数据分析和算法开发的环境都搭建好了之后,团队A的同学又提了没有IDE,影响效率。</p><p>没有办法,得考虑是不是换个Windows的EC2了。这个时候<strong>VS Code Remote Development</strong> comes to my rescue。</p><p>试用了下来,感觉这个<strong>VS Code Remote Development</strong>是个神器啊。</p><h2 id=什么是vscode-remote-development>什么是VScode Remote Development<a hidden class=anchor aria-hidden=true href=#什么是vscode-remote-development>#</a></h2><p>VScode Remote Development是VScode的一个扩展功能,允许你:</p><ul><li>使用容器、远程机器或Windows Subsystem for Linux (WSL)作为全职开发环境</li><li>在远程环境中运行扩展和工具</li><li>使用本地VScode的所有功能,就像在本地开发一样</li></ul><h3 id=三种remote模式>三种Remote模式<a hidden class=anchor aria-hidden=true href=#三种remote模式>#</a></h3><ol><li><strong>Remote - SSH</strong>:通过SSH连接到远程机器</li><li><strong>Remote - Containers</strong>:使用Docker容器作为开发环境</li><li><strong>Remote - WSL</strong>:连接到Windows上的Linux子系统</li></ol><p>本文主要介绍Remote - SSH,这是最常用的模式。</p><h2 id=为什么使用remote-development>为什么使用Remote Development<a hidden class=anchor aria-hidden=true href=#为什么使用remote-development>#</a></h2><h3 id=传统远程开发的痛点>传统远程开发的痛点<a hidden class=anchor aria-hidden=true href=#传统远程开发的痛点>#</a></h3><ol><li><strong>没有IDE</strong>:只能使用vim或emacs,学习曲线陡峭</li><li><strong>文件传输麻烦</strong>:需要频繁使用scp或rsync</li><li><strong>调试困难</strong>:无法使用图形化调试工具</li><li><strong>本地和远程环境不一致</strong>:容易产生"在我机器上能跑"的问题</li><li><strong>协作困难</strong>:难以分享开发环境</li></ol><h3 id=remote-development的优势>Remote Development的优势<a hidden class=anchor aria-hidden=true href=#remote-development的优势>#</a></h3><ol><li><strong>完整的IDE体验</strong>:使用本地VScode连接远程服务器</li><li><strong>无缝的文件操作</strong>:直接编辑远程文件,就像本地文件一样</li><li><strong>强大的调试功能</strong>:完整的断点、变量查看等功能</li><li><strong>环境一致性</strong>:直接在远程环境中开发</li><li><strong>扩展支持</strong>:大部分扩展都可以在远程环境运行</li></ol><h2 id=安装和配置>安装和配置<a hidden class=anchor aria-hidden=true href=#安装和配置>#</a></h2><h3 id=1-系统要求>1. 系统要求<a hidden class=anchor aria-hidden=true href=#1-系统要求>#</a></h3><p><strong>本地机器</strong>:</p><ul><li>Windows 7/8/10/11</li><li>macOS 10.12+</li><li>Linux (Desktop)</li></ul><p><strong>远程机器</strong>:</p><ul><li>运行SSH服务器</li><li>可以是Linux、macOS或其他Unix-like系统</li></ul><h3 id=2-安装扩展>2. 安装扩展<a hidden class=anchor aria-hidden=true href=#2-安装扩展>#</a></h3><p>在本地VScode中安装"Remote - SSH"扩展:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>1. 打开VScode
+</span></span><span class=line><span class=cl>2. 点击左侧扩展图标 (Ctrl+Shift+X)
+</span></span><span class=line><span class=cl>3. 搜索 &#34;Remote - SSH&#34;
+</span></span><span class=line><span class=cl>4. 点击安装
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>### 3. 配置SSH
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**生成SSH密钥**(如果还没有):
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```bash
+</span></span><span class=line><span class=cl># 生成SSH密钥对
+</span></span><span class=line><span class=cl>ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 将公钥复制到远程服务器
+</span></span><span class=line><span class=cl>ssh-copy-id user@remote-host
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 或者手动复制
+</span></span><span class=line><span class=cl>cat ~/.ssh/id_rsa.pub | ssh user@remote-host &#34;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&#34;
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**配置SSH主机**:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```bash
+</span></span><span class=line><span class=cl># 编辑SSH配置文件
+</span></span><span class=line><span class=cl>nano ~/.ssh/config
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 添加以下内容
+</span></span><span class=line><span class=cl>Host remote-server
+</span></span><span class=line><span class=cl>    HostName your-server-ip
+</span></span><span class=line><span class=cl>    User your-username
+</span></span><span class=line><span class=cl>    IdentityFile ~/.ssh/id_rsa
+</span></span><span class=line><span class=cl>    Port 22
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>### 4. 连接到远程服务器
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**方法1:使用命令面板**
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>1. 按F1或Ctrl+Shift+P打开命令面板
+</span></span><span class=line><span class=cl>2. 输入 &#34;Remote-SSH: Connect to Host&#34;
+</span></span><span class=line><span class=cl>3. 选择要连接的主机
+</span></span><span class=line><span class=cl>4. 新窗口打开,连接到远程服务器
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**方法2:使用侧边栏**
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>1. 点击左侧远程资源管理器图标
+</span></span><span class=line><span class=cl>2. 选择要连接的主机
+</span></span><span class=line><span class=cl>3. 点击连接
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>## 常用功能
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>### 1. 文件操作
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>连接成功后,你可以:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```bash
+</span></span><span class=line><span class=cl># 打开远程文件夹
+</span></span><span class=line><span class=cl>File -&gt; Open Folder
+</span></span><span class=line><span class=cl># 选择远程服务器上的文件夹
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 创建新文件
+</span></span><span class=line><span class=cl># 在文件浏览器中右键 -&gt; New File
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 编辑文件
+</span></span><span class=line><span class=cl># 直接在编辑器中编辑,自动保存到远程服务器
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>### 2. 终端操作
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>VScode提供集成的终端:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```bash
+</span></span><span class=line><span class=cl># 打开终端
+</span></span><span class=line><span class=cl>Ctrl + ` 或 View -&gt; Terminal
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 在远程服务器上执行命令
+</span></span><span class=line><span class=cl>pwd  # 显示远程服务器的当前目录
+</span></span><span class=line><span class=cl>ls   # 列出远程服务器的文件
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 运行Python脚本
+</span></span><span class=line><span class=cl>python script.py
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 运行Jupyter notebook
+</span></span><span class=line><span class=cl>jupyter notebook
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>### 3. 调试功能
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**配置调试**:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```json
+</span></span><span class=line><span class=cl>// .vscode/launch.json
+</span></span><span class=line><span class=cl>{
+</span></span><span class=line><span class=cl>    &#34;version&#34;: &#34;0.2.0&#34;,
+</span></span><span class=line><span class=cl>    &#34;configurations&#34;: [
+</span></span><span class=line><span class=cl>        {
+</span></span><span class=line><span class=cl>            &#34;name&#34;: &#34;Python: Current File&#34;,
+</span></span><span class=line><span class=cl>            &#34;type&#34;: &#34;python&#34;,
+</span></span><span class=line><span class=cl>            &#34;request&#34;: &#34;launch&#34;,
+</span></span><span class=line><span class=cl>            &#34;program&#34;: &#34;${file}&#34;,
+</span></span><span class=line><span class=cl>            &#34;console&#34;: &#34;integratedTerminal&#34;
+</span></span><span class=line><span class=cl>        }
+</span></span><span class=line><span class=cl>    ]
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**使用调试器**:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>1. 在代码行号左侧点击设置断点
+</span></span><span class=line><span class=cl>2. 按F5开始调试
+</span></span><span class=line><span class=cl>3. 查看变量、调用栈等
+</span></span><span class=line><span class=cl>4. 使用调试控制台执行代码
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>### 4. 扩展安装
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>远程扩展会自动安装在远程服务器上:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```bash
+</span></span><span class=line><span class=cl># 安装Python扩展
+</span></span><span class=line><span class=cl># 在本地安装后,会自动在远程服务器安装
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 查看已安装的扩展
+</span></span><span class=line><span class=cl>Extensions -&gt; Show Local Extensions (过滤)
+</span></span><span class=line><span class=cl>Extensions -&gt; Show Remote Extensions
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>## 实战案例
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>### 案例1:远程Python开发
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**场景**:在远程服务器上开发Python项目
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**步骤**:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>1. **连接到远程服务器**
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>Remote-SSH: Connect to Host -&gt; remote-server
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>2. **打开项目文件夹```text
+</span></span></code></pre></div><p>File -> Open Folder -> /home/user/project</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>3. **配置Pytho```text器**
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```bash
+</span></span><span class=line><span class=cl>Ctrl + Shift + P -&gt; Python: Select Interpreter
+</span></span><span class=line><span class=cl>选择远程服务器上的Python环境
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>4. **编写代码**
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```python
+</span></span><span class=line><span class=cl># main.py
+</span></span><span class=line><span class=cl>import numpy as np
+</span></span><span class=line><span class=cl>import pandas as pd
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def process_data(filename):
+</span></span><span class=line><span class=cl>    data = pd.read_csv(filename)
+</span></span><span class=line><span class=cl>    result = data.groupby(&#39;category&#39;).sum()
+</span></span><span class=line><span class=cl>    return result
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>if __name__ == &#39;__main__&#39;:
+</span></span><span class=line><span class=cl>    result = process_data(&#39;data.csv&#39;)
+</span></span><span class=line><span class=cl>    print(result)
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>5. **运行和调试**
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```bash
+</span></span><span class=line><span class=cl># 在终端运行
+</span></span><span class=line><span class=cl>python main.py
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># 或使用调试器
+</span></span><span class=line><span class=cl># 设置断点,按F5运行
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>### 案例2:远程Jupyter Notebook
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**场景**:在远程服务器上使用Jupyter Notebook
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**步骤**:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>1. **在远程终端启动Jupyter**
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```bash
+</span></span><span class=line><span class=cl>jupyter notebook --no-browser --port=8888
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>2. **设置端口转发**
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>```bash
+</span></span><span class=line><span class=cl># 在本地机器上运行
+</span></span><span class=line><span class=cl>ssh -N -f -L localhost:8888:localhost:8888 user@remote-server
+</span></span><span class=line><span class=cl>```text
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>3. **```text浏览器访问**
+</span></span></code></pre></div><p>http://localhost:8888</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>### 案例3:远程Docker开发
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**场景**:在远程服务器的Docker容器中开发
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>**步骤**:
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>1. **使用Remote - Containers扩展**
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl> ```text
+</span></span><span class=line><span class=cl> **连接到远程容器**
+</span></span><span class=line><span class=cl> 
+</span></span><span class=line><span class=cl> Remote-Containers: Attach to Running Container
+</span></span></code></pre></div><ol start=3><li><strong>在容器中开发</strong></li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-dockerfile data-lang=dockerfile><span class=line><span class=cl><span class=c># Dockerfile</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>FROM</span><span class=w> </span><span class=s>python:3.8</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>WORKDIR</span><span class=w> </span><span class=s>/app</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>COPY</span> requirements.txt .<span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>RUN</span> pip install -r requirements.txt<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>COPY</span> . .<span class=err>
+</span></span></span><span class=line><span class=cl><span class=k>CMD</span> <span class=p>[</span><span class=s2>&#34;python&#34;</span><span class=p>,</span> <span class=s2>&#34;main.py&#34;</span><span class=p>]</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>## 高级技巧</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 1. 多个SSH配置</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>管理多个远程服务器:<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>bash<span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># ~/.ssh/config</span><span class=err>
+</span></span></span><span class=line><span class=cl>Host project-dev<span class=err>
+</span></span></span><span class=line><span class=cl>    HostName dev.example.com<span class=err>
+</span></span></span><span class=line><span class=cl>    User devuser<span class=err>
+</span></span></span><span class=line><span class=cl>    IdentityFile ~/.ssh/dev_key<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>Host project-prod<span class=err>
+</span></span></span><span class=line><span class=cl>    HostName prod.example.com<span class=err>
+</span></span></span><span class=line><span class=cl>    User produser<span class=err>
+</span></span></span><span class=line><span class=cl>    IdentityFile ~/.ssh/prod_key<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>Host aws-server<span class=err>
+</span></span></span><span class=line><span class=cl>    HostName ec2-xx-xx-xx-xx.compute.amazonaws.com<span class=err>
+</span></span></span><span class=line><span class=cl>    User ubuntu<span class=err>
+</span></span></span><span class=line><span class=cl>    IdentityFile ~/.ssh/aws_key.pem<span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 2. 端口转发</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>转发远程端口到本地:<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>bash<span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 在远程终端运行服务</span><span class=err>
+</span></span></span><span class=line><span class=cl>python -m http.server <span class=m>8000</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 在本地VScode中</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 端口会自动提示转发</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 或手动配置:Forward a Port</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 3. 同步本地和远程设置</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>使用settings.json同步配置:<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>json<span class=err>
+</span></span></span><span class=line><span class=cl><span class=o>{</span><span class=err>
+</span></span></span><span class=line><span class=cl>    <span class=s2>&#34;remote.SSH.enableRemoteCommand&#34;</span>: true,<span class=err>
+</span></span></span><span class=line><span class=cl>    <span class=s2>&#34;remote.SSH.showLoginTerminal&#34;</span>: true,<span class=err>
+</span></span></span><span class=line><span class=cl>    <span class=s2>&#34;python.pythonPath&#34;</span>: <span class=s2>&#34;/usr/bin/python3&#34;</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=o>}</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 4. 使用Git</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>在远程服务器上使用Git:<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>bash<span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 在远程终端</span><span class=err>
+</span></span></span><span class=line><span class=cl>git init<span class=err>
+</span></span></span><span class=line><span class=cl>git add .<span class=err>
+</span></span></span><span class=line><span class=cl>git commit -m <span class=s2>&#34;Initial commit&#34;</span><span class=err>
+</span></span></span><span class=line><span class=cl>git push origin main<span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>## 常见问题</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 1. 连接超时</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>**问题**:无法连接到远程服务器<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>**解决**:<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>bash<span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 检查SSH连接</span><span class=err>
+</span></span></span><span class=line><span class=cl>ssh user@remote-host<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 检查SSH配置</span><span class=err>
+</span></span></span><span class=line><span class=cl>cat ~/.ssh/config<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 使用verbose模式调试</span><span class=err>
+</span></span></span><span class=line><span class=cl>ssh -vvv user@remote-host<span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 2. 扩展不工作</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>**问题**:某些扩展在远程不工作<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>**解决**:<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>- 检查扩展是否支持Remote<span class=err>
+</span></span></span><span class=line><span class=cl>- 在远程服务器上手动安装扩展<span class=err>
+</span></span></span><span class=line><span class=cl>- 查看扩展文档<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 3. 权限问题</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>**问题**:文件权限错误<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>**解决**:<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>bash<span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 修改文件权限</span><span class=err>
+</span></span></span><span class=line><span class=cl>chmod +x script.sh<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 修改文件所有者</span><span class=err>
+</span></span></span><span class=line><span class=cl>sudo chown user:group file<span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 4. 性能问题</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>**问题**:远程响应慢<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>**解决**:<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>- 检查网络连接<span class=err>
+</span></span></span><span class=line><span class=cl>- 减少文件监视<span class=err>
+</span></span></span><span class=line><span class=cl>- 优化大文件操作<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>## 最佳实践</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 1. SSH密钥管理</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>bash<span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 为不同的服务器使用不同的密钥</span><span class=err>
+</span></span></span><span class=line><span class=cl>ssh-keygen -t rsa -f ~/.ssh/project_key<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 使用ssh-agent管理密钥</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=nb>eval</span> <span class=s2>&#34;</span><span class=k>$(</span>ssh-agent -s<span class=k>)</span><span class=s2>&#34;</span><span class=err>
+</span></span></span><span class=line><span class=cl>ssh-add ~/.ssh/project_key<span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 2. 环境配置</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>使用<span class=sb>`</span>.vscode<span class=sb>`</span>文件夹管理项目配置:<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl>.vscode/<span class=err>
+</span></span></span><span class=line><span class=cl>├── settings.json       <span class=c1># 项目设置</span><span class=err>
+</span></span></span><span class=line><span class=cl>├── launch.json        <span class=c1># 调试配置</span><span class=err>
+</span></span></span><span class=line><span class=cl>├── tasks.json         <span class=c1># 任务配置</span><span class=err>
+</span></span></span><span class=line><span class=cl>└── extensions.json     <span class=c1># 推荐扩展</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 3. 版本控制</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># 使用.gitignore忽略本地配置</span><span class=err>
+</span></span></span><span class=line><span class=cl>.vscode/<span class=err>
+</span></span></span><span class=line><span class=cl>*.pyc<span class=err>
+</span></span></span><span class=line><span class=cl>__py__/<span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 4. 文档化</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>markdown<span class=err>
+</span></span></span><span class=line><span class=cl><span class=c># README.md</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>## 环境要求</span><span class=err>
+</span></span></span><span class=line><span class=cl>- Python 3.8+<span class=err>
+</span></span></span><span class=line><span class=cl>- Node.js 14+<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>## 快速开始</span><span class=err>
+</span></span></span><span class=line><span class=cl>1. 安装依赖: pip install -r requirements.txt<span class=err>
+</span></span></span><span class=line><span class=cl>2. 配置环境: cp .env.example .env<span class=err>
+</span></span></span><span class=line><span class=cl>3. 运行服务: python main.py<span class=err>
+</span></span></span><span class=line><span class=cl><span class=sb>```</span>text<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>## 参考资源</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 官方文档</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>- <span class=o>[</span>Visual Studio Code Remote Development<span class=o>](</span>https://code.visualstudio.com/docs/remote/remote-overview<span class=o>)</span><span class=err>
+</span></span></span><span class=line><span class=cl>- <span class=o>[</span>Remote SSH<span class=o>](</span>https://code.visualstudio.com/docs/remote/ssh<span class=o>)</span><span class=err>
+</span></span></span><span class=line><span class=cl>- <span class=o>[</span>Remote Containers<span class=o>](</span>https://code.visualstudio.com/docs/remote/containers<span class=o>)</span><span class=err>
+</span></span></span><span class=line><span class=cl>- <span class=o>[</span>Remote WSL<span class=o>](</span>https://code.visualstudio.com/docs/remote/wsl<span class=o>)</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>### 中文教程</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>- <span class=o>[</span>VSCode Remote SSH 使用指南<span class=o>](</span>https://www.jianshu.com/p/0f2fb935a9a1<span class=o>)</span><span class=err>
+</span></span></span><span class=line><span class=cl>- <span class=o>[</span>VSCode Remote 开发环境配置<span class=o>](</span>https://zhuanlan.zhihu.com/p/68664042<span class=o>)</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=c>## 总结</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>VScode Remote Development是一个革命性的工具,它让远程开发变得和本地开发一样方便。通过Remote - SSH,你可以:<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>- 在本地使用VScode的全部功能<span class=err>
+</span></span></span><span class=line><span class=cl>- 直接编辑远程服务器上的文件<span class=err>
+</span></span></span><span class=line><span class=cl>- 使用强大的调试和测试工具<span class=err>
+</span></span></span><span class=line><span class=cl>- 保持开发环境的一致性<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>对于需要在远程服务器上工作的开发者来说,这是一个必备的工具。<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl>&gt; 实践建议:花时间配置好SSH密钥和VScode设置,这会让你的远程开发体验更加流畅。<span class=err>
+</span></span></span></code></pre></div></div><footer class=post-footer><ul class=post-tags><li><a href=https://s-ai-unix.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/>系统管理</a></li><li><a href=https://s-ai-unix.github.io/tags/python/>Python</a></li></ul><nav class=paginav><a class=prev href=https://s-ai-unix.github.io/posts/2020-02-16-mathematical-statistics-preface-excerpts/><span class=title>« Prev</span><br><span>高等数理统计学前言摘录</span>
+</a><a class=next href=https://s-ai-unix.github.io/posts/2019-07-20-thoughts-on-data-analysis-work/><span class=title>Next »</span><br><span>对数据分析工作的深度思考</span></a></nav><ul class=share-buttons><li><a target=_blank rel="noopener noreferrer" aria-label="share VScode Remote远程开发完全指南 on x" href="https://x.com/intent/tweet/?text=VScode%20Remote%e8%bf%9c%e7%a8%8b%e5%bc%80%e5%8f%91%e5%ae%8c%e5%85%a8%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2fs-ai-unix.github.io%2fposts%2f2019-07-24-vscode-remote-development-guide%2f&amp;hashtags=%e7%b3%bb%e7%bb%9f%e7%ae%a1%e7%90%86%2cPython"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share VScode Remote远程开发完全指南 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fs-ai-unix.github.io%2fposts%2f2019-07-24-vscode-remote-development-guide%2f&amp;title=VScode%20Remote%e8%bf%9c%e7%a8%8b%e5%bc%80%e5%8f%91%e5%ae%8c%e5%85%a8%e6%8c%87%e5%8d%97&amp;summary=VScode%20Remote%e8%bf%9c%e7%a8%8b%e5%bc%80%e5%8f%91%e5%ae%8c%e5%85%a8%e6%8c%87%e5%8d%97&amp;source=https%3a%2f%2fs-ai-unix.github.io%2fposts%2f2019-07-24-vscode-remote-development-guide%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share VScode Remote远程开发完全指南 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fs-ai-unix.github.io%2fposts%2f2019-07-24-vscode-remote-development-guide%2f&title=VScode%20Remote%e8%bf%9c%e7%a8%8b%e5%bc%80%e5%8f%91%e5%ae%8c%e5%85%a8%e6%8c%87%e5%8d%97"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share VScode Remote远程开发完全指南 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fs-ai-unix.github.io%2fposts%2f2019-07-24-vscode-remote-development-guide%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentColor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a></li></ul></footer><script src=https://giscus.app/client.js data-repo=s-ai-unix/blog data-repo-id=R_kgDOQ3Njaw data-category=General data-category-id=DIC_kwDOQ3Nja84C0yve data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://s-ai-unix.github.io/>s-ai-unix's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var n,t=e.innerHTML,s=!1;for(t.indexOf("<em>")!==-1&&(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("</em>")!==-1&&(n=t.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),n=n.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("<em>$")!==-1&&(n=t.replace(/<em>\$/g,"$"),n!==t&&(t=n,s=!0)),t.indexOf("</em>$")!==-1&&(n=t.replace(/<\/em>\$/g,"$"),n!==t&&(t=n,s=!0));t.indexOf("<em>")!==-1&&t.indexOf("</em>")!==-1;){if(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n===t)break;t=n,s=!0}t.indexOf("_{")!==-1&&(n=t.replace(/_{/g,"_{"),n!==t&&(t=n,s=!0)),t.indexOf("}_")!==-1&&(n=t.replace(/}_/g,"}"),n!==t&&(t=n,s=!0)),t.indexOf("\\\\")!==-1&&(n=t.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),n!==t&&(t=n,s=!0)),s&&(e.innerHTML=t)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var n,t=e.innerHTML,s=!1;for(t.indexOf("<em>")!==-1&&(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("</em>")!==-1&&(n=t.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),n=n.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("<em>$")!==-1&&(n=t.replace(/<em>\$/g,"$"),n!==t&&(t=n,s=!0)),t.indexOf("</em>$")!==-1&&(n=t.replace(/<\/em>\$/g,"$"),n!==t&&(t=n,s=!0));t.indexOf("<em>")!==-1&&t.indexOf("</em>")!==-1;){if(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n===t)break;t=n,s=!0}t.indexOf("_{")!==-1&&(n=t.replace(/_{/g,"_{"),n!==t&&(t=n,s=!0)),t.indexOf("}_")!==-1&&(n=t.replace(/}_/g,"}"),n!==t&&(t=n,s=!0)),t.indexOf("\\\\")!==-1&&(n=t.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),n!==t&&(t=n,s=!0)),s&&(e.innerHTML=t)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script></body></html>

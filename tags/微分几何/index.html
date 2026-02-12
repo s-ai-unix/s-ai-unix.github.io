@@ -1,0 +1,197 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>微分几何 | s-ai-unix's Blog</title><meta name=keywords content><meta name=description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta name=author content="s-ai-unix"><link rel=canonical href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/><link crossorigin=anonymous href=/assets/css/stylesheet.0833aff7e1cf567ecfb9755701ee95a80535f671e2e1a0a770c9bc20a0a7b5bb.css integrity="sha256-CDOv9+HPVn7PuXVXAe6VqAU19nHi4aCncMm8IKCntbs=" rel="preload stylesheet" as=style><link rel=icon href=https://s-ai-unix.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://s-ai-unix.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://s-ai-unix.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://s-ai-unix.github.io/apple-touch-icon.png><link rel=mask-icon href=https://s-ai-unix.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/index.xml title=rss><link rel=alternate hreflang=en href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"><meta property="og:site_name" content="s-ai-unix's Blog"><meta property="og:title" content="微分几何"><meta property="og:description" content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="微分几何"><meta name=twitter:description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><link rel=stylesheet href=https://s-ai-unix.github.io/css/classical-quote.css></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://s-ai-unix.github.io/ accesskey=h title="s-ai-unix's Blog (Alt + H)">s-ai-unix's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://s-ai-unix.github.io/ title="🏠 首页"><span>🏠 首页</span></a></li><li><a href=https://s-ai-unix.github.io/posts/ title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://s-ai-unix.github.io/archives/ title="📁 归档"><span>📁 归档</span></a></li><li><a href=https://s-ai-unix.github.io/tags/ title="🏷️ 标签"><span>🏷️ 标签</span></a></li><li><a href=https://s-ai-unix.github.io/search/ title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://s-ai-unix.github.io/about/ title="👤 关于"><span>👤 关于</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://s-ai-unix.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://s-ai-unix.github.io/tags/>Tags</a></div><h1>微分几何</h1></header><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/2026-01-26-connection-differential-geometry.jpg alt=微分几何中的联络></figure><header class=entry-header><h2 class=entry-hint-parent>微分几何中的联络：一场从直观到严格的数学之旅</h2></header><div class=entry-content><p>引言：一个根本的数学困境 想象你站在地球表面的赤道上，手里拿着一根箭，箭头指向正北方。现在，你带着这根箭沿着赤道向东行走，始终保持箭头指向"正北方"（相对于你当前的地理位置）。当你绕地球一周回到起点时，会发生什么？
+这个看似简单的问题揭示了微分几何中一个深刻的困境：如何比较流形上不同点的切向量？
+图1：球面上的平行移动（交互式）。红色箭头表示向量在赤道上平行移动。你可以拖动图形来从不同角度观察，注意绕赤道一周后向量方向的变化。
+在欧几里得空间中，我们从来不需要担心这个问题。如果在 $\mathbb{R}^n$ 的两个不同点 $p$ 和 $q$ 各有一个向量 $v_p$ 和 $v_q$，我们可以直接平移 $v_p$ 到 $q$ 点，然后和 $v_q$ 比较。这是因为欧氏空间有一个自然的平行性——所有点的切空间都可以自然地等同起来。
+图3：联络的必要性（交互式）。左侧展示欧氏空间中不同点的切向量可以直接比较（因为切空间自然等同）；右侧展示弯曲流形上需要"联络"来定义不同点切空间之间的对应关系（橙色虚线表示联络）。你可以拖动图形从不同角度观察。
+图2：在平面上，不同点的切向量可以直接平移比较。每个点上的红色箭头代表同一个向量平移后的结果。
+但在一般的流形上，比如球面上，没有这种自然的等同。每一点的切空间都是一个独立的向量空间，点与点之间的切空间之间没有任何天然的联系。这就是联络概念要解决的根本问题：如何在流形上建立不同点切空间之间的"联络"，从而能够定义方向导数、平行移动，并最终定义曲率。
+联络的概念是现代微分几何的基石，它的历史可以追溯到19世纪中叶。Riemann 在1854年的著名演讲《论几何基础的假设》中已经隐含了联络的思想，但严格的数学表述则是由Levi-Civita、Christoffel、Ricci、Cartan等人在后续几十年中逐步完善的。本文将带你踏上一段从直观到严格的数学之旅，深入理解这个优美而深刻的数学概念。
+第一章：预备知识——流形与切丛 在深入联络的概念之前，我们需要一些基本的几何语言。如果你已经熟悉流形和切丛的概念，可以快速浏览这一章。
+1.1 什么是流形？ 直观地说，流形是一个局部看起来像欧氏空间，但整体可能有复杂弯曲结构的几何对象。
+一维流形：曲线，如圆、线段 二维流形：曲面，如球面、环面、甜甜圈表面 高维流形：难以直接可视化，但数学定义同样适用 形式化定义：一个 $n$ 维拓扑流形是一个豪斯多夫空间 $M$，使得对于任意 $p \in M$，存在一个开邻域 $U \subset M$ 和同胚映射 $\phi: U \to V$，其中 $V$ 是 $\mathbb{R}^n$ 的开子集。$(U, \phi)$ 称为一个坐标卡或坐标图。
+1.2 切空间与切向量 在 $\mathbb{R}^n$ 中，切向量的概念很直观：它是一个指向某个方向的箭头。但在流形上，我们需要更仔细地定义切向量。
+有几种等价的定义方式：
+定义1（方向导数视角）：$p$ 点的切向量是作用在函数上的方向导算子。如果 $v$ 是一个切向量，$\gamma: (-\varepsilon, \varepsilon) \to M$ 是一条满足 $\gamma(0) = p$ 的曲线，那么： $$ v[f] = \left.\frac{d}{dt}\right|_{t=0} f(\gamma(t)) $$
+...</p></div><footer class=entry-footer><span title='2026-01-26 19:30:00 +0800 CST'>January 26, 2026</span>&nbsp;·&nbsp;<span>17 min</span>&nbsp;·&nbsp;<span>3558 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 微分几何中的联络：一场从直观到严格的数学之旅" href=https://s-ai-unix.github.io/posts/2026-01-26-connection-differential-geometry/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/riemann-geometry.jpg alt=黎曼几何可视化></figure><header class=entry-header><h2 class=entry-hint-parent>黎曼几何：弯曲空间的优雅语言</h2></header><div class=entry-content><p>引言：从平行公设到弯曲空间 在人类思想的漫长历程中，欧几里得几何曾被视为绝对真理的典范。两千多年来，人们相信平行公设——“给定一条直线和一个点，通过该点有且仅有一条平行线”——是放之四海而皆准的真理。
+然而，数学的进步往往源于对"显而易见"的质疑。19世纪，几位大胆的数学家独立发现：如果改变平行公设，可以得到完全自洽的几何体系。高斯、波尔约、罗巴切夫斯基发现了双曲几何（负曲率几何），而黎曼则走得更远——他设想了一种全新的几何，其中空间的性质可以逐点变化。
+1854年，黎曼在哥廷根大学的著名演讲《论几何基础的假设》中，提出了一个革命性的概念：空间本身可以是弯曲的，而且这种弯曲可以因位置而异。这一思想后来成为爱因斯坦广义相对论的数学基础。
+在黎曼几何中，距离不再由简单的勾股定理给出，而是由一个依赖于位置的"度量张量"决定。直线被"测地线"取代，平行移动会导致向量旋转，曲率不再是单一数值而是一个复杂的张量。
+在这篇文章中，我们将系统性地介绍黎曼几何的核心概念，从度量张量到曲率张量，从测地线到指数映射，从Ricci流到庞加莱猜想。我们不仅要理解这些概念的数学形式，更要感受它们所蕴含的深刻几何直觉。
+第一章：黎曼流形的基础概念 1.1 从欧氏空间到流形 欧几里得空间 $\mathbb{R}^n$ 是最简单的几何空间。在 $\mathbb{R}^n$ 中，距离由勾股定理给出：两点 $x = (x_1, \ldots, x_n)$ 和 $y = (y_1, \ldots, y_n)$ 之间的距离是
+$$ d(x, y) = \sqrt{\sum_{i=1}^n (y_i - x_i)^2} $$
+这个公式隐含了一个假设：空间在任何地方、任何方向上的"测量标准"都是一样的。但如果我们放松这个假设呢？
+黎曼流形的直觉：想象一张可以任意弯曲但不能拉伸的橡皮膜。膜上每一点的"拉伸程度"不同，导致距离的测量方式也不同。这就是黎曼流形的直观图像。
+定义：黎曼流形 $(M, g)$ 是一个光滑流形 $M$ 配备一个黎曼度量 $g$。黎曼度量 $g$ 是一个对称、正定的 $(0, 2)$ 型张量场，即在每一点 $p \in M$，$g_p$ 是切空间 $T_pM$ 上的内积。
+1.2 局部坐标与度量张量 在局部坐标系 $(x^1, \ldots, x^n)$ 下，黎曼度量可以表示为
+$$ g = \sum_{i,j=1}^n g_{ij} dx^i \otimes dx^j $$
+...</p></div><footer class=entry-footer><span title='2026-01-25 17:00:00 +0800 CST'>January 25, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>925 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 黎曼几何：弯曲空间的优雅语言" href=https://s-ai-unix.github.io/posts/2026-01-25-riemann-geometry/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/intrinsic-extrinsic.jpg alt=内蕴与外蕴几何></figure><header class=entry-header><h2 class=entry-hint-parent>内蕴与外蕴：几何学的两种视角</h2></header><div class=entry-content><p>引言：蚂蚁与上帝 想象一只生活在一个曲面上的蚂蚁。这只蚂蚁不知道它生活在一个二维曲面上，它只知道在自己的"世界"里移动。如果蚂蚁沿着某个方向走了一圈，回到起点，它会发现走过的角度不等于 360 度——这在圆柱面上是 720 度（转了两圈），但在球面上可能大于 360 度。这只蚂蚁能感知到的几何性质，就是我们所说的内蕴几何。
+现在想象一个悬浮在曲面之上的观察者——我们称之为"上帝视角"。这个观察者能看到曲面在三维空间中的具体形状，知道曲面是弯的、扭的、有孔的。这个观察者能看到的几何性质，就是我们所说的外蕴几何。
+内蕴几何与外蕴几何的区别，是微分几何中最核心、最美妙的概念之一。理解了这两个概念，你就掌握了理解黎曼几何的钥匙。
+在本篇文章中，我们将从直观的例子出发，系统性地介绍内蕴几何与外蕴几何的核心内容，探讨它们的区别与联系，并解释 Gauss 的绝妙定理——高斯曲率是内蕴的这一革命性发现。
+第一章：内蕴几何——曲面本身的语言 1.1 蚂蚁的视角：什么是内蕴几何 内蕴几何研究的是不依赖于曲面如何嵌入外部空间的几何性质。简单来说，就是"生活在曲面上的生物"所能感知到的几何性质。
+假设一只蚂蚁生活在一个曲面上。这只蚂蚁可以：
+在曲面上爬行，测量两点之间的路径长度 测量区域的面积 画三角形，计算角度 沿着某个方向走一圈，测量角度的"亏空"或"过剩" 所有这些测量都不需要蚂蚁知道"曲面是在三维空间中的"。
+1.2 第一基本形式：内蕴几何的度量工具 为了描述曲面的内蕴几何，我们需要一个数学工具来测量长度和角度。这个工具就是第一基本形式。
+设曲面由参数方程 $\mathbf{r}(u, v) = (x(u, v), y(u, v), z(u, v))$ 给出。
+定义三个基本量：
+$$ \begin{aligned} E &= \frac{\partial \mathbf{r}}{\partial u} \cdot \frac{\partial \mathbf{r}}{\partial u} = x_u^2 + y_u^2 + z_u^2 \ F &= \frac{\partial \mathbf{r}}{\partial u} \cdot \frac{\partial \mathbf{r}}{\partial v} = x_u x_v + y_u y_v + z_u z_v \ G &= \frac{\partial \mathbf{r}}{\partial v} \cdot \frac{\partial \mathbf{r}}{\partial v} = x_v^2 + y_v^2 + z_v^2 \end{aligned} $$
+...</p></div><footer class=entry-footer><span title='2026-01-25 16:00:00 +0800 CST'>January 25, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>511 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 内蕴与外蕴：几何学的两种视角" href=https://s-ai-unix.github.io/posts/2026-01-25-intrinsic-extrinsic-geometry/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/ig-overview.jpg alt=信息几何可视化></figure><header class=entry-header><h2 class=entry-hint-parent>信息几何：在概率空间中寻找最短路径</h2></header><div class=entry-content><p>引言：当概率成为空间上的点 想象一下，你站在一个巨大的画廊里。墙上挂着无数幅画，每一幅画都是一张概率分布的直方图。如果你要量化两幅画之间的"距离"，你会怎么做？直接比较每个柱子的高度差异？还是考虑某种更本质的、统计学意义上的距离？
+这个问题触及了统计学的核心：如何量化两个概率分布之间的差异。传统的做法是使用 KL 散度或互信息，但这些度量缺乏几何直观——它们不是真正的"距离"，也不满足三角不等式。
+信息几何给出了一种全新的视角：将所有概率分布看作一个黎曼流形，每个分布是流形上的一个点，Fisher 信息矩阵定义了这个流形上的度量张量。在这个框架下，我们可以谈论"两点之间的最短路径"（测地线），可以计算"梯度"（自然梯度），可以定义"曲率"（统计流形的曲率）。
+这个领域的诞生可以追溯到 1945 年，印度统计学家 C. R. Rao 提出了 Fisher 信息度量可以作为微分几何的度量张量。此后，法国数学家 Amari 系统性地发展了信息几何的理论，并将其与神经网络、优化算法相结合。
+在这篇文章中，我们将从基础概念开始，系统性地介绍信息几何的核心理论，探讨其在深度学习中的应用，并对未来的发展方向做出展望。
+第一章：几何概率空间 1.1 概率分布作为流形 考虑一个简单的例子：所有零均值、单位方差的一维高斯分布 $\mathcal{N}(0, \sigma^2)$ 可以用一个参数 $\sigma$ 来表示。但如果我们考虑所有可能的高斯分布 $\mathcal{N}(\mu, \sigma^2)$，这就变成了一个二维的空间。
+更一般地，考虑一个参数族 $\mathcal{P} = {p(x \mid \theta) : \theta \in \Theta}$，其中 $\theta \in \mathbb{R}^n$ 是参数。这个参数族可以看作一个 $n$ 维的流形——这就是统计流形。
+关键洞察：每个概率分布不是孤立的对象，而是镶嵌在无穷维分布空间中的一个点。信息几何的任务就是给这个流形装备一个自然的几何结构。
+1.2 Fisher 信息度量 1945 年，C. R. Rao 发现了一个重要的事实：Fisher 信息矩阵可以定义一个黎曼度量。
+定义：对于参数族 $p(x \mid \theta)$，Fisher 信息矩阵定义为：
+$$ I(\theta){ij} = \mathbb{E}{p(x \mid \theta)}\left[\frac{\partial \log p(x \mid \theta)}{\partial \theta_i} \frac{\partial \log p(x \mid \theta)}{\partial \theta_j}\right] $$
+...</p></div><footer class=entry-footer><span title='2026-01-25 15:00:00 +0800 CST'>January 25, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>483 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 信息几何：在概率空间中寻找最短路径" href=https://s-ai-unix.github.io/posts/2026-01-25-information-geometry/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/nash-embedding-theorem.jpg alt=抽象几何图形></figure><header class=entry-header><h2 class=entry-hint-parent>纳什嵌入定理：弯曲空间如何嵌入平直空间</h2></header><div class=entry-content><p>引言：地图与疆域 想象你手持一个橘子，想要将它的皮完整地剥下来，然后平铺在桌面上。你会发现一个简单的事实：无论你多么小心，橘子皮都无法完美地平铺——它必然会撕裂或起皱。这个日常观察蕴含着深刻的几何真理：弯曲的表面无法无失真地展开成平直的平面。
+然而，数学家们一直在思考一个相反的问题：是否任何弯曲的空间都可以"嵌入"到某个足够高维的平直空间中？这个问题看似抽象，却触及了几何学的本质——什么才是描述弯曲空间的正确方式？
+1954年，一位年轻的数学家用一个惊人的定理彻底回答了这个问题：任何黎曼流形都可以等距地嵌入到欧几里得空间中。这位数学家就是约翰·纳什，而这个定理就是著名的纳什嵌入定理（Nash Embedding Theorem）。
+更令人惊叹的是，纳什不仅证明了存在性，还给出了精确的维数界限：对于紧致流形，$n$ 维黎曼流形可以嵌入到 $n(3n+11)/2$ 维欧氏空间中；对于非紧流形，可以嵌入到 $n(n+1)(3n+11)/2$ 维空间中。
+本文将带你踏上这段智力旅程，从19世纪的几何革命开始，逐步理解纳什定理的背景、证明思想及其深远影响。
+第一章：几何学的危机与重生 1.1 高斯的内蕴几何 1827年，卡尔·高斯发表了一篇革命性的论文《关于曲面的一般研究》。在此之前，数学家研究曲面时总是将其看作三维空间中的对象——曲面的性质被认为依赖于它"如何放置"在周围空间中。
+高斯提出了一个颠覆性的观点：曲面的几何性质应该可以完全从曲面内部来描述，而不需要参考外部空间。他引入了一个关键概念——高斯曲率（Gaussian curvature）$K$，并证明了一个惊人的定理：
+$$ K = \frac{\det(\text{II})}{\det(\text{I})} $$
+其中 $\text{I}$ 是第一基本形式（度量张量），$\text{II}$ 是第二基本形式。更深刻的是高斯的绝妙定理（Theorema Egregium）：
+$$ K = \frac{1}{\sqrt{EG-F^2}}\left[\frac{\partial}{\partial u}\left(\frac{F}{\sqrt{EG-F^2}}\frac{\partial G}{\partial u} - \frac{G}{\sqrt{EG-F^2}}\frac{\partial F}{\partial u}\right) - \frac{\partial}{\partial v}\left(\frac{E}{\sqrt{EG-F^2}}\frac{\partial G}{\partial u} - \frac{F}{\sqrt{EG-F^2}}\frac{\partial E}{\partial u}\right)\right] $$
+这个公式告诉我们：高斯曲率完全由第一基本形式决定，不需要知道曲面在三维空间中如何弯曲。这意味着生活在二维曲面上的"蚂蚁"可以通过测量曲面内部的距离、角度来计算曲率，而无需跳到三维空间中去"看"！
+1.2 黎曼的宏伟构想 1854年，黎曼在高斯工作的基础上，提出了黎曼几何的框架。他的核心思想是：
+推广度量概念：在 $n$ 维流形上定义度量张量 $g_{ij}$，使得弧长微元为： $$ ds^2 = \sum_{i,j=1}^{n} g_{ij}(x)dx^i dx^j $$
+内蕴几何：所有几何性质（曲率、联络、测地线）都由度量张量 $g_{ij}$ 及其导数决定
+抽象流形：流形本身不需要嵌入在任何外部空间中，它是一个独立的几何对象
+黎曼的构想既是解放也是困惑：我们终于可以不依赖外部空间来研究弯曲空间，但这种自由是否也意味着我们失去了一些东西？
+...</p></div><footer class=entry-footer><span title='2026-01-23 11:03:00 +0800 CST'>January 23, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>612 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 纳什嵌入定理：弯曲空间如何嵌入平直空间" href=https://s-ai-unix.github.io/posts/2026-01-23-nash-embedding-theorem/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/ricci-flow-geometry2.jpg alt=几何流中的曲面演化></figure><header class=entry-header><h2 class=entry-hint-parent>Ricci Flow - A Comprehensive Review</h2></header><div class=entry-content><p>Ricci Flow - A Comprehensive Review 引言 想象一个橡皮筋在一张橡胶膜上滑动，随着时间推移，橡胶膜的形状会不断变化，直到达到某种平衡状态。这种"形状随时间演化"的直观想法，正是 Ricci Flow 的核心思想。Ricci Flow 不仅是一个优美的数学概念，更是理解几何结构内在规律的重要工具。
+在 1982 年，数学家 Richard Hamilton 提出了 Ricci Flow 的概念，最初是为了研究流形的几何结构。二十多年后，这一理论被 Grigori Perelman 成功应用于证明庞加莱猜想，彻底改变了几何学的面貌。本文将带您深入了解这个被誉为"几何学中的热方程"的强大工具。
+第一章：预备知识 1.1 流形的基本概念 在讨论 Ricci Flow 之前，我们需要理解流形（Manifold）的概念。简单来说，流形是局部欧几里得的空间，即在每个小邻域内，空间看起来就像 $\mathbb{R}^n$。
+正式定义：一个 $n$ 维流形 $M$ 是一个 Hausdorff 空间，对于每一点 $p \in M$，都存在一个开邻域 $U$ 和一个同胚映射 $\phi: U \to \mathbb{R}^n$。
+1.2 度量张量 流形上的几何结构由度量张量 $g$ 决定。在局部坐标系 ${x^i}$ 中，度量可以表示为一个对称的正定矩阵 $(g_{ij})$，其中 $g_{ij}$ 定义了向量内积：
+$$ \langle X, Y \rangle = g_{ij} X^i Y^j $$
+1.3 黎曼曲率张量 度量张量 $g$ 的导数引出了黎曼曲率张量 $R_{ijkl}$，它衡量了流形的弯曲程度。曲率张量的分量可以通过 Christoffel 符号计算：
+...</p></div><footer class=entry-footer><span title='2026-01-22 08:00:00 +0800 CST'>January 22, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>576 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to Ricci Flow - A Comprehensive Review" href=https://s-ai-unix.github.io/posts/2026-01-22-ricci-flow-comprehensive-review/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/vector-calculus-geometry.jpg alt=向量场的几何直觉></figure><header class=entry-header><h2 class=entry-hint-parent>微积分的三大公式：格林、高斯与斯托克斯定理的统一视角</h2></header><div class=entry-content><p>想象这样一个场景：你站在河边，看着水流在河道中蜿蜒前行。河水的流速在不同的位置和方向上都不同——有的地方湍急，有的地方平缓。如果你想知道流过一个闭合河岸的净水量，你会怎么做？
+直觉告诉你：可以沿着河岸计算流进和流出的差异。但数学告诉你，这等价于计算河岸所包围区域内水源的"产生"或"消失"。这就是格林公式的物理直观。
+从二维的河流到三维的空气流动，从平面上的旋转到空间中的曲面，微积分的三大公式——格林公式、高斯公式、斯托克斯公式——都在讲述同一个深刻的思想：边界上的积分与内部的积分可以通过某种微分运算相互转化。
+一、预备知识：向量微积分的语言 在深入三大公式之前，让我们先回顾一些必要的基础概念。
+1.1 向量场 向量场 $\mathbf{F} : \mathbb{R}^n \to \mathbb{R}^n$ 是一个函数，它给空间中的每个点赋予一个向量。在二维情况下，我们通常写成：
+$$ \mathbf{F}(x, y) = P(x, y)\mathbf{i} + Q(x, y)\mathbf{j} $$
+物理中常见的向量场包括：
+流体的速度场 电磁场的电场或磁场 引力场 1.2 梯度、散度与旋度 假设 $f(x, y, z)$ 是一个标量函数，$\mathbf{F} = (P, Q, R)$ 是一个向量场，我们有三个关键的微分算子：
+梯度：标量场的梯度是一个向量，指向函数增长最快的方向。
+$$ \nabla f = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}\right) $$
+散度：向量场的散度是一个标量，衡量向量场在某点的"发散"程度。
+$$ \nabla \cdot \mathbf{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} $$
+...</p></div><footer class=entry-footer><span title='2026-01-14 22:14:36 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>1167 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 微积分的三大公式：格林、高斯与斯托克斯定理的统一视角" href=https://s-ai-unix.github.io/posts/2026-01-14-greens-gauss-stokes-formulas-guide/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/photo-1620641788421-7a1c342ea42e.jpg alt=抽象几何空间></figure><header class=entry-header><h2 class=entry-hint-parent>黎曼张量度量：弯曲空间的距离语言</h2></header><div class=entry-content><p>引言：如何测量弯曲的世界？ 想象一下，你生活在一个球面上。如果你想测量两点之间的距离，或者两条线之间的夹角，你会怎么做？
+在平坦的欧几里得平面上，这很简单：距离用勾股定理计算，角度用点积定义。但在球面上，直线变成了大圆弧，勾股定理不再成立，角度的计算也变得更加复杂。
+问题的关键在于：我们需要一个通用的方法来定义任意空间中的距离和角度。
+这个方法就是黎曼度量（Riemannian Metric），或者更准确地说，度量张量（Metric Tensor）。它是黎曼几何的基础，也是广义相对论中描述时空的核心工具。
+第一章：从勾股定理到度量张量 欧几里得距离 在二维欧几里得平面上，两点 $(x_1, y_1)$ 和 $(x_2, y_2)$ 之间的距离是：
+$$ d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} $$
+这个公式源自勾股定理。更一般地，如果我们考虑一个微小的位移 $(dx, dy)$，那么对应的距离是：
+$$ ds^2 = dx^2 + dy^2 $$
+这个表达式被称为线元素（line element）。它告诉我们：沿 $x$ 方向移动 $dx$，沿 $y$ 方向移动 $dy$，总距离的平方是 $dx^2 + dy^2$。
+三维欧几里得空间 在三维欧几里得空间中，线元素是：
+$$ ds^2 = dx^2 + dy^2 + dz^2 $$
+我们可以把它写成矩阵形式：
+$$ ds^2 = \begin{pmatrix} dx & dy & dz \end{pmatrix} \begin{pmatrix} 1 & 0 & 0 \ 0 & 1 & 0 \ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} dx \ dy \ dz \end{pmatrix} $$
+...</p></div><footer class=entry-footer><span title='2026-01-14 21:35:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>1144 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 黎曼张量度量：弯曲空间的距离语言" href=https://s-ai-unix.github.io/posts/2026-01-14-riemann-metric-tensor/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/photo-1509228468518-180dd4864904.jpg alt=抽象几何空间></figure><header class=entry-header><h2 class=entry-hint-parent>黎曼曲率张量：弯曲时空的数学语言</h2></header><div class=entry-content><p>引言：从二维到无穷维 在我们之前的文章中，我们探索了高斯曲率（Gaussian Curvature），这个概念描述了二维曲面的弯曲程度。高斯的伟大发现是：曲面的弯曲是"内蕴"的，即只依赖于曲面自身的度量，而与曲面在三维空间中的嵌入方式无关。
+但是，如果我们生活在四维时空中呢？或者更高维的空间？我们还能用同样的方式描述弯曲吗？
+答案是肯定的，但需要更加强大的数学工具。这个工具就是黎曼曲率张量（Riemann Curvature Tensor），由伟大的数学家伯恩哈德·黎曼（Bernhard Riemann）在19世纪中叶提出。
+黎曼曲率张量是黎曼几何的核心概念，它不仅推广了高斯曲率，更成为了广义相对论中描述时空弯曲的数学基础。
+第一章：回顾高斯的遗产 在深入黎曼曲率张量之前，让我们简要回顾高斯的工作。
+高斯曲率与绝妙定理 对于二维曲面，高斯曲率 $K$ 定义为：
+$$ K = \frac{LN - M^2}{EG - F^2} $$
+其中 $E, F, G$ 是第一基本形式的系数，$L, M, N$ 是第二基本形式的系数。
+高斯的绝妙定理告诉我们：$K$ 可以仅用 $E, F, G$ 及其导数表示，因此是曲面的内蕴性质。
+这个定理暗示了一个深刻的观点：空间本身可能有内在的几何结构，这种结构不依赖于任何"外部"空间。
+从曲面到更高维度 高斯的工作集中在二维曲面上。但问题是：如何将这个思想推广到更高维度？
+答案是：我们需要一种能够描述任意维度空间弯曲的数学对象。这个对象必须满足：
+在二维情况下，它应该退化到高斯曲率 它应该包含足够的信息来描述任意方向、任意平面上的弯曲 它应该是内蕴的（即只依赖于度量） 黎曼曲率张量正是满足这些要求的数学对象。
+第二章：黎曼的远见——1854年的演讲 伯恩哈德·黎曼（1826-1866） 伯恩哈德·黎曼是高斯的学生，也是数学史上最具原创性的思想家之一。他的工作跨越数论、复分析、微分几何等多个领域。
+1854年6月10日，黎曼在哥廷根大学做了题为**《论几何基础的假设》**（Über die Hypothesen, welche der Geometrie zu Grunde liegen）的演讲。这篇演讲被认为是微分几何史上最重要的文献之一，也是黎曼几何的奠基之作。
+黎曼几何的基本思想 在这次演讲中，黎曼提出了一个革命性的想法：几何不一定是三维欧几里得空间的子集，它可以是任意维度的"流形"（manifold）。
+黎曼定义：
+流形（Manifold）：局部看起来像欧几里得空间的几何对象 度量（Metric）：定义流形上两点之间的距离和角度 曲率（Curvature）：描述流形的弯曲程度 黎曼意识到：如果我们有一个度量 $g_{ij}$，我们可以计算各种几何量，包括曲率。但这个曲率在高维情况下应该是什么样的？
+黎曼的原始定义 黎曼在演讲中给出了曲率的原始定义（与现代形式略有不同）：
+考虑流形上一点 $P$，取两个切向量 $X, Y$。沿着由 $X$ 和 $Y$ 张成的二维平面，我们可以构建一个"测地三角形"。这个三角形在流形上沿着测地线（最短路径）连接三点。
+...</p></div><footer class=entry-footer><span title='2026-01-14 21:28:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>858 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 黎曼曲率张量：弯曲时空的数学语言" href=https://s-ai-unix.github.io/posts/2026-01-14-riemann-curvature-tensor/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/photo-1635070041078-e363dbe005cb.jpg alt=抽象几何图形></figure><header class=entry-header><h2 class=entry-hint-parent>高斯曲率：弯曲世界的数学语言</h2></header><div class=entry-content><p>引言：弯曲的世界 想象一下，你是一只蚂蚁，生活在一个巨大的球面上。对于这只蚂蚁来说，这个世界看起来是什么样子的？如果你问它：“这个世界是平的还是弯曲的？“它会怎么回答？
+这个问题看似简单，却蕴含着深刻的数学思想。古希腊的欧几里得用五条公理构建了完美的平面几何学，但现实世界中的曲面——球面、马鞍面、波浪形的海浪——让数学家们不得不思考：如何描述这些弯曲的几何形状？
+答案就是曲率，特别是高斯曲率（Gaussian Curvature）。这个概念不仅改变了我们对几何的理解，更成为了现代物理的基石。
+第一章：曲率的直观理解 在深入数学之前，让我们先从直觉出发，理解什么是"弯曲”。
+直线的曲率 一条直线没有弯曲，我们说它的曲率为零。这一点很直观——直线上任意一点都朝同一个方向延伸，没有"拐弯”。
+圆的曲率呢？如果一个圆的半径是 $R$，那么它的曲率定义为：
+$$ \kappa = \frac{1}{R} $$
+这个定义很合理：圆越小（半径越小），弯曲得越厉害，曲率越大；圆越大（半径越大），弯曲越不明显，曲率越小；当半径趋于无穷大时，圆就变成了直线，曲率趋于零。
+平面曲线的曲率 对于任意一条平面曲线，我们可以这样定义曲率：在某一点处，找一个最接近该曲线的圆（称为"密切圆"），这个圆的曲率就是曲线在该点的曲率。
+数学上，如果曲线由参数方程 $(x(t), y(t))$ 给出，曲率的公式是：
+$$ \kappa = \frac{|x’(t)y’’(t) - y’(t)x’’(t)|}{(x’(t)^2 + y’(t)^2)^{3/2}} $$
+这个公式看起来有点复杂，但本质上就是用曲线的二阶导数（加速度）来描述弯曲程度。
+从曲线到曲面 现在我们要迈出关键的一步：从曲线到曲面。球面是弯曲的，马鞍面也是弯曲的，但它们"弯曲"的方式不同。这种差异，正是高斯曲率要捕捉的。
+第二章：从平面到曲面——数学家的探索 古希腊的遗产 古希腊几何学以欧几里得的《几何原本》为代表，建立在五条公理之上。其中最著名的是第五公理（平行公理）：“过直线外一点，有且只有一条直线与该直线平行。”
+这条公理在平面上成立，但在曲面上却不一定成立。这暗示着，曲面的几何可能与平面有本质区别。
+黎曼前的探索 在19世纪初，数学家们开始思考更一般的几何学。Gauss（高斯）之前的一些数学家，如Monge和Euler，已经研究过曲面的某些性质。
+莱昂哈德·欧拉（Leonhard Euler）在1760年给出了一个重要发现：对于曲面上的任意一点，存在两个特殊的方向，沿着这两个方向的法曲率分别取得最大值和最小值。这两个值被称为主曲率，记为 $\kappa_1$ 和 $\kappa_2$。
+欧拉还发现了一个重要公式：如果两个主方向之间的夹角是 $\theta$，那么沿着与第一个主方向夹角为 $\phi$ 的方向的法曲率是：
+$$ \kappa_n(\phi) = \kappa_1 \cos^2 \phi + \kappa_2 \sin^2 \phi $$
+这个公式被称为欧拉曲率公式，它告诉我们，如果知道了两个主曲率，就知道了一切方向的法曲率。
+但欧拉的研究有一个局限：他只考虑了法曲率，即沿着某个方向在法平面内的曲率。这种曲率依赖于曲面在空间中的"嵌入方式"，被称为"外蕴曲率"（extrinsic curvature）。
+卡尔·弗里德里希·高斯的登场 卡尔·弗里德里希·高斯（Carl Friedrich Gauss, 1777-1855）是数学史上最伟大的数学家之一。他在1827年发表了一篇里程碑式的论文：《关于曲面的一般研究》（Disquisitiones Generales Circa Superficies Curvas）。
+...</p></div><footer class=entry-footer><span title='2026-01-14 21:16:00 +0800 CST'>January 14, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>1121 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 高斯曲率：弯曲世界的数学语言" href=https://s-ai-unix.github.io/posts/2026-01-14-gaussian-curvature/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=https://s-ai-unix.github.io/>s-ai-unix's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var n,t=e.innerHTML,s=!1;for(t.indexOf("<em>")!==-1&&(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("</em>")!==-1&&(n=t.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),n=n.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("<em>$")!==-1&&(n=t.replace(/<em>\$/g,"$"),n!==t&&(t=n,s=!0)),t.indexOf("</em>$")!==-1&&(n=t.replace(/<\/em>\$/g,"$"),n!==t&&(t=n,s=!0));t.indexOf("<em>")!==-1&&t.indexOf("</em>")!==-1;){if(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n===t)break;t=n,s=!0}t.indexOf("_{")!==-1&&(n=t.replace(/_{/g,"_{"),n!==t&&(t=n,s=!0)),t.indexOf("}_")!==-1&&(n=t.replace(/}_/g,"}"),n!==t&&(t=n,s=!0)),t.indexOf("\\\\")!==-1&&(n=t.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),n!==t&&(t=n,s=!0)),s&&(e.innerHTML=t)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var n,t=e.innerHTML,s=!1;for(t.indexOf("<em>")!==-1&&(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("</em>")!==-1&&(n=t.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),n=n.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("<em>$")!==-1&&(n=t.replace(/<em>\$/g,"$"),n!==t&&(t=n,s=!0)),t.indexOf("</em>$")!==-1&&(n=t.replace(/<\/em>\$/g,"$"),n!==t&&(t=n,s=!0));t.indexOf("<em>")!==-1&&t.indexOf("</em>")!==-1;){if(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n===t)break;t=n,s=!0}t.indexOf("_{")!==-1&&(n=t.replace(/_{/g,"_{"),n!==t&&(t=n,s=!0)),t.indexOf("}_")!==-1&&(n=t.replace(/}_/g,"}"),n!==t&&(t=n,s=!0)),t.indexOf("\\\\")!==-1&&(n=t.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),n!==t&&(t=n,s=!0)),s&&(e.innerHTML=t)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script></body></html>

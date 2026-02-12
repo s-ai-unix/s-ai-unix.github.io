@@ -1,0 +1,226 @@
+{{ if or .Params.math .Params.mathjax .Site.Params.math .Site.Params.mathjax }}
+<script>
+// 修复 Hugo Goldmark 破坏的数学公式，然后加载 MathJax
+(function() {
+  'use strict';
+
+  // 修复所有被Goldmark破坏的公式格式
+  function fixGoldmarkFormulas() {
+    var elements = document.querySelectorAll('p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul');
+    elements.forEach(function(el) {
+      // 跳过名言组件元素，避免干扰
+      if (el.classList.contains('classical-quote-container') ||
+          el.classList.contains('quote-text') ||
+          el.closest('.classical-quote-container')) {
+        return;
+      }
+      var html = el.innerHTML;
+      var fixed = false;
+
+      // Case 1: 修复 $h_<em>t</em>$ -> $h_t$ (下标斜体问题)
+      if (html.indexOf('<em>') !== -1) {
+        var newHtml = html.replace(
+          /\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,
+          function(match, before, sub, after) {
+            if (/^[\d.,]+$/.test((before + sub + after).replace(/[.,]/g, ''))) {
+              return match; // 跳过货币
+            }
+            return '$' + before + '_' + sub + after + '$';
+          }
+        );
+        newHtml = newHtml.replace(
+          /\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,
+          function(match, before, sub, after) {
+            return '$$' + before + '_' + sub + after + '$$';
+          }
+        );
+        if (newHtml !== html) {
+          html = newHtml;
+          fixed = true;
+        }
+      }
+
+      // Case 2: 修复 $...\sum</em>{i=1}$ -> $...\sum_{i=1}$ (跨边界em标签)
+      if (html.indexOf('</em>') !== -1) {
+        var newHtml = html.replace(
+          /\$([^$]*?)<\/em>([^$]*?)\$/g,
+          function(match, before, after) {
+            return '$' + before + '_{' + after + '$';
+          }
+        );
+        newHtml = newHtml.replace(
+          /\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,
+          function(match, before, after) {
+            return '$$' + before + '_{' + after + '$$';
+          }
+        );
+        if (newHtml !== html) {
+          html = newHtml;
+          fixed = true;
+        }
+      }
+
+      // Case 3: 修复 <em>$...$ -> $...$ (开头的em标签)
+      if (html.indexOf('<em>$') !== -1) {
+        var newHtml = html.replace(/<em>\$/g, '$');
+        if (newHtml !== html) {
+          html = newHtml;
+          fixed = true;
+        }
+      }
+
+      // Case 4: 修复 </em>$... -> </em>$ (结尾的em标签)
+      if (html.indexOf('</em>$') !== -1) {
+        var newHtml = html.replace(/<\/em>\$/g, '$');
+        if (newHtml !== html) {
+          html = newHtml;
+          fixed = true;
+        }
+      }
+
+      // Case 5: 修复 $a_<em>b</em>$ -> $a_b$ (任何位置)
+      while (html.indexOf('<em>') !== -1 && html.indexOf('</em>') !== -1) {
+        var newHtml = html.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,
+          function(match, before, sub, after) {
+            if (/^[\d.,]+$/.test((before + sub + after).replace(/[.,]/g, ''))) {
+              return match; // 跳过货币
+            }
+            return '$' + before + '_' + sub + after + '$';
+          }
+        );
+        newHtml = newHtml.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,
+          function(match, before, sub, after) {
+            return '$$' + before + '_' + sub + after + '$$';
+          }
+        );
+        if (newHtml === html) break; // 没有更多替换了
+        html = newHtml;
+        fixed = true;
+      }
+
+      // Case 6: 修复 _{ (未闭合的下标开始) -> {_{
+      // 这是最关键的问题：_被解析为<em>
+      if (html.indexOf('_{') !== -1) {
+        var newHtml = html.replace(/_{/g, '_{');
+        if (newHtml !== html) {
+          html = newHtml;
+          fixed = true;
+        }
+      }
+
+      // Case 7: 修复 }_ (未闭合的下标结束) -> }}
+      if (html.indexOf('}_') !== -1) {
+        var newHtml = html.replace(/}_/g, '}');
+        if (newHtml !== html) {
+          html = newHtml;
+          fixed = true;
+        }
+      }
+
+      // Case 8: 修复 Goldmark 破坏的下标: </em>{\mathrm{...}} -> _{\mathrm{...}}
+      // 问题: _{\mathrm{pre}} 被解析为 </em>{\mathrm{pre}}
+      if (html.includes('</em>{')) {
+        // 只处理数学公式内的 </em>{\mathrm{...}} 模式
+        // 匹配 \mathbf{W}</em>{\mathrm{pre}} -> \mathbf{W}_{\mathrm{pre}}
+        var newHtml = html.replace(/\\mathbf\{(W|x|y|z)\}<\/em>\{\\mathrm\{([a-z]+)\}\}/g, '\\mathbf{$1}_{\\mathrm{$2}}');
+        // 匹配 L</em>{\mathrm{fine}} -> L_{\mathrm{fine}}
+        newHtml = newHtml.replace(/([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g, '$1_{\\mathrm{$2}}');
+        // 匹配 \nabla L</em>{\mathrm{fine}} -> \nabla L_{\mathrm{fine}}
+        newHtml = newHtml.replace(/\\nabla ([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g, '\\nabla $1_{\\mathrm{$2}}');
+        // 匹配 H</em>{\mathrm{fine}} -> H_{\mathrm{fine}}
+        newHtml = newHtml.replace(/([A-Z])<\/em>\{\\mathrm\{([a-z]+)\}\}/g, '$1_{\\mathrm{$2}}');
+        if (newHtml !== html) {
+          html = newHtml;
+          fixed = true;
+        }
+      }
+
+      // Case 9: 修复 Goldmark 破坏的下标: <em>{\mathrm{...}} -> _{\mathrm{...}}
+      // 问题: _{\mathrm{pre}} 被解析为 <em>{\mathrm{pre}}
+      if (html.includes('<em>{\\mathrm{')) {
+        // 匹配 \mathbf{W}<em>{\mathrm{pre}} -> \mathbf{W}_{\mathrm{pre}}
+        var newHtml = html.replace(/\\mathbf\{(W|x|y|z)\}<em>\{\\mathrm\{([a-z]+)\}\}/g, '\\mathbf{$1}_{\\mathrm{$2}}');
+        // 匹配 L<em>{\mathrm{fine}} -> L_{\mathrm{fine}}
+        newHtml = newHtml.replace(/([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g, '$1_{\\mathrm{$2}}');
+        // 匹配 \nabla L<em>{\mathrm{fine}} -> \nabla L_{\mathrm{fine}}
+        newHtml = newHtml.replace(/\\nabla ([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g, '\\nabla $1_{\\mathrm{$2}}');
+        // 匹配 H<em>{\mathrm{fine}} -> H_{\mathrm{fine}}
+        newHtml = newHtml.replace(/([A-Z])<em>\{\\mathrm\{([a-z]+)\}\}/g, '$1_{\\mathrm{$2}}');
+        if (newHtml !== html) {
+          html = newHtml;
+          fixed = true;
+        }
+      }
+
+      // Case 10: 清理剩余的 </em> 和 <em> 标签（在公式中）
+      if (html.includes('</em>') || html.includes('<em>')) {
+        // 清理数学公式中残留的 em 标签
+        var newHtml = html.replace(/(\$[^$]*?)<em>([^$]*?)<\/em>/g, '$1_{$2}');
+        newHtml = newHtml.replace(/(\$\$[^$]*?)<em>([^$]*?)<\/em>/g, '$1_{$2}');
+        // 直接删除数学公式中的 em 标签（如果不成对）
+        newHtml = newHtml.replace(/(\$[^$]*?)<em>/g, '$1');
+        newHtml = newHtml.replace(/<em>([^$]*?\$)/g, '$1');
+        newHtml = newHtml.replace(/(\$[^$]*?)<\/em>/g, '$1');
+        newHtml = newHtml.replace(/<\/em>([^$]*?\$)/g, '$1');
+        if (newHtml !== html) {
+          html = newHtml;
+          fixed = true;
+        }
+      }
+
+      // Case 11: 修复双重转义: \\ -> \
+      if (html.indexOf('\\\\') !== -1) {
+        var newHtml = html.replace(
+          /(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,
+          function(match, open, content, close) {
+            // 在公式内容中将所有 \\ 替换为 \
+            while (content.indexOf('\\\\') !== -1) {
+              content = content.replace(/\\\\/g, '\\');
+            }
+            return open + content + close;
+          }
+        );
+        if (newHtml !== html) {
+          html = newHtml;
+          fixed = true;
+        }
+      }
+
+      if (fixed) {
+        el.innerHTML = html;
+      }
+    });
+  }
+
+  // 配置 MathJax
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      tags: 'ams',
+      packages: {'[+]': ['noerrors', 'noundefined', 'boldsymbol']},
+      macros: {
+        oiint: '\\mathop{∯}',
+        oiiint: '\\mathop{∰}'
+      }
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    startup: {
+      pageReady: function() {
+        // 在渲染前修复所有被Goldmark破坏的公式
+        fixGoldmarkFormulas();
+        return MathJax.startup.defaultPageReady().then(function() {
+          console.log('MathJax formulas rendered successfully');
+        });
+      }
+    }
+  };
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{{ end }}

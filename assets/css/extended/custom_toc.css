@@ -1,0 +1,132 @@
+/* 自定义侧边悬浮目录样式 */
+
+/* 将目录固定在页面右侧 */
+.post-single {
+    position: relative;
+}
+
+.toc {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    max-width: 250px;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 50;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+/* 目录标题样式 */
+.toc > details > summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 5px 0;
+    color: var(--primary);
+    user-select: none;
+    list-style: none;
+}
+
+.toc > details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.toc > details > summary::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: solid;
+    border-width: 0 2px 2px 0;
+    padding: 3px;
+    transition: transform 0.3s;
+}
+
+.toc > details[open] > summary::after {
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+/* 目录内部样式 */
+.toc .inner {
+    margin-top: 10px;
+    padding-right: 5px;
+}
+
+.toc .inner ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.toc .inner ul ul {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.toc .inner li {
+    margin: 5px 0;
+}
+
+.toc .inner a {
+    color: var(--secondary);
+    text-decoration: none;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+}
+
+.toc .inner a:hover {
+    background: var(--border);
+    color: var(--primary);
+}
+
+/* 当前激活的目录项样式 */
+.toc .inner a.active {
+    background: var(--primary);
+    color: var(--entry);
+    font-weight: 500;
+}
+
+/* 滚动条样式 */
+.toc::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc::-webkit-scrollbar-track {
+    background: var(--entry);
+}
+
+.toc::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+}
+
+.toc::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+/* 在移动设备上隐藏固定目录，改用默认样式 */
+@media (max-width: 1200px) {
+    .toc {
+        position: static;
+        max-width: 100%;
+        max-height: none;
+        margin-bottom: 20px;
+    }
+}
+
+/* 平板设备 */
+@media (max-width: 768px) {
+    .toc {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,153 @@
+baseURL: https://s-ai-unix.github.io/
+languageCode: zh-cn
+title: s-ai-unix's Blog
+theme: PaperMod
+
+build:
+  future: true
+
+# 配置 Goldmark 处理数学公式
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
+      # 包裹代码块不会意外处理数学公式
+      wrapStandAloneParagraphWithin: p
+    renderer:
+      unsafe: true
+      # 硬换行不被转换为 <br>
+      hardwraps: false
+  # 代码高亮配置
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    style: monokai
+    tabWidth: 2
+    noClasses: false
+    lineNumbersInTable: true
+
+ignoreLogs: ['warning-goldmark-raw-html']
+
+params:
+  env: production
+  description: "s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"
+  author: "s-ai-unix"
+
+  # 启用评论功能
+  comments: true
+
+  # 启用 MathJax 数学公式渲染
+  mathjax: true
+
+  defaultTheme: auto
+  ShowShareButtons: true
+  ShareButtons: ["twitter", "linkedin", "facebook", "reddit", "pinterest"]
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowToc: true
+  TocOpen: true
+
+  # 草稿页面提示
+  ShowDraftPageLabel: true
+
+  # 文章封面图片优化
+  cover:
+    responsiveImages: true
+    linkFullImages: true
+
+  # RSS 订阅优化
+  rss:
+    fullContent: true
+
+  # Profile Mode - 更酷的个人首页
+  profileMode:
+    enabled: true
+    title: "s-ai-unix"
+    subtitle: "🚀 胡思乱想家 | 📐 数据魔法师 | 🤖 AI 从业者"
+    imageUrl: "https://api.dicebear.com/7.x/micah/svg?seed=s-ai-unix&backgroundColor=b6e3f4,c0aede,d1d4f9"
+    imageTitle: "s-ai-unix"
+    imageWidth: 140
+    imageHeight: 140
+
+  homeInfoParams:
+    Title: "🚀 欢迎来到我的博客"
+    imageUrl: "https://api.dicebear.com/7.x/micah/svg?seed=s-ai-unix&backgroundColor=b6e3f4,c0aede,d1d4f9"
+    imageTitle: "s-ai-unix"
+    imageWidth: 120
+    imageHeight: 120
+    Content: >
+      这里记录了我的碎碎念。<br><br>
+      如果刚好你也喜欢, 那更好。<br><br>
+      📧 联系方式: [isunix1989@gmail.com](mailto:isunix1989@gmail.com)<br>
+      💻 GitHub: [@s-ai-unix](https://github.com/s-ai-unix)
+
+  socialIcons:
+    - name: email
+      url: "mailto:isunix1989@gmail.com"
+    - name: github
+      url: "https://github.com/s-ai-unix"
+
+  # Giscus 评论系统配置
+  giscus:
+    repo: "s-ai-unix/blog"
+    repoId: "R_kgDOQ3Njaw"
+    category: "General"
+    categoryId: "DIC_kwDOQ3Nja84C0yve"
+    mapping: "pathname"
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "zh-CN"
+    loading: "lazy"
+
+  # 搜索功能配置
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 100
+    threshold: 0.3
+    minMatchCharLength: 2
+    keys: ["title", "summary", "content", "tags"]  # 标题、摘要、内容、标签
+
+menu:
+  main:
+    - identifier: home
+      name: 🏠 首页
+      url: /
+      weight: 10
+    - identifier: posts
+      name: 📚 文章
+      url: /posts/
+      weight: 20
+    - identifier: archives
+      name: 📁 归档
+      url: /archives/
+      weight: 25
+    - identifier: tags
+      name: 🏷️ 标签
+      url: /tags/
+      weight: 30
+    - identifier: search
+      name: 🔍 搜索
+      url: /search/
+      weight: 40
+    - identifier: about
+      name: 👤 关于
+      url: /about/
+      weight: 50
+
+# Hugo 输出配置，用于生成搜索索引
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # 必需，用于搜索功能

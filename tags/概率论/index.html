@@ -1,0 +1,130 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>概率论 | s-ai-unix's Blog</title><meta name=keywords content><meta name=description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta name=author content="s-ai-unix"><link rel=canonical href=https://s-ai-unix.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/><link crossorigin=anonymous href=/assets/css/stylesheet.0833aff7e1cf567ecfb9755701ee95a80535f671e2e1a0a770c9bc20a0a7b5bb.css integrity="sha256-CDOv9+HPVn7PuXVXAe6VqAU19nHi4aCncMm8IKCntbs=" rel="preload stylesheet" as=style><link rel=icon href=https://s-ai-unix.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://s-ai-unix.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://s-ai-unix.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://s-ai-unix.github.io/apple-touch-icon.png><link rel=mask-icon href=https://s-ai-unix.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://s-ai-unix.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/index.xml title=rss><link rel=alternate hreflang=en href=https://s-ai-unix.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://s-ai-unix.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"><meta property="og:site_name" content="s-ai-unix's Blog"><meta property="og:title" content="概率论"><meta property="og:description" content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="概率论"><meta name=twitter:description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><link rel=stylesheet href=https://s-ai-unix.github.io/css/classical-quote.css></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://s-ai-unix.github.io/ accesskey=h title="s-ai-unix's Blog (Alt + H)">s-ai-unix's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://s-ai-unix.github.io/ title="🏠 首页"><span>🏠 首页</span></a></li><li><a href=https://s-ai-unix.github.io/posts/ title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://s-ai-unix.github.io/archives/ title="📁 归档"><span>📁 归档</span></a></li><li><a href=https://s-ai-unix.github.io/tags/ title="🏷️ 标签"><span>🏷️ 标签</span></a></li><li><a href=https://s-ai-unix.github.io/search/ title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://s-ai-unix.github.io/about/ title="👤 关于"><span>👤 关于</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://s-ai-unix.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://s-ai-unix.github.io/tags/>Tags</a></div><h1>概率论</h1></header><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/probability-statistics-ml-guide.jpg alt=概率分布可视化></figure><header class=entry-header><h2 class=entry-hint-parent>概率论与数理统计：机器学习的概率基石</h2></header><div class=entry-content><p>引言：在不确定的世界中寻找确定性 想象一下，你站在一个赌场的轮盘赌桌前。小球在旋转的轮盘上跳跃，最终停在一个数字上。你知道这个结果是完全随机的吗？还是说，如果你能足够精确地测量小球的初始位置、速度、轮盘的摩擦系数等所有参数，你就能预测出最终的结果？
+这个思想实验引发了人类对概率本质的深刻思考。17世纪，法国数学家帕斯卡和费马在通信中讨论赌博问题，标志着概率论作为一门数学学科的诞生。随后的几个世纪里，伯努利、拉普拉斯、高斯等数学大师们为概率论的发展做出了巨大贡献。
+到了20世纪初，俄罗斯数学家柯尔莫哥洛夫给出了概率论的严格公理化定义，将概率论建立在坚实的数学基础之上。几乎同时，贝叶斯的理论开始重新受到重视，为我们提供了一种全新的思考不确定性的方式。
+那么，概率论和机器学习有什么关系呢？
+假设你是一名医生，你需要根据患者的症状来诊断疾病。你有体温、血压、血常规等数据，以及过去的诊断记录。你会怎么做？你会综合考虑所有因素，得出一个诊断结论。这个过程本质上就是一个概率推断过程——根据观测到的数据（症状），推断最可能的原因（疾病）。
+机器学习也是如此。给定一堆数据，模型需要学习数据背后的规律，然后对新的数据进行预测。在这个过程中，不确定性无处不在：数据可能有噪声，模型可能不完美，预测结果也可能有偏差。概率论为我们提供了处理这些不确定性的数学工具。
+在这篇文章中，我们将系统地介绍概率论与数理统计在机器学习中的应用。从基础的概率公理开始，逐步深入到极限定理、统计推断、信息论基础，最后探讨这些理论如何在现代机器学习和深度学习算法中发挥作用。
+第一章：概率基础 1.1 概率的公理化定义 1933年，柯尔莫哥洛夫建立了现代概率论的基础。他提出了三条基本公理：
+公理1（非负性）：对于任何事件 $A$，都有 $P(A) \geq 0$。
+公理2（规范性）：样本空间 $\Omega$ 的概率为 $1$，即 $P(\Omega) = 1$。
+公理3（可加性）：对于任意可数个互斥事件 $A_1, A_2, \ldots$，有
+$$ P\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} P(A_i) $$
+这三条公理看起来很简单，但它们是整个概率论大厦的基石。从这些公理出发，我们可以推导出概率论的所有重要结果。
+例如，对于两个事件 $A$ 和 $B$，我们可以推导出并集的概率公式：
+$$ P(A \cup B) = P(A) + P(B) - P(A \cap B) $$
+这个公式的直观理解是：将 $A$ 的概率和 $B$ 的概率相加时，$A$ 和 $B$ 的交集部分被计算了两次，所以需要减去一次。
+1.2 条件概率和贝叶斯公式 条件概率是概率论中最重要的概念之一。直观地说，条件概率 $P(A \mid B)$ 表示"在事件 $B$ 已经发生的条件下，事件 $A$ 发生的概率"。
+...</p></div><footer class=entry-footer><span title='2026-01-25 12:00:00 +0800 CST'>January 25, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>1058 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 概率论与数理统计：机器学习的概率基石" href=https://s-ai-unix.github.io/posts/2026-01-25-probability-statistics-ml-guide/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/monte-carlo-method.jpg alt=蒙特卡罗方法的随机性可视化></figure><header class=entry-header><h2 class=entry-hint-parent>蒙特卡罗算法：从原子弹到人工智能的随机之旅</h2></header><div class=entry-content><p>引言：掷骰子解方程 想象一下，有人告诉你：要计算一个复杂的定积分，不需要微积分，只需要掷足够多的骰子。你大概会觉得这个人疯了。然而，这正是二十世纪最伟大的计算方法之一——蒙特卡罗方法（Monte Carlo Method）的核心思想。
+当我们面对那些传统方法难以处理的高维积分、复杂系统的模拟或者无法解析求解的概率问题时，蒙特卡罗方法给出了一个看似简单却深刻的答案：用随机性来求解确定性问题。这种方法已经深入到科学的方方面面——从核物理到金融工程，从生物进化到人工智能，无处不见它的身影。
+让我们从一个最经典的例子开始：如何用"扔针"来计算 $\pi$ 的值。
+第一章：蒙特卡罗的诞生——曼哈顿计划的秘密代号 1.1 摩纳哥的赌场与原子弹的秘密 “蒙特卡罗"这个名字，源自摩纳哥著名的赌城。1940 年代，在洛斯阿拉莫斯实验室，一群顶尖的科学家正在紧锣密鼓地研制世界上第一颗原子弹。在这个属于"曼哈顿计划"的绝密基地里，数学家约翰·冯·诺伊曼（John von Neumann）和斯坦尼斯拉夫·乌拉姆（Stanislaw Ulam）正在研究核裂变中的中子扩散问题。
+这个问题极其复杂：中子在原子弹内部的行为是随机的，它们可能被原子核捕获，可能引发新的裂变，也可能逃逸出去。传统的方法根本无法处理这种复杂的随机过程。
+乌拉姆后来回忆起他是如何产生这个想法的：
+“当时我正因病康复，在玩纸牌接龙。我开始思考：如果把牌随机排列一百次，大概有多少次能成功接龙？相比于把所有可能的情况都计算出来，直接实验似乎更容易…”
+这个看似简单的想法，孕育了一个全新的计算方法。由于这种方法涉及随机性，而蒙特卡罗又以赌场闻名，冯·诺伊曼就给它起了"蒙特卡罗"这个代号——既是保密的需要，也恰如其分地描述了方法的本质。
+1.2 早期的思想萌芽 虽然蒙特卡罗方法在1940年代才正式命名，但用随机性来解决确定性问题的思想古已有之。
+1777年，布丰投针实验
+法国数学家乔治-路易·勒克莱尔，布丰伯爵（Georges-Louis Leclerc, Comte de Buffon）提出了第一个著名的随机实验：
+在一张画满平行线的纸（线间距为 $d$）上随机投掷一根长度为 $l$ 的针（$l &lt; d$），针与任意一条平行线相交的概率是多少？
+布丰证明了，这个概率是：
+$$ P = \frac{2l}{\pi d} $$
+这给出了一个计算 $\pi$ 的方法：如果我们投掷针 $N$ 次，其中 $n$ 次与线相交，那么：
+$$ \frac{n}{N} \approx \frac{2l}{\pi d} \implies \pi \approx \frac{2lN}{nd} $$
+这个实验被多次验证：1850年，沃尔夫在苏黎世投掷了5000次，得到 $\pi \approx 3.1596$；1901年，拉泽里尼投掷3408次，甚至得到了精确到小数点后6位的 $\pi$ 值（虽然有人怀疑他可能"选择性记录"了结果）。
+19世纪末的统计学革命
+随着统计学的发展，卡尔·皮尔逊（Karl Pearson）等人开始使用随机抽样来解决统计问题。但这些方法仍然主要用于验证已知的结果，而不是作为通用的计算工具。
+第二章：数学基础——为什么随机性有效？ 要理解蒙特卡罗方法，我们需要先理解它的数学基础。这一切都建立在大数定律和中心极限定理这两大概率论支柱之上。
+...</p></div><footer class=entry-footer><span title='2026-01-21 23:00:00 +0800 CST'>January 21, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>1171 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 蒙特卡罗算法：从原子弹到人工智能的随机之旅" href=https://s-ai-unix.github.io/posts/2026-01-21-monte-carlo-method/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/gaussian-distribution.jpg alt=正态分布钟形曲线></figure><header class=entry-header><h2 class=entry-hint-parent>正态分布：从赌桌到宇宙的完美曲线</h2></header><div class=entry-content><p>引言：钟声隐隐 如果你走进一个 crowded 的教室，测量每个人的身高；或者在同一条件下反复测量一个物理量；又或者在工厂里统计成千上万件产品的尺寸——你会发现，这些数据总是呈现出一种奇特的规律：大部分数值聚集在中间，越往两端越少。
+画出分布图，你会看到一条优雅的曲线——中间隆起如钟，两侧缓缓下降，渐近于零却永不触及。这就是正态分布（Normal Distribution），也叫高斯分布（Gaussian Distribution）或钟形曲线（Bell Curve）。
+它是概率论中最重要、最自然的分布。从气体分子的运动到股票价格的波动，从人类的身高到测量的误差，正态分布无处不在。
+但你是否想过：为什么大自然偏爱这种分布？这条曲线是如何被人类发现的？它背后隐藏着怎样的数学之美？
+让我们穿越回17、18世纪，去看看这条曲线是如何在历史的迷雾中逐渐浮现的。
+第一章：前史——测量与误差的困惑 伽利略的洞见 早在1632年，伽利略在他的《关于两大世界体系的对话》中就观察到了一个有趣的现象：当你反复测量某个物理量时，误差总是呈现出一种规律——小的误差比大的误差更常见，正误差和负误差出现的频率大致相等。
+这是人类对"误差分布"最早的直觉认知之一。伽利略并没有给出数学公式，但他敏锐地察觉到：观测误差并非杂乱无章，而是遵循某种规律。
+早期天文学家的困扰 17、18世纪的天文学家面临着一个实际问题：同一颗行星或恒星，不同观测者得到的数据总有微小差异。如何从这些"有误差"的观测值中推断出真实值？
+当时流行的方法是取平均值，但没有人能从理论上解释为什么这样做是合理的。一个困扰着那个时代科学家的问题是：是否存在一种"最优"的估计方法？
+这些朴素的问题和观察，为正态分布的发现埋下了种子。
+第二章：意外发现——棣莫弗与二项分布的极限 正态分布的第一次正式登场，来自一个看似毫不相关的问题：赌博。
+亚伯拉罕·棣莫弗 亚伯拉罕·棣莫弗（Abraham de Moivre, 1667-1754）是一位法国-英国数学家。他年轻时因宗教迫害流亡英国，在伦敦靠当家庭教师和赌博顾问维生。
+1733年，棣莫弗在研究一个具体问题时做出了一个重大发现：当伯努利试验的次数 $n$ 很大时，二项分布可以用一条光滑的曲线来近似。
+这个发现最初只是他一本小册子中的一段内容，后来被收录进1738年出版的《机遇原理》（The Doctrine of Chances）第二版中。
+从二项分布到正态曲线 考虑抛硬币的问题：抛 $n$ 次硬币，出现 $k$ 次正面的概率由二项分布给出：
+$$P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}$$
+当 $n$ 很大时，直接计算这个公式非常困难——阶乘会变得极其巨大。棣莫弗想知道：能否找到一个近似公式？
+通过巧妙的数学技巧（斯特林公式的早期版本），棣莫弗发现：当 $n \to \infty$ 时，标准化的二项分布收敛到：
+$$f(x) = \frac{1}{\sqrt{2\pi}}e^{-x^2/2}$$
+这就是标准正态分布的概率密度函数！
+历史的遗憾 有趣的是，棣莫弗并不知道自己发现了一个"普适"的分布。他只是把它当作计算二项分布的一个实用技巧。他的工作也没有引起当时学术界的广泛关注。
+直到多年后，这条曲线才被拉普拉斯和高斯重新发掘，并赋予其更深刻的意义。
+flowchart LR A["1632伽利略观测误差规律"] --> B["1733棣莫弗二项分布极限"] B --> C["1809高斯误差理论"] C --> D["1810拉普拉斯中心极限定理"] D --> E["1860麦克斯韦对称性推导"] style A fill:#FF9500,color:#fff,stroke-width:2px style B fill:#FF9500,color:#fff,stroke-width:2px style C fill:#007AFF,color:#fff,stroke-width:3px style D fill:#34C759,color:#fff,stroke-width:2px style E fill:#34C759,color:#fff,stroke-width:2px 第三章：高斯的革命——误差理论与最小二乘法 正态分布真正成为概率论的核心，要归功于卡尔·弗里德里希·高斯（Carl Friedrich Gauss, 1777-1855）。
+...</p></div><footer class=entry-footer><span title='2026-01-21 10:00:00 +0800 CST'>January 21, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>565 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 正态分布：从赌桌到宇宙的完美曲线" href=https://s-ai-unix.github.io/posts/2026-01-21-gaussian-distribution-history/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/bayes-theorem.jpg alt=贝叶斯公式可视化></figure><header class=entry-header><h2 class=entry-hint-parent>贝叶斯公式：从牧师遗作到人工智能基石</h2></header><div class=entry-content><p>引言：从"上帝的视角"到"凡人的推断" 想象你是一名医生，患者刚刚做完某种疾病的筛查测试。测试结果是阳性。那么，这位患者真正患病的概率是多少？
+如果你回答"既然测试准确率是95%，那么患病的概率就是95%"，那你和大多数人的直觉一样——但也一样错了。
+正确答案可能让你吃惊：哪怕测试准确率达到95%，如果这种疾病在人群中发病率只有1%，那么一个阳性结果意味着患者真正患病的概率可能只有16%左右。
+这个反直觉的结果，正是贝叶斯公式的核心思想：我们的信念应该随着新证据的到来而更新，但更新的方式不是简单的替换，而是要结合我们已有的知识（先验信息）。
+贝叶斯公式不仅是一个数学定理，更是一种思维方式。它告诉我们：在信息不完整的世界里，我们如何从有限的数据中学习，如何科学地调整我们的信念。从18世纪的一位英国牧师兼数学家，到21世纪的人工智能，贝叶斯的思想经历了一段跌宕起伏的旅程。
+timeline title 贝叶斯公式发展历程 section 18世纪 1763年 : 贝叶斯遗作发表 1812年 : 拉普拉斯系统阐述 section 19-20世纪 20世纪初 : 频率学派占据主导 20世纪中叶 : 萨瓦奇、杰弗里斯复兴贝叶斯思想 1980年代 : MCMC方法实用化 section 21世纪 21世纪 : 贝叶斯方法成为AI核心 第一章：贝叶斯牧师的那篇遗作 1.1 托马斯·贝叶斯其人 托马斯·贝叶斯（Thomas Bayes，1701-1761）是18世纪英国的一位长老会牧师，同时也是一位业余数学家。他出生于英格兰的一个显赫家庭，父亲是非国教牧师乔舒亚·贝叶斯。托马斯在爱丁堡大学学习神学和逻辑学，后来接任父亲的教职，在坦布里奇韦尔斯（Tunbridge Wells）担任牧师。
+尽管贝叶斯在世时并未在数学领域发表太多作品，但他对概率论有着深刻的思考。他最著名的著作《机会问题的求解方法》（An Essay towards solving a Problem in the Doctrine of Chances）在他去世后于1763年发表在《皇家学会哲学汇刊》上。这篇论文由他的朋友理查德·普莱斯（Richard Price）整理并提交。
+1.2 问题的提出：从"已知原因求结果"到"已知结果求原因" 贝叶斯关注的是一个根本性的哲学和数学问题：如果我们观察到某个结果，如何推断导致这个结果的原因？
+在贝叶斯之前，概率论主要处理"正向概率"问题：如果我们知道某种原因，可以计算它产生特定结果的概率。例如，如果一枚硬币是均匀的，那么抛掷得到正面的概率是50%。
+但现实中我们经常面临"逆向概率"问题：我们观察到了结果，想要推断原因。例如，我们观察到病人有某种症状，想推断他患某种疾病的概率；或者我们观察到数据，想推断产生这些数据的参数。
+贝叶斯的天才之处在于，他用条件概率建立了因果推断的数学框架。
+...</p></div><footer class=entry-footer><span title='2026-01-21 10:00:00 +0800 CST'>January 21, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>878 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 贝叶斯公式：从牧师遗作到人工智能基石" href=https://s-ai-unix.github.io/posts/2026-01-21-bayes-theorem/></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://s-ai-unix.github.io/>s-ai-unix's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var n,t=e.innerHTML,s=!1;for(t.indexOf("<em>")!==-1&&(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("</em>")!==-1&&(n=t.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),n=n.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("<em>$")!==-1&&(n=t.replace(/<em>\$/g,"$"),n!==t&&(t=n,s=!0)),t.indexOf("</em>$")!==-1&&(n=t.replace(/<\/em>\$/g,"$"),n!==t&&(t=n,s=!0));t.indexOf("<em>")!==-1&&t.indexOf("</em>")!==-1;){if(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n===t)break;t=n,s=!0}t.indexOf("_{")!==-1&&(n=t.replace(/_{/g,"_{"),n!==t&&(t=n,s=!0)),t.indexOf("}_")!==-1&&(n=t.replace(/}_/g,"}"),n!==t&&(t=n,s=!0)),t.indexOf("\\\\")!==-1&&(n=t.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),n!==t&&(t=n,s=!0)),s&&(e.innerHTML=t)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var n,t=e.innerHTML,s=!1;for(t.indexOf("<em>")!==-1&&(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("</em>")!==-1&&(n=t.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),n=n.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),n!==t&&(t=n,s=!0)),t.indexOf("<em>$")!==-1&&(n=t.replace(/<em>\$/g,"$"),n!==t&&(t=n,s=!0)),t.indexOf("</em>$")!==-1&&(n=t.replace(/<\/em>\$/g,"$"),n!==t&&(t=n,s=!0));t.indexOf("<em>")!==-1&&t.indexOf("</em>")!==-1;){if(n=t.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),n=n.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),n===t)break;t=n,s=!0}t.indexOf("_{")!==-1&&(n=t.replace(/_{/g,"_{"),n!==t&&(t=n,s=!0)),t.indexOf("}_")!==-1&&(n=t.replace(/}_/g,"}"),n!==t&&(t=n,s=!0)),t.indexOf("\\\\")!==-1&&(n=t.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),n!==t&&(t=n,s=!0)),s&&(e.innerHTML=t)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script></body></html>

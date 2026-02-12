@@ -1,0 +1,41 @@
+{{- partial "mathjax.html" . -}}
+
+<!-- Mermaid 自定义样式 -->
+<link rel="stylesheet" href="{{ "css/mermaid-custom.css" | relURL }}">
+
+<!-- Mermaid 代码块转换脚本 -->
+<script src="{{ "js/mermaid-converter.js" | relURL }}"></script>
+
+<!-- Mermaid 图表支持 -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  // 等待转换脚本执行完成后再初始化
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script>
+
+<!-- TOC 自动高亮和滚动跟随脚本 -->
+{{- if (.Param "ShowToc") }}
+<script src="{{ "js/toc.js" | relURL }}"></script>
+{{- end }}

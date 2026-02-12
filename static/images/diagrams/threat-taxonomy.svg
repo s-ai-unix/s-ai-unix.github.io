@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff">
+    汽车网络安全威胁分类体系
+  </text>
+  <text x="600" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#a0aec0">
+    Automotive Cybersecurity Threat Taxonomy
+  </text>
+  
+  <!-- Central Vehicle Icon -->
+  <g transform="translate(600, 180)">
+    <circle cx="0" cy="0" r="60" fill="#2d2d5a" stroke="#667eea" stroke-width="3"/>
+    <path d="M-30,-10 L-30,15 L-40,25 L-40,35 L30,35 L30,25 L40,15 L40,-10 Q40,-25 0,-25 Q-40,-25 -40,-10 Z" fill="#667eea" opacity="0.3"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#667eea">🚗</text>
+  </g>
+  
+  <!-- Tier 1: System Domains -->
+  <!-- IVI System -->
+  <g transform="translate(150, 120)" filter="url(#shadow)">
+    <rect width="200" height="130" rx="12" fill="#e74c3c" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">信息娱乐系统</text>
+    <text x="100" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ffcdd2">IVI System</text>
+    <line x1="20" y1="60" x2="180" y2="60" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+    <text x="100" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 车载信息娱乐主机</text>
+    <text x="100" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 车载显示器/仪表盘</text>
+    <text x="100" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 车载音响系统</text>
+  </g>
+  
+  <!-- ADAS System -->
+  <g transform="translate(500, 80)" filter="url(#shadow)">
+    <rect width="200" height="130" rx="12" fill="#f39c12" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">驾驶辅助系统</text>
+    <text x="100" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fff3e0">ADAS System</text>
+    <line x1="20" y1="60" x2="180" y2="60" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+    <text x="100" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 摄像头/雷达/激光雷达</text>
+    <text x="100" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 域控制器</text>
+    <text x="100" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 融合感知算法</text>
+  </g>
+  
+  <!-- Body System -->
+  <g transform="translate(850, 120)" filter="url(#shadow)">
+    <rect width="200" height="130" rx="12" fill="#9b59b6" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">车身控制系统</text>
+    <text x="100" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f3e5f5">Body System</text>
+    <line x1="20" y1="60" x2="180" y2="60" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+    <text x="100" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 车门/车窗控制</text>
+    <text x="100" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 灯光/空调控制</text>
+    <text x="100" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 座椅/后视镜控制</text>
+  </g>
+  
+  <!-- Powertrain System -->
+  <g transform="translate(150, 300)" filter="url(#shadow)">
+    <rect width="200" height="130" rx="12" fill="#3498db" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">动力系统</text>
+    <text x="100" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#e3f2fd">Powertrain</text>
+    <line x1="20" y1="60" x2="180" y2="60" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+    <text x="100" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 发动机/变速箱控制</text>
+    <text x="100" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 电机控制系统</text>
+    <text x="100" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 电池管理系统(BMS)</text>
+  </g>
+  
+  <!-- Chassis System -->
+  <g transform="translate(500, 300)" filter="url(#shadow)">
+    <rect width="200" height="130" rx="12" fill="#1abc9c" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">底盘系统</text>
+    <text x="100" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#e0f2f1">Chassis System</text>
+    <line x1="20" y1="60" x2="180" y2="60" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+    <text x="100" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 制动系统(ABS/ESC)</text>
+    <text x="100" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 转向系统(EPS)</text>
+    <text x="100" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 悬挂系统</text>
+  </g>
+  
+  <!-- Gateway/Cloud -->
+  <g transform="translate(850, 300)" filter="url(#shadow)">
+    <rect width="200" height="130" rx="12" fill="#27ae60" opacity="0.9"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">网关与云平台</text>
+    <text x="100" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#e8f5e9">Gateway & Cloud</text>
+    <line x1="20" y1="60" x2="180" y2="60" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+    <text x="100" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 车载网关</text>
+    <text x="100" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• T-BOX/远程通信</text>
+    <text x="100" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">• 云端服务平台</text>
+  </g>
+  
+  <!-- Tier 2: Attack Vectors -->
+  <g transform="translate(50, 480)">
+    <rect width="1100" height="200" rx="16" fill="#0f0f23" stroke="#2d2d5a" stroke-width="2"/>
+    <text x="550" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">攻击向量分类</text>
+    
+    <!-- Remote Attacks -->
+    <g transform="translate(30, 50)">
+      <rect width="160" height="130" rx="8" fill="#c0392b"/>
+      <text x="80" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">远程攻击</text>
+      <text x="80" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ffcdd2">Remote</text>
+      <line x1="15" y1="55" x2="145" y2="55" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+      <text x="80" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 云平台漏洞利用</text>
+      <text x="80" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 移动通信拦截</text>
+      <text x="80" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 手机APP攻击</text>
+    </g>
+    
+    <!-- Physical Attacks -->
+    <g transform="translate(210, 50)">
+      <rect width="160" height="130" rx="8" fill="#8e44ad"/>
+      <text x="80" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">物理攻击</text>
+      <text x="80" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f3e5f5">Physical</text>
+      <line x1="15" y1="55" x2="145" y2="55" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+      <text x="80" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• OBD诊断接口</text>
+      <text x="80" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• USB/SD卡注入</text>
+      <text x="80" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 直接硬件接入</text>
+    </g>
+    
+    <!-- Proximity Attacks -->
+    <g transform="translate(390, 50)">
+      <rect width="160" height="130" rx="8" fill="#2980b9"/>
+      <text x="80" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">近场攻击</text>
+      <text x="80" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e3f2fd">Proximity</text>
+      <line x1="15" y1="55" x2="145" y2="55" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+      <text x="80" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 蓝牙/WiFi攻击</text>
+      <text x="80" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 密钥中继攻击</text>
+      <text x="80" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 胎压传感器欺骗</text>
+    </g>
+    
+    <!-- Sensor Attacks -->
+    <g transform="translate(570, 50)">
+      <rect width="160" height="130" rx="8" fill="#16a085"/>
+      <text x="80" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">传感器攻击</text>
+      <text x="80" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e0f2f1">Sensor</text>
+      <line x1="15" y1="55" x2="145" y2="55" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+      <text x="80" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 激光雷达欺骗</text>
+      <text x="80" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 摄像头致盲</text>
+      <text x="80" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 对抗性补丁</text>
+    </g>
+    
+    <!-- V2X Attacks -->
+    <g transform="translate(750, 50)">
+      <rect width="160" height="130" rx="8" fill="#d35400"/>
+      <text x="80" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">V2X通信攻击</text>
+      <text x="80" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fbe9e7">V2X</text>
+      <line x1="15" y1="55" x2="145" y2="55" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+      <text x="80" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 虚假信息注入</text>
+      <text x="80" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 位置欺骗</text>
+      <text x="80" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• DoS攻击</text>
+    </g>
+    
+    <!-- Supply Chain -->
+    <g transform="translate(930, 50)">
+      <rect width="160" height="130" rx="8" fill="#7f8c8d"/>
+      <text x="80" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">供应链攻击</text>
+      <text x="80" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#eceff1">Supply Chain</text>
+      <line x1="15" y1="55" x2="145" y2="55" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+      <text x="80" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 第三方组件漏洞</text>
+      <text x="80" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 依赖库投毒</text>
+      <text x="80" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fff">• 开发环境入侵</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="695" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">
+    Threat Taxonomy | Automotive Attack Surface Analysis
+  </text>
+</svg>
