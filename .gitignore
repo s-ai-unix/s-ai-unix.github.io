@@ -1,11 +1,22 @@
+# Hugo build outputs
+posts/
+public/
+resources/
+
 # Hugo
 /public/
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json
+.hugo_build.lock
+hugo.log
 
 # macOS
 .DS_Store
+
+# Python
+__pycache__/
+*.pyc
 
 # Temporary files
 *.tmp
