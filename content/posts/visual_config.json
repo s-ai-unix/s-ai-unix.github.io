@@ -1,55 +1,55 @@
 {
-  "article_title": "2026-02-22-github-pages-404故障排查深度分析与根因定位",
+  "article_title": "[九]彭罗斯霍金奇点定理",
   "sections": [
     {
-      "h2_title": "引言：当博客突然消失",
-      "visual_description": "A minimalist editorial illustration showing a digital library structure dissolving into pixels and fading away, with a magnifying glass examining scattered fragments in the foreground. The composition suggests sudden disappearance and the need for investigation. Black and white pen and ink sketch, loose confident strokes, intentional white space, New Yorker magazine illustration style.",
-      "caption": "博客突然消失"
+      "h2_title": "引言：时空的终极命运",
+      "visual_description": "A dramatic illustration of a collapsing star forming a black hole, with spacetime bending and warping around it. The singularity at the center represented as a point of infinite curvature. Minimalist editorial style with deep blacks and subtle light rays.",
+      "caption": "时空的终极命运"
     },
     {
-      "h2_title": "第一章：问题的初步诊断",
-      "visual_description": "A conceptual diagram showing a medical examination scene. A patient representing the blog sits on an examination table while a doctor checks temperature with a thermometer. The scene represents surface-level symptom observation without deeper investigation. Clean lines, architectural precision, minimalist composition. Black and white ink sketch with cross-hatching details, New Yorker editorial style.",
-      "caption": "初步诊断症状"
+      "h2_title": "第一章：预备知识——时空的数学结构",
+      "visual_description": "A clean diagram showing the structure of spacetime with light cones - future light cone, past light cone, and spacelike regions. Geometric representation of Lorentzian manifold. Editorial illustration style.",
+      "caption": "时空的数学结构"
     },
     {
-      "h2_title": "第二章：根因分析的两种路径",
-      "visual_description": "A fork-in-the-road illustration showing two distinct paths diverging in a forest. The left path is short and level but ends abruptly at a dead end surrounded by fog and confusion. The right path winds uphill requiring more effort but leads to a clear summit with panoramic view. The composition represents choosing between superficial and deep investigation. Pen and ink drawing with selective shading, elegant negative space, New Yorker style.",
-      "caption": "两种分析路径"
+      "h2_title": "第二章：能量条件——物质的物理约束",
+      "visual_description": "An abstract representation of energy conditions in physics - vectors and tensors visualized with geometric arrows. Clean line art showing the relationship between energy-momentum and spacetime curvature.",
+      "caption": "能量条件"
     },
     {
-      "h2_title": "第三章：两种方法的深度对比",
-      "visual_description": "A split-screen comparison illustration. Left panel shows a person looking at their reflection in a mirror, seeing only surface appearance. Right panel shows the same person using an X-ray machine viewer, revealing detailed internal skeletal structures beneath the surface. The contrast emphasizes superficial versus deep analysis. Minimalist line art with thoughtful use of negative space, New Yorker editorial illustration.",
-      "caption": "深度对比分析"
+      "h2_title": "第三章：Raychaudhuri方程——奇点定理的核心工具",
+      "visual_description": "A diagram showing a congruence of geodesics converging toward a focal point. Rays of light bending inward due to gravity. The focusing effect visualized with clean geometric lines.",
+      "caption": "测地线聚焦"
     },
     {
-      "h2_title": "第四章：核心差异分析",
-      "visual_description": "An analytical illustration showing two puzzle pieces being examined side by side. The left piece appears smooth and simple on its surface. The right piece, when viewed from a cross-sectional angle, reveals complex internal gears and interlocking mechanisms working together. The composition highlights how deeper examination reveals hidden complexity and system interactions. Black and white sketch with detailed mechanical elements, architectural precision.",
-      "caption": "核心差异识别"
+      "h2_title": "第四章：彭罗斯奇点定理——黑洞的必然性",
+      "visual_description": "An illustration of a closed trapped surface - a spherical region where even outward-directed light is bent back by gravity. The concept of gravitational collapse visualized. Editorial illustration.",
+      "caption": "闭合捕获面"
     },
     {
-      "h2_title": "第五章：为什么会这样？",
-      "visual_description": "A conceptual illustration of cognitive bias showing a person looking through a distorted lens or prism that only shows a narrow slice of reality. Surrounding the person are multiple alternative perspectives represented as faint outlines or shadows they cannot see. The composition illustrates how our perceptions can be limited by initial assumptions. Minimalist editorial style with intentional use of light and shadow contrast, New Yorker magazine aesthetic.",
-      "caption": "认知偏差分析"
+      "h2_title": "第五章：霍金奇点定理——宇宙的起点",
+      "visual_description": "A dramatic visualization of the Big Bang - the initial singularity of the universe. Light emanating from a central point representing the beginning of time and space. Cosmic expansion editorial illustration.",
+      "caption": "宇宙的起点"
     },
     {
-      "h2_title": "第六章：方法论总结",
-      "visual_description": "A systematic illustration showing an organized toolbox with precision tools arranged on a workbench. Each tool represents a different method: a magnifying glass for analysis, a level for balance, a compass for direction, a caliper for measurement. The tools are neatly arranged in rows, suggesting methodical systematic approach. Clean lines, geometric precision, black and white pen and ink sketch with cross-hatching for depth.",
-      "caption": "方法论总结"
+      "h2_title": "第六章：奇点的本质与类型",
+      "visual_description": "A comparative diagram showing different types of singularities - spacelike, timelike, and null. Geometric representations of spacetime diagrams with different singularity structures.",
+      "caption": "奇点的类型"
     },
     {
-      "h2_title": "第七章：启示与经验教训",
-      "visual_description": "An inspirational illustration showing a mountaineer reaching a summit. The tiny figure stands at the peak looking down at the landscape they climbed through. The journey from base to summit is visible, representing gaining perspective through experience and effort. Sweeping landscape with minimalist figure, emphasis on vastness and clarity achieved through elevation, New Yorker editorial illustration style.",
-      "caption": "经验教训启示"
+      "h2_title": "第七章：意义、局限与展望",
+      "visual_description": "An abstract representation of quantum gravity - discrete spacetime, string theory vibrations, or loop quantum gravity spin networks. Conceptual illustration of physics beyond general relativity.",
+      "caption": "量子引力展望"
     },
     {
-      "h2_title": "第八章：预防机制",
-      "visual_description": "A technical illustration showing an automated quality control system. A conveyor belt with items passing through a scanning gate equipped with gears, sensors, and filters. Defective items are automatically diverted while good items continue. The composition suggests systematic prevention through automated checks. Architectural precision, mechanical details, black and white line art with cross-hatching, New Yorker style.",
-      "caption": "预防机制建立"
+      "h2_title": "结语：数学之美的物理回响",
+      "visual_description": "A contemplative illustration of a person looking up at the night sky, with subtle mathematical equations and geometric patterns in the background. Elegant editorial style representing the harmony of mathematics and physics.",
+      "caption": "数学与物理"
     },
     {
-      "h2_title": "结语：从症状到根源的跃迁",
-      "visual_description": "A transformative illustration showing a spiral staircase ascending from dark chaotic fragments at the bottom into clear organized patterns at the top. Light increases progressively upward. The journey represents cognitive leap from surface symptoms to root cause understanding. Dramatic use of line density to create light and shadow contrast, minimalist but powerful composition, New Yorker magazine style.",
-      "caption": "认知跃迁"
+      "h2_title": "参考文献",
+      "visual_description": "Minimalist abstract shapes representing academic references and citations. Clean editorial illustration with subtle geometric elements.",
+      "caption": "参考文献"
     }
   ]
 }
