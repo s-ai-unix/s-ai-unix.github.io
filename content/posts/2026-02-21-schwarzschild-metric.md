@@ -207,4 +207,4 @@ $$r_s \approx 9 \text{ 毫米}$$
 
 ---
 
-*参考来源：本文主要参考 Wikipedia - Derivation of the Schwarzschild solution, Sean Carroll - Lecture Notes on General Relativity, 以及 Sabine Hossenfelder 的博文。*
+参考来源：本文主要参考 Wikipedia - Derivation of the Schwarzschild solution, Sean Carroll - Lecture Notes on General Relativity, 以及 Sabine Hossenfelder 的博文。
