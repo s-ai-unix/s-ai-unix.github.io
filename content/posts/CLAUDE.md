@@ -10,4 +10,11 @@
 | #1218 | 11:10 AM | ✅ | Converted LaTeX math equations to HTML in article | ~202 |
 | #1195 | 10:56 AM | 🔵 | User investigating image paths in Hugo blog post | ~237 |
 | #1185 | 10:14 AM | 🔵 | Located source article file for WeChat publishing | ~193 |
+
+### Feb 22, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #1923 | 12:00 PM | 🔴 | Fixed LaTeX formula underscore escaping in markdown article | ~269 |
+| #1897 | 11:50 AM | 🟣 | Completed comprehensive Bianchi identity blog article with mathematical content | ~437 |
 </claude-mem-context>
