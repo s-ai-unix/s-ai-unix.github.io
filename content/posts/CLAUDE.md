@@ -19,7 +19,6 @@
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
 | #1968 | 12:39 PM | 🔴 | Recovered and restored Bianchi identity article with corrected image paths | ~356 |
-| #1961 | 12:38 PM | 🔴 | Fixed Bianchi identity article cover image path from relative to absolute URL | ~236 |
 | #1942 | 12:16 PM | 🔴 | Fixed underscore escaping in Hilbert Action article formulas before Hugo build | ~258 |
 | #1939 | 12:14 PM | 🟣 | Created comprehensive article about Hilbert Action and Einstein field equations | ~490 |
 | #1923 | 12:00 PM | 🔴 | Fixed LaTeX formula underscore escaping in markdown article | ~269 |

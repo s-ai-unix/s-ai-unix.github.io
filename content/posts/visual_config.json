@@ -1,0 +1,55 @@
+{
+  "article_title": "2026-02-22-github-pages-404故障排查深度分析与根因定位",
+  "sections": [
+    {
+      "h2_title": "引言：当博客突然消失",
+      "visual_description": "A minimalist editorial illustration showing a digital library structure dissolving into pixels and fading away, with a magnifying glass examining scattered fragments in the foreground. The composition suggests sudden disappearance and the need for investigation. Black and white pen and ink sketch, loose confident strokes, intentional white space, New Yorker magazine illustration style.",
+      "caption": "博客突然消失"
+    },
+    {
+      "h2_title": "第一章：问题的初步诊断",
+      "visual_description": "A conceptual diagram showing a medical examination scene. A patient representing the blog sits on an examination table while a doctor checks temperature with a thermometer. The scene represents surface-level symptom observation without deeper investigation. Clean lines, architectural precision, minimalist composition. Black and white ink sketch with cross-hatching details, New Yorker editorial style.",
+      "caption": "初步诊断症状"
+    },
+    {
+      "h2_title": "第二章：根因分析的两种路径",
+      "visual_description": "A fork-in-the-road illustration showing two distinct paths diverging in a forest. The left path is short and level but ends abruptly at a dead end surrounded by fog and confusion. The right path winds uphill requiring more effort but leads to a clear summit with panoramic view. The composition represents choosing between superficial and deep investigation. Pen and ink drawing with selective shading, elegant negative space, New Yorker style.",
+      "caption": "两种分析路径"
+    },
+    {
+      "h2_title": "第三章：两种方法的深度对比",
+      "visual_description": "A split-screen comparison illustration. Left panel shows a person looking at their reflection in a mirror, seeing only surface appearance. Right panel shows the same person using an X-ray machine viewer, revealing detailed internal skeletal structures beneath the surface. The contrast emphasizes superficial versus deep analysis. Minimalist line art with thoughtful use of negative space, New Yorker editorial illustration.",
+      "caption": "深度对比分析"
+    },
+    {
+      "h2_title": "第四章：核心差异分析",
+      "visual_description": "An analytical illustration showing two puzzle pieces being examined side by side. The left piece appears smooth and simple on its surface. The right piece, when viewed from a cross-sectional angle, reveals complex internal gears and interlocking mechanisms working together. The composition highlights how deeper examination reveals hidden complexity and system interactions. Black and white sketch with detailed mechanical elements, architectural precision.",
+      "caption": "核心差异识别"
+    },
+    {
+      "h2_title": "第五章：为什么会这样？",
+      "visual_description": "A conceptual illustration of cognitive bias showing a person looking through a distorted lens or prism that only shows a narrow slice of reality. Surrounding the person are multiple alternative perspectives represented as faint outlines or shadows they cannot see. The composition illustrates how our perceptions can be limited by initial assumptions. Minimalist editorial style with intentional use of light and shadow contrast, New Yorker magazine aesthetic.",
+      "caption": "认知偏差分析"
+    },
+    {
+      "h2_title": "第六章：方法论总结",
+      "visual_description": "A systematic illustration showing an organized toolbox with precision tools arranged on a workbench. Each tool represents a different method: a magnifying glass for analysis, a level for balance, a compass for direction, a caliper for measurement. The tools are neatly arranged in rows, suggesting methodical systematic approach. Clean lines, geometric precision, black and white pen and ink sketch with cross-hatching for depth.",
+      "caption": "方法论总结"
+    },
+    {
+      "h2_title": "第七章：启示与经验教训",
+      "visual_description": "An inspirational illustration showing a mountaineer reaching a summit. The tiny figure stands at the peak looking down at the landscape they climbed through. The journey from base to summit is visible, representing gaining perspective through experience and effort. Sweeping landscape with minimalist figure, emphasis on vastness and clarity achieved through elevation, New Yorker editorial illustration style.",
+      "caption": "经验教训启示"
+    },
+    {
+      "h2_title": "第八章：预防机制",
+      "visual_description": "A technical illustration showing an automated quality control system. A conveyor belt with items passing through a scanning gate equipped with gears, sensors, and filters. Defective items are automatically diverted while good items continue. The composition suggests systematic prevention through automated checks. Architectural precision, mechanical details, black and white line art with cross-hatching, New Yorker style.",
+      "caption": "预防机制建立"
+    },
+    {
+      "h2_title": "结语：从症状到根源的跃迁",
+      "visual_description": "A transformative illustration showing a spiral staircase ascending from dark chaotic fragments at the bottom into clear organized patterns at the top. Light increases progressively upward. The journey represents cognitive leap from surface symptoms to root cause understanding. Dramatic use of line density to create light and shadow contrast, minimalist but powerful composition, New Yorker magazine style.",
+      "caption": "认知跃迁"
+    }
+  ]
+}
