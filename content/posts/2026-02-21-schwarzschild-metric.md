@@ -6,7 +6,7 @@ description: "从1916年战壕中的一封信，到黑洞的存在预言——�
 categories: ["物理", "数学"]
 tags: ["广义相对论", "微分几何", "数学史", "黑洞"]
 cover:
-    image: "images/covers/schwarzschild-cover.png"
+    image: "images/covers/schwarzschild-cover.jpg"
     alt: "施瓦西度规概念图"
     caption: "施瓦西度规：球对称真空中的时空几何"
 math: true
@@ -173,7 +173,7 @@ $$r_s \approx 9 \text{ 毫米}$$
 
 **2015年**：LIGO首次探测到引力波——两个黑洞碰撞产生的时空涟漪。**2019年**：事件视界望远镜（EHT）拍摄到黑洞M87*的首张照片。
 
-![M87黑洞](/images/plots/schwarzschild-m87-blackhole.png)
+![M87黑洞](/images/plots/schwarzschild-m87-blackhole.jpg)
 
 **图1**：事件视界望远镜拍摄的人类史上首张黑洞照片（M87*），距离地球5500万光年，质量约为太阳的65亿倍。
 

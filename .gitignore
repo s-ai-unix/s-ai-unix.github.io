@@ -1,11 +1,10 @@
-# Hugo build outputs
-posts/
-public/
-resources/
-images/
+# Hugo build outputs (repo root only)
+/posts/
+/public/
+/resources/
+/images/
 
 # Hugo
-/public/
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json
