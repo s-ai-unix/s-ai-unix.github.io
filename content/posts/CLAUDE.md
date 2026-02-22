@@ -7,14 +7,23 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
+| #1220 | 11:11 AM | 🔴 | Manual HTML fix for nested paragraph tags in math formulas | ~265 |
 | #1218 | 11:10 AM | ✅ | Converted LaTeX math equations to HTML in article | ~202 |
+| #1213 | 11:07 AM | 🟣 | Article regenerated with MathJax formula rendering support | ~231 |
+| #1204 | 11:05 AM | 🔵 | Checked KaTeX SVG rendering in converted HTML article | ~197 |
 | #1195 | 10:56 AM | 🔵 | User investigating image paths in Hugo blog post | ~237 |
+| #1189 | 10:41 AM | 🟣 | Article converted to HTML and saved for WeChat publishing | ~221 |
 | #1185 | 10:14 AM | 🔵 | Located source article file for WeChat publishing | ~193 |
 
 ### Feb 22, 2026
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
+| #1982 | 12:46 PM | 🔵 | Confirmed Bianchi identity article exists with proper frontmatter and structure | ~308 |
+| #1968 | 12:39 PM | 🔴 | Recovered and restored Bianchi identity article with corrected image paths | ~356 |
+| #1961 | 12:38 PM | 🔴 | Fixed Bianchi identity article cover image path from relative to absolute URL | ~236 |
+| #1942 | 12:16 PM | 🔴 | Fixed underscore escaping in Hilbert Action article formulas before Hugo build | ~258 |
+| #1939 | 12:14 PM | 🟣 | Created comprehensive article about Hilbert Action and Einstein field equations | ~490 |
 | #1923 | 12:00 PM | 🔴 | Fixed LaTeX formula underscore escaping in markdown article | ~269 |
 | #1897 | 11:50 AM | 🟣 | Completed comprehensive Bianchi identity blog article with mathematical content | ~437 |
 </claude-mem-context>
