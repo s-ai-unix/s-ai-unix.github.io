@@ -1,5 +1,36 @@
 # Hugo Blog Project - Claude Code Configuration
 
+## 🔒 提交前强制检查（CRITICAL）
+
+**所有文章提交前必须通过以下检查**：
+
+```bash
+# 1. 数学公式检查（必须执行）
+python3 scripts/check_math_formulas.py content/posts/文章.md
+
+# 2. 完整质量检查（推荐）
+python3 scripts/pre_publish_check.py content/posts/文章.md
+
+# 3. 本地构建验证（必须执行）
+hugo --minify
+
+# 4. 本地预览检查（强烈推荐）
+hugo server -D
+# 在浏览器中 http://127.0.0.1:1313/ 确认公式正确渲染
+```
+
+**⚠️ Git Pre-commit Hook 会自动检查**：
+- 如果数学公式格式不正确，commit 会被阻止
+- 如需跳过检查（不推荐）：`git commit --no-verify`
+
+**快速诊断工具**：
+```bash
+# 诊断单个文章
+./scripts/diagnose_blog.sh content/posts/文章.md
+```
+
+---
+
 ## Skills Management
 
 **IMPORTANT**: This project uses **global skills only**. Do NOT create project-level skills in `.claude/skills/`.

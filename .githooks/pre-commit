@@ -1,0 +1,31 @@
+#!/bin/bash
+# Git pre-commit hook for Hugo blog
+# 自动检查数学公式格式
+
+echo "🔍 Running pre-commit checks..."
+
+# 检查修改的 .md 文件
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$')
+
+if [ -n "$FILES" ]; then
+    echo "📝 Checking markdown files:"
+    echo "$FILES"
+    echo ""
+
+    # 运行数学公式检查
+    python3 scripts/check_math_formulas.py $FILES
+
+    if [ $? -ne 0 ]; then
+        echo ""
+        echo "❌ Math formula check failed!"
+        echo "Please fix the issues before committing."
+        echo ""
+        echo "💡 提示："
+        echo "   - 下划线必须转义: \$x_i\$ → \$x\\_i\$"
+        echo "   - 运��修复脚本: python3 scripts/latex_hugo_fix.py <file.md>"
+        exit 1
+    fi
+fi
+
+echo ""
+echo "✅ Pre-commit checks passed!"
