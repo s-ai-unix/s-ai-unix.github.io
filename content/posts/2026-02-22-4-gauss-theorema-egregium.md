@@ -3,6 +3,7 @@ title: "[四] 高斯绝妙定理：弯曲时空的内禀几何"
 date: 2026-01-12T23:00:00+08:00
 draft: false
 description: "从零开始详细推导微分几何中的高斯绝妙定理，包括曲面论基础、协变导数、黎曼曲率张量，以及在地图投影、广义相对论、计算机图形学中的应用"
+slug: "gauss-theorema-egregium"
 categories: ["数学", "微分几何"]
 tags: ["微分几何", "数学史", "黎曼几何"]
 cover:

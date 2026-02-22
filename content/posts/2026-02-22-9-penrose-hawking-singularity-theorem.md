@@ -3,6 +3,7 @@ title: "[九] 彭罗斯-霍金奇点定理：广义相对论的终极边界"
 date: 2026-01-29T19:00:00+08:00
 draft: false
 description: "本文系统综述彭罗斯-霍金奇点定理的理论体系，从物理直觉出发，深入剖析其数学结构、推导过程与物理意义，探索广义相对论中时空奇点的不可避免性。"
+slug: "penrose-hawking-singularity"
 categories: ["物理学", "广义相对论"]
 tags: ["广义相对论", "微分几何", "综述", "数学史", "黑洞"]
 cover:
@@ -14,7 +15,7 @@ math: true
 
 ## 引言：时空的终极命运
 
-![引言：时空的终极命运](01.inbox/papers/posts/illustrations/[九]彭罗斯霍金奇点定理-01.png)
+![引言：时空的终极命运](01.inbox/papers/posts/illustrations/2026-02-22-9-penrose-hawking-singularity-theorem-01.png)
 
 
 1965年的一个春日，年轻的数学家罗杰·彭罗斯（Roger Penrose）正坐在剑桥大学的一个咖啡馆里，凝视着手中咖啡杯里旋转的泡沫。那一刻，一个改变物理学史的洞见在他脑海中闪现：**如果一个恒星坍缩得足够致密，奇点的形成将是不可避免的**——这不是由于某种特殊的对称性假设，而是源于引力的普遍性质。
@@ -35,7 +36,7 @@ math: true
 
 ## 第一章：预备知识——时空的数学结构
 
-![第一章：预备知识——时空的数学结构](01.inbox/papers/posts/illustrations/[九]彭罗斯霍金奇点定理-02.png)
+![第一章：预备知识——时空的数学结构](01.inbox/papers/posts/illustrations/2026-02-22-9-penrose-hawking-singularity-theorem-02.png)
 
 
 ### 1.1 什么是时空？
@@ -148,7 +149,7 @@ WEC 成立，且对于任意指向未来的类时向量 $t^{\mu}$，向量 $-T^{
 
 ## 第三章：Raychaudhuri方程——奇点定理的核心工具
 
-![第三章：Raychaudhuri方程——奇点定理的核心工具](01.inbox/papers/posts/illustrations/[九]彭罗斯霍金奇点定理-04.png)
+![第三章：Raychaudhuri方程——奇点定理的核心工具](01.inbox/papers/posts/illustrations/2026-02-22-9-penrose-hawking-singularity-theorem-04.png)
 
 
 ### 3.1 测地线汇
@@ -263,7 +264,7 @@ $$
 
 ## 第五章：霍金奇点定理——宇宙的起点
 
-![第五章：霍金奇点定理——宇宙的起点](01.inbox/papers/posts/illustrations/[九]彭罗斯霍金奇点定理-06.png)
+![第五章：霍金奇点定理——宇宙的起点](01.inbox/papers/posts/illustrations/2026-02-22-9-penrose-hawking-singularity-theorem-06.png)
 
 
 ### 5.1 宇宙的膨胀

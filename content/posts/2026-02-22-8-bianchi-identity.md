@@ -4,6 +4,7 @@ author: ["s-ai-unix"]
 date: 2026-02-22
 draft: false
 description: "从微分几何的核心恒等式到广义相对论的数学基础，用大一新生能听懂的语言，详解比安基恒等式的来龙去脉。"
+slug: "bianchi-identity"
 tags: ["微分几何", "广义相对论", "比安基恒等式", "黎曼几何"]
 categories: ["数学", "物理"]
 math: true

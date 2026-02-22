@@ -1,5 +1,7 @@
 ---
 title: "[二] 克里斯托费尔符号：弯曲空间的导航系统"
+slug: "christoffel-symbols"
+
 date: 2026-01-13T20:00:00+08:00
 draft: false
 description: "从零开始理解克里斯托费尔符号（Christoffel symbols）：从平面坐标到弯曲空间的平行移动，从黎曼几何到广义相对论，适合有微积分和线性代数基础的读者"

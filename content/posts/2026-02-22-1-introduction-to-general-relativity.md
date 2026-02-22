@@ -9,7 +9,7 @@ cover:
     image: "images/covers/1462331940025-496dfbfc7564.jpg"
     alt: "广义相对论"
     caption: "广义相对论：时空的弯曲与引力"
-slug: "yi-guang-yi-xiang-dui-lun-ru-men"
+slug: "general-relativity-intro"
 
 ---
 

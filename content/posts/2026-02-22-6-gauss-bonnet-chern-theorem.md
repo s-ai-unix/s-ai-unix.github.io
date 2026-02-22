@@ -10,6 +10,7 @@ categories:
 comments: true
 mathjax: true
 description: "深入探讨Gauss-Bonnet定理及其高维推广Gauss-Bonnet-Chern定理，介绍这两个经典公式及其证明思路，展示微分几何中局部与全局性质之间的深刻联系。"
+slug: "gauss-bonnet-chern"
 cover:
   image: "images/covers/1632981824734-43c34a45e816.jpg"
   alt: "微分几何曲面"
