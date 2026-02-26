@@ -1,55 +1,30 @@
 {
-  "article_title": "[九]彭罗斯霍金奇点定理",
+  "article_title": "2026-02-26-十年一觉数据科学梦",
   "sections": [
     {
-      "h2_title": "引言：时空的终极命运",
-      "visual_description": "A dramatic illustration of a collapsing star forming a black hole, with spacetime bending and warping around it. The singularity at the center represented as a point of infinite curvature. Minimalist editorial style with deep blacks and subtle light rays.",
-      "caption": "时空的终极命运"
+      "h2_title": "第一章：初识数据（2011-2016）",
+      "visual_description": "A minimalist editorial illustration showing flowing streams of digital data represented as elegant curved lines and geometric shapes passing through processing gates. Perl code fragments as architectural elements in the background. Clean composition with negative space, suggesting data transformation and filtering. Black and white pen and ink sketch, New Yorker style, with subtle red accents highlighting key data points.",
+      "caption": "Perl时代的代码隐喻"
     },
     {
-      "h2_title": "第一章：预备知识——时空的数学结构",
-      "visual_description": "A clean diagram showing the structure of spacetime with light cones - future light cone, past light cone, and spacelike regions. Geometric representation of Lorentzian manifold. Editorial illustration style.",
-      "caption": "时空的数学结构"
+      "h2_title": "第二章：大数据浪潮（2016-2021）",
+      "visual_description": "A conceptual diagram showing multiple smartwatches and fitness devices emitting data streams that converge into a powerful river of information. The visualization includes abstract human figures in motion, heart rate curves, step counts represented as ascending stairs, and sleep patterns as gentle waves. The composition suggests massive scale and continuous flow. Architectural precision with geometric patterns, monochromatic ink sketch with crimson highlights on key data nodes.",
+      "caption": "可穿戴设备数据流"
     },
     {
-      "h2_title": "第二章：能量条件——物质的物理约束",
-      "visual_description": "An abstract representation of energy conditions in physics - vectors and tensors visualized with geometric arrows. Clean line art showing the relationship between energy-momentum and spacetime curvature.",
-      "caption": "能量条件"
+      "h2_title": "第三章：理论深化（2020-2023）",
+      "visual_description": "An abstract visualization featuring probability distribution curves (bell shapes), statistical symbols (summation sigma, integral signs), and algorithmic networks represented as interconnected nodes. The composition shows geometric shapes—spheres, cubes, and planes—in a three-dimensional space, suggesting the mathematical foundations of machine learning. Elegant, intellectual atmosphere with clean lines and sophisticated negative space. Black and white ink drawing with subtle vermilion accents on mathematical symbols.",
+      "caption": "数学与算法的交响"
     },
     {
-      "h2_title": "第三章：Raychaudhuri方程——奇点定理的核心工具",
-      "visual_description": "A diagram showing a congruence of geodesics converging toward a focal point. Rays of light bending inward due to gravity. The focusing effect visualized with clean geometric lines.",
-      "caption": "测地线聚焦"
+      "h2_title": "第四章：AI时代降临（2023-至今）",
+      "visual_description": "A futuristic interior view of an automobile cockpit showing a large dashboard display with holographic elements. The scene includes abstract representations of neural networks, knowledge graph connections as glowing nodes and edges, and voice interaction waves emanating from the driver's position. The composition balances technical precision with human-centered design. Minimalist editorial style with loose confident strokes, architectural drawing aesthetic, monochromatic with strategic use of cinnabar red for emphasis.",
+      "caption": "AI智能座舱的愿景"
     },
     {
-      "h2_title": "第四章：彭罗斯奇点定理——黑洞的必然性",
-      "visual_description": "An illustration of a closed trapped surface - a spherical region where even outward-directed light is bent back by gravity. The concept of gravitational collapse visualized. Editorial illustration.",
-      "caption": "闭合捕获面"
-    },
-    {
-      "h2_title": "第五章：霍金奇点定理——宇宙的起点",
-      "visual_description": "A dramatic visualization of the Big Bang - the initial singularity of the universe. Light emanating from a central point representing the beginning of time and space. Cosmic expansion editorial illustration.",
-      "caption": "宇宙的起点"
-    },
-    {
-      "h2_title": "第六章：奇点的本质与类型",
-      "visual_description": "A comparative diagram showing different types of singularities - spacelike, timelike, and null. Geometric representations of spacetime diagrams with different singularity structures.",
-      "caption": "奇点的类型"
-    },
-    {
-      "h2_title": "第七章：意义、局限与展望",
-      "visual_description": "An abstract representation of quantum gravity - discrete spacetime, string theory vibrations, or loop quantum gravity spin networks. Conceptual illustration of physics beyond general relativity.",
-      "caption": "量子引力展望"
-    },
-    {
-      "h2_title": "结语：数学之美的物理回响",
-      "visual_description": "A contemplative illustration of a person looking up at the night sky, with subtle mathematical equations and geometric patterns in the background. Elegant editorial style representing the harmony of mathematics and physics.",
-      "caption": "数学与物理"
-    },
-    {
-      "h2_title": "参考文献",
-      "visual_description": "Minimalist abstract shapes representing academic references and citations. Clean editorial illustration with subtle geometric elements.",
-      "caption": "参考文献"
+      "h2_title": "第五章：反思与展望",
+      "visual_description": "A conceptual illustration showing a path or road leading toward a horizon where multiple technological streams converge—data pipelines, AI neural networks, human figures representing expertise, and geometric symbols of innovation. The composition suggests continuity, growth, and the intersection of technology and human wisdom. Elegant minimalist design with generous white space, the path as a sweeping curve creating visual movement. Black and white pen and ink with carmine red highlights on key convergence points.",
+      "caption": "未来的数据之路"
     }
   ]
 }

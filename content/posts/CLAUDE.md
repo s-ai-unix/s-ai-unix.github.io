@@ -11,8 +11,6 @@
 | #1218 | 11:10 AM | ✅ | Converted LaTeX math equations to HTML in article | ~202 |
 | #1213 | 11:07 AM | 🟣 | Article regenerated with MathJax formula rendering support | ~231 |
 | #1204 | 11:05 AM | 🔵 | Checked KaTeX SVG rendering in converted HTML article | ~197 |
-| #1195 | 10:56 AM | 🔵 | User investigating image paths in Hugo blog post | ~237 |
-| #1189 | 10:41 AM | 🟣 | Article converted to HTML and saved for WeChat publishing | ~221 |
 
 ### Feb 22, 2026
 
