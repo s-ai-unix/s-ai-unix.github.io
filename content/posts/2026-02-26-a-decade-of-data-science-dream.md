@@ -6,7 +6,7 @@ description: "十年一觉数据科学梦"
 categories: ["回忆录", "数据科学"]
 tags: ["数据科学", "回忆录", "职业生涯"]
 cover:
-    image: "images/covers/十年一觉数据科学梦-cover.jpg"
+    image: "images/covers/ml-algorithms-legacy.jpg"
     alt: "十年一觉数据科学梦"
     caption: "十年一觉数据科学梦 - 封面图"
 math: true
