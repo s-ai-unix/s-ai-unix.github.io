@@ -1,30 +1,35 @@
 {
-  "article_title": "2026-02-26-十年一觉数据科学梦",
+  "article_title": "2026-03-08-nanoclaw-agent-journey",
   "sections": [
     {
-      "h2_title": "第一章：初识数据（2011-2016）",
-      "visual_description": "A minimalist editorial illustration showing flowing streams of digital data represented as elegant curved lines and geometric shapes passing through processing gates. Perl code fragments as architectural elements in the background. Clean composition with negative space, suggesting data transformation and filtering. Black and white pen and ink sketch, New Yorker style, with subtle red accents highlighting key data points.",
-      "caption": "Perl时代的代码隐喻"
+      "h2_title": "引子：当工具成为杠杆",
+      "visual_description": "A lone figure standing at the edge of a vast construction site, holding a long wooden lever that extends into the clouds. Ancient Greek archimedes lever metaphor meets modern technology. Misty atmosphere with beams of light breaking through. Pen and ink sketch style with loose crosshatching, New Yorker editorial illustration aesthetic.",
+      "caption": "Tools as Levers"
     },
     {
-      "h2_title": "第二章：大数据浪潮（2016-2021）",
-      "visual_description": "A conceptual diagram showing multiple smartwatches and fitness devices emitting data streams that converge into a powerful river of information. The visualization includes abstract human figures in motion, heart rate curves, step counts represented as ascending stairs, and sleep patterns as gentle waves. The composition suggests massive scale and continuous flow. Architectural precision with geometric patterns, monochromatic ink sketch with crimson highlights on key data nodes.",
-      "caption": "可穿戴设备数据流"
+      "h2_title": "第一部分：效率进化的核心洞察",
+      "visual_description": "A spiral staircase made of glass and steel ascending through clouds, with some steps glowing warmly while others remain transparent. A small figure climbing upward, looking back at the winding path below. Represents the journey from illusion to real evolution. Minimalist architectural drawing style, black ink with subtle red accents.",
+      "caption": "Spiral of Evolution"
     },
     {
-      "h2_title": "第三章：理论深化（2020-2023）",
-      "visual_description": "An abstract visualization featuring probability distribution curves (bell shapes), statistical symbols (summation sigma, integral signs), and algorithmic networks represented as interconnected nodes. The composition shows geometric shapes—spheres, cubes, and planes—in a three-dimensional space, suggesting the mathematical foundations of machine learning. Elegant, intellectual atmosphere with clean lines and sophisticated negative space. Black and white ink drawing with subtle vermilion accents on mathematical symbols.",
-      "caption": "数学与算法的交响"
+      "h2_title": "第二部分：实际落地的价值验证",
+      "visual_description": "An artisan's workbench with traditional tools scattered alongside holographic AI interfaces. Blueprints unfurl across the wooden surface, half hand-drawn and half digitally rendered. A vintage brass compass rests next to glowing circuit patterns. Still life composition, detailed pen and ink with selective red highlights on key instruments.",
+      "caption": "Old and New Tools"
     },
     {
-      "h2_title": "第四章：AI时代降临（2023-至今）",
-      "visual_description": "A futuristic interior view of an automobile cockpit showing a large dashboard display with holographic elements. The scene includes abstract representations of neural networks, knowledge graph connections as glowing nodes and edges, and voice interaction waves emanating from the driver's position. The composition balances technical precision with human-centered design. Minimalist editorial style with loose confident strokes, architectural drawing aesthetic, monochromatic with strategic use of cinnabar red for emphasis.",
-      "caption": "AI智能座舱的愿景"
+      "h2_title": "第三部分：效率进化的七个建议",
+      "visual_description": "Seven stepping stones arranged across a calm stream, each stone inscribed with different symbols representing workflow, memory, permissions, and validation. A pathway leading from chaos to order. Zen garden aesthetic meets technical diagram. Simple ink wash style with clean lines and generous white space.",
+      "caption": "Seven Stepping Stones"
     },
     {
-      "h2_title": "第五章：反思与展望",
-      "visual_description": "A conceptual illustration showing a path or road leading toward a horizon where multiple technological streams converge—data pipelines, AI neural networks, human figures representing expertise, and geometric symbols of innovation. The composition suggests continuity, growth, and the intersection of technology and human wisdom. Elegant minimalist design with generous white space, the path as a sweeping curve creating visual movement. Black and white pen and ink with carmine red highlights on key convergence points.",
-      "caption": "未来的数据之路"
+      "h2_title": "第四部分：NanoClaw 折腾实录",
+      "visual_description": "A tangled mess of garden hoses and irrigation pipes in a greenhouse, with water pooling in unexpected places. Among the chaos, small shoots of plants are thriving. Represents debugging and system maintenance. Detailed observational drawing style, intricate line work showing both disorder and hidden order.",
+      "caption": "Garden of Debugging"
+    },
+    {
+      "h2_title": "结语：给 AI 铺路",
+      "visual_description": "A winding mountain path being constructed stone by stone, extending toward a distant horizon where sky meets land. The road is half-built, with construction materials and scaffolding visible. Dawn light breaking over the mountains. Epic landscape in minimalist ink style, emphasizing journey and potential.",
+      "caption": "Paving the Way"
     }
   ]
 }
