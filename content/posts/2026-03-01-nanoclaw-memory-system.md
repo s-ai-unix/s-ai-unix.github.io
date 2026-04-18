@@ -1,7 +1,7 @@
 ---
 title: "从文件日记到向量记忆：NanoClaw 记忆系统的工程化重构"
 date: 2026-03-01T18:00:00+08:00
-draft: true
+draft: false
 description: "深入剖析 NanoClaw 原有记忆机制的架构局限，以及如何通过向量提取与分层存储实现真正的长期认知能力。"
 categories: ["技术", "AI", "系统架构"]
 tags: ["NanoClaw", "AI记忆", "向量检索", "认知架构", "系统重构"]
