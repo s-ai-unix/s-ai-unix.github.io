@@ -59,6 +59,10 @@ AI 起来以后，危险第一次变了。
 
 **别让下一代入口长在微信外面。**
 
+![第一句话入口](/images/illustrations/2026-03-22-wechat-openclaw-agent-entry/first-sentence-entry.png)
+
+*Agent 时代，真正值钱的位置，是用户说出第一句话之前的入口心智。*
+
 ## 二、腾讯为什么现在就要接
 
 如果只从产品体验出发，当然可以等一等。
@@ -116,6 +120,10 @@ Apple 更彻底。Apple Intelligence 的重点不在单个聊天窗口，而在�
 
 所以腾讯最终把 OpenClaw 接进微信，而没有单独再做一个 AI App，这个选择很合理。微信本来就是最有条件去承接大众 Agent 的地方。
 
+![全球 AI 入口的三条路线](/images/illustrations/2026-03-22-wechat-openclaw-agent-entry/global-entry-routes.png)
+
+*消息入口、手机默认入口和超级 App 入口，正在从不同方向争夺同一个位置。*
+
 ## 四、微信方向对了，执行还差半步
 
 如果只评价战略方向，我会给微信一个很高的分数。
@@ -139,6 +147,10 @@ Apple 更彻底。Apple Intelligence 的重点不在单个聊天窗口，而在�
 如果腾讯后面只是把它维持在这个层面，这步棋会很可惜。因为用户不会因为“微信里也有个 AI”就改习惯。用户只会因为“微信里真的能把事办完”才改习惯。
 
 这两个门槛，差得很远。
+
+![从聊天功能到任务闭环](/images/illustrations/2026-03-22-wechat-openclaw-agent-entry/task-execution-loop.png)
+
+*从聊天窗口到任务闭环，中间隔着服务调用、权限协议和执行确认。*
 
 ## 五、我对微信策略的三点评价
 
@@ -284,6 +296,10 @@ Apple 更彻底。Apple Intelligence 的重点不在单个聊天窗口，而在�
 它更像用户日常任务如何被表达、理解、分发、执行、确认的操作层。
 
 谁拿住这一层，谁就拿住下一代互联网最深的那个位置。
+
+![从社交通讯基础设施到任务协作基础设施](/images/illustrations/2026-03-22-wechat-openclaw-agent-entry/task-collaboration-infrastructure.png)
+
+*当消息、文件、语音和服务都能被 Agent 调度，微信才真正从通信网络走向任务网络。*
 
 ## 八、最后一句判断
 
