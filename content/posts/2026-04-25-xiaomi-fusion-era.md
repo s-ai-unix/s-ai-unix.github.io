@@ -4,7 +4,7 @@ date: 2026-04-25T11:00:00+08:00
 draft: false
 description: 读胡峥楠2026年访谈：他说你学的东西五年后可能有50%是错的，但不知道是哪50%。这不是知识焦虑，这是融合时代的生存常态。
 cover:
-    url: /images/covers/2026-04-25-xiaomi-fusion-cover.png
+    image: images/covers/2026-04-25-xiaomi-fusion-cover.png
     alt: "融合时代的知识恐慌"
     caption: "融合时代，边界正在消亡，知识正在重构"
 tags: [AI, 汽车, 胡峥楠, 融合时代]
