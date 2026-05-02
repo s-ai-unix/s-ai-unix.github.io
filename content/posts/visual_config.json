@@ -1,35 +1,35 @@
 {
-  "article_title": "2026-03-08-nanoclaw-agent-journey",
+  "article_title": "2026-05-01-ai-first-principles-1-solomonoff-induction",
   "sections": [
     {
-      "h2_title": "引子：当工具成为杠杆",
-      "visual_description": "A lone figure standing at the edge of a vast construction site, holding a long wooden lever that extends into the clouds. Ancient Greek archimedes lever metaphor meets modern technology. Misty atmosphere with beams of light breaking through. Pen and ink sketch style with loose crosshatching, New Yorker editorial illustration aesthetic.",
-      "caption": "Tools as Levers"
+      "h2_title": "引言：从工程技巧到计算科学",
+      "visual_description": "A minimalist editorial illustration showing a complex, tangled mass of wires and gears slowly resolving into a single, perfectly smooth, glowing geometric sphere. Representing the evolution from messy engineering to elegant first principles. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "秩序的涌现"
     },
     {
-      "h2_title": "第一部分：效率进化的核心洞察",
-      "visual_description": "A spiral staircase made of glass and steel ascending through clouds, with some steps glowing warmly while others remain transparent. A small figure climbing upward, looking back at the winding path below. Represents the journey from illusion to real evolution. Minimalist architectural drawing style, black ink with subtle red accents.",
-      "caption": "Spiral of Evolution"
+      "h2_title": "第一章：贝叶斯与奥卡姆的联姻",
+      "visual_description": "A minimalist editorial illustration of a classic balance scale. One side holds a glowing, intricately detailed feather, while the other holds a heavy, dark, complex rock. The scale tips towards the feather. Representing Occam's razor and simple truth. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "概率与剃刀"
     },
     {
-      "h2_title": "第二部分：实际落地的价值验证",
-      "visual_description": "An artisan's workbench with traditional tools scattered alongside holographic AI interfaces. Blueprints unfurl across the wooden surface, half hand-drawn and half digitally rendered. A vintage brass compass rests next to glowing circuit patterns. Still life composition, detailed pen and ink with selective red highlights on key instruments.",
-      "caption": "Old and New Tools"
+      "h2_title": "第二章：从图灵机到通用先验",
+      "visual_description": "A minimalist editorial illustration of an infinite paper tape winding through a vast, quiet landscape, being read by a single, elegant mechanical eye. Representing a Universal Turing Machine processing reality. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "通用的先验"
     },
     {
-      "h2_title": "第三部分：效率进化的七个建议",
-      "visual_description": "Seven stepping stones arranged across a calm stream, each stone inscribed with different symbols representing workflow, memory, permissions, and validation. A pathway leading from chaos to order. Zen garden aesthetic meets technical diagram. Simple ink wash style with clean lines and generous white space.",
-      "caption": "Seven Stepping Stones"
+      "h2_title": "第三章：预测未来的终极公式",
+      "visual_description": "A minimalist editorial illustration of a river of light splitting into countless branching streams, with the widest and brightest stream flowing straight ahead into the horizon. Representing probability paths and forecasting the future. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "预测的公式"
     },
     {
-      "h2_title": "第四部分：NanoClaw 折腾实录",
-      "visual_description": "A tangled mess of garden hoses and irrigation pipes in a greenhouse, with water pooling in unexpected places. Among the chaos, small shoots of plants are thriving. Represents debugging and system maintenance. Detailed observational drawing style, intricate line work showing both disorder and hidden order.",
-      "caption": "Garden of Debugging"
+      "h2_title": "第四章：不可计算的完美与现实的妥协",
+      "visual_description": "A minimalist editorial illustration of a figure standing at the base of a towering, impossible mountain that disappears into the clouds. The figure is building a small, sturdy bridge over a chasm at the bottom. Representing the compromise between theoretical perfection and practical computation. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "现实的妥协"
     },
     {
-      "h2_title": "结语：给 AI 铺路",
-      "visual_description": "A winding mountain path being constructed stone by stone, extending toward a distant horizon where sky meets land. The road is half-built, with construction materials and scaffolding visible. Dawn light breaking over the mountains. Epic landscape in minimalist ink style, emphasizing journey and potential.",
-      "caption": "Paving the Way"
+      "h2_title": "结语：通往绝对信息的阶梯",
+      "visual_description": "A minimalist editorial illustration of an endless spiral staircase made of floating stone steps, ascending towards a pure white light. Representing the journey towards the ultimate measure of absolute information. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "绝对的信息"
     }
   ]
 }
