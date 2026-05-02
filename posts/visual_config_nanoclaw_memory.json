@@ -1,0 +1,41 @@
+{
+  "文章标题": "从文件日记到向量记忆：NanoClaw 记忆系统的工程化重构",
+  "生成参数": {
+    "style": "纽约客风格钢笔墨水速写",
+    "aspect_ratio": "16:9",
+    "color_scheme": "黑白线条为主，朱红色点缀",
+    "mood": "简洁留白，松弛线条，知性氛围"
+  },
+  "配图规划": [
+    {
+      "id": "v1-file-memory",
+      "placement": "第一章后",
+      "visual_description": "A minimalist editorial illustration of a vintage leather-bound journal or diary sitting on a wooden desk, with loose handwritten pages scattered around. The scene suggests manual note-taking and human memory. Include a fountain pen lying next to the open journal. Clean ink lines with cross-hatching for shadows. The composition should feel nostalgic and slightly chaotic, representing the old file-based memory system.",
+      "caption": "文件记忆时代：人工维护的日记本"
+    },
+    {
+      "id": "v2-architecture-comparison",
+      "placement": "第三章开头",
+      "visual_description": "A split-screen conceptual diagram showing two parallel systems. Left side: a single traditional filing cabinet with papers overflowing from drawers. Right side: a modern neural network visualization with interconnected nodes, flowing data streams, and geometric patterns suggesting vector embeddings. The two halves are connected by transformation arrows. Architectural precision, clean lines, minimalist composition.",
+      "caption": "架构演进：从静态文件到动态向量"
+    },
+    {
+      "id": "memory-extraction-pipeline",
+      "placement": "3.2节后",
+      "visual_description": "An abstract representation of a memory extraction pipeline. Show raw conversation bubbles entering a geometric processing unit on the left, then flowing through a series of filtering and refinement stages represented as abstract mechanical or organic shapes, finally emerging as crystalline structured gems or geometric forms on the right. Suggest transformation from chaos to order.",
+      "caption": "记忆提取管线：从对话到结构化知识"
+    },
+    {
+      "id": "deduplication-merge",
+      "placement": "3.3节后",
+      "visual_description": "A visual metaphor for merging memories. Show two overlapping translucent circles or organic shapes gradually merging into one unified form. The overlapping region glows or has special texture suggesting synthesis. Include subtle geometric elements suggesting similarity measurement or distance calculation. Clean, elegant, minimalist composition with mathematical undertones.",
+      "caption": "去重与合并：相似记忆的智能融合"
+    },
+    {
+      "id": "tiered-storage-layers",
+      "placement": "3.5节后",
+      "visual_description": "A layered architectural diagram showing three horizontal strata. Top layer: tiny crystalline structures or minimal icons floating in space. Middle layer: medium-sized geometric forms or architectural elements. Bottom layer: deep foundation with complex detailed structures or bookshelves. Suggests a pyramid of abstraction from summary to detail.",
+      "caption": "分层存储：L0/L1/L2 三级抽象"
+    }
+  ]
+}

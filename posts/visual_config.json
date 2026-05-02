@@ -1,0 +1,35 @@
+{
+  "article_title": "2026-05-01-ai-first-principles-1-solomonoff-induction",
+  "sections": [
+    {
+      "h2_title": "引言：从工程技巧到计算科学",
+      "visual_description": "A minimalist editorial illustration showing a complex, tangled mass of wires and gears slowly resolving into a single, perfectly smooth, glowing geometric sphere. Representing the evolution from messy engineering to elegant first principles. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "秩序的涌现"
+    },
+    {
+      "h2_title": "第一章：贝叶斯与奥卡姆的联姻",
+      "visual_description": "A minimalist editorial illustration of a classic balance scale. One side holds a glowing, intricately detailed feather, while the other holds a heavy, dark, complex rock. The scale tips towards the feather. Representing Occam's razor and simple truth. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "概率与剃刀"
+    },
+    {
+      "h2_title": "第二章：从图灵机到通用先验",
+      "visual_description": "A minimalist editorial illustration of an infinite paper tape winding through a vast, quiet landscape, being read by a single, elegant mechanical eye. Representing a Universal Turing Machine processing reality. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "通用的先验"
+    },
+    {
+      "h2_title": "第三章：预测未来的终极公式",
+      "visual_description": "A minimalist editorial illustration of a river of light splitting into countless branching streams, with the widest and brightest stream flowing straight ahead into the horizon. Representing probability paths and forecasting the future. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "预测的公式"
+    },
+    {
+      "h2_title": "第四章：不可计算的完美与现实的妥协",
+      "visual_description": "A minimalist editorial illustration of a figure standing at the base of a towering, impossible mountain that disappears into the clouds. The figure is building a small, sturdy bridge over a chasm at the bottom. Representing the compromise between theoretical perfection and practical computation. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "现实的妥协"
+    },
+    {
+      "h2_title": "结语：通往绝对信息的阶梯",
+      "visual_description": "A minimalist editorial illustration of an endless spiral staircase made of floating stone steps, ascending towards a pure white light. Representing the journey towards the ultimate measure of absolute information. Black and white pen and ink sketch with a touch of vermilion red, New Yorker style.",
+      "caption": "绝对的信息"
+    }
+  ]
+}

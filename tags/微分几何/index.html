@@ -1,0 +1,238 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>微分几何 | s-ai-unix's Blog</title><meta name=keywords content><meta name=description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta name=author content="s-ai-unix"><link rel=canonical href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/><link crossorigin=anonymous href=/assets/css/stylesheet.22fd955b9b2997e9af94a4eca3a0909beac4b04580e73de824e9f7a74d3b8e95.css integrity="sha256-Iv2VW5spl+mvlKTso6CQm+rEsEWA5z3oJOn3p007jpU=" rel="preload stylesheet" as=style><link rel=icon href=https://s-ai-unix.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://s-ai-unix.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://s-ai-unix.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://s-ai-unix.github.io/apple-touch-icon.png><link rel=mask-icon href=https://s-ai-unix.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/index.xml title=rss><link rel=alternate hreflang=en href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"><meta property="og:site_name" content="s-ai-unix's Blog"><meta property="og:title" content="微分几何"><meta property="og:description" content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="微分几何"><meta name=twitter:description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><link rel=stylesheet href=https://s-ai-unix.github.io/css/classical-quote.css></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://s-ai-unix.github.io/ accesskey=h title="s-ai-unix's Blog (Alt + H)">s-ai-unix's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://s-ai-unix.github.io/ title="🏠 首页"><span>🏠 首页</span></a></li><li><a href=https://s-ai-unix.github.io/posts/ title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://s-ai-unix.github.io/archives/ title="📁 归档"><span>📁 归档</span></a></li><li><a href=https://s-ai-unix.github.io/tags/ title="🏷️ 标签"><span>🏷️ 标签</span></a></li><li><a href=https://s-ai-unix.github.io/search/ title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://s-ai-unix.github.io/about/ title="👤 关于"><span>👤 关于</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://s-ai-unix.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://s-ai-unix.github.io/tags/>Tags</a></div><h1>微分几何</h1></header><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/hilbert-action-cover.jpg alt="希尔伯特作用量 - 封面图"></figure><header class=entry-header><h2 class=entry-hint-parent>[七] 希尔伯特作用量：爱因斯坦场方程的数学之源</h2></header><div class=entry-content><p>引言：物理学的最小作用量原理 1915年11月，阿尔伯特·爱因斯坦在柏林普鲁士科学院发表了他关于广义相对论的系列论文。在同一时间，远在哥廷根的大卫·希尔伯特也在独立地进行着同样的工作。
+这两位数学物理学家，一个从物理直觉出发，一个从数学公理出发，最终殊途同归，得到了完全相同的结果——描述引力的爱因斯坦场方程。
+但希尔伯特的方法更为优雅：他没有直接猜测场方程的形式，而是从一个简单的原理出发——最小作用量原理。
+作用量（Action）：物理学中描述系统演化"代价"的标量量。可以想象成自然界在演化过程中选择"最经济"的路径，就像光从一点传播到另一点时，总是沿着耗时最短的路径前进（费马原理）。
+第一章：从光的路径到作用量 1.1 费马原理的启示 早在17世纪，法国数学家费马发现：光在传播时，总是选择耗时最短的路径。
+无论光从空气射入水中发生折射，还是在镜面上反射，它都仿佛在"计算"所有可能的路径，然后选择那个让传播时间最短的一条。
+这就是费马原理——物理学的最小作用量思想的最早萌芽。
+最小作用量原理（Principle of Least Action）：自然界总是选择使作用量取极值（通常是最小值）的路径。可以想象成宇宙是一个精明的会计师，总是选择"成本最低"的方式来演化。
+1.2 经典力学中的作用量 18世纪，欧拉和拉格朗日将这一思想系统化，建立了分析力学。
+在经典力学中，一个粒子的运动由拉格朗日量 $L$ 决定：
+$$L = T - V$$
+这里 $T$ 是动能，$V$ 是势能。作用量 $S$ 则是拉格朗日量沿路径的积分：
+$$S = \int_{t_1}^{t_2} L , dt$$
+最小作用量原理告诉我们：真实的运动路径使作用量 $S$ 取极值。
+通过对作用量变分（即考虑微小偏离），我们得到欧拉-拉格朗日方程：
+$$\frac{d}{dt} \frac{\partial L}{\partial \dot{q}} - \frac{\partial L}{\partial q} = 0$$
+这就是经典力学的核心方程。牛顿第二定律、能量守恒、动量守恒，都可以从这个原理导出。
+图1：光在两种介质界面处的折射。光选择耗时最短的路径，这是最小作用量原理在光学中的体现。
+1.3 从粒子到场 19世纪，物理学的发展将最小作用量原理推广到了场论。
+麦克斯韦的电磁理论、热力学、统计力学，都可以用作用量的语言来描述。物理学家发现，场（如电磁场）的作用量比粒子的作用量更为基本。
+一个场 $\phi$ 的作用量通常写成：
+$$S = \int \mathcal{L}(\phi, \partial_{\mu} \phi) , d^4x$$
+...</p></div><footer class=entry-footer><span title='2026-02-22 12:00:00 +0800 CST'>February 22, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>950 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to [七] 希尔伯特作用量：爱因斯坦场方程的数学之源" href=https://s-ai-unix.github.io/posts/hilbert-action/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/bianchi-identity-cover.png alt=比安基恒等式：弯曲空间的深层对称></figure><header class=entry-header><h2 class=entry-hint-parent>[八] 比安基恒等式：弯曲空间的深层对称</h2></header><div class=entry-content><p>引言：当空间不再是平面 还记得高中几何课上那些笔直的线条和完美的圆吗？欧几里得在两千多年前建立的几何体系告诉我们：空间是平的，三角形内角和永远是 $180^{\circ}$ ，平行线永远不会相交。
+但如果我们生活的空间本身就像一张被揉皱的纸呢？
+微分几何（Differential Geometry）：研究曲线、曲面以及更高维"流形"的数学分支。它用微积分的方法研究几何对象的局部性质，就像用显微镜观察弯曲空间的微观结构。
+爱因斯坦在1915年提出广义相对论时，彻底颠覆了我们的空间观念。他告诉世人：质量会弯曲时空，而物体只是沿着弯曲时空中的"直线"运动。要理解这个革命性的理论，我们需要一种全新的数学语言。
+这就是比安基恒等式登场的舞台。
+第一章：从蚂蚁的视角看流形 1.1 什么是流形？ 想象一只生活在巨大球面上的蚂蚁。由于体型太小，它只能看到周围的一小片区域。对它来说，这片区域看起来就像一块平坦的平面。
+这就是**流形（Manifold）**的本质：局部看起来像欧几里得空间，但整体可能是弯曲的。
+流形（Manifold）：一种在每个点的邻域内都近似于欧几里得空间的拓扑空间。可以想象成由无数个"平坦补丁"拼接而成的弯曲空间。一维流形是曲线，二维流形是曲面，四维流形可以用来描述时空。
+图1：蚂蚁生活在球面上，局部区域看起来是平的，但整体是弯曲的。这正是一个二维流形的生动写照。
+1.2 切空间：每一点都有自己的"地面" 当蚂蚁站在球面的某一点时，它脚下有一个"切平面"——这就是切空间（Tangent Space）。
+数学上，流形 $M$ 上每一点 $p$ 都有一个对应的切空间 $T\_p M$ 。这个切空间是一个向量空间，里面的元素称为切向量，代表在该点可能的速度方向。
+$ T\_p M = \text{所有经过点 } p \text{ 的曲线的速度向量} $
+这就像站在地球表面的你，无论你身在何处，你总能定义"向前、向后、向左、向右"这些方向。
+第二章：平行移动与联络 2.1 弯曲空间中的"平行"难题 在平坦的平面上，如果我们把一个向量沿着闭合路径移动一圈，它会回到原点，方向和大小都不变。
+但在弯曲的球面上，事情变得有趣了。
+想象你在赤道上 pointing 向北的箭头。你沿着经线走到北极，然后沿着另一条经线回到赤道，再沿着赤道回到起点。你会发现——箭头旋转了！
+这就是**和乐（Holonomy）**现象，是曲率最直接的体现。
+图2：在球面上进行平行移动，向量会沿着闭合路径发生旋转。这种旋转揭示了空间的内在曲率。
+2.2 联络：定义"平行"的规则 为了在弯曲空间中定义向量的"平行移动"，我们需要一个数学工具：联络（Connection）。
+联络（Connection）：一种定义流形上向量如何沿着曲线"平行移动"的规则。可以想象成在空间每一点放置的一组"指南针"，告诉你如何把邻近点的向量"搬运"过来比较。
+在黎曼几何中，我们使用列维-奇维塔联络（Levi-Civita Connection），它是唯一满足以下两个条件的联络：
+无挠性（Torsion-free）：挠率张量 $T=0$ 与度量相容（Metric-compatible）：内积在平行移动下保持不变 用数学语言表达，联络由克里斯托费尔符号（Christoffel Symbols） $\Gamma^{\lambda}_{\mu\nu}$ 描述：
+$ \nabla\_{\mu} V^{\nu} = \partial\_{\mu} V^{\nu} + \Gamma^{\nu}\_{\mu\lambda} V^{\lambda} $
+...</p></div><footer class=entry-footer><span title='2026-02-22 00:00:00 +0000 UTC'>February 22, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>717 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to [八] 比安基恒等式：弯曲空间的深层对称" href=https://s-ai-unix.github.io/posts/bianchi-identity/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/schwarzschild-cover.jpg alt=施瓦西度规概念图></figure><header class=entry-header><h2 class=entry-hint-parent>施瓦西度规：广义相对论的第一个精确解与黑洞的预言</h2></header><div class=entry-content><p>引言：一封来自战壕的信 1916年，第一次世界大战的炮火在法国北部轰鸣。在这场人类历史上最残酷的战争阴影下，一位名叫卡尔·施瓦西（Karl Schwarzschild）的德国天文学家正在德军服役，担任炮兵计算员。令人难以想象的是，就是在这样的环境下，他在给爱因斯坦的信中附上了自己求解爱因斯坦场方程的论文——这便是施瓦西度规的诞生。
+试想一下，当你身处战壕，耳边是炮火声，眼前是复杂的微分方程，心中却装着整个宇宙的奥秘。这或许是科学史上最浪漫的场景之一。1916年1月，施瓦西在给爱因斯坦的信中写道：
+“如您所见，战争虽然让我远离学术工作，但您的理论却让我找到了宁静的避难所。”
+爱因斯坦收到这篇论文后激动不已。他回复道：
+“我从未想过有人能以如此简洁的方式求解这个问题。你的计算令我印象深刻。”
+这便是广义相对论第一个精确解的诞生——施瓦西度规（Schwarzschild Metric）。它描述了在真空、球对称条件下时空的几何性质，直接预言了黑洞的存在。
+第一章：爱因斯坦场方程与对称性的力量 在深入施瓦西度规之前，我们需要理解它的来龙去脉。
+爱因斯坦场方程（Einstein Field Equations）：描述时空曲率与物质分布关系的方程。可以想象成时空的"弹性"方程——物质告诉时空如何弯曲，时空告诉物质如何运动。
+方程的数学形式是：
+$$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$
+其中左边 $G_{\mu\nu}$ 是爱因斯坦张量，描述时空的弯曲程度；右边 $T_{\mu\nu}$ 是能动张量，描述物质和能量的分布。
+这个方程有什么特别之处？
+想象一下：你面前有一块弹性布料（代表时空），你在上面放一个重球（代表恒星）。布料会凹陷下去，这个凹陷就是"时空弯曲"。如果小球经过凹陷区域，它的运动轨迹会改变——这就是引力。
+现在问题来了：这个方程组极其复杂，包含10个互相耦合的非线性偏微分方程。在一般情况下，找到精确解几乎不可能。
+但施瓦西做了一件聪明的事——他引入了对称性。
+对称性（Symmetry）：物理系统在某种变换下保持不变的性质。就像圆形具有旋转对称性，球具有完全的空间旋转对称性。
+对于大多数天体——比如太阳、地球——我们可以合理地假设它们是球对称的。这意味着：
+① 静态（Static）：不随时间变化
+② 球对称（Spherically Symmetric）：在任意方向上看都一样
+③ 真空（Vacuum）：外部没有物质分布
+有了这三条假设，方程大幅简化，施瓦西才能在战壕中用手工计算求解！
+第二章：施瓦西度规的推导——一步步走近真理 现在让我们跟随施瓦西的思路，看看这个著名的度规是如何被"发现"的。
+2.1 设定时空的形状 在球坐标 $(r, \theta, \phi, t)$ 中，任何静态、球对称的时空线元可以写成最一般的形式：
+$$ds^2 = B(r)c^2dt^2 - A(r)dr^2 - r^2(d\theta^2 + \sin^2\theta , d\phi^2)$$
+这里 $A(r)$ 和 $B(r)$ 是两个待求的只与 $r$ 有关的函数。注意这个形式已经包含了所有球对称静态时空的可能——这就是对称性的威力！
+2.2 进入真空 在距离天体足够远的地方（也就是我们研究的空间区域），没有物质分布，所以 $T_{\mu\nu} = 0$。爱因斯坦场方程简化为：
+...</p></div><footer class=entry-footer><span title='2026-02-21 18:16:00 +0800 CST'>February 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>270 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 施瓦西度规：广义相对论的第一个精确解与黑洞的预言" href=https://s-ai-unix.github.io/posts/2026-02-21-schwarzschild-metric/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/dg-prerequisites-cover.jpg alt=微分几何知识网络></figure><header class=entry-header><h2 class=entry-hint-parent>通往微分几何之路：系统掌握前序知识完全指南</h2></header><div class=entry-content><p>引言：为什么要学习微分几何？ 想象一下，你是一只生活在二维纸面上的蚂蚁。你的整个世界就是这张纸——你可以向前、向后、向左、向右移动，但永远无法理解"向上"或"向下"意味着什么。直到有一天，你所在的纸面被弯成了一个球面。你开始注意到一些奇怪的现象：沿着直线一直走，最终会回到起点；三角形的内角和似乎大于 $180^{\circ}$；平行线会在某个神秘的地方相交。
+这就是微分几何研究的起点：如何在弯曲的空间中描述几何。
+微分几何是现代数学中最优雅、最深刻的分支之一。它不仅是理解广义相对论的数学语言，也是计算机图形学、机器人学、机器学习等领域的基础工具。从爱因斯坦用黎曼几何描述引力场，到深度学习中的流形学习，微分几何的思想无处不在。
+然而，攀登这座数学高峰并非易事。许多学习者在面对外微分、联络、曲率张量等概念时感到困惑，往往是因为前序知识的基础不够扎实。本文将系统梳理掌握大学微分几何所需的全部前序知识，帮助你构建完整的知识框架。
+微分几何的发展历程 微分几何的故事要从17世纪讲起。
+牛顿与莱布尼茨时代（1687年前后）
+1687年，牛顿发表《自然哲学的数学原理》，不仅奠定了经典力学的基础，也发明了微积分这一强大的数学工具。正是微积分，使得研究"弯曲"和"变化"成为可能。莱布尼茨独立发展的微积分记号系统——特别是 $dy/dx$ 这种表示变化率的方式——至今仍被广泛使用。
+欧拉的开创性工作（1736-1783）
+莱昂哈德·欧拉是历史上最高产的数学家之一。他对曲线和曲面的研究为微分几何奠定了基础。欧拉引入了曲线的曲率和挠率概念，研究了测地线（曲面上的"直线"），并解决了著名的哥尼斯堡七桥问题——这被认为是图论和拓扑学的诞生。
+高斯的《曲面的一般研究》（1827）
+卡尔·弗里德里希·高斯在1827年发表的《曲面的一般研究》（Disquisitiones Generales circa Superficies Curvas）被公认为现代微分几何的起点。在这篇论文中，高斯引入了第一基本形式和第二基本形式，证明了惊人的高斯绝妙定理（Theorema Egregium）：高斯曲率是曲面的内蕴量，也就是说，生活在曲面上的生物，无需知道曲面如何嵌入三维空间，就能测量出曲率。
+这一发现的意义怎么强调都不为过。它表明几何可以分为"内在的"和"外在的"——这正是后来黎曼几何和广义相对论的核心思想。
+黎曼的革命性演讲（1854）
+1854年，年轻的伯恩哈德·黎曼为了获得哥廷根大学的教职资格，发表了一篇题为《论几何基础中的假设》的演讲。在这篇演讲中，黎曼将高斯关于曲面的理论推广到了任意维度的空间，提出了黎曼流形的概念。
+黎曼的关键洞见是：空间的性质不应该由它如何嵌入更高维空间决定，而应该由度量（测量距离的方式）决定。他引入了黎曼度量张量 $g_{ij}$，使得在任何局部坐标系下都能计算距离和角度。
+张量分析与相对论（1869-1915）
+1869年，克里斯托费尔发展了协变微分的理论；1900年，列维-奇维塔引入平行移动的概念；里奇和列维-奇维塔系统发展了张量分析。这些工作为爱因斯坦的广义相对论提供了数学语言。
+1915年，爱因斯坦利用黎曼几何描述了引力场。他证明了引力不是力，而是时空弯曲的表现。这是微分几何在物理学中最壮观的应用。
+现代发展（1950年至今）
+陈省身在1940-50年代发展了示性类理论，将拓扑学与微分几何联系起来。丘成桐在1982年证明了卡拉比猜想，打开了弦理论的大门。佩雷尔曼在2002年利用里奇流证明了庞加莱猜想，这是21世纪数学的最大成就之一。
+今天，微分几何在计算机图形学（曲面建模）、机器人学（位形空间）、机器学习（流形学习、信息几何）等领域发挥着重要作用。
+第一章：微积分基础 如果说微分几何是一座宏伟的大厦，那么微积分就是它的地基。在这一章中，我们将回顾微积分的核心概念，特别是那些直接为微分几何服务的部分。
+1.1 极限与连续：无穷小的严格化 微积分的核心概念——导数和积分——都建立在极限的基础之上。理解极限，是理解一切后续内容的第一步。
+极限的 $\varepsilon$-$\delta$ 定义 函数 $f(x)$ 在 $x \to a$ 时的极限为 $L$，记作
+$$\lim_{x \to a} f(x) = L$$
+其严格定义是：对于任意给定的 $\varepsilon > 0$，存在 $\delta > 0$，使得当 $0 &lt; |x - a| &lt; \delta$ 时，有 $|f(x) - L| &lt; \varepsilon$。
+...</p></div><footer class=entry-footer><span title='2026-02-03 08:05:00 +0800 CST'>February 3, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>1631 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 通往微分几何之路：系统掌握前序知识完全指南" href=https://s-ai-unix.github.io/posts/2026-02-03-road-to-differential-geometry-complete-guide/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/from-topology-to-diffgeo-cover.jpg alt=从拓扑到微分几何的数学之旅></figure><header class=entry-header><h2 class=entry-hint-parent>从拓扑到微分几何：系统掌握大学微分几何所需的拓扑学前置知识</h2></header><div class=entry-content><p>引言 当你翻开一本微分几何的教材，首先映入眼帘的往往是一连串令人望而生畏的定义：拓扑空间、流形、图册、微分结构……为什么学习曲线和曲面之前，必须先掌握这些看似抽象的概念？为什么数学家们如此执着于"连续性"、“紧致性"这样的拓扑性质？
+问题的答案隐藏在数学发展的历史长河中。18世纪的欧拉在研究多面体时发现了一个惊人的规律：无论多面体的形状如何变化，其顶点数 $V$、边数 $E$、面数 $F$ 始终满足关系 $V - E + F = 2$。这个公式后来被称为欧拉示性数，它揭示了一个深刻的事实——某些几何性质在连续变形下保持不变。
+19世纪，高斯在研究曲面时引入了高斯曲率的概念，却发现了一个令人震惊的结果：高斯绝妙定理（Theorema Egregium）表明，高斯曲率实际上是一个内蕴量，只依赖于曲面上的度量，而不依赖于曲面在三维空间中的嵌入方式。这意味着曲面的某些性质是"与生俱来的”，与外界环境无关。
+这些发现逐渐汇聚成一个新的数学分支——拓扑学。拓扑学研究的是空间在连续变形下保持不变的性质。它不关心距离、角度这些度量信息，而是关注更本质的结构：哪些点是"邻近"的？哪些空间"本质上相同"？一个空间是否"连通"？是否"紧致"？
+当我们进入20世纪，随着爱因斯坦广义相对论的诞生，微分几何迎来了它的黄金时代。然而，要真正理解弯曲时空、黎曼流形、张量分析这些概念，拓扑学的基础是不可或缺的。本文将系统梳理学习大学微分几何所需的拓扑学前置知识，从历史背景到严格定义，从直观理解到形式推导，帮助你建立一座从拓扑通往微分几何的桥梁。
+第一章：拓扑学的黎明——从七桥问题到欧拉示性数 1.1 柯尼斯堡七桥问题与图论的萌芽 1736年，普鲁士的柯尼斯堡城（今俄罗斯加里宁格勒）有一个著名的休闲问题：城市被普雷格尔河分割成四个区域，由七座桥连接。市民们热衷于一个问题：是否可以从某处出发，经过每座桥恰好一次，最后回到起点？
+年轻的数学家欧拉将这个问题抽象化。他把四个区域看作四个顶点（vertex），七座桥看作七条边（edge），于是整个问题转化为在一个由顶点和边构成的图（graph）中寻找一条特殊路径——现在称为欧拉回路（Eulerian circuit）。
+欧拉证明了：一个连通图存在欧拉回路，当且仅当每个顶点的度数都是偶数。在柯尼斯堡七桥问题中，四个区域的桥数分别是3、3、3、5，都是奇数，因此不存在这样的路径。
+这个看似简单的结论开创了图论这一全新领域，更重要的是，它展示了拓扑思维的核心——忽略具体的形状和距离，只关注连接关系。
+1.2 欧拉示性数与多面体公式 1750年，欧拉发现了另一个惊人的规律。对于任意凸多面体，其顶点数 $V$、边数 $E$、面数 $F$ 满足：
+$$ \chi = V - E + F = 2 $$
+这个数 $2$ 就是该多面体的欧拉示性数（Euler characteristic）。
+让我们验证几个经典例子：
+正四面体：$V = 4, E = 6, F = 4$，所以 $\chi = 4 - 6 + 4 = 2$ 正方体：$V = 8, E = 12, F = 6$，所以 $\chi = 8 - 12 + 6 = 2$ 正八面体：$V = 6, E = 12, F = 8$，所以 $\chi = 6 - 12 + 8 = 2$ ...</p></div><footer class=entry-footer><span title='2026-02-03 07:55:16 +0800 CST'>February 3, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>1547 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 从拓扑到微分几何：系统掌握大学微分几何所需的拓扑学前置知识" href=https://s-ai-unix.github.io/posts/2026-02-03-topology-to-differential-geometry-prerequisites/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/poincare-volume-form-cover.jpg alt=几何抽象背景></figure><header class=entry-header><h2 class=entry-hint-parent>Poincaré的洞察：体积元的定向与外微分形式的诞生</h2></header><div class=entry-content><p>引言：一个看似平凡的发现 1890年代末，巴黎的学术圈正沉浸在分析学的繁荣之中。法国数学家亨利·庞加莱（Henri Poincaré, 1854-1912）坐在书桌前，凝视着多重积分的变换公式。在旁人看来，这只是一个技术性的细节问题——如何计算曲面积分、体积分在坐标变换下的行为？
+然而，Poincaré敏锐地意识到一个被前人忽视的事实：多重积分的体积元应该有一个正负定向。
+这一看似平凡的看法使得多重积分在坐标变换下原来有些拖泥带水的变换公式，有了一个精练的形式，并使Newton-Leibniz公式的推广，步入了坦途。
+这一发现看似微不足道——不过是给积分测度加上一个正负号而已——但它却如同一把钥匙，打开了通往现代微分几何的大门。它直接催生了外微分形式（differential forms）的概念，为Stokes定理、de Rham上同调、甚至是现代物理学中的规范场论奠定了基础。
+让我们循着历史的足迹，探寻这一发现的来龙去脉。
+第一章：Poincaré之前的多重积分 1.1 单变量的辉煌与局限 让我们先回到单变量微积分的美好时代。Newton和Leibniz在17世纪末创立的微积分基本定理告诉我们：
+$$ \int_a^b f’(x) , dx = f(b) - f(a) $$
+这个公式之所以优美，在于它将区间 $[a,b]$ 上的积分与边界 ${a, b}$ 上的函数值联系起来。更妙的是，它暗示了积分具有某种"定向"的性质：从 $a$ 到 $b$ 的积分，与从 $b$ 到 $a$ 的积分差一个负号：
+$$ \int_b^a f(x) , dx = -\int_a^b f(x) , dx $$
+然而，当数学家们尝试将这一框架推广到多变量时，他们遇到了意想不到的困难。
+1.2 早期的多重积分变换 考虑一个二重积分：
+$$ I = \iint_D f(x,y) , dx , dy $$
+假设我们进行坐标变换 $(x,y) \mapsto (u,v)$，其中 $x = x(u,v)$，$y = y(u,v)$。在18、19世纪，数学家们知道变换公式涉及雅可比行列式（Jacobian determinant）：
+...</p></div><footer class=entry-footer><span title='2026-02-01 18:47:22 +0800 CST'>February 1, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>894 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to Poincaré的洞察：体积元的定向与外微分形式的诞生" href=https://s-ai-unix.github.io/posts/2026-02-01-poincare-volume-form/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>从弯曲到一致性：微分几何中的芬切尔定理与舒尔定理</h2></header><div class=entry-content><p>引言：从古希腊到现代几何 在古希腊的亚历山大图书馆里，数学家们就已经开始思考曲线和曲面的性质。欧几里得的《几何原本》建立了几何学的公理体系，但那是关于直线的几何——平坦的、规则的、完美的。然而，自然界中却充满了弯曲：行星轨道、海岸线、山脉的轮廓，甚至光线在引力场中的路径。
+当我们从平坦的欧几里得空间迈向弯曲的几何世界时，一个自然的问题浮现：如何量化"弯曲"？一条曲线究竟有多"弯曲"？一个曲面在哪个方向最"弯曲"？
+这个问题催生了微分几何的诞生。从高斯的曲面理论到黎曼的一般流形，数学家们发展了一套精妙的语言来描述弯曲。在这个过程中，两个深刻定理脱颖而出：芬切尔定理（Fenchel’s Theorem）和舒尔定理（Schur’s Theorem）。
+芬切尔定理，由 Werner Fenchel 在 1929 年证明，给出了闭曲线弯曲程度的一个基本下界：任何简单闭曲线的全曲率至少为 $2\pi$。这个数字 $2\pi$ 不仅仅是圆周的长度，更蕴含着拓扑学的深刻含义——它与曲线的"旋转"次数有关。
+而舒尔定理，由 Friedrich Schur 在 1917 年发现，则在更高维度的黎曼几何中提供了一个关于"一致性"的深刻洞察。它告诉我们：如果一个空间在某个方向的弯曲程度最大，那么其他方向的弯曲程度如何。这是比较几何学（Comparison Geometry）的开端。
+本文将从曲线的基本概念开始，娓娓道来地介绍这两条定理。我们将看到，数学的优美不仅在于其严谨性，更在于它揭示了自然界中深刻的统一性。
+第一章：曲线的几何——曲率与 Frenet 标架 在进入芬切尔定理之前，我们需要掌握描述曲线弯曲的基本工具。让我们从最直观的概念开始。
+1.1 参数化曲线 设 $\gamma: [a, b] \to \mathbb{R}^3$ 是一条可微曲线。为了简化讨论，我们通常假设曲线是正则的（regular），即 $\gamma’(t) \neq 0$ 对所有 $t$ 成立。这里 $\gamma’(t)$ 是曲线的切向量，它告诉我们曲线在参数 $t$ 处的方向。
+为了消除参数化对曲线描述的影响，我们常常使用弧长参数化。设 $s(t)$ 是从起点 $\gamma(a)$ 到 $\gamma(t)$ 的弧长：
+$$ s(t) = \int_a^t \lVert \gamma’(\tau) \rVert , d\tau $$
+反函数 $t(s)$ 允许我们将曲线表示为弧长的函数 $\gamma(s)$。弧长参数化的优点是切向量具有单位长度：
+$$ \lVert \frac{d\gamma}{ds} \rVert = \frac{ds}{dt} \cdot \left\lVert \frac{d\gamma}{dt} \right\rVert^{-1} = 1 $$
+...</p></div><footer class=entry-footer><span title='2026-01-29 20:50:00 +0800 CST'>January 29, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>1246 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 从弯曲到一致性：微分几何中的芬切尔定理与舒尔定理" href=https://s-ai-unix.github.io/posts/2026-01-29-fenchel-schur-theorems/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/1555255707-c07966088b7b.jpg alt=Monge-Ampere方程与最优传输></figure><header class=entry-header><h2 class=entry-hint-parent>蒙日-安培方程：从经典几何到现代分析的系统综述</h2></header><div class=entry-content><p>引言：一个跨越两个半世纪的数学传奇 1771年，法国数学家加斯帕尔·蒙日（Gaspard Monge）在研究曲面和曲线理论时，写下了一个看似简单的方程。他或许不会想到，这个方程将在接下来的两个半世纪里，成为连接微分几何、偏微分方程、变分法和概率论的深刻纽带，并最终在2018年帮助阿莱西奥·菲加利（Alessio Figalli）获得菲尔兹奖。
+这个方程就是蒙日-安培方程（Monge-Ampère Equation）。
+图1：蒙日-安培方程从18世纪到现代的发展历程，涵盖了几何、分析和应用数学的多个里程碑。
+蒙日-安培方程的特殊之处在于它的完全非线性特性。与拉普拉斯方程或热方程这类线性方程不同，蒙日-安培方程涉及未知函数二阶导数的行列式——这是所有二阶导数的非线性组合。这种结构既带来了深刻的数学挑战，也赋予了它独特的几何意义。
+在本文中，我们将从三个维度深入探索这一优美的数学对象：
+历史维度：从蒙日的几何洞察到现代正则性理论 理论维度：方程的结构、椭圆性理论和解的适定性 应用维度：从凸几何到最优传输，从气象学到机器学习 第一章：历史渊源——从蒙日到现代 1.1 蒙日的几何洞察（1771-1807） 加斯帕尔·蒙日（1746-1818）是法国大革命时期的杰出数学家，被誉为画法几何的奠基人。他对曲面的研究源于工程学的实际问题：如何在二维平面上精确表示三维物体？
+1771年，蒙日在论文《Memoire sur les developpées, les rayons de courbure et les différens genres d’inflexions des courbes à double courbure》中首次研究了一类涉及曲面曲率的偏微分方程。他考虑的核心问题是：给定曲面的曲率信息，能否重建曲面本身？
+蒙日的洞察在于认识到曲面的高斯曲率与函数二阶导数之间的深刻联系。对于一个由 $z = u(x, y)$ 给出的曲面，其高斯曲率 $K$ 可以表示为：
+$$ K = \frac{u_{xx}u_{yy} - u_{xy}^2}{(1 + u_x^2 + u_y^2)^2} $$ 分子中的 $u_{xx}u_{yy} - u_{xy}^2$ 正是函数 $u$ 的Hessian行列式——蒙日-安培方程的核心结构。
+1.2 安培的分析贡献（1820s） 安德烈-玛丽·安培（André-Marie Ampère，1775-1836）更为人熟知的是他在电磁学方面的贡献（电流单位"安培"即以他命名）。但在1820年代，安培对蒙日的方程进行了系统的分析研究，将其推广到更一般的形式。
+安培考虑了方程的一般二阶形式：
+$$ A(u_{xx}u_{yy} - u_{xy}^2) + Bu_{xx} + Cu_{xy} + Du_{yy} + E = 0 $$ 其中系数 $A, B, C, D, E$ 可以依赖于 $(x, y, u, u_x, u_y)$。当 $A \neq 0$ 时，方程具有典型的蒙日-安培结构。
+...</p></div><footer class=entry-footer><span title='2026-01-29 19:30:00 +0800 CST'>January 29, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>1027 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 蒙日-安培方程：从经典几何到现代分析的系统综述" href=https://s-ai-unix.github.io/posts/2026-01-29-monge-ampere-equation-detailed-introduction/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/singularity-theorem-cover.jpg alt=黑洞奇点与时空结构></figure><header class=entry-header><h2 class=entry-hint-parent>[九] 彭罗斯-霍金奇点定理：广义相对论的终极边界</h2></header><div class=entry-content><p>引言：时空的终极命运 1965年的一个春日，年轻的数学家罗杰·彭罗斯（Roger Penrose）正坐在剑桥大学的一个咖啡馆里，凝视着手中咖啡杯里旋转的泡沫。那一刻，一个改变物理学史的洞见在他脑海中闪现：如果一个恒星坍缩得足够致密，奇点的形成将是不可避免的——这不是由于某种特殊的对称性假设，而是源于引力的普遍性质。
+这个洞见最终发展成了著名的彭罗斯奇点定理（Penrose Singularity Theorem），它与斯蒂芬·霍金（Stephen Hawking）在1970年证明的霍金奇点定理一起，构成了广义相对论中最深刻的成果之一。彭罗斯因此在2020年获得了诺贝尔物理学奖，表彰他"发现黑洞形成是广义相对论的稳健预言"。
+但是，这些定理究竟说了什么？它们如何证明？又对我们的宇宙理解意味着什么？
+让我们从一个简单的观察开始：在牛顿引力理论中，如果向太空中抛掷一个球，它可能会落回地面，也可能逃逸到无穷远，这取决于初速度。但在广义相对论中，情况变得更为微妙——一旦物质足够集中，时空本身就会"撕裂"，产生奇点。
+图1：时空中的光锥结构。光锥将时空划分为未来、过去和类空区域，是理解因果结构的基石。
+在本文中，我们将踏上一段深入的数学物理之旅，从微分几何的基础概念出发，逐步构建理解奇点定理所需的理论框架，最终揭示这些定理的深刻内涵。
+第一章：预备知识——时空的数学结构 1.1 什么是时空？ 在广义相对论中，时空是一个四维的洛伦兹流形 $(M, g)$，其中：
+$M$ 是一个四维光滑流形 $g$ 是一个洛伦兹度规，其符号差为 $(-, +, +, +)$ 或 $(+, -, -, -)$ 这意味着在每一点 $p \in M$，度规 $g_p$ 在切空间 $T_p M$ 上定义了一个内积，允许我们计算向量的"长度"和"夹角"。但与黎曼几何不同，洛伦兹度规可以取负值，这导致了类时（timelike）、类光（null）和类空（spacelike）向量的区分。
+$$ g(v, w) = g_{\mu\nu} v^{\mu} w^{\nu} $$ 对于任意向量 $v \in T_p M$：
+若 $g(v, v) &lt; 0$：$v$ 是类时向量（对应实物体的世界线） 若 $g(v, v) = 0$：$v$ 是类光向量（对应光线的世界线） 若 $g(v, v) > 0$：$v$ 是类空向量（连接同时事件的线） 1.2 测地线与自由落体 在广义相对论中，不受外力的粒子沿测地线运动。测地线是"最直"的曲线，满足测地线方程：
+...</p></div><footer class=entry-footer><span title='2026-01-29 19:00:00 +0800 CST'>January 29, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>655 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to [九] 彭罗斯-霍金奇点定理：广义相对论的终极边界" href=https://s-ai-unix.github.io/posts/penrose-hawking-singularity/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/minimal-surface-cover.jpg alt=极小曲面></figure><header class=entry-header><h2 class=entry-hint-parent>极小曲面：从肥皂泡到数学之美</h2></header><div class=entry-content><p>引言：肥皂泡的数学秘密 小时候，我们都玩过吹肥皂泡。当肥皂泡漂浮在空中时，它那薄膜表面在阳光下闪烁着彩虹般的光芒。但你有没有想过：*为什么肥皂泡总是球形？
+答案藏在数学中。肥皂泡的表面张力使得薄膜尽可能地"收缩"，以达到能量最小的稳定状态。对于封闭的肥皂泡，球形是表面积最小的形状——这就是为什么肥皂泡总是圆的。
+但如果我们用金属丝弯成不同的形状，再蘸上肥皂液，会得到什么样的曲面呢？
+1776年，意大利数学家拉格朗日（Joseph-Louis Lagrange）首次提出了这个问题：给定空间中的一条闭合曲线，寻找张在这条曲线上且面积最小的曲面。这就是极小曲面问题的起源。
+从那个简单的肥皂泡开始，极小曲面理论已经发展成为微分几何中最美丽、最深刻的分支之一。它不仅有着优雅的数学结构，还在建筑学、材料科学、生物学等领域有着广泛的应用。
+让我们一起走进这个弯曲而优雅的数学世界。
+第一章：什么是极小曲面？ 1.1 直观理解 极小曲面（Minimal Surface）是局部上面积最小的曲面。更准确地说：
+一个曲面 $S$ 称为极小曲面，如果它在每一点的平均曲率（mean curvature）都为零。
+平均曲率是什么？ 让我们先建立直观理解。
+想象你在一个曲面的某一点上。如果你沿着不同的方向切开这个曲面，会得到不同的曲线，每条曲线在该点都有一个曲率。所有这些曲率的平均值（实际上是主曲率的算术平均）就是平均曲率 $H$。
+图 1：平均曲率描述了曲面在某一点向各个方向弯曲的程度。椭圆抛物面处处向同一方向弯曲（$H > 0$），而双曲抛物面在不同方向上弯曲方向相反。
+对于极小曲面，$H = 0$ 意味着在每个点，曲面向相反方向弯曲的程度恰好抵消。这种"鞍形"结构使得曲面在所有方向上的拉伸达到平衡。
+1.2 物理意义：面积最小化 极小曲面的名称来源于其变分性质：
+极小曲面是面积泛函的临界点（critical point）。
+这是什么意思？想象你在曲面 $S$ 上做一个微小的变形，就像轻轻按压肥皂膜。如果 $S$ 是极小曲面，那么在变形的一阶近似下，面积不变。
+图 2：变分原理示意。极小曲面在微小扰动下，面积的一阶变分为零，对应于稳定平衡状态。
+1.3 高斯曲率与平均曲率 对于曲面上的每一点，存在两个互相垂直的主方向，沿这两个方向的曲率分别达到最大值 $k_1$ 和最小值 $k_2$。这两个曲率称为主曲率。
+高斯曲率：$K = k_1 \cdot k_2$
+平均曲率：$H = \frac{k_1 + k_2}{2}$
+极小曲面的定义：$H = 0$
+这一观察给出了极小曲面的一个重要特征：极小曲面的高斯曲率处处非正（$K \leq 0$）。
+第二章：从变分法到极小曲面方程 2.1 Plateau 问题 比利时物理学家约瑟夫·普拉托（Joseph Plateau）在19世纪进行了一系列关于肥皂膜的实验。他发现，将金属丝框架浸入肥皂液后形成的薄膜，总是对应于张在框架上的面积最小的曲面。
+...</p></div><footer class=entry-footer><span title='2026-01-29 08:31:25 +0800 CST'>January 29, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>168 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 极小曲面：从肥皂泡到数学之美" href=https://s-ai-unix.github.io/posts/2026-01-29-minimal-surfaces/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://s-ai-unix.github.io/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=https://s-ai-unix.github.io/>s-ai-unix's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var t,n=e.innerHTML,s=!1;for(n.indexOf("<em>")!==-1&&(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("</em>")!==-1&&(t=n.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),t=t.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("<em>$")!==-1&&(t=n.replace(/<em>\$/g,"$"),t!==n&&(n=t,s=!0)),n.indexOf("</em>$")!==-1&&(t=n.replace(/<\/em>\$/g,"$"),t!==n&&(n=t,s=!0));n.indexOf("<em>")!==-1&&n.indexOf("</em>")!==-1;){if(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t===n)break;n=t,s=!0}n.indexOf("_{")!==-1&&(t=n.replace(/_{/g,"_{"),t!==n&&(n=t,s=!0)),n.indexOf("}_")!==-1&&(t=n.replace(/}_/g,"}"),t!==n&&(n=t,s=!0)),n.includes("</em>{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),n.includes("<em>{\\mathrm{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),(n.includes("</em>")||n.includes("<em>"))&&(t=n.replace(/(\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$[^$]*?)<em>/g,"$1"),t=t.replace(/<em>([^$]*?\$)/g,"$1"),t=t.replace(/(\$[^$]*?)<\/em>/g,"$1"),t=t.replace(/<\/em>([^$]*?\$)/g,"$1"),t!==n&&(n=t,s=!0)),n.indexOf("\\\\")!==-1&&(t=n.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),t!==n&&(n=t,s=!0)),s&&(e.innerHTML=n)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",packages:{"[+]":["noerrors","noundefined","boldsymbol"]},macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var t,n=e.innerHTML,s=!1;for(n.indexOf("<em>")!==-1&&(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("</em>")!==-1&&(t=n.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),t=t.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("<em>$")!==-1&&(t=n.replace(/<em>\$/g,"$"),t!==n&&(n=t,s=!0)),n.indexOf("</em>$")!==-1&&(t=n.replace(/<\/em>\$/g,"$"),t!==n&&(n=t,s=!0));n.indexOf("<em>")!==-1&&n.indexOf("</em>")!==-1;){if(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t===n)break;n=t,s=!0}n.indexOf("_{")!==-1&&(t=n.replace(/_{/g,"_{"),t!==n&&(n=t,s=!0)),n.indexOf("}_")!==-1&&(t=n.replace(/}_/g,"}"),t!==n&&(n=t,s=!0)),n.includes("</em>{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),n.includes("<em>{\\mathrm{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),(n.includes("</em>")||n.includes("<em>"))&&(t=n.replace(/(\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$[^$]*?)<em>/g,"$1"),t=t.replace(/<em>([^$]*?\$)/g,"$1"),t=t.replace(/(\$[^$]*?)<\/em>/g,"$1"),t=t.replace(/<\/em>([^$]*?\$)/g,"$1"),t!==n&&(n=t,s=!0)),n.indexOf("\\\\")!==-1&&(t=n.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),t!==n&&(n=t,s=!0)),s&&(e.innerHTML=n)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",packages:{"[+]":["noerrors","noundefined","boldsymbol"]},macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script></body></html>

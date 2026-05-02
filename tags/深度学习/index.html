@@ -1,0 +1,232 @@
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>深度学习 | s-ai-unix's Blog</title><meta name=keywords content><meta name=description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta name=author content="s-ai-unix"><link rel=canonical href=https://s-ai-unix.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/><link crossorigin=anonymous href=/assets/css/stylesheet.22fd955b9b2997e9af94a4eca3a0909beac4b04580e73de824e9f7a74d3b8e95.css integrity="sha256-Iv2VW5spl+mvlKTso6CQm+rEsEWA5z3oJOn3p007jpU=" rel="preload stylesheet" as=style><link rel=icon href=https://s-ai-unix.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://s-ai-unix.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://s-ai-unix.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://s-ai-unix.github.io/apple-touch-icon.png><link rel=mask-icon href=https://s-ai-unix.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://s-ai-unix.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml title=rss><link rel=alternate hreflang=en href=https://s-ai-unix.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://s-ai-unix.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><meta property="og:site_name" content="s-ai-unix's Blog"><meta property="og:title" content="深度学习"><meta property="og:description" content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><meta property="og:locale" content="zh-cn"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="深度学习"><meta name=twitter:description content="s-ai-unix 的个人技术博客，分享数学、AI、产品设计、数据科学、智能汽车(设计、研发、质量、合规)、历史等领域的知识和思考"><link rel=stylesheet href=https://s-ai-unix.github.io/css/classical-quote.css></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://s-ai-unix.github.io/ accesskey=h title="s-ai-unix's Blog (Alt + H)">s-ai-unix's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://s-ai-unix.github.io/ title="🏠 首页"><span>🏠 首页</span></a></li><li><a href=https://s-ai-unix.github.io/posts/ title="📚 文章"><span>📚 文章</span></a></li><li><a href=https://s-ai-unix.github.io/archives/ title="📁 归档"><span>📁 归档</span></a></li><li><a href=https://s-ai-unix.github.io/tags/ title="🏷️ 标签"><span>🏷️ 标签</span></a></li><li><a href=https://s-ai-unix.github.io/search/ title="🔍 搜索 (Alt + /)" accesskey=/><span>🔍 搜索</span></a></li><li><a href=https://s-ai-unix.github.io/about/ title="👤 关于"><span>👤 关于</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://s-ai-unix.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://s-ai-unix.github.io/tags/>Tags</a></div><h1>深度学习</h1></header><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/alan-turing-ai-cover.jpg alt=图灵与人工智能></figure><header class=entry-header><h2 class=entry-hint-parent>跨越计算的边界：为什么在AI时代，我们依然要仰望图灵？</h2></header><div class=entry-content><p>ChatGPT刚出来的时候，全世界的目光都被一个词吸住了，图灵测试。
+人们兴奋地讨论，AI是不是终于「通过」了图灵测试？这个70多年前由一个英国数学家提出的思想实验，是不是终于被实现了？
+但很少有人追问一个更本质的问题，仅仅凭一个关于「机器能否模仿人类」的思想实验，再加上一台抽象到让人头疼的「假想打字机」（图灵机），这两个概念就足以撑起「计算机科学之父」的头衔吗？
+远远不够。
+图灵测试只是他思想冰山中最容易被大众看到的那一角。在这篇文章里，我想带你拨开迷雾，看看这个人在短短41年的生命里，到底为今天的人工智能大厦打下了怎样的地基。
+你会发现，他之所以伟大，不只是因为他预言了机器会思考，而是因为他在没有任何人想到「计算机」这三个字的年代，就已经亲手写下了整座大厦的蓝图。从地基到方法论，从「能不能」到「怎么做」，全是他一个人完成的。
+第一章：24岁的年轻人定义了「计算」本身 1935年，剑桥大学。一个23岁的年轻人听完一场讲座之后，被一个问题击中了。
+这个问题来自大数学家大卫·希尔伯特（David Hilbert），叫做「判定问题」（Entscheidungsproblem）。简单说就是，能不能找到一种纯粹的机械步骤，自动判断任何数学命题的真假？不用灵感，不用直觉，就像一台机器一样，输入命题，输出「对」或「错」。
+这个问题看起来是纯数学的，跟普通人毫无关系。但图灵为了回答它，做了一件所有人都没预料到的事。
+他没有去推导公式，而是闭上眼睛，想象了一台机器。
+图灵机（Turing Machine）：一台只懂最基本操作的机器，在一条无限长的纸带上读写0和1，根据极简的规则一步步移动。你可以把它想象成一个只懂加减法、但拥有无限时间、无限耐心和无限长草稿纸的记账员。
+然后，图灵证明了，这台简陋到荒谬的机器，可以计算任何「可计算」的东西。
+但真正的天才是下一步。他说，既然这台机器能执行任何计算规则，那我是不是可以设计一台「万能」的图灵机，它不需要为每个任务重新造一台新机器，而是把别的机器的规则「写进」纸带里，就能模拟任何一台图灵机？
+这就是「通用图灵机」（Universal Turing Machine）。
+今天你用的手机、笔记本、云服务器，底层原理全部通用图灵机。你不需要为微信造一台手机、为抖音再造一台、为导航又造一台。同一台设备，换个软件（纸带上的规则）就能干完全不同的事。
+这个「软件和硬件分离」的概念，在1936年是颠覆性的。在图灵之前，人们认为计算机器都是为特定任务定制的硬件齿轮。图灵第一次从数学上证明，计算可以脱离具体的物理形态，变成纯粹的信息处理过程。
+而图灵写下这篇论文的时候，他24岁。
+图1：图灵把「计算」还原成纸带、读写头和规则，一台足够简单的机器，却能刻画所有可计算过程。
+今天动辄千亿参数的大语言模型，无论它在和你对话时表现得多么像有灵魂的人类，底层依然在那个24岁年轻人画出的框架里运行。图灵没有发明某一种计算机，他定义了「计算」本身。
+第二章：预言机，以及机器做不到的事 定义了「计算」之后，图灵做了一件更有意思的事。他问，那计算做不到的呢？
+在1936年的论文里，他已经证明了一件事，存在某些问题，图灵机永远无法回答。最著名的就是「停机问题」，给你一段程序，你能不能判断它最终会停下来还是永远跑下去？图灵用数学证明了，这件事不可能通过任何机械步骤来完成。
+到了普林斯顿读博期间（1936-1938），图灵把这个思路推得更远。他在博士论文里提出了一个概念，「预言机」（Oracle Machine）。
+预言机（Oracle Machine）：给图灵机外挂一个「黑箱」，遇到解不出的问题时，可以直接问这个黑箱要答案，而不需要知道过程。想象你在考场上做一张极难的卷子，遇到死活解不出的题，突然有一个全知全能的老师在你耳边说出答案。
+图2：预言机像一个不能被拆开的黑箱，它不解释过程，只在机械推理走到边界时给出答案。
+图灵用预言机做了什么？他在论文里区分了人类思维中的两种能力，「技巧」（Ingenuity）和「直觉」（Intuition）。
+技巧是那些可以被明确规则化、可以一步步按程序执行的部分。这部分，机器完全可以胜任，甚至比人做得更好。
+直觉是那种突然的跳跃，你不知道为什么想到了这个方向，但它就是出现了。那种「灵光一闪」的瞬间，形式化的逻辑规则无法涵盖它。在图灵的理论框架里，每当机械的技巧走到尽头，就需要一次直觉的跳跃来打开新的局面，然后再继续用技巧去铺路。
+这不是说图灵断言了机器永远不可能拥有直觉。他比谁都相信机器的潜力。但他用严谨的数学，标记出了当前的计算框架中存在边界。这个边界不是技术上的限制，而是逻辑结构上的。
+今天回头看，这个洞察准得吓人。当下的深度学习极其擅长在已有的模式空间里生成、推理、优化（技巧），但当需要从零到一提出全新的科学范式时，仍然举步维艰。图灵在80多年前就用数学语言，把这个边界画出来了。
+第三章：一个1950年的预言，精确命中了今天 让我们回到1950年。
+那一年，全世界最强大的计算机占了整整一个大房间，耗电量够供一条街，运算能力还不如今天一个10块钱的计算器。没有任何AI，没有任何互联网，连「程序员」这个职业都还不存在。
+就在这一年，图灵写下了《计算机器与智能》这篇论文。
+大多数人只知道这篇文章提出了图灵测试。但真正让人拍案叫绝的，是他在论文末尾提出的「儿童机器」（Child-Machine）构想。
+图灵说，试图直接编写一个具备成人智能的程序，是极其困难甚至徒劳的。正确的方法是什么？开发一个像儿童大脑一样的初始程序，给它基础的逻辑和极强的学习能力，然后让它在环境中通过教育来成长。
+那最有效的教育方式是什么？
+奖励与惩罚。
+图3：图灵认为我们不该制造一个成年的机器，而是通过奖励与惩罚像教育孩童一样训练它，这正是现代强化学习的精髓。
+强化学习（Reinforcement Learning）：让智能体在环境中不断试错，做对了给奖励，做错了给惩罚。就像训练小狗握手，做对了就给一块肉干。
+仔细想想这件事。在1950年，在计算机还是一个房间大小的铁柜子的年代，图灵不仅预言了人工智能终将到来，他甚至连「怎么培养AI」的正确路线图都画好了。
+2016年，AlphaGo横扫围棋界，底层正是强化学习。 2023年，ChatGPT之所以能学会顺从人类的偏好、不说胡话，用的是RLHF（基于人类反馈的强化学习）。
+70多年过去了。图灵当年画的那张路线图，不仅没过时，我们恰恰是在上面狂奔。
+他不是只预言了「AI会出现」，他是把「地基」和「方法论」一并写好了。
+尾声：数字时代的普罗米修斯 1952年，图灵因为同性恋行为被英国政府定罪。他被迫在坐牢和化学阉割之间做出选择。
+他选择了后者。
+两年后，1954年6月7日，图灵被发现死在自己的卧室里，床头有一个咬过一口的苹果。他41岁。
+这个人，二战期间在布莱切利园破解了德国海军的Enigma密码，历史学家估计他的工作将战争缩短了至少两年，拯救了上千万人的生命。他定义了「计算」本身，预见了机器智能的可能性，设计了训练智能的方法论。
+图4：在布莱切利园，图灵把抽象的计算思想变成了破解密码的现实工具，也改变了二战的进程。
+然后他被自己拯救的社会迫害至死。
+2013年，英国女王伊丽莎白二世签署了对图灵的皇家赦免。距离他去世，已经过去了59年。
+今天，我们每次在屏幕前敲下回车，每次大模型吐出流畅的文字，背后都在回荡着图灵半个多世纪前的思考。他没有活到看见哪怕第一台个人电脑诞生的那一天，但他画下的蓝图，至今没有一条被证明走错了。
+他真的是数字时代的普罗米修斯，为人间盗来了火种，自己却在黑暗中燃尽。</p></div><footer class=entry-footer><span title='2026-05-01 19:00:00 +0800 CST'>May 1, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>63 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 跨越计算的边界：为什么在AI时代，我们依然要仰望图灵？" href=https://s-ai-unix.github.io/posts/2026-05-01-alan-turing-greatness-ai/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/2026-04-26-ai-prompt-cover.png alt=人与AI的边界正在模糊></figure><header class=entry-header><h2 class=entry-hint-parent>Human-to-Human，AI-to-AI，贾扬清的内部沟通规则或许太简单理想化了</h2></header><div class=entry-content><p>Human-to-Human，AI-to-AI，贾扬清的内部沟通规则或许太简单理想化了 贾扬清发了一条帖子，17K+ Views，说他在公司内部设了一条沟通规则：
+Just set an internal comms rule: no AI-generated content for collaboration.
+If you used AI, don’t send the output. Send your prompt, or better, your raw thinking. Assume your reader will paste it into ChatGPT. Write so they won’t need to. Separate channels: human-to-human = your thoughts; AI-to-AI = attach outputs like audit working papers. Human to human, AI to AI. Works well so far.
+图1：贾扬清发帖提出内部沟通规则，主张将人与AI的沟通通道分离。
+...</p></div><footer class=entry-footer><span title='2026-04-26 10:00:00 +0800 CST'>April 26, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>290 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to Human-to-Human，AI-to-AI，贾扬清的内部沟通规则或许太简单理想化了" href=https://s-ai-unix.github.io/posts/2026-04-26-ai-prompt-is-not-the-whole-story/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/2026-04-14-kant-ai-consciousness-cover.jpg alt></figure><header class=entry-header><h2 class=entry-hint-parent>当康德遇上 ChatGPT：一场关于心智、机器与现实的思想实验</h2></header><div class=entry-content><p>试想一下：你正坐在电脑前阅读这篇文章。你的眼睛接收光线，大脑处理信号，意识浮现出"这是一篇关于康德和 AI 的文章"这个念头。
+但如果，你的大脑其实泡在一个营养缸里，所有的感觉都是超级计算机喂给你的电信号呢？
+这不是科幻小说的开场白。这是哲学家希拉里·普特南在 1981 年提出的经典思想实验。而更让人意外的是，240 多年前，一个从未离开过家乡柯尼斯堡的德国老头，已经给出了回应这个问题的思想工具。
+他就是伊曼努尔·康德。
+今天，当 ChatGPT 能写诗、能推理、能通过律师考试的时候，康德的那套"先验哲学"不仅没有过时，反而成了我们理解 AI、智能和意识最锋利的手术刀之一。
+康德的核心洞见：你看到的世界，不是世界本身 大多数人对现实有一种朴素的信念：我看到红色，是因为那个苹果"本身就是红色的"；我感到硬，是因为桌子"本来就是硬的"。
+康德说，不对。
+先验唯心论（Transcendental Idealism）：我们永远无法直接接触"事物本身"（物自体），我们感知到的一切，都经过了心智的加工和建构。可以想象成你永远戴着一副无法摘下的"心智眼镜"，你看到的一切都是经过镜片过滤后的样子。
+这副"眼镜"有两层滤镜。
+第一层：时间和空间。 康德认为，时间和空间不是客观世界的属性，而是我们感知世界的"先天格式"。就像你的手机拍照时，不管拍什么，照片都是矩形的。这不是因为世界是矩形的，而是因为你的相机传感器是矩形的。
+第二层：知性范畴。 感官给你的只是一堆零散的感觉材料（红的、圆的、甜的）。要把它们组织成"眼前有一个红苹果"这样有意义的经验，需要一套概念框架来"拼装"。康德列出了 12 个基本范畴，比如因果关系、实体与偶性、统一性与多样性。
+这里最关键的一点是：这些范畴不是从经验中学来的，而是经验之所以可能的前提条件。
+你没法靠观察来"发现"因果律。恰恰相反，因果律是你能够观察和理解任何事情的前提。没有它，你面前就只有一团无法解释的、混沌的感觉碎片。
+机器能思考吗？图灵和康德的隔空对话 1950 年，图灵提出了一个绕过"思考"定义的精妙方案：如果一台机器的对话表现让人分辨不出它是不是人类，那我们就说它能"思考"。这就是著名的图灵测试。
+图灵测试（Turing Test）：判断机器是否具有智能的一种方法。如果你和一台机器文字聊天，分不清对面是人还是机器，就说明它通过了测试。可以想象成一场"蒙面歌王"，你只听声音判断歌手是谁。
+今天的大语言模型在很多场景下已经能骗过人了。那是不是说 AI 真的在"思考"？
+康德的框架给出了一个更深层的分析工具。
+在康德看来，真正的"认知"需要两样东西同时工作。直觉（Intuition）提供原始材料，知性（Understanding）用范畴去组织它。正如他那句名言所说：
+“没有内容的思想是空洞的，没有概念的直觉是盲目的。”
+那么 GPT 在做什么？它处理文本序列，预测下一个 token，在统计意义上"理解"了语言的结构。但它有"直觉"吗？它有原始的感觉经验吗？显然没有。它从未见过一个苹果，闻过一朵花，感受过疼痛。
+但问题没这么简单。
+中文房间：语法够不够？ 哲学家约翰·塞尔在 1980 年扔出了一个炸弹。
+中文房间（Chinese Room）：一个不懂中文的英语母语者被关在房间里，手里有一本规则手册。中国人从门缝塞进中文问题，他按规则查表、输出中文回答。外面的人以为房间里有人懂中文，但实际上他一个字也不理解。可以想象成一本翻译手册足够厚、足够详细，就能骗过所有人，但手册本身"不懂"任何语言。
+塞尔想说的是：语法（按规则操作符号）不等于语义（真正理解含义）。 电脑再强大，也只是在做语法操作。
+如果我们用康德的框架来看这个实验，会发现一个有趣的对应。
+那个房间里的人（或者说，GPT 的算法）确实在执行一种"知性"操作：按规则组合、转换符号。但他缺少的是"直觉"维度的参与：他从未真正接触过中文语义的"原始材料"。他的操作是空转的知性，是没有直觉的概念。
+按康德的说法，这样的操作是"空洞的"。
+不过，这里有一个微妙的反驳值得讨论。塞尔的论证预设了"理解"必须发生在执行操作的个体层面。但如果把整个系统（规则手册 + 房间 + 操作者）作为一个整体来看呢？这就是所谓的"系统回应"（Systems Reply）。
+康德本人不会反对"系统"这个视角。他的"统觉的综合统一"就是一种系统性的自我意识，是所有经验碎片被整合到同一个"我"当中的过程。问题在于：一套算法系统，即使再复杂，有没有这样一个统一的"我"来整合所有信息？
+这把我们带到了这场讨论中最深的那口井。中文房间实验追问的是：没有真正接触语义的系统能不能算"理解"？接下来的问题更狠：就算一个系统真的在处理信息、做出反应，它"里面"有人在体验吗？
+意识的"难问题"：从康德到查尔默斯 为什么蝙蝠"觉得"自己在用超声波定位？为什么你看红色的时候会有一种"红的感觉"，而不是仅仅处理了一个 700 纳米的波长数据？
+意识的难问题（Hard Problem of Consciousness）：由哲学家大卫·查尔默斯提出。为什么物理过程（神经元放电、突触传递）会产生主观感受？解释大脑如何处理信息是"容易问题"，解释为什么处理信息的同时还伴随着"体验"，是"难问题"。可以想象成你完全拆解了一台收音机的所有零件和电路，但你仍然无法解释"音乐为什么好听"。
+...</p></div><footer class=entry-footer><span title='2026-04-14 00:00:00 +0000 UTC'>April 14, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>141 words</span>&nbsp;·&nbsp;<span>牧羊人</span></footer><a class=entry-link aria-label="post link to 当康德遇上 ChatGPT：一场关于心智、机器与现实的思想实验" href=https://s-ai-unix.github.io/posts/2026-04-14-kant-ai-consciousness/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/mingpt-cover.png alt=minGPT：300行代码读懂GPT原理></figure><header class=entry-header><h2 class=entry-hint-parent>Andrej Karpathy 的 minGPT：300行代码读懂GPT原理</h2></header><div class=entry-content><p>2017 年 Transformer 提出后，OpenAI 在 2018 年沿着 decoder-only 路线做出了 GPT，并在 GPT-2、GPT-3、GPT-4 上不断放大规模，验证了自回归预训练的威力。问题是，工业代码通常太大，关键细节被工程封装遮住了。
+如果你想从代码层面真正看懂 GPT，Andrej Karpathy 的 minGPT 几乎是最短路径：不到 300 行，就把核心机制完整串起来。
+GPT（Generative Pre-trained Transformer）：一种 decoder-only 的自回归语言模型，本质是“给定前文预测下一个 token”。可以想象成超大规模自动补全系统。它重要在于同一目标函数就能覆盖写作、问答和代码生成。
+一、GPT 的本质：预测下一个词 在深入代码前，先抓住任务本质。你看到“他推开那扇沉重的”，大脑会自动补“门”。GPT 做的就是这种 next-token 预测，只是它把这件事做到了海量语料和超大参数规模。
+用数学语言表达，GPT 建模的是条件概率分布：
+$$ P(x_t | x_1, x_2, …, x_{t-1}) $$
+给定前 $t-1$ 个词，模型输出第 $t$ 个词的概率分布；不断重复这个过程，就得到完整生成。
+自回归（Autoregressive）：每一步只用历史信息预测下一步。可以想象成边写边续句。它重要在于训练目标和生成过程完全一致。
+GPT 通过 next-token prediction 学习，不是随机挖空，而是把序列整体右移一位：
+$$ \text{input}=(x_1, x_2, \ldots, x_{T-1}), \quad \text{target}=(x_2, x_3, \ldots, x_T) $$
+模型每一步都预测“下一个 token”，再用交叉熵计算损失。这种训练方式既简单又有效，让 GPT 能从海量文本中自动学习语言规律。
+Teacher Forcing：训练时用真实上文而不是模型自己的上一步输出。可以想象成每一步都给参考答案前缀。它重要在于让训练更稳定、收敛更快。
+...</p></div><footer class=entry-footer><span title='2026-02-16 10:32:13 +0800 CST'>February 16, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>1199 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to Andrej Karpathy 的 minGPT：300行代码读懂GPT原理" href=https://s-ai-unix.github.io/posts/2026-02-16-mingpt-300-lines-gpt/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/conditional-expectation-cover.jpg alt=条件期望：连接统计与机器学习的桥梁></figure><header class=entry-header><h2 class=entry-hint-parent>条件期望：从统计基础到深度学习应用</h2></header><div class=entry-content><p>引言：预测的艺术 想象你是一位气象学家，面对一个看似简单却极具挑战性的问题：明天的气温会是多少？你拥有大量的历史数据——过去几年的气温记录、湿度、气压、风速等。但仅仅知道历史的平均气温是远远不够的。如果今天是炎热潮湿的夏日午后，那么明天的气温很可能与寒冷冬日的平均气温相差甚远。
+这时，你需要一种更精细的预测方法：在给定今天天气状况的条件下，预测明天的气温。这就是条件期望（Conditional Expectation）的核心思想——不是做无条件的平均，而是在已知某些信息的条件下，做出最优的预测。
+条件期望是现代概率论和统计学的基石概念之一。从卡尔·皮尔逊（Karl Pearson）在19世纪末对回归分析的开拓性工作，到柯尔莫哥洛夫（Andrey Kolmogorov）在1933年建立概率论的公理化体系，再到今天深度学习中变分自编码器（VAE）的潜在空间建模，条件期望始终扮演着核心角色。
+本文将深入浅出地介绍条件期望的完整理论体系：从严格的数学定义出发，推导其关键性质，展示其在统计推断中的威力，最终揭示它如何在现代机器学习和深度学习中被广泛应用。
+第一章：条件期望的直观理解 1.1 从条件概率到条件期望 让我们从更简单的概念——条件概率开始。假设你正在玩一副标准的52张扑克牌。抽到一张红桃的概率是多少？
+$$P(\text{红桃}) = \frac{13}{52} = \frac{1}{4}$$
+现在，假设有人告诉你这张牌是红色的（红桃或方块）。在这个条件下，抽到红桃的概率变为：
+$$P(\text{红桃} \mid \text{红色}) = \frac{13}{26} = \frac{1}{2}$$
+条件概率回答了"某事件发生的概率是多少"的问题。而条件期望则进一步回答：“在某条件下，某个随机变量的期望值是多少？”
+例子：假设 $X$ 表示掷一个公平骰子的结果，$Y$ 表示结果的奇偶性（$Y=1$ 表示奇数，$Y=0$ 表示偶数）。那么：
+无条件期望：$E[X] = \frac{1+2+3+4+5+6}{6} = 3.5$ 条件期望（已知是奇数）：$E[X \mid Y=1] = \frac{1+3+5}{3} = 3$ 条件期望（已知是偶数）：$E[X \mid Y=0] = \frac{2+4+6}{3} = 4$ 上图展示了这一例子：左图显示所有可能结果的分布，右图显示在奇偶条件下的条件分布及其期望值。
+1.2 条件期望作为最优预测 条件期望有一个深刻的最优性解释：在给定信息的条件下，条件期望是最小化均方误差的预测。
+假设你想用某个可观测的随机变量 $X$ 来预测另一个随机变量 $Y$。你希望找到一个函数 $g(X)$，使得预测误差 $Y - g(X)$ 在某种意义下最小。
+定理：在所有 $X$ 的函数中，条件期望 $E[Y \mid X]$ 最小化均方误差：
+...</p></div><footer class=entry-footer><span title='2026-02-03 20:00:00 +0800 CST'>February 3, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>992 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 条件期望：从统计基础到深度学习应用" href=https://s-ai-unix.github.io/posts/2026-02-03-conditional-expectation-from-statistical/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/dg-prerequisites-cover.jpg alt=微分几何知识网络></figure><header class=entry-header><h2 class=entry-hint-parent>通往微分几何之路：系统掌握前序知识完全指南</h2></header><div class=entry-content><p>引言：为什么要学习微分几何？ 想象一下，你是一只生活在二维纸面上的蚂蚁。你的整个世界就是这张纸——你可以向前、向后、向左、向右移动，但永远无法理解"向上"或"向下"意味着什么。直到有一天，你所在的纸面被弯成了一个球面。你开始注意到一些奇怪的现象：沿着直线一直走，最终会回到起点；三角形的内角和似乎大于 $180^{\circ}$；平行线会在某个神秘的地方相交。
+这就是微分几何研究的起点：如何在弯曲的空间中描述几何。
+微分几何是现代数学中最优雅、最深刻的分支之一。它不仅是理解广义相对论的数学语言，也是计算机图形学、机器人学、机器学习等领域的基础工具。从爱因斯坦用黎曼几何描述引力场，到深度学习中的流形学习，微分几何的思想无处不在。
+然而，攀登这座数学高峰并非易事。许多学习者在面对外微分、联络、曲率张量等概念时感到困惑，往往是因为前序知识的基础不够扎实。本文将系统梳理掌握大学微分几何所需的全部前序知识，帮助你构建完整的知识框架。
+微分几何的发展历程 微分几何的故事要从17世纪讲起。
+牛顿与莱布尼茨时代（1687年前后）
+1687年，牛顿发表《自然哲学的数学原理》，不仅奠定了经典力学的基础，也发明了微积分这一强大的数学工具。正是微积分，使得研究"弯曲"和"变化"成为可能。莱布尼茨独立发展的微积分记号系统——特别是 $dy/dx$ 这种表示变化率的方式——至今仍被广泛使用。
+欧拉的开创性工作（1736-1783）
+莱昂哈德·欧拉是历史上最高产的数学家之一。他对曲线和曲面的研究为微分几何奠定了基础。欧拉引入了曲线的曲率和挠率概念，研究了测地线（曲面上的"直线"），并解决了著名的哥尼斯堡七桥问题——这被认为是图论和拓扑学的诞生。
+高斯的《曲面的一般研究》（1827）
+卡尔·弗里德里希·高斯在1827年发表的《曲面的一般研究》（Disquisitiones Generales circa Superficies Curvas）被公认为现代微分几何的起点。在这篇论文中，高斯引入了第一基本形式和第二基本形式，证明了惊人的高斯绝妙定理（Theorema Egregium）：高斯曲率是曲面的内蕴量，也就是说，生活在曲面上的生物，无需知道曲面如何嵌入三维空间，就能测量出曲率。
+这一发现的意义怎么强调都不为过。它表明几何可以分为"内在的"和"外在的"——这正是后来黎曼几何和广义相对论的核心思想。
+黎曼的革命性演讲（1854）
+1854年，年轻的伯恩哈德·黎曼为了获得哥廷根大学的教职资格，发表了一篇题为《论几何基础中的假设》的演讲。在这篇演讲中，黎曼将高斯关于曲面的理论推广到了任意维度的空间，提出了黎曼流形的概念。
+黎曼的关键洞见是：空间的性质不应该由它如何嵌入更高维空间决定，而应该由度量（测量距离的方式）决定。他引入了黎曼度量张量 $g_{ij}$，使得在任何局部坐标系下都能计算距离和角度。
+张量分析与相对论（1869-1915）
+1869年，克里斯托费尔发展了协变微分的理论；1900年，列维-奇维塔引入平行移动的概念；里奇和列维-奇维塔系统发展了张量分析。这些工作为爱因斯坦的广义相对论提供了数学语言。
+1915年，爱因斯坦利用黎曼几何描述了引力场。他证明了引力不是力，而是时空弯曲的表现。这是微分几何在物理学中最壮观的应用。
+现代发展（1950年至今）
+陈省身在1940-50年代发展了示性类理论，将拓扑学与微分几何联系起来。丘成桐在1982年证明了卡拉比猜想，打开了弦理论的大门。佩雷尔曼在2002年利用里奇流证明了庞加莱猜想，这是21世纪数学的最大成就之一。
+今天，微分几何在计算机图形学（曲面建模）、机器人学（位形空间）、机器学习（流形学习、信息几何）等领域发挥着重要作用。
+第一章：微积分基础 如果说微分几何是一座宏伟的大厦，那么微积分就是它的地基。在这一章中，我们将回顾微积分的核心概念，特别是那些直接为微分几何服务的部分。
+1.1 极限与连续：无穷小的严格化 微积分的核心概念——导数和积分——都建立在极限的基础之上。理解极限，是理解一切后续内容的第一步。
+极限的 $\varepsilon$-$\delta$ 定义 函数 $f(x)$ 在 $x \to a$ 时的极限为 $L$，记作
+$$\lim_{x \to a} f(x) = L$$
+其严格定义是：对于任意给定的 $\varepsilon > 0$，存在 $\delta > 0$，使得当 $0 &lt; |x - a| &lt; \delta$ 时，有 $|f(x) - L| &lt; \varepsilon$。
+...</p></div><footer class=entry-footer><span title='2026-02-03 08:05:00 +0800 CST'>February 3, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>1631 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to 通往微分几何之路：系统掌握前序知识完全指南" href=https://s-ai-unix.github.io/posts/2026-02-03-road-to-differential-geometry-complete-guide/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/llama3-herd-cover.jpg alt="Llama 3 模型集群架构示意图"></figure><header class=entry-header><h2 class=entry-hint-parent>AI 论文解读系列：The Llama 3 Herd of Models —— 开源大模型的巅峰之作</h2></header><div class=entry-content><p>引言：开源 AI 的黎明 2024 年 7 月 23 日，Meta AI 发布了一篇重磅论文——《The Llama 3 Herd of Models》。这篇论文不仅介绍了一个拥有 4050 亿参数的巨型语言模型，更标志着开源人工智能正式迈入了与闭源巨头分庭抗礼的新纪元。
+回想 2022 年底，ChatGPT 的横空出世让整个 AI 领域为之震动。然而，最强大的模型始终被封闭在 OpenAI、Google 等公司的围墙之内。研究者无法探究其内部机理，开发者无法自由定制，这种"黑箱"状态严重阻碍了 AI 技术的普惠发展。
+Llama 3 的出现改变了这一切。Meta 不仅开源了完整的模型权重，还详细披露了从数据筛选到训练优化的每一个技术细节。这意味着，任何研究者和开发者都可以在自己的硬件上运行这个媲美 GPT-4 的模型，深入理解它的工作原理，甚至在此基础上进行创新。
+本文将带领读者深入这篇 92 页的论文，从数据、规模、复杂性管理三个核心维度，层层剥开 Llama 3 的技术奥秘。
+第一章：模型概览 —— “模型群"的设计理念 1.1 为什么叫 “Herd”（群）？ 论文标题中的 “Herd of Models” 并非随意命名。Meta 同时发布了三个不同规模的模型：
+模型 参数量 上下文长度 目标场景 Llama 3 8B $8 \times 10^9$ 128K tokens 边缘设备、低延迟推理 Llama 3 70B $70 \times 10^9$ 128K tokens 平衡性能与效率 Llama 3 405B $405 \times 10^9$ 128K tokens 顶级性能、复杂推理 这种"群"策略的核心思想是：用一个旗舰模型（405B）指导整个家族的优化方向，同时让每个成员在特定场景下发挥最大价值。
+...</p></div><footer class=entry-footer><span title='2026-01-31 09:30:00 +0800 CST'>January 31, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>1184 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to AI 论文解读系列：The Llama 3 Herd of Models —— 开源大模型的巅峰之作" href=https://s-ai-unix.github.io/posts/2026-01-31-ai-paper-llama3-herd-of-models/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/alphazero-cover.jpg alt="AlphaZero 国际象棋棋盘"></figure><header class=entry-header><h2 class=entry-hint-parent>AI 论文解读系列：AlphaZero - 从零开始的自我博弈通用算法</h2></header><div class=entry-content><p>引言：超越人类知识 2017年12月，一个历史性的事件发生在伦敦 DeepMind 的实验室里。一个名为 AlphaZero 的算法，在仅接受游戏规则、没有任何人类棋谱输入的情况下，通过短短 24 小时的自我对弈训练，不仅掌握了国际象棋，还击败了当时世界最强的国际象棋程序 Stockfish。
+这不是科幻小说。2018 年 12 月，DeepMind 团队在《科学》杂志上发表了题为"Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm"的论文，向世界展示了这一突破。
+AlphaZero 的意义远超它击败的对手。它证明了：一个通用的学习算法可以从随机初始状态开始，仅通过自我博弈，就能达到超越人类数千年积累的专业知识水平。这一成就不仅震撼了棋类世界，更深刻地影响了我们对机器学习和人工智能的认知。
+第一章：从 AlphaGo 到 AlphaZero 1.1 AlphaGo 的局限 要理解 AlphaZero 的革命性，我们需要先回顾它的前辈 AlphaGo。
+AlphaGo 在 2016 年击败了围棋世界冠军李世石，这是人工智能史上的里程碑。但 AlphaGo 的训练过程依赖于人类专家的知识：
+监督学习阶段：使用 16 万盘人类高手棋谱训练策略网络 强化学习阶段：在监督学习基础上进一步优化 价值网络：需要人类棋谱数据进行训练 这种对人类数据的依赖带来了几个问题：
+知识瓶颈：模型的上限受限于人类棋谱的质量 领域限制：针对围棋设计的架构难以迁移到其他游戏 数据成本：获取高质量人类棋谱需要大量资源 1.2 完全自主学习的愿景 AlphaZero 的核心突破在于：完全抛弃人类棋谱，从零开始学习。
+这一想法的理论基础来自强化学习的一个核心洞察：如果环境是确定的，且我们能够模拟环境的动态，那么一个智能体可以通过与环境的交互来学习最优策略，而无需任何外部示范。
+在棋类游戏中，这个条件完美满足：
+规则完全已知且确定 可以完美模拟任意棋局的发展 胜负结果是明确的奖励信号 图 1：AlphaGo 与 AlphaZero 训练流程对比。AlphaGo 从人类棋谱开始，AlphaZero 则从随机初始化开始纯自我博弈
+...</p></div><footer class=entry-footer><span title='2026-01-30 13:00:00 +0800 CST'>January 30, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>702 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to AI 论文解读系列：AlphaZero - 从零开始的自我博弈通用算法" href=https://s-ai-unix.github.io/posts/2026-01-30-alphazero-paper-interpretation/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/alphago-cover.jpg alt="AlphaGo 围棋人工智能"></figure><header class=entry-header><h2 class=entry-hint-parent>AI 论文解读系列：AlphaGo - 深度学习与树搜索征服围棋</h2></header><div class=entry-content><p>引言：最后的堡垒 2016年1月27日，伦敦。DeepMind 团队在《自然》杂志上发表了一篇注定要载入人工智能史册的论文：“Mastering the game of Go with deep neural networks and tree search”。这篇论文介绍了 AlphaGo——一个结合了深度神经网络和蒙特卡洛树搜索的计算机围棋程序。
+就在论文发表两个月后，AlphaGo 以 4:1 的比分击败了世界围棋冠军李世石。这是人工智能历史上的一个转折点。在此之前，围棋被普遍认为是人工智能难以攻克的"最后的堡垒"。
+为什么围棋如此困难？让我们从这个问题开始，逐步揭开 AlphaGo 的神秘面纱。
+第一章：围棋——人工智能的终极挑战 1.1 搜索空间的爆炸性增长 围棋起源于中国，已有超过 2500 年的历史。它的规则极其简单：黑白双方轮流在 $19 \times 19$ 的棋盘交叉点上落子，以围地多者为胜。然而，这种简单规则却孕育出了近乎无穷的复杂性。
+从数学角度分析，围棋的复杂度体现在两个维度：
+分支因子：平均每步有约 250 种合法着法。相比之下，国际象棋约为 35。
+对局长度：典型围棋对局约有 150 步。国际象棋约为 80 步。
+游戏树的规模可以用 $b^d$ 来估计，其中 $b$ 是分支因子，$d$ 是深度。围棋的游戏树复杂度约为 $250^{150} \approx 10^{360}$，而国际象棋约为 $35^{80} \approx 10^{123}$。
+为了理解这个数字的庞大程度，可以对比：
+宇宙中估计的原子数量：约 $10^{80}$ 个 可观测宇宙的体积（以普朗克体积计）：约 $10^{185}$ 这意味着，即使使用穷举搜索——即使我们拥有由宇宙中所有原子构成的超级计算机，每颗原子每秒能进行 $10^{20}$ 次运算——也无法在宇宙年龄（约 138 亿年）内遍历完围棋的所有可能局面。
+1.2 局面评估的困难 比搜索空间更棘手的是局面评估。在国际象棋中，程序员可以编写明确的评估函数：王的安全性、子力价值、控制中心等。这些启发式规则可以被形式化为可计算的函数。
+但在围棋中，局面评估极其微妙。一个看似被围困的棋子群可能在 20 步后"起死回生"；一片看似稳固的领地可能因为一个隐蔽的劫争而化为乌有。人类棋手依靠直觉和"棋感"来判断局面优劣，而这种直觉很难被编码为显式规则。
+...</p></div><footer class=entry-footer><span title='2026-01-30 12:30:00 +0800 CST'>January 30, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>667 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to AI 论文解读系列：AlphaGo - 深度学习与树搜索征服围棋" href=https://s-ai-unix.github.io/posts/2026-01-30-alphago-paper-interpretation/></a></article><article class="post-entry tag-entry"><figure class=entry-cover><img loading=lazy src=https://s-ai-unix.github.io/images/covers/inception-v4-cover.jpg alt="AI 论文解读系列 Inception-v4 Going Deeper with Convolutions"></figure><header class=entry-header><h2 class=entry-hint-parent>AI 论文解读系列：Inception-v4 - Going Deeper with Convolutions</h2></header><div class=entry-content><p>AI 论文解读系列：Inception-v4 - Going Deeper with Convolutions 引言 2016年2月，Google 的 Christian Szegedy 等人在 arXiv 上发表了一篇名为《Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning》的论文。这篇论文不仅是 Inception 系列发展的重要里程碑，更提出了一种革命性的思路：将 Inception 的多尺度特征提取能力与 ResNet 的残差连接相结合。
+让我们先回顾一下当时的背景。2015年，ResNet 横空出世，用简单的跳跃连接解决了深层网络的退化问题，将网络深度推向了一百层甚至上千层。与此同时，Inception-v3 以其独特的多分支结构，在计算效率和准确率之间取得了优异的平衡。一个自然的问题浮现出来：**这两种看似迥异的设计哲学能否融合？**如果能将 Inception 的高效特征提取与残差连接的优化优势结合起来，会发生什么？
+本文将系统性地解读这篇经典论文，从 Inception 系列的演进脉络出发，深入剖析 Inception-v4 的架构设计原理，探讨 Inception-ResNet 的创新之处，以及残差缩放这一关键技术的数学本质。
+图：Inception 系列演进历程与 ImageNet 竞赛 Top-5 错误率变化趋势
+第一章：Inception 的演进之路 1.1 Inception-v1：多尺度特征提取的开创 要理解 Inception-v4，我们需要先回到2014年的 Inception-v1（GoogLeNet）。当时，深度学习领域的主流思路是"越深越好"——AlexNet 有8层，VGGNet 堆到了19层。但 Google 的研究者们提出了一个不同的观点：与其简单地堆叠相同的层，不如让网络自己选择如何组合不同尺度的特征。
+Inception 模块的核心思想可以用一个简单的问题来概括：当我们观察一张图像时，我们究竟需要多大的感受野？
+识别一只猫的脸，可能只需要一个 $3 \times 3$ 的区域就能看清它的眼睛和鼻子 但要判断这是一只完整卧着的猫，可能需要一个 $5 \times 5$ 的区域来捕捉整体轮廓 而对于更宏观的场景理解，甚至需要更大的视野 Inception 模块的解决方案是并行使用不同大小的卷积核，让网络自己学习每种尺度的权重。一个典型的 Inception 模块包含四个分支：
+...</p></div><footer class=entry-footer><span title='2026-01-30 12:30:00 +0800 CST'>January 30, 2026</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>1455 words</span>&nbsp;·&nbsp;<span>s-ai-unix</span></footer><a class=entry-link aria-label="post link to AI 论文解读系列：Inception-v4 - Going Deeper with Convolutions" href=https://s-ai-unix.github.io/posts/2026-01-30-ai-paper-interpretation-series-inception-v4-going-deeper-with-convolutions/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://s-ai-unix.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=https://s-ai-unix.github.io/>s-ai-unix's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var t,n=e.innerHTML,s=!1;for(n.indexOf("<em>")!==-1&&(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("</em>")!==-1&&(t=n.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),t=t.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("<em>$")!==-1&&(t=n.replace(/<em>\$/g,"$"),t!==n&&(n=t,s=!0)),n.indexOf("</em>$")!==-1&&(t=n.replace(/<\/em>\$/g,"$"),t!==n&&(n=t,s=!0));n.indexOf("<em>")!==-1&&n.indexOf("</em>")!==-1;){if(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t===n)break;n=t,s=!0}n.indexOf("_{")!==-1&&(t=n.replace(/_{/g,"_{"),t!==n&&(n=t,s=!0)),n.indexOf("}_")!==-1&&(t=n.replace(/}_/g,"}"),t!==n&&(n=t,s=!0)),n.includes("</em>{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),n.includes("<em>{\\mathrm{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),(n.includes("</em>")||n.includes("<em>"))&&(t=n.replace(/(\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$[^$]*?)<em>/g,"$1"),t=t.replace(/<em>([^$]*?\$)/g,"$1"),t=t.replace(/(\$[^$]*?)<\/em>/g,"$1"),t=t.replace(/<\/em>([^$]*?\$)/g,"$1"),t!==n&&(n=t,s=!0)),n.indexOf("\\\\")!==-1&&(t=n.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),t!==n&&(n=t,s=!0)),s&&(e.innerHTML=n)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",packages:{"[+]":["noerrors","noundefined","boldsymbol"]},macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>(function(){"use strict";function e(){var e=document.querySelectorAll("p, li, td, div, span, h1, h2, h3, h4, h5, h6, ol, ul");e.forEach(function(e){if(e.classList.contains("classical-quote-container")||e.classList.contains("quote-text")||e.closest(".classical-quote-container"))return;var t,n=e.innerHTML,s=!1;for(n.indexOf("<em>")!==-1&&(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("</em>")!==-1&&(t=n.replace(/\$([^$]*?)<\/em>([^$]*?)\$/g,function(e,t,n){return"$"+t+"_{"+n+"$"}),t=t.replace(/\$\$([^$]*?)<\/em>([^$]*?)\$\$/g,function(e,t,n){return"$$"+t+"_{"+n+"$$"}),t!==n&&(n=t,s=!0)),n.indexOf("<em>$")!==-1&&(t=n.replace(/<em>\$/g,"$"),t!==n&&(n=t,s=!0)),n.indexOf("</em>$")!==-1&&(t=n.replace(/<\/em>\$/g,"$"),t!==n&&(n=t,s=!0));n.indexOf("<em>")!==-1&&n.indexOf("</em>")!==-1;){if(t=n.replace(/\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$/g,function(e,t,n,s){return/^[\d.,]+$/.test((t+n+s).replace(/[.,]/g,""))?e:"$"+t+"_"+n+s+"$"}),t=t.replace(/\$\$([^$]*?)<em>([^<]+?)<\/em>([^$]*?)\$\$/g,function(e,t,n,s){return"$$"+t+"_"+n+s+"$$"}),t===n)break;n=t,s=!0}n.indexOf("_{")!==-1&&(t=n.replace(/_{/g,"_{"),t!==n&&(n=t,s=!0)),n.indexOf("}_")!==-1&&(t=n.replace(/}_/g,"}"),t!==n&&(n=t,s=!0)),n.includes("</em>{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<\/em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),n.includes("<em>{\\mathrm{")&&(t=n.replace(/\\mathbf\{(W|x|y|z)\}<em>\{\\mathrm\{([a-z]+)\}\}/g,"\\mathbf{$1}_{\\mathrm{$2}}"),t=t.replace(/([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t=t.replace(/\\nabla ([LHf])<em>\{\\mathrm\{([a-z]+)\}\}/g,`\\nabla $1_{\\mathrm{$2}}`),t=t.replace(/([A-Z])<em>\{\\mathrm\{([a-z]+)\}\}/g,"$1_{\\mathrm{$2}}"),t!==n&&(n=t,s=!0)),(n.includes("</em>")||n.includes("<em>"))&&(t=n.replace(/(\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$\$[^$]*?)<em>([^$]*?)<\/em>/g,"$1_{$2}"),t=t.replace(/(\$[^$]*?)<em>/g,"$1"),t=t.replace(/<em>([^$]*?\$)/g,"$1"),t=t.replace(/(\$[^$]*?)<\/em>/g,"$1"),t=t.replace(/<\/em>([^$]*?\$)/g,"$1"),t!==n&&(n=t,s=!0)),n.indexOf("\\\\")!==-1&&(t=n.replace(/(\$\{1,2\})([^$]*?)(\$\{1,2\})/g,function(e,t,n,s){for(;n.indexOf("\\\\")!==-1;)n=n.replace(/\\\\/g,"\\");return t+n+s}),t!==n&&(n=t,s=!0)),s&&(e.innerHTML=n)})}window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]],processEscapes:!0,processEnvironments:!0,tags:"ams",packages:{"[+]":["noerrors","noundefined","boldsymbol"]},macros:{oiint:"\\mathop{∯}",oiiint:"\\mathop{∰}"}},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]},startup:{pageReady:function(){return e(),MathJax.startup.defaultPageReady().then(function(){console.log("MathJax formulas rendered successfully")})}}}})()</script><script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/css/mermaid-custom.css><script src=/js/mermaid-converter.js></script><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  
+  setTimeout(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#e3f2fd',
+        primaryTextColor: '#1565c0',
+        primaryBorderColor: '#2196f3',
+        lineColor: '#42a5f5',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#fff9c4',
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        nodeBorder: '#2196f3',
+        clusterBkg: '#ffffff',
+        clusterBorder: '#e0e0e0',
+        titleColor: '#1565c0',
+        edgeLabelBackground: '#fafafa',
+      },
+      securityLevel: 'loose',
+    });
+  }, 100);
+</script><script src=/js/toc.js></script></body></html>
